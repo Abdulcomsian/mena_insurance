@@ -173,7 +173,7 @@
                </div>
             </div>
       </div>
-      <div id="addCard" class="home container-fluid tab-pane active">
+      <div id="addCard" class="home container-fluid tab-pane fade">
          <div class="content-div">
             <button class="open-sidebar"><i class="fa fa-bars" aria-hidden="true"></i></button>
                <h3>Payment Method</h3>
