@@ -25,15 +25,18 @@ Route::get('/about', function () {
 Route::get('/login', function () {
     return view('screens.login');
 });
-Route::get('/register', function () {
-    return view('screens.register');
-});
+// Route::get('/registers', function () {
+//     //$countries = Countries::all();
+//     $countries = ["Pakistna", "India", "China"];
+//     return view('auth.register')->with("countries", $countries);
+// });
 Route::get('/forgot', function () {
     return view('screens.forgot');
 });
 Route::get('/conformation', function () {
     return view('screens.payment-confromation');
 });
+// ['middleware' => 'auth']
 Route::get('/search', function () {
     return view('screens.search-place');
 });
@@ -49,3 +52,7 @@ Route::get('/history', function () {
 Route::get('/payment', function () {
     return view('screens.add-card');
 });
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
