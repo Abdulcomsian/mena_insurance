@@ -49,23 +49,19 @@ use Illuminate\Support\Facades\DB;
                                 @enderror
                             </div>
                             <div class="inputDiv">
-                            <select class="form-control">
                             @php
-                            // $countries = Countries::all();
-                            $countries = DB::table('countries')->select(DB::raw('country_name'))->get();
-                           
-                           dd($countries);
+                                // $countries = Countries::all();
+                                $countries = DB::table('countries')->select(DB::raw('country_name, id'))->get();
+                               
+                             //dd($countries );
                             @endphp
+                            <select class="form-control">
+                           
                             @foreach($countries as $country)
-                                <option>{{$country}}</option>
+                                <option value="{{$country->id}}">{{$country->country_name}}</option>
                             @endforeach
                             </select>
-                                <input class="form-control @error('address') is-invalid @enderror"  type="text" name="country" value="{{ old('address') }}"   placeholder="Address">
-                                @error('address')
-                                        <span class="invalid-feedback" role="alert">
-                                            <strong>{{ $message }}</strong>
-                                        </span>
-                                @enderror
+                                
                             </div>
                             <div class="inputDiv">
                                 <input class="form-control @error('address') is-invalid @enderror"  type="text" name="mobile" value="{{ old('address') }}"   placeholder="Mobile Number">
@@ -83,31 +79,27 @@ use Illuminate\Support\Facades\DB;
                                         </span>
                                 @enderror
                             </div>
-                        <div class="form-group row">
-                            <label for="password" class="col-md-4 col-form-label text-md-right">{{ __('Password') }}</label>
+                            <div class="inputDiv">
 
-                            <div class="col-md-6">
-                                <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="new-password">
+                                <input id="password" type="password" placeholder="Password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="new-password">
 
                                 @error('password')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>
                                 @enderror
-                            </div>
+
                         </div>
 
-                        <div class="form-group row">
-                            <label for="password-confirm" class="col-md-4 col-form-label text-md-right">{{ __('Confirm Password') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required autocomplete="new-password">
+                        <div class="inputDiv">
+                            
+                                <input id="password-confirm" type="password" placeholder="Confirm Password" class="form-control @error('password_confirmation') is-invalid @enderror" name="password_confirmation" required autocomplete="new-password">
                             </div>
                         </div>
 
                         <div class="form-group row mb-0">
-                            <div class="col-md-6 offset-md-4">
-                                <button type="submit" class="btn btn-primary">
+                            <div class="col-md-6" style="margin: 0 auto;">
+                                <button type="submit" class="btn btn-primary mt-3" style="border:#2e953e; background:#2e953e;">
                                     {{ __('Register') }}
                                 </button>
                             </div>

@@ -7,18 +7,18 @@
 <section id="subscription-section" class="common-section">
     <div class="side-bar">
          <button class="open-sidebar"><i class="fa fa-arrow-left" aria-hidden="true"></i></i></button>
-            <ul class="nav nav-pills" role="tablist">
+         <ul class="nav nav-pills" role="tablist">
                <li class="nav-item">
-                  <a class="nav-link" data-toggle="pill" href="#subscription"><img src="assets/img/Icons/Icon feather-home - off.png" alt="" class="img-fluid"><span>My Subscription</span> </a>
+                  <a class="nav-link "  href="{{url('subscription')}}"><img src="assets/img/Icons/Icon feather-home - off.png" alt="" class="img-fluid"><span><i class="fa fa-money" aria-hidden="true"></i> My Subscription</span> </a>
                </li>
                <li class="nav-item">
-                  <a href="#account" class="nav-link my-project" data-toggle="pill"> <img src="assets/img/Icons/Icon feather-search - off.png" alt="" class="img-fluid"><span><i class="fa fa-user" aria-hidden="true"></i> Account Setting</span> </a>
+                  <a href="{{url('account')}}" class="nav-link my-project " > <img src="assets/img/Icons/Icon feather-search - off.png" alt="" class="img-fluid"><span><i class="fa fa-user" aria-hidden="true"></i> Account Setting</span> </a>
                </li>
                <li class="nav-item">
-                  <a href="#history" class="nav-link" data-toggle="pill"> <img src="assets/img/Icons/Icon material-favorite-border - off.png" alt="" class="img-fluid"><span><i class="fa fa-history" aria-hidden="true"></i> Renewal & History Billing</span> </a>
+                  <a href="{{url('history')}}" class="nav-link " > <img src="assets/img/Icons/Icon material-favorite-border - off.png" alt="" class="img-fluid"><span><i class="fa fa-history" aria-hidden="true"></i> Renewal & History Billing</span> </a>
                </li>
                <li class="nav-item">
-                  <a href="#addCard" class="nav-link active" data-toggle="pill"> <img src="assets/img/Icons/Icon material-history - off.png" alt="" class="img-fluid"><span><i class="fa fa-id-card-o" aria-hidden="true"></i> Add Payment Method</span> </a>
+                  <a href="{{url('payment')}}" class="nav-link active" > <img src="assets/img/Icons/Icon material-history - off.png" alt="" class="img-fluid"><span><i class="fa fa-id-card-o" aria-hidden="true"></i> Add Payment Method</span> </a>
                </li>
             </ul>
     </div>
@@ -37,7 +37,7 @@
                            <th>Amount</th>
                            <th>Status</th>
                            <th>Expire Date</th>
-                           <th>Balance Availabe</th>
+                           <th>Balance Available</th>
                      </tr>
                   </thead>
                   <tbody>

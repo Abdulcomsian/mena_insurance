@@ -1,8 +1,7 @@
-
 @extends('common.header')
 @section('content')
 
-<section id="comon-div">
+<section id="comon-div" class="forgot-page">
     <div class="left-side">
     </div>
     <div class="right-side">

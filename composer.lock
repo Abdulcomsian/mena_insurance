@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "04ac15f3d448cba4baef89238955b61c",
+    "content-hash": "acecc4364aa6c7036d5323389c391b1e",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -1050,6 +1050,56 @@
                 "source": "https://github.com/laravel/ui/tree/v2.2.0"
             },
             "time": "2020-08-25T18:30:43+00:00"
+        },
+        {
+            "name": "laravel_payment/telr",
+            "version": "1.2.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/bafi/Telr.git",
+                "reference": "b7580557afbb33dd6e8b9ff4d1d677e34e15ecd5"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/bafi/Telr/zipball/b7580557afbb33dd6e8b9ff4d1d677e34e15ecd5",
+                "reference": "b7580557afbb33dd6e8b9ff4d1d677e34e15ecd5",
+                "shasum": ""
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "TelrGateway\\TelrServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "TelrGateway\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Moustafa Gouda",
+                    "email": "mgouda@arkdev.net"
+                }
+            ],
+            "description": "Pay online through telr payment gateway",
+            "keywords": [
+                "laravel",
+                "payment",
+                "telr",
+                "telr payment"
+            ],
+            "support": {
+                "issues": "https://github.com/bafi/Telr/issues",
+                "source": "https://github.com/bafi/Telr/tree/1.2.1"
+            },
+            "time": "2020-09-09T15:41:34+00:00"
         },
         {
             "name": "league/commonmark",

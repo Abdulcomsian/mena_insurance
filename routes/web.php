@@ -22,14 +22,14 @@ Route::get('/contact', function () {
 Route::get('/about', function () {
     return view('screens.about');
 });
-Route::get('/login', function () {
-    return view('screens.login');
-});
+// Route::get('/login2', function () {
+//     return view('screens.login');
+// });
 // Route::get('/registers', function () {
 //     //$countries = Countries::all();
 //     $countries = ["Pakistna", "India", "China"];
 //     return view('auth.register')->with("countries", $countries);
-// });
+// }); 
 Route::get('/forgot', function () {
     return view('screens.forgot');
 });
@@ -40,12 +40,16 @@ Route::get('/conformation', function () {
 Route::get('/search', function () {
     return view('screens.search-place');
 });
-Route::get('/subcription', function () {
-    return view('screens.subscription');
-});
-Route::get('/account', function () {
-    return view('screens.account-setting');
-});
+// Route::get('/subcription', function () {
+//     return view('screens.subscription');
+// });
+Route::get('subscription', 'userpagesController@subcription')->name('subscription');
+Route::get('account', 'userpagesController@account')->name('account');
+Route::post('account', 'userpagesController@update_account')->name('update_account');
+
+// Route::get('account', function () {
+//     return view('screens.account-setting');
+// });
 Route::get('/history', function () {
     return view('screens.renewal-history');
 });

@@ -15,28 +15,34 @@
             <li class="nav-item">
                <a class="nav-link" href="/contact">Contact</a>
             </li>
+            @auth
             <li class="nav-item">
                   <div class="dropdown">
                      <button class="dropbtn"><i class="fa fa-user-circle-o" aria-hidden="true"></i></button>
                      <div class="dropdown-content">
                         <h3>Mena Insurance</h3>
                         <p>Customer # <span><b>025894</b></span></p>
-                        <a href="/subcription#">My Subscription</a>
+                        <a href="/subscription#">My Subscription</a>
                         <a href="/account"><i class="fa fa-user" aria-hidden="true"></i> Account Setting</a>
                         <a href="/history"><i class="fa fa-history" aria-hidden="true"></i> Renewal & Billing History</a>
-                        <p class="logout"><a href=""><i class="fa fa-sign-out" aria-hidden="true"></i> Logout</a></p>
+                        <p class="logout"><a  href="{{ route('logout') }}"><i class="fa fa-sign-out" aria-hidden="true"></i> Logout</a></p>
                      </div>
                   </div>
             </li>
+            @endauth
+
+
          </ul>
+         @guest
          <ul class="navbar-nav nav-flex-icons">
             <li class="nav-item">
-               <a class="nav-link" href="#">Log in</a>
+               <a class="nav-link" href="{{route('login')}}">Log in</a>
             </li>
             <li class="nav-item">
-               <a class="nav-link registerBtn" href="#">Register</a>
+               <a class="nav-link registerBtn" href="{{route('register')}}">Register</a>
             </li>
          </ul>
+         @endguest
       </div>
    </nav>
 </section>
