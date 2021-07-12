@@ -2,7 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use http\Env\Response;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
+use phpDocumentor\Reflection\Types\True_;
 
 class HomeController extends Controller
 {
@@ -13,7 +16,7 @@ class HomeController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('auth');
+//        $this->middleware('auth');
     }
 
     /**
@@ -24,5 +27,14 @@ class HomeController extends Controller
     public function index()
     {
         return view('/home');
+    }
+
+    public function liveSearch(Request $request){
+        $data = DB::table('company_detail')
+            ->select('id','country','company_name')
+            ->where('country','=',$request->country)
+            ->where('company_name', 'like','%' . $request['query'] . '%')
+            ->get();
+        return response()->json($data);
     }
 }

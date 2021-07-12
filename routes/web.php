@@ -29,7 +29,7 @@ Route::get('/about', function () {
 //     //$countries = Countries::all();
 //     $countries = ["Pakistna", "India", "China"];
 //     return view('auth.register')->with("countries", $countries);
-// }); 
+// });
 Route::get('/forgot', function () {
     return view('screens.forgot');
 });
@@ -60,3 +60,4 @@ Route::get('/payment', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/live_search', 'HomeController@liveSearch')->name('live_search');
