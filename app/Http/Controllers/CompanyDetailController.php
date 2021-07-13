@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\CompanyDetail;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -18,9 +17,12 @@ class CompanyDetailController extends Controller
     }
 
     public function show($id){
-        $company_detail = CompanyDetail::where('id',$id)->with(['board_of_directors','company_accounting','market_share'])->first();
-//        dd($company_detail);
-        return view('screens.company-detail',compact('company_detail'));
+        try {
+            $company_detail = CompanyDetail::where('id',$id)->with(['board_of_directors','company_accounting','market_share'])->first();
+            return view('screens.company-detail',compact('company_detail'));
+        }catch (\Exception $exception){
+            return back();
+        }
     }
 
 }

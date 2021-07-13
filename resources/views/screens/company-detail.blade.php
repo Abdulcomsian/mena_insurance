@@ -72,7 +72,7 @@
                                    </div>
                                    <h3 class="title">Senior Management / Board of Directors</h3>
                                     <div class="row">
-                                        @isset($company_detail->board_of_directors)
+                                        @if(count($company_detail->board_of_directors) > 0)
                                             @foreach($company_detail->board_of_directors as $item)
                                                 <div class="col-lg-6 col-md-6">
                                                     <div class="insights-div">
@@ -81,7 +81,13 @@
                                                    </div>
                                                 </div>
                                             @endforeach
-                                        @endisset
+                                        @else
+                                            <div class="col-lg-6 col-md-6">
+                                                <div class="insights-div">
+                                                   <p>-</p>
+                                                </div>
+                                            </div>
+                                        @endif
                                     </div>
                                 </div>
                                 </div>
@@ -100,33 +106,33 @@
                                         <div class="row">
                                             <div class="col-lg-6 col-md-6">
                                                 <div class="insights-div">
-                                                <h3>Financial Strength Rating</h3>
-                                                <p>-</p>
-                                            </div>
-                                            </div>
-                                            <div class="col-lg-6 col-md-6">
-                                                <div class="insights-div">
-                                                <h3>Issuer Credit Rating</h3>
-                                                <p>-</p>
-                                            </div>
+                                                    <h3>Financial Strength Rating</h3>
+                                                    <p>{{ $company_detail->company_accounting->financial_strength_rating  ?: '-' }}</p>
+                                                </div>
                                             </div>
                                             <div class="col-lg-6 col-md-6">
                                                 <div class="insights-div">
-                                                <h3>S&P Rating</h3>
-                                                <p>-</p>
-                                            </div>
-                                            </div>
-                                            <div class="col-lg-6 col-md-6">
-                                                <div class="insights-div">
-                                                <h3>Moody's Rating</h3>
-                                                <p>-</p>
-                                            </div>
+                                                    <h3>Issuer Credit Rating</h3>
+                                                    <p>{{ $company_detail->company_accounting->issue_credit_rating  ?: '-' }}</p>
+                                                </div>
                                             </div>
                                             <div class="col-lg-6 col-md-6">
                                                 <div class="insights-div">
-                                                <h3>Other Rating</h3>
-                                                <p>IFS - BB</p>
+                                                    <h3>S&P Rating</h3>
+                                                    <p>{{ $company_detail->company_accounting->s_andprating  ?: '-' }}</p>
+                                                </div>
                                             </div>
+                                            <div class="col-lg-6 col-md-6">
+                                                <div class="insights-div">
+                                                    <h3>Moody's Rating</h3>
+                                                    <p>{{ $company_detail->company_accounting->moody_rating  ?: '-' }}</p>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-6 col-md-6">
+                                                <div class="insights-div">
+                                                    <h3>Other Rating</h3>
+                                                    <p>{{ $company_detail->company_accounting->other_rating  ?: '-' }}</p>
+                                                </div>
                                             </div>
                                             <button style="color:#fff;">Sanction Status</button>
                                         </div>
@@ -153,7 +159,7 @@
                                             <div class="col-lg-6 col-md-6">
                                                 <div class="insights-div">
                                                 <h3>Year</h3>
-                                                    <p>{{ $company_detail->company_accounting->gross_written_premium_year  ?: '-' }}</p>
+                                                <p>{{ $company_detail->company_accounting->gross_written_premium_year  ?: '-' }}</p>
                                             </div>
                                             </div>
                                             <div class="col-lg-6 col-md-6">
@@ -165,7 +171,7 @@
                                             <div class="col-lg-6 col-md-6">
                                                 <div class="insights-div">
                                                 <h3>Financial Report</h3>
-                                                <p><a href="">{{ $company_detail->financial_report ?: '-' }}</a></p>
+                                                <p><a href="{{ $company_detail->financial_report ?: '' }}" target="_blank">{{ $company_detail->financial_report ?: '-' }}</a></p>
                                             </div>
                                             </div>
                                         </div>
@@ -233,7 +239,7 @@
                             <div class="col-lg-6 col-md-6">
                                 <div class="insights-div">
                                     <h3>Website</h3>
-                                    <p>{{$company_detail->company_website ?: '-'}}</p>
+                                    <p><a href="{{ $company_detail->company_website ?: '-' }}" target="_blank">{{$company_detail->company_website ?: '-'}}</a></p>
                                 </div>
                             </div>
                             <div class="col-lg-6 col-md-6">
