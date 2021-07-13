@@ -60,4 +60,7 @@ Route::get('/payment', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
-Route::get('/live_search', 'HomeController@liveSearch')->name('live_search');
+
+//By Assad Yaqoob
+Route::get('live_search', 'CompanyDetailController@liveSearch')->name('live_search');
+Route::get('company_detail/{id}','CompanyDetailController@show')->name('companydetail.show');

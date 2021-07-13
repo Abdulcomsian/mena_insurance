@@ -104,11 +104,11 @@
                     $('#data').empty();
                     if(data.length > 0) {
                         $.each(data, function (index, item) {
-                            $('#data').append(`<li class="list-group-item"><a href="${item.id}">${item.company_name}</a></li>`)
+                            $('#data').append(`<li class="list-group-item"><a href="company_detail/${item.id}">${item.company_name}</a></li>`)
                         });
                     }
                     else{
-                        $('#data').append(`<li><a href="">No Result Found</a></li>`)
+                        $('#data').append(`<li class="list-group-item">No Result Found</li>`)
                     }
                 }
             })

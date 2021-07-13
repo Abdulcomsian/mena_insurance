@@ -29,12 +29,5 @@ class HomeController extends Controller
         return view('/home');
     }
 
-    public function liveSearch(Request $request){
-        $data = DB::table('company_detail')
-            ->select('id','country','company_name')
-            ->where('country','=',$request->country)
-            ->where('company_name', 'like','%' . $request['query'] . '%')
-            ->get();
-        return response()->json($data);
-    }
+
 }
