@@ -68,24 +68,24 @@
         $('#payment_table').DataTable();
     });
 
-    var ctx = document.getElementById("myChart").getContext('2d');
-
-var myChart = new Chart(ctx, {
-    type: 'doughnut',
-    data: {
-        labels: ["T.C. Sosyal Güvenlik Kurumu Başkanlığı",	"Polis Bakım ve Yardım Sandığı"],
-        datasets: [{
-            data: [500,	20], // Specify the data values array
-
-            borderColor: ['#3fd596', '#0061fe'], // Add custom color border
-            backgroundColor: ['#3fd596', '#0061fe'], // Add custom color background (Points and Fill)
-            borderWidth: 1 // Specify bar border width
-        }]},
-    options: {
-      responsive: true, // Instruct chart js to respond nicely.
-      maintainAspectRatio: false, // Add to prevent default behaviour of full-width/height
-    }
-});
+//     var ctx = document.getElementById("myChart").getContext('2d');
+//
+// var myChart = new Chart(ctx, {
+//     type: 'doughnut',
+//     data: {
+//         labels: ["T.C. Sosyal Güvenlik Kurumu Başkanlığı",	"Polis Bakım ve Yardım Sandığı"],
+//         datasets: [{
+//             data: [500,	20], // Specify the data values array
+//
+//             borderColor: ['#3fd596', '#0061fe'], // Add custom color border
+//             backgroundColor: ['#3fd596', '#0061fe'], // Add custom color background (Points and Fill)
+//             borderWidth: 1 // Specify bar border width
+//         }]},
+//     options: {
+//       responsive: true, // Instruct chart js to respond nicely.
+//       maintainAspectRatio: false, // Add to prevent default behaviour of full-width/height
+//     }
+// });
 
     $(document).on('keyup', '#search', function(){
         var query = $('#search').val();

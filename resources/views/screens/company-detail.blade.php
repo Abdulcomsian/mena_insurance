@@ -216,7 +216,7 @@
                 </div>
                 <div class="col-lg-6 col-md-6">
                     <div class="right-side commonDiv">
-                        <img src="assets/img/logo.png" alt="">
+                        <img src="{{asset('assets/img/logo.png')}}" alt="">
                         <div class="row">
                             <div class="col-lg-12">
                                 <div class="insights-div">
