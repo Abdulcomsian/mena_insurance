@@ -22,6 +22,8 @@ class CreateReqForSancStatusTable extends Migration
             $table->string('reason')->nullable();
             $table->bigInteger('user_id')->nullable();
             $table->string('name');
+            $table->timestamps();
+
         });
     }
 

@@ -12,7 +12,7 @@ use Illuminate\Database\Eloquent\Model;
 
 /**
  * Class CompanyDetail
- * 
+ *
  * @property int $id
  * @property string $created_by
  * @property Carbon|null $created_date
@@ -37,7 +37,7 @@ use Illuminate\Database\Eloquent\Model;
  * @property string|null $toll_free_number
  * @property string|null $trade_name
  * @property string|null $alternative_names
- * 
+ *
  * @property Collection|BoardOfDirector[] $board_of_directors
  * @property Collection|CompanyAccounting[] $company_accountings
  * @property Collection|MarketShare[] $market_shares
@@ -48,8 +48,6 @@ use Illuminate\Database\Eloquent\Model;
 class CompanyDetail extends Model
 {
 	protected $table = 'company_detail';
-	public $incrementing = false;
-	public $timestamps = false;
 
 	protected $casts = [
 		'id' => 'int',
@@ -93,14 +91,14 @@ class CompanyDetail extends Model
 		return $this->hasMany(BoardOfDirector::class, 'company_id');
 	}
 
-	public function company_accountings()
+	public function company_accounting()
 	{
-		return $this->hasMany(CompanyAccounting::class, 'company_id');
+		return $this->hasOne(CompanyAccounting::class, 'company_id');
 	}
 
-	public function market_shares()
+	public function market_share()
 	{
-		return $this->hasMany(MarketShare::class, 'company_id');
+		return $this->hasOne(MarketShare::class, 'company_id');
 	}
 
 	public function sanction_statuses()

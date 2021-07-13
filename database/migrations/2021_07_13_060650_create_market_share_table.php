@@ -26,6 +26,7 @@ class CreateMarketShareTable extends Migration
             $table->decimal('total_share', 19, 2)->nullable();
             $table->bigInteger('company_id')->nullable();
             $table->foreign('company_id', 'FKq763po2ua2vrlteqabkxisgpp')->references('id')->on('company_detail');
+            $table->timestamps();
         });
     }
 

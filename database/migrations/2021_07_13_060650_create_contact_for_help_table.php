@@ -19,6 +19,7 @@ class CreateContactForHelpTable extends Migration
             $table->string('email_id');
             $table->string('mobile_number')->nullable();
             $table->string('name');
+            $table->timestamps();
         });
     }
 

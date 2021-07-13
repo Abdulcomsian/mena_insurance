@@ -24,6 +24,7 @@ class CreateBoardOfDirectorTable extends Migration
             $table->string('name')->nullable();
             $table->bigInteger('company_id')->nullable();
             $table->foreign('company_id', 'FK4t9gsrw98wbqdy7eghib7t677')->references('id')->on('company_detail');
+            $table->timestamps();
         });
     }
 

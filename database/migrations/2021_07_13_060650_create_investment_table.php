@@ -24,6 +24,7 @@ class CreateInvestmentTable extends Migration
             $table->integer('year')->nullable();
             $table->bigInteger('company_accounting_id')->nullable();
             $table->foreign('company_accounting_id', 'FKpr81ge2p91rlcoakh9jnay11k')->references('id')->on('company_accounting');
+            $table->timestamps();
         });
     }
 

@@ -18,6 +18,7 @@ class CreateSanctionStatusTable extends Migration
             $table->string('status')->nullable();
             $table->bigInteger('company_id')->nullable();
             $table->foreign('company_id', 'FKlpcqdfmbdssc5h1am4srpqulk')->references('id')->on('company_detail');
+            $table->timestamps();
         });
     }
 

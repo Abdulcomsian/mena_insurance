@@ -24,6 +24,7 @@ class CreateIncomeStatementTable extends Migration
             $table->integer('year')->nullable();
             $table->bigInteger('company_accounting_id')->nullable();
             $table->foreign('company_accounting_id', 'FKf9rqfsswhp949mlx4oyw5w7q6')->references('id')->on('company_accounting');
+            $table->timestamps();
         });
     }
 

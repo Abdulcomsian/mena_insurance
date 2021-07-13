@@ -18,9 +18,9 @@ class CompanyDetailController extends Controller
     }
 
     public function show($id){
-        $company_detail = CompanyDetail::where('id',$id)->first();
-
-        dd($company_detail);
+        $company_detail = CompanyDetail::where('id',$id)->with(['board_of_directors','company_accounting','market_share'])->first();
+//        dd($company_detail);
+        return view('screens.company-detail',compact('company_detail'));
     }
 
 }

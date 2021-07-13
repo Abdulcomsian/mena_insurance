@@ -31,6 +31,7 @@ class CreateCompanyAccountingTable extends Migration
             $table->string('s_andprating')->nullable();
             $table->bigInteger('company_id')->nullable();
             $table->foreign('company_id', 'FK8rjr9xrvmdpyg9lt4r4eq1cch')->references('id')->on('company_detail');
+            $table->timestamps();
         });
     }
 

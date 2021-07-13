@@ -24,6 +24,7 @@ class CreateSubsidiaryTable extends Migration
             $table->string('name')->nullable();
             $table->bigInteger('company_accounting_id')->nullable();
             $table->foreign('company_accounting_id', 'FKq4ebnpur9k2ad1jvjr0yru96j')->references('id')->on('company_accounting');
+            $table->timestamps();
         });
     }
 

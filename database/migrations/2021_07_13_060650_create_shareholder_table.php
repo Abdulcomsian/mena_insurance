@@ -23,6 +23,7 @@ class CreateShareholderTable extends Migration
             $table->double('share_percentage')->nullable();
             $table->bigInteger('market_share_id')->nullable();
             $table->foreign('market_share_id', 'FKdnopeygqm3bg8g4arm5urcbua')->references('id')->on('market_share');
+            $table->timestamps();
         });
     }
 

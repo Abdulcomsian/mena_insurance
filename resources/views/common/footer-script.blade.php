@@ -104,7 +104,7 @@
                     $('#data').empty();
                     if(data.length > 0) {
                         $.each(data, function (index, item) {
-                            $('#data').append(`<li class="list-group-item"><a href="company_detail/${item.id}">${item.company_name}</a></li>`)
+                            $('#data').append(`<li class="list-group-item"><a target="_blank" href="company_detail/${item.id}">${item.company_name}</a></li>`)
                         });
                     }
                     else{

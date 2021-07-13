@@ -11,7 +11,7 @@ use Illuminate\Database\Eloquent\Model;
 
 /**
  * Class BoardOfDirector
- * 
+ *
  * @property int $id
  * @property string $created_by
  * @property Carbon|null $created_date
@@ -21,7 +21,7 @@ use Illuminate\Database\Eloquent\Model;
  * @property string|null $image_url
  * @property string|null $name
  * @property int|null $company_id
- * 
+ *
  * @property CompanyDetail|null $company_detail
  *
  * @package App\Models
