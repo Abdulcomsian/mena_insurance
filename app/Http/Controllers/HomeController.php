@@ -2,7 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use http\Env\Response;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
+use phpDocumentor\Reflection\Types\True_;
 
 class HomeController extends Controller
 {
@@ -13,7 +16,7 @@ class HomeController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('auth');
+//        $this->middleware('auth');
     }
 
     /**
@@ -25,4 +28,9 @@ class HomeController extends Controller
     {
         return view('/home');
     }
+
+    public function telrCurlTesting(){
+        dump('Here in controller');
+    }
+
 }

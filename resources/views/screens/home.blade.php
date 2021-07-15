@@ -266,7 +266,12 @@
                                 <option value="Zimbabwe">Zimbabwe</option>
                             </select>
                         </div>
-                        <input type="text" placeholder="Search for an Insurance Organization or Key Executives">    
+                        <input id="search" type="text" placeholder="Search for an Insurance Organization or Key Executives">
+                    </div>
+                    <div>
+                        <ul class="list-group" id="data">
+
+                        </ul>
                     </div>
                     <button>Search</button>
                 </form>
@@ -500,10 +505,10 @@
                     <div class="comment-slider">
                         <div class="comment-box">
                             <div class="comment">
-                                <p>I wanted to take a moment and tell you what a 
-                                    fantastic employee you have. She treated me with 
-                                    the up most professionalism and was a calming voice that 
-                                    alleviated my stress during a stressful situation. 
+                                <p>I wanted to take a moment and tell you what a
+                                    fantastic employee you have. She treated me with
+                                    the up most professionalism and was a calming voice that
+                                    alleviated my stress during a stressful situation.
                                     She is an absolute pleasure to work with.
                                 </p>
                             </div>
@@ -548,7 +553,7 @@
 <div class="modal fade" id="orderModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
-     
+
       <div class="modal-body">
         <i class="fa fa-exclamation-triangle" aria-hidden="true"></i>
         <p>Mena Insurance,<br> Please sign up <b>or</b> Login to place an Order</p>

@@ -29,7 +29,7 @@ Route::get('/about', function () {
 //     //$countries = Countries::all();
 //     $countries = ["Pakistna", "India", "China"];
 //     return view('auth.register')->with("countries", $countries);
-// }); 
+// });
 Route::get('/forgot', function () {
     return view('screens.forgot');
 });
@@ -60,3 +60,11 @@ Route::get('/payment', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+//By Assad Yaqoob
+Route::get('live_search', 'CompanyDetailController@liveSearch')->name('live_search');
+Route::get('company_detail/{id}','CompanyDetailController@show')->name('companydetail.show');
+
+//Testing Routes
+Route::view('telr-testing','testing.telr');
+Route::get('telr-curl-testing','HomeController@telrCurlTesting');
