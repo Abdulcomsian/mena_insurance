@@ -11,7 +11,7 @@ use Illuminate\Database\Eloquent\Model;
 
 /**
  * Class Transaction
- * 
+ *
  * @property string $cart_id
  * @property int|null $order_id
  * @property int $store_id
@@ -44,7 +44,7 @@ class Transaction extends Model
 {
 	protected $table = 'transaction';
 	protected $primaryKey = 'cart_id';
-	public $incrementing = false;
+//	public $incrementing = false;
 
 	protected $casts = [
 		'order_id' => 'int',

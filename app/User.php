@@ -4,14 +4,14 @@
  * Created by Reliese Model.
  */
 
-namespace App\Models;
+namespace App;
 
 use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Model;
 
 /**
  * Class User
- * 
+ *
  * @property int $id
  * @property string $name
  * @property string $email

@@ -17,6 +17,7 @@ class DatabaseSeeder extends Seeder
         $this->call(\Database\Seeders\CompanyAccountingTableSeeder::class);
         $this->call(\Database\Seeders\MarketShareTableSeeder::class);
         $this->call(\Database\Seeders\ShareholderTableSeeder::class);
-
+        $this->call(\Database\Seeders\CountriesTableSeeder::class);
+        $this->call(\Database\Seeders\CountryInformationTableSeeder::class);
     }
 }

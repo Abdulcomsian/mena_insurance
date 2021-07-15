@@ -29,5 +29,8 @@ class HomeController extends Controller
         return view('/home');
     }
 
+    public function telrCurlTesting(){
+        dump('Here in controller');
+    }
 
 }

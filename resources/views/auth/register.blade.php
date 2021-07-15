@@ -6,7 +6,7 @@ use Illuminate\Support\Facades\DB;
 @extends('common.header')
 @section('content')
 
-<section id="comon-div" class="register-page"> 
+<section id="comon-div" class="register-page">
     <div class="left-side">
     </div>
     <div class="right-side">
@@ -52,16 +52,16 @@ use Illuminate\Support\Facades\DB;
                             @php
                                 // $countries = Countries::all();
                                 $countries = DB::table('countries')->select(DB::raw('country_name, id'))->get();
-                               
+
                              //dd($countries );
                             @endphp
-                            <select class="form-control">
-                           
+                            <select class="form-control" name="country">
+
                             @foreach($countries as $country)
                                 <option value="{{$country->id}}">{{$country->country_name}}</option>
                             @endforeach
                             </select>
-                                
+
                             </div>
                             <div class="inputDiv">
                                 <input class="form-control @error('address') is-invalid @enderror"  type="text" name="mobile" value="{{ old('address') }}"   placeholder="Mobile Number">
@@ -92,7 +92,7 @@ use Illuminate\Support\Facades\DB;
                         </div>
 
                         <div class="inputDiv">
-                            
+
                                 <input id="password-confirm" type="password" placeholder="Confirm Password" class="form-control @error('password_confirmation') is-invalid @enderror" name="password_confirmation" required autocomplete="new-password">
                             </div>
                         </div>

@@ -64,3 +64,7 @@ Route::get('/home', 'HomeController@index')->name('home');
 //By Assad Yaqoob
 Route::get('live_search', 'CompanyDetailController@liveSearch')->name('live_search');
 Route::get('company_detail/{id}','CompanyDetailController@show')->name('companydetail.show');
+
+//Testing Routes
+Route::view('telr-testing','testing.telr');
+Route::get('telr-curl-testing','HomeController@telrCurlTesting');
