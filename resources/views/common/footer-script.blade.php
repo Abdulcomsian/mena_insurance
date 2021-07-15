@@ -90,8 +90,6 @@
     $(document).on('keyup', '#search', function(){
         var query = $('#search').val();
         var country = $('#country').val();
-        // console.log(query);
-        // console.log(country);
         if (query) {
             console.log('in if',query)
             $.ajax({
@@ -110,10 +108,12 @@
                     else{
                         $('#data').append(`<li class="list-group-item">No Result Found</li>`)
                     }
+                },
+                error:function (){
+                    $('#data').empty();
                 }
             })
         }else {
-            console.log('in else');
             $('#data').empty();
         }
     });

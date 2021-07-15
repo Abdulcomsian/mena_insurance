@@ -9,12 +9,16 @@ use Illuminate\Support\Facades\DB;
 class CompanyDetailController extends Controller
 {
     public function liveSearch(Request $request){
-        $data = DB::table('company_detail')
-            ->select('id','country','company_name')
-            ->where('country','=',$request->country)
-            ->where('company_name', 'like','%' . $request['query'] . '%')
-            ->get();
-        return response()->json($data);
+        try{
+            $data = DB::table('company_detail')
+                ->select('id', 'country', 'company_name')
+                ->where('country', '=', $request->country)
+                ->where('company_name', 'like', '%' . $request['query'] . '%')
+                ->get();
+            return response()->json($data);
+        }catch (\Exception $exception) {
+          return response()->json('');
+        }
     }
 
     public function show($id){

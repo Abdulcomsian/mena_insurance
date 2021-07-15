@@ -2,9 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Package;
 use http\Env\Response;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use mysql_xdevapi\Exception;
 use phpDocumentor\Reflection\Types\True_;
 
 class HomeController extends Controller
@@ -26,7 +28,14 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('/home');
+        try {
+            $packages = Package::where('status','active')
+                ->orderby('id','asc')
+                ->get();
+            return view('screens.home',compact('packages'));
+        }catch (\Exception $exception){
+            return back();
+        }
     }
 
     public function telrCurlTesting(){

@@ -13,9 +13,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('screens.home');
-});
+Route::get('/', 'HomeController@index');
+
 Route::get('/contact', function () {
     return view('screens.contact');
 });
@@ -64,6 +63,11 @@ Route::get('/home', 'HomeController@index')->name('home');
 //By Assad Yaqoob
 Route::get('live_search', 'CompanyDetailController@liveSearch')->name('live_search');
 Route::get('company_detail/{id}','CompanyDetailController@show')->name('companydetail.show');
+
+Route::get('transaction-create/{id}','TransactionController@create')->name('transaction.create');
+Route::post('transaction-cancel','TransactionController@cancel')->name('transaction.cancel');
+Route::post('transaction-success','TransactionController@success')->name('transaction.success');
+Route::post('transaction-decline','TransactionController@decline')->name('transaction.decline');
 
 //Testing Routes
 Route::view('telr-testing','testing.telr');
