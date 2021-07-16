@@ -57,6 +57,7 @@ class Transaction extends Model
 
 	protected $fillable = [
 		'order_id',
+		'cart_id',
 		'store_id',
 		'test_mode',
 		'amount',
