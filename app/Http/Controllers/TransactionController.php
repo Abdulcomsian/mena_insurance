@@ -41,7 +41,6 @@ class TransactionController extends Controller
             if(isset( $results->order->url) && isset($results->order->ref)){
                 session()->put('package_id',$id);
                 session()->put('order_no',$results->order->ref);
-//                dd($results->order->ref);
                 return redirect($results->order->url);
             }else{
                 dd('Url not exits',$results);
@@ -58,7 +57,6 @@ class TransactionController extends Controller
 
     public function success(Request $request){
         try {
-            dump('In success');
             $order_no = session()->get('order_no');
             if(isset($order_no)){
                 $params = array(
@@ -67,7 +65,6 @@ class TransactionController extends Controller
                     'ivp_authkey' => 'FmJq#sfCh9-BTRbp',
                     'order_ref' => $order_no,
                 );
-                dump($params);
                 $ch = curl_init();
                 curl_setopt($ch, CURLOPT_URL, "https://secure.telr.com/gateway/order.json");
                 curl_setopt($ch, CURLOPT_POST, count($params));
@@ -89,7 +86,6 @@ class TransactionController extends Controller
 
     protected function saveTransaction($transaction){
         try {
-//            dd($transaction);
             $package = Package::where('id',decrypt(session()->get('package_id')))->first();
             Transaction::create([
                 'order_id' => $transaction->order->ref ?? null,
