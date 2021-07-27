@@ -17,8 +17,8 @@ use Illuminate\Support\Facades\DB;
                         <div class="form-div">
                             <h2>Sign Up</h2>
                             <div class="inputDiv">
-                                <input class="form-control @error('companyname') is-invalid @enderror"  type="text" name="companyname" value="{{ old('companyname') }}" required autocomplete="companyname" autofocus placeholder="Company Name">
-                                @error('companyname')
+                                <input class="form-control @error('company_name') is-invalid @enderror"  type="text" name="company_name" value="{{ old('company_name') }}" required autocomplete="company_name" autofocus placeholder="Company Name">
+                                @error('company_name')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
                                         </span>
@@ -64,16 +64,16 @@ use Illuminate\Support\Facades\DB;
 
                             </div>
                             <div class="inputDiv">
-                                <input class="form-control @error('address') is-invalid @enderror"  type="text" name="mobile" value="{{ old('address') }}"   placeholder="Mobile Number">
-                                @error('address')
+                                <input class="form-control @error('mobile_number') is-invalid @enderror"  type="text" name="mobile_number" value="{{ old('mobile_number') }}"   placeholder="Mobile Number">
+                                @error('mobile_number')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
                                         </span>
                                 @enderror
                             </div>
                             <div class="inputDiv">
-                                <input class="form-control @error('office') is-invalid @enderror"  type="text" name="office" value="{{ old('office') }}"   placeholder="Office Number">
-                                @error('office')
+                                <input class="form-control @error('office_number') is-invalid @enderror"  type="text" name="office_number" value="{{ old('office_number') }}"   placeholder="Office Number">
+                                @error('office_number')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
                                         </span>

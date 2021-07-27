@@ -34,7 +34,7 @@ class HomeController extends Controller
                 ->get();
             return view('screens.home',compact('packages'));
         }catch (\Exception $exception){
-            return back();
+            return $exception->getMessage();
         }
     }
 

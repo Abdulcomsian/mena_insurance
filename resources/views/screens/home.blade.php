@@ -266,7 +266,7 @@
                                 <option value="Zimbabwe">Zimbabwe</option>
                             </select>
                         </div>
-                        <input id="search" type="text" placeholder="Search for an Insurance Organization or Key Executives">
+                        <input id="search" type="text" autocomplete="off" placeholder="Search for an Insurance Organization or Key Executives">
                     </div>
                     <div>
                         <ul class="list-group" id="data">
