@@ -25,9 +25,9 @@ class TransactionController extends Controller
                 'ivp_currency' => 'AED',
                 'ivp_desc' => $package->description,
 //                'ivp_framed ' => 2,
-                'return_auth' => 'http://127.0.0.1:8000/transaction-success',
-                'return_can' => 'http://127.0.0.1:8000/transaction-cancel',
-                'return_decl' => 'http://127.0.0.1:8000/transaction-decline'
+                'return_auth' => url('/').'/transaction-success',
+                'return_can' => url('/').'/transaction-cancel',
+                'return_decl' => url('/').'/transaction-decline'
             );
             $ch = curl_init();
             curl_setopt($ch, CURLOPT_URL, "https://secure.telr.com/gateway/order.json");

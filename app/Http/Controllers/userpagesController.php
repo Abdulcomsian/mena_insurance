@@ -25,7 +25,6 @@ class userpagesController extends Controller
 
         $users = User::where('id', '=', $user_id)->first();
         $countries = Country::all();
-        // dd($users);
         return view('screens.account-setting', compact("users", "countries"));
     }
 
