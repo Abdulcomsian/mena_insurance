@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\CountryInformation;
 use App\Models\Package;
 use http\Env\Response;
 use Illuminate\Http\Request;
@@ -18,7 +19,7 @@ class HomeController extends Controller
      */
     public function __construct()
     {
-//        $this->middleware('auth');
+//     $this->middleware(['auth','verified']);
     }
 
     /**
@@ -32,9 +33,10 @@ class HomeController extends Controller
             $packages = Package::where('status','active')
                 ->orderby('id','asc')
                 ->get();
-            return view('screens.home',compact('packages'));
+            $countries  = CountryInformation::orderby('country_name','asc')->get();
+            return view('screens.home',compact('packages','countries'));
         }catch (\Exception $exception){
-            return $exception->getMessage();
+            return 'Something went wrong';
         }
     }
 

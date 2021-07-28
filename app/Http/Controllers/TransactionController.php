@@ -46,11 +46,9 @@ class TransactionController extends Controller
                 dd('Url not exits',$results);
             }
         }catch (\Exception $exception){
-            dd($exception->getMessage());
-            return back();
+            return 'Something went wrong';
         }catch (DecryptException $decryptException){
-            dd($decryptException->getMessage());
-            return back();
+            return 'Something went wrong';
         }
     }
 
@@ -80,7 +78,7 @@ class TransactionController extends Controller
                 }
             }
         }catch (\Exception $exception){
-            dd($exception->getMessage());
+            return 'Something went wrong';
         }
     }
 
@@ -106,13 +104,26 @@ class TransactionController extends Controller
                 'user_id' => Auth::id() ?? null,
                 'package_id' => $package->id ?? null,
             ]);
+            $sub = Subscription::where('user_id',Auth::id())->first();
+            if (isset($sub)){
+                Subscription::where('user_id',Auth::id())->update([
+                    'package_id' => $package->id,
+                    'package_name' => $package->name,
+                    'price' => $package->price,
+                    'status' => SubscriptionStatus::Approved,
+                    'sanctions_balance' => $package->sanctions + $sub->sanctions_balance,
+                ]);
+            }else{
+                Subscription::create([
+                    'package_id' => $package->id,
+                    'package_name' => $package->name,
+                    'price' => $package->price,
+                    'status' => SubscriptionStatus::Approved,
+                    'user_id' => Auth::id(),
+                    'sanctions_balance' => $package->sanctions,
+                ]);
+            }
 
-            Subscription::create([
-                'package_id' => $package->id,
-                'status' => SubscriptionStatus::Approved,
-                'user_id' => Auth::id(),
-                'sanctions_balance' => $package->sanctions,
-            ]);
             dump('Save Transaction');
         }catch (\Exception $exception){
             dd('Exception in save transaction',$exception->getMessage());

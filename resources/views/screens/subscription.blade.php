@@ -31,43 +31,32 @@
                <table id="subscription_table" class="display">
                   <thead>
                      <tr>
-                           <th>ID</th>
+                           <th>S.No</th>
                            <th>Date</th>
                            <th>Package Name</th>
                            <th>Amount</th>
                            <th>Status</th>
-                           <th>Expire Date</th>
                            <th>Balance Available</th>
                      </tr>
                   </thead>
                   <tbody>
-                  @foreach ($subscription as $item)
                      <tr>
-                           <td>{{$item->id}}</td>
-                           <td>{{date("d-M-Y",strtotime($item->date_created))}}</td>
-                           <td>{{$item->package_name}}</td>
-                           <td>{{$item->amount}}</td>
+                           <td>1</td>
+                           <td>{{date("d-M-Y",strtotime($subscription->created_at))  ?: '-'}}</td>
+                           <td>{{$subscription->package_name ?: '-'}}</td>
+                           <td>{{$subscription->price ?: '-'}}</td>
                            <td>
-                              @if($item->status==1)
-                                 <span class="approved">Approved</span>
-                              @elseif($item->status==2)
-                                 <span class="pending">Pending</span>
-                              @elseif($item->status==3)
-                                 <span class="expired">Expired</span>
-                              @endif
+                                <span class="{{strtolower($subscription->status)}}  ?: ''">{{$subscription->status  ?: '-'}}</span>
                            </td>
-                           <td>{{date("d-M-Y",strtotime($item->expiry_date))}}</td>
-                           <td>{{$item->balance}}</td>
+                           <td>{{$subscription->sanctions_balance ?: '-'}}</td>
                      </tr>
-                     @endforeach
-                     
                   </tbody>
                </table>
             </div>
          </div>
       </div>
-      
+
     </div>
-   
+
 </section>
 @endsection

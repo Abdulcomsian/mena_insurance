@@ -26,39 +26,41 @@
 
       <div id="account" class="home container-fluid tab-pane active">
          <div class="content-div">
-            <button class="open-sidebar"><i class="fa fa-bars" aria-hidden="true"></i></button>
+             <button class="open-sidebar"><i class="fa fa-bars" aria-hidden="true"></i></button>
             <h3>My Profile</h3>
-            <div class="form-div">
-               <form method="post" action="{{route('update_account')}}">
+             <div class="form-div">
+                 @include('common.flash-message')
+                 <form method="post" action="{{route('update_account',encrypt(\Illuminate\Support\Facades\Auth::id()))}}">
                @csrf
-                  <div class="container-fluid">
+
+                    <div class="container-fluid">
                      <div class="row">
                         <div class="col-lg-6 col-md-6">
                            <div class="inputDiv">
-                              <input type="text" class="form-control" name="company_name" value="{{ $users->company_name }}" placeholder="Company Name">
+                              <input type="text" class="form-control" name="company_name" value="{{ Auth::user()->company_name }}" placeholder="Company Name">
                            </div>
                         </div>
                         <div class="col-lg-6 col-md-6">
                            <div class="inputDiv">
-                              <input type="text" class="form-control" name="name" value="{{ $users->name }}"  placeholder="Full Name">
+                              <input type="text" class="form-control" name="name" value="{{ Auth::user()->name }}"  placeholder="Full Name">
                            </div>
                         </div>
                         <div class="col-lg-6 col-md-6">
                            <div class="inputDiv">
-                              <input type="text" class="form-control"  name="email" value="{{ $users->email }}" placeholder="Email">
+                              <input type="text" class="form-control"  name="email" value="{{ Auth::user()->email }}" placeholder="Email">
                            </div>
                         </div>
                         <div class="col-lg-6 col-md-6">
                            <div class="inputDiv">
-                              <input type="text" class="form-control" name="address" value="{{ $users->address }}" placeholder="Address">
+                              <input type="text" class="form-control" name="address" value="{{ Auth::user()->address }}" placeholder="Address">
                            </div>
                         </div>
                         <div class="col-lg-6 col-md-6">
                            <div class="inputDiv">
-                              <select class="form-control" name="country">
+                              <select class="form-control" name="country_id">
 
                                  @foreach($countries as $country)
-                                    <option @if($users->country == $country->id) {{"selected"}} @endif value="{{$country->id}}">{{$country->country_name}}</option>
+                                    <option @if(Auth::user()->country_id == $country->id) selected @endif value="{{$country->id}}">{{$country->country_name}}</option>
                                  @endforeach
                                  </select>
                               <!-- <input type="text" class="form-control" value=""  placeholder="Country"> -->
@@ -66,17 +68,24 @@
                         </div>
                         <div class="col-lg-6 col-md-6">
                            <div class="inputDiv">
-                              <input type="text" class="form-control"  name="mobile" value="{{ $users->mobile }}" placeholder="Mobile Number">
+                              <input type="text" class="form-control"  name="mobile_number" value="{{ Auth::user()->mobile_number }}" placeholder="Mobile Number">
+                           </div>
+                        </div>
+                         <div class="col-lg-6 col-md-6">
+                           <div class="inputDiv">
+                              <input type="text" class="form-control"  name="office_number" value="{{ Auth::user()->office_number }}" placeholder="Office Number">
+                           </div>
+                        </div>
+                     </div>
+                      <div  class="row">
+                        <div class="col-lg-6 col-md-6">
+                           <div class="inputDiv">
+                              <input type="text" class="form-control" name="password" placeholder="Password">
                            </div>
                         </div>
                         <div class="col-lg-6 col-md-6">
                            <div class="inputDiv">
-                              <input type="text" class="form-control" name="password" value="{{ $users->office }}" placeholder="Password">
-                           </div>
-                        </div>
-                        <div class="col-lg-6 col-md-6">
-                           <div class="inputDiv">
-                              <input type="text" class="form-control" name="confirm_password"  value="{{ $users->company_name }}" placeholder="Confrim Password">
+                              <input type="text" class="form-control" name="password_confirmation" placeholder="Confrim Password">
                            </div>
                         </div>
                         <div class="col-lg-12">

@@ -91,14 +91,12 @@
         var query = $('#search').val();
         var country = $('#country').val();
         if (query) {
-            console.log('in if',query)
             $.ajax({
                 url: "{{ route('live_search') }}",
                 method: 'GET',
                 data: {query: query, country: country},
                 dataType: 'json',
                 success: function (data) {
-                    // console.log(data);
                     $('#data').empty();
                     if(data.length > 0) {
                         $.each(data, function (index, item) {

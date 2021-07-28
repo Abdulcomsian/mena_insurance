@@ -136,39 +136,26 @@
                <h3>My Billing History</h3>
                <div class="table-div table-responsive">
                   <table id="history_table" class="display">
-                     <thead>
-                        <tr>
-                              <th>ID</th>
-                              <th>Transaction ID</th>
-                              <th>Date</th>
-                              <th>Product Name</th>
-                              <th>Amount</th>
-                        </tr>
-                     </thead>
-                     <tbody>
-                        <tr>
-                              <td>001</td>
-                              <td>669855</td>
-                              <td>1 - July - 2021</td>
-                              <td>Gold</td>
-                              <td>AED 10</td>
-                              
-                        </tr>
-                        <tr>
-                              <td>002</td>
-                              <td>657425</td>
-                              <td>1 - July - 2021</td>
-                              <td>Gold</td>
-                              <td>AED 10</td>
-                        </tr>
-                        <tr>
-                              <td>002</td>
-                              <td>985315</td>
-                              <td>1 - July - 2021</td>
-                              <td>Gold</td>
-                              <td>AED 10</td>
-                        </tr>
-                     </tbody>
+                      <thead>
+                      <tr>
+                          <th>S.No</th>
+                          <th>Date</th>
+                          <th>Package Name</th>
+                          <th>Amount</th>
+                          <th>Status</th>
+                      </tr>
+                      </thead>
+                      <tbody>
+                      @foreach($transactions as $item)
+                          <tr>
+                              <td>{{$loop->iteration}}</td>
+                              <td>{{date("d-M-Y",strtotime($item->created_at))  ?: '-'}}</td>
+                              <td>{{$item->package->name}}</td>
+                              <td>{{$item->amount}}</td>
+                              <td><span class="approved">{{$item->status}}</span></td>
+                          </tr>
+                      @endforeach
+                      </tbody>
                   </table>
                </div>
             </div>
