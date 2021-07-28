@@ -12,6 +12,10 @@ use Illuminate\Support\Facades\Hash;
 
 class userpagesController extends Controller
 {
+    public function __construct()
+    {
+         $this->middleware(['auth','verified']);
+    }
     //
     public function subcription()
     {
