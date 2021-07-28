@@ -382,69 +382,74 @@
         </div>
         <div class="multi-package">
             <div class="row">
-                <div class="col-lg-4 col-md-4">
+                @foreach($packages as $item)
+                    <div class="col-lg-4 col-md-4">
                     <div class="package-box">
                         <p class="price">
-                            AED<br> 100
+                            AED<br> {{$item->price ?: '-'}}
                         </p>
                         <div class="package-header">
-                            <h3>Silver</h3>
+                            <h3>{{$item->name ?: '-'}}</h3>
                         </div>
                         <div class="list-package">
                             <ul>
-                                <li>1 GB Storage Space</li>
-                                <li>10 GB Monthly Bandwidth</li>
-                                <li>10 Sub-domains</li>
-                                <li>25 Email Accounts</li>
-                                <li>Control panel</li>
-                                <li>24/7 Support</li>
+                                <li>Sanctions {{$item->sanctions ?: '-'}}</li>
                             </ul>
                         </div>
-                        <button data-toggle="modal" data-target="#orderModal">Order Now</button>
+                        @guest
+                            <button data-toggle="modal" data-target="#orderModal">Order Now</button>
+                        @endguest
+
+                        @auth
+                            <a href="{{route('transaction.create',encrypt($item->id))}}">
+                                <button>Order Now</button>
+                            </a>
+                        @endauth
                     </div>
                 </div>
-                <div class="col-lg-4 col-md-4">
-                    <div class="package-box">
-                        <p class="price">
-                            AED 400
-                        </p>
-                        <div class="package-header">
-                            <h3>Gold</h3>
-                        </div>
-                        <div class="list-package">
-                            <ul>
-                                <li>1 GB Storage Space</li>
-                                <li>10 GB Monthly Bandwidth</li>
-                                <li>10 Sub-domains</li>
-                                <li>25 Email Accounts</li>
-                                <li>Control panel</li>
-                                <li>24/7 Support</li>
-                            </ul>
-                        </div>
-                        <button data-toggle="modal" data-target="#orderModal">Order Now</button>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-4">
-                    <div class="package-box">
-                        <p class="price">
-                            AED 1000
-                        </p>
-                        <div class="package-header">
-                            <h3>Platinum</h3>
-                        </div>
-                        <div class="list-package">
-                            <ul>
-                                <li>1 GB Storage Space</li>
-                                <li>10 GB Monthly Bandwidth</li>
-                                <li>10 Sub-domains</li>
-                                <li>25 Email Accounts</li>
-                                <li>Control panel</li>
-                                <li>24/7 Support</li>
-                            </ul>
-                        </div>
-                        <button data-toggle="modal" data-target="#orderModal">Order Now</button>
-                    </div>
-                </div>
+                @endforeach
+{{--                <div class="col-lg-4 col-md-4">--}}
+{{--                    <div class="package-box">--}}
+{{--                        <p class="price">--}}
+{{--                            AED 400--}}
+{{--                        </p>--}}
+{{--                        <div class="package-header">--}}
+{{--                            <h3>Gold</h3>--}}
+{{--                        </div>--}}
+{{--                        <div class="list-package">--}}
+{{--                            <ul>--}}
+{{--                                <li>1 GB Storage Space</li>--}}
+{{--                                <li>10 GB Monthly Bandwidth</li>--}}
+{{--                                <li>10 Sub-domains</li>--}}
+{{--                                <li>25 Email Accounts</li>--}}
+{{--                                <li>Control panel</li>--}}
+{{--                                <li>24/7 Support</li>--}}
+{{--                            </ul>--}}
+{{--                        </div>--}}
+{{--                        <button data-toggle="modal" data-target="#orderModal">Order Now</button>--}}
+{{--                    </div>--}}
+{{--                </div>--}}
+{{--                <div class="col-lg-4 col-md-4">--}}
+{{--                    <div class="package-box">--}}
+{{--                        <p class="price">--}}
+{{--                            AED 1000--}}
+{{--                        </p>--}}
+{{--                        <div class="package-header">--}}
+{{--                            <h3>Platinum</h3>--}}
+{{--                        </div>--}}
+{{--                        <div class="list-package">--}}
+{{--                            <ul>--}}
+{{--                                <li>1 GB Storage Space</li>--}}
+{{--                                <li>10 GB Monthly Bandwidth</li>--}}
+{{--                                <li>10 Sub-domains</li>--}}
+{{--                                <li>25 Email Accounts</li>--}}
+{{--                                <li>Control panel</li>--}}
+{{--                                <li>24/7 Support</li>--}}
+{{--                            </ul>--}}
+{{--                        </div>--}}
+{{--                        <button data-toggle="modal" data-target="#orderModal">Order Now</button>--}}
+{{--                    </div>--}}
+{{--                </div>--}}
             </div>
         </div>
     </div>

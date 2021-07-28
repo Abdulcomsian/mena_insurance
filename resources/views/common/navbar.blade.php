@@ -25,7 +25,26 @@
                         <a href="/subscription#">My Subscription</a>
                         <a href="/account"><i class="fa fa-user" aria-hidden="true"></i> Account Setting</a>
                         <a href="/history"><i class="fa fa-history" aria-hidden="true"></i> Renewal & Billing History</a>
-                        <p class="logout"><a  href="{{ route('logout') }}"><i class="fa fa-sign-out" aria-hidden="true"></i> Logout</a></p>
+{{--                         <a class="menu-link px-5" href="{{ route('logout') }}"--}}
+{{--                            onclick="event.preventDefault();--}}
+{{--                                                     document.getElementById('logout-form').submit();">--}}
+{{--                             {{ __('Logout') }}--}}
+{{--                         </a>--}}
+
+{{--                         <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">--}}
+{{--                             @csrf--}}
+{{--                         </form>--}}
+
+                         <p class="logout">
+                             <a  href="{{ route('logout') }}" onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
+                                 <i class="fa fa-sign-out" aria-hidden="true"></i>
+                                 Logout
+                             </a>
+                         <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                             @csrf
+                         </form>
+                         </p>
                      </div>
                   </div>
             </li>

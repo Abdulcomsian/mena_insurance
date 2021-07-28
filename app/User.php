@@ -1,41 +1,45 @@
 <?php
 
-/**
- * Created by Reliese Model.
- */
-
 namespace App;
 
 use App\Models\Country;
 use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Model;
+use App\Models\Subscription;
+use Illuminate\Contracts\Auth\MustVerifyEmail;
+use Illuminate\Foundation\Auth\User as Authenticatable;
+use Illuminate\Notifications\Notifiable;
 
-/**
- * Class User
- *
- * @property int $id
- * @property string $name
- * @property string $email
- * @property Carbon|null $email_verified_at
- * @property string $password
- * @property string|null $remember_token
- * @property Carbon|null $created_at
- * @property Carbon|null $updated_at
- *
- * @package App\Models
- */
-class User extends Model
+class User extends Authenticatable
 {
-	protected $table = 'users';
+    use Notifiable;
 
-	protected $dates = [
-		'email_verified_at'
-	];
+    /**
+     * The attributes that are mass assignable.
+     *
+     * @var array
+     */
+    protected $fillable = [
+        'name', 'email', 'password',
+    ];
 
-	protected $hidden = [
-		'password',
-		'remember_token'
-	];
+    /**
+     * The attributes that should be hidden for arrays.
+     *
+     * @var array
+     */
+    protected $hidden = [
+        'password', 'remember_token',
+    ];
+
+    /**
+     * The attributes that should be cast to native types.
+     *
+     * @var array
+     */
+    protected $casts = [
+        'email_verified_at' => 'datetime',
+    ];
 
 	protected $fillable = [
 		'name',
@@ -52,5 +56,9 @@ class User extends Model
 
 	public function country(){
 	    return $this->hasOne(Country::class);
+    }
+    
+    public function subscription(){
+        $this->hasOne(Subscription::class);
     }
 }
