@@ -52,13 +52,14 @@ class Transaction extends Model
 		'test_mode' => 'bool',
 		'amount' => 'float',
 		'approved' => 'bool',
-		'status' => 'bool'
 	];
 
 	protected $fillable = [
 		'order_id',
 		'cart_id',
 		'store_id',
+		'user_id',
+        'package_id',
 		'test_mode',
 		'amount',
 		'description',
@@ -80,4 +81,8 @@ class Transaction extends Model
 		'response',
 		'status'
 	];
+
+	public function package(){
+	    return $this->belongsTo(Package::class);
+    }
 }

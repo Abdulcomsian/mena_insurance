@@ -16,25 +16,14 @@
                <a class="nav-link" href="/contact">Contact</a>
             </li>
             @auth
-            <li class="nav-item">
+            <li class="nav-item">Welcome, {{Auth::user()->name}}
                   <div class="dropdown">
                      <button class="dropbtn"><i class="fa fa-user-circle-o" aria-hidden="true"></i></button>
                      <div class="dropdown-content">
                         <h3>Mena Insurance</h3>
-                        <p>Customer # <span><b>025894</b></span></p>
                         <a href="/subscription#">My Subscription</a>
                         <a href="/account"><i class="fa fa-user" aria-hidden="true"></i> Account Setting</a>
                         <a href="/history"><i class="fa fa-history" aria-hidden="true"></i> Renewal & Billing History</a>
-{{--                         <a class="menu-link px-5" href="{{ route('logout') }}"--}}
-{{--                            onclick="event.preventDefault();--}}
-{{--                                                     document.getElementById('logout-form').submit();">--}}
-{{--                             {{ __('Logout') }}--}}
-{{--                         </a>--}}
-
-{{--                         <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">--}}
-{{--                             @csrf--}}
-{{--                         </form>--}}
-
                          <p class="logout">
                              <a  href="{{ route('logout') }}" onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
@@ -49,8 +38,6 @@
                   </div>
             </li>
             @endauth
-
-
          </ul>
          @guest
          <ul class="navbar-nav nav-flex-icons">
@@ -64,4 +51,13 @@
          @endguest
       </div>
    </nav>
+    @if(session('verified'))
+        <p class="alert alert-success">
+            <span  style="
+            border: 2px solid;
+            margin-right: 14px;
+            cursor: pointer;
+            " onclick="$('.alert').hide();">X</span>
+        You've successfully verified your email!</p>
+    @endif
 </section>

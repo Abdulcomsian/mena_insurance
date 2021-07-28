@@ -10,11 +10,20 @@ class CompanyDetailController extends Controller
 {
     public function liveSearch(Request $request){
         try{
-            $data = DB::table('company_detail')
-                ->select('id', 'country', 'company_name')
-                ->where('country', '=', $request->country)
-                ->where('company_name', 'like', '%' . $request['query'] . '%')
-                ->get();
+            if ($request->country == 'All'){
+                $data = DB::table('company_detail')
+                    ->select('id', 'country', 'company_name')
+                    ->where('company_name', 'like', '%' . $request['query'] . '%')
+                    ->get();
+            }
+            else{
+                $data = DB::table('company_detail')
+                    ->select('id', 'country', 'company_name')
+                    ->where('country', '=', $request->country)
+                    ->where('company_name', 'like', '%' . $request['query'] . '%')
+                    ->get();
+            }
+
             return response()->json($data);
         }catch (\Exception $exception) {
           return response()->json('');

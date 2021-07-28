@@ -44,19 +44,21 @@ Route::get('/search', function () {
 // });
 Route::get('subscription', 'userpagesController@subcription')->name('subscription');
 Route::get('account', 'userpagesController@account')->name('account');
-Route::post('account', 'userpagesController@update_account')->name('update_account');
+Route::post('account-update/{id}', 'userpagesController@update_account')->name('update_account');
 
 // Route::get('account', function () {
 //     return view('screens.account-setting');
 // });
-Route::get('/history', function () {
-    return view('screens.renewal-history');
-});
+//Route::get('/history', function () {
+//    return view('screens.renewal-history');
+//});
+Route::get('history', 'userpagesController@history')->name('history');
+
 Route::get('/payment', function () {
     return view('screens.add-card');
 });
 
-Auth::routes();
+Auth::routes(['verify' => true]);
 
 Route::get('/home', 'HomeController@index')->name('home');
 

@@ -38,6 +38,13 @@ class CreateTelrTransactionsTable extends Migration
             $table->boolean('approved')->nullable()->comment = 'The transaction status is approved or failed';
             $table->json('response')->nullable()->comment = 'The transaction response';
             $table->string('status',10)->comment = 'The transaction status is updated or not';
+
+            $table->bigInteger('user_id')->unsigned();
+            $table->foreign('user_id')->references('id')->on('users');
+
+            $table->bigInteger('package_id')->unsigned();
+            $table->foreign('package_id')->references('id')->on('packages');
+
             $table->softDeletes();
             $table->timestamps();
         });

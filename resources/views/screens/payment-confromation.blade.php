@@ -8,7 +8,7 @@
                     <i class="fa fa-check" aria-hidden="true"></i>
                     <h2>Payment Successfully!</h2>
                     <p>Your payment was Successfull. You have subscribed to the package.</p>
-                    
+                    <a class="btn btn-success" href="{{route('home')}}">Go To Home</a>
                 </div>
             </div>
         </div>
