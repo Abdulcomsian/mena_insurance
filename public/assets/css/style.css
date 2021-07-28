@@ -1019,3 +1019,8 @@ button.open-sidebar{
         max-width: 100%;
     }
 }
+
+.terms-condition p{font-size: 13px;
+    color: #000000 !important;
+    margin-bottom: 20px !important;
+    letter-spacing: 1px !important;}

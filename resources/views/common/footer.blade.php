@@ -24,6 +24,15 @@
                             <a href="/about">About</a>
                         </li>
                         <li>
+                            <a href="{{url('terms-condition')}}">Terms & Conditions</a>
+                        </li>
+                        <li>
+                            <a href="{{url('privacy-policy')}}">Privacy POlicy</a>
+                        </li>
+                        <li>
+                            <a href="{{url('refund-policy')}}">Refund Policy</a>
+                        </li>
+                        <li>
                             <a href="/contact">Contact Us</a>
                         </li>
                     </ul>
