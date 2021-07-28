@@ -11,6 +11,7 @@
                         <span><a href=""><i class="fa fa-linkedin" aria-hidden="true"></i></a></span>
                         <span><a href=""><i class="fa fa-instagram" aria-hidden="true"></i></a></span>
                     </div>
+                    <div style="margin-top: 40px;width: 110px;"><img  src="assets/img/creditcard.png" alt="" class="img-fluid" /></div>
                 </div>
             </div>
             <div class="col-lg-4 col-md-4">
