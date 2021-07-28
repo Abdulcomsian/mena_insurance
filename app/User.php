@@ -6,6 +6,7 @@
 
 namespace App;
 
+use App\Models\Country;
 use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Model;
 
@@ -41,6 +42,15 @@ class User extends Model
 		'email',
 		'email_verified_at',
 		'password',
-		'remember_token'
+		'remember_token',
+        'office_number',
+        'company_name',
+        'mobile_number',
+        'address',
+        'country_id'
 	];
+
+	public function country(){
+	    return $this->hasOne(Country::class);
+    }
 }
