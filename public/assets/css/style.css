@@ -127,6 +127,20 @@ table tbody td{
     display: flex;
     align-items: center;
 }
+#homeBanner .list-group{
+    width: 60%;
+    position: absolute;
+    right: 0;
+    max-height: 250px;
+    overflow: auto;
+}
+#homeBanner .list-group li{
+    text-align: left;
+}
+#homeBanner .list-group li.list-group-item a {
+    color: #000;
+    font-weight: 500;
+}
 #homeBanner .bannerContent{
     text-align: center;
     color: #fff;
@@ -176,6 +190,7 @@ table tbody td{
     max-width: 70%;
     margin: auto;
     text-align: center;
+    position: relative;
 }
 #homeBanner form button{
     background: rgb(46, 149, 62);
@@ -1004,3 +1019,8 @@ button.open-sidebar{
         max-width: 100%;
     }
 }
+
+.terms-condition p{font-size: 13px;
+    color: #000000 !important;
+    margin-bottom: 20px !important;
+    letter-spacing: 1px !important;}

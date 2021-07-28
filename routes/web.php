@@ -74,3 +74,14 @@ Route::get('transaction-decline','TransactionController@decline')->name('transac
 //Testing Routes
 Route::view('telr-testing','testing.telr');
 Route::get('telr-curl-testing','HomeController@telrCurlTesting');
+
+Route::get('/terms-condition', function () {
+    return view('screens.terms');
+});
+Route::get('/privacy-policy', function () {
+    return view('screens.privacy');
+});
+
+Route::get('/refund-policy', function () {
+    return view('screens.refund');
+});
