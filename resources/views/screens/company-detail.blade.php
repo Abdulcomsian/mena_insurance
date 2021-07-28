@@ -154,25 +154,33 @@
                                                 <div class="insights-div">
                                                 <h3>Gross Written Premium</h3>
                                                 <p>{{ $company_detail->company_accounting->gross_written_premium  ?: '-' }}</p>
-                                            </div>
+                                                </div>
                                             </div>
                                             <div class="col-lg-6 col-md-6">
                                                 <div class="insights-div">
                                                 <h3>Year</h3>
                                                 <p>{{ $company_detail->company_accounting->gross_written_premium_year  ?: '-' }}</p>
-                                            </div>
+                                                </div>
                                             </div>
                                             <div class="col-lg-6 col-md-6">
                                                 <div class="insights-div">
                                                 <h3>Paid Up Capital</h3>
                                                 <p>{{ $company_detail->market_share->paid_up_shares  ?: '-' }}</p>
-                                            </div>
+                                                </div>
                                             </div>
                                             <div class="col-lg-6 col-md-6">
                                                 <div class="insights-div">
                                                 <h3>Financial Report</h3>
                                                 <p><a href="{{ $company_detail->financial_report ?: '' }}" target="_blank">{{ $company_detail->financial_report ?: '-' }}</a></p>
-                                            </div>
+                                                </div>
+                                            </div><div class="col-lg-6 col-md-6">
+                                                <div class="insights-div">
+                                                    <h3>Paid Up Capital In USD</h3>
+                                                    <p>${{ $dollar_rate  ?: '-' }}</p>
+                                                </div>
+                                            </div><div class="col-lg-6 col-md-6">
+                                                <div class="insights-div">
+                                               </div>
                                             </div>
                                         </div>
                                     </div>

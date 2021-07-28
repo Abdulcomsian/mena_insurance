@@ -16,9 +16,9 @@ class CreateCountryInformationTable extends Migration
         Schema::create('country_information', function (Blueprint $table) {
             $table->bigInteger('id')->primary();
             $table->string('created_by', 50);
-            $table->dateTime('created_date', 6)->nullable();
+            $table->string('created_date', 50);
             $table->string('last_modified_by', 50)->nullable();
-            $table->dateTime('last_modified_date', 6)->nullable();
+            $table->string('last_modified_date', 50)->nullable();
             $table->string('country_name')->nullable()->unique('UK_esh08984ecuad26j5fctmv1gg');
             $table->binary('law_governing_ins')->nullable();
             $table->string('no_of_operating_entities')->nullable();
@@ -26,6 +26,7 @@ class CreateCountryInformationTable extends Migration
             $table->string('reg_authority_web_link')->nullable();
             $table->string('latitude')->nullable();
             $table->string('longitude')->nullable();
+            $table->string('rate_in_dollar')->nullable();
             $table->timestamps();
         });
     }
