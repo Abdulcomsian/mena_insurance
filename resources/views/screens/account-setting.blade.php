@@ -23,7 +23,7 @@
             </ul>
     </div>
     <div class="tab-content main-admin-content">
-     
+
       <div id="account" class="home container-fluid tab-pane active">
          <div class="content-div">
             <button class="open-sidebar"><i class="fa fa-bars" aria-hidden="true"></i></button>
@@ -56,7 +56,7 @@
                         <div class="col-lg-6 col-md-6">
                            <div class="inputDiv">
                               <select class="form-control" name="country">
-                           
+
                                  @foreach($countries as $country)
                                     <option @if($users->country == $country->id) {{"selected"}} @endif value="{{$country->id}}">{{$country->country_name}}</option>
                                  @endforeach
@@ -110,7 +110,7 @@
                               <td>1 - July - 2021</td>
                               <td>Gold</td>
                               <td>AED 10</td>
-                              
+
                         </tr>
                         <tr>
                               <td>002</td>
