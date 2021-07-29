@@ -40,6 +40,7 @@
                      </tr>
                   </thead>
                   <tbody>
+                  @if(isset($subscription))
                      <tr>
                            <td>1</td>
                            <td>{{date("d-M-Y",strtotime($subscription->created_at))  ?: '-'}}</td>
@@ -50,6 +51,9 @@
                            </td>
                            <td>{{$subscription->sanctions_balance ?: '-'}}</td>
                      </tr>
+                  @else
+                      <tr><td>No Subscription Found</td></tr>
+                  @endif
                   </tbody>
                </table>
             </div>
