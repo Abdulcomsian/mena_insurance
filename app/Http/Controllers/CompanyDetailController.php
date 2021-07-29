@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\CompanyDetail;
+use App\Models\CountryInformation;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -33,9 +34,12 @@ class CompanyDetailController extends Controller
     public function show($id){
         try {
             $company_detail = CompanyDetail::where('id',$id)->with(['board_of_directors','company_accounting','market_share'])->first();
-            return view('screens.company-detail',compact('company_detail'));
+            $dollar_rate = CountryInformation::where('country_name',$company_detail->country)->pluck('rate_in_dollar')->first();
+            $res = preg_replace("/[^0-9\s]/", "", $company_detail->market_share->paid_up_shares);
+            $dollar_rate = (float)$res * (float)$dollar_rate;
+            return view('screens.company-detail',compact('company_detail','dollar_rate'));
         }catch (\Exception $exception){
-            return back();
+            return $exception->getMessage();
         }
     }
 
