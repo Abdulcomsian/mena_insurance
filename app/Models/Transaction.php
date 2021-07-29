@@ -43,13 +43,10 @@ use Illuminate\Database\Eloquent\Model;
 class Transaction extends Model
 {
 	protected $table = 'transaction';
-	protected $primaryKey = 'cart_id';
-//	public $incrementing = false;
 
 	protected $casts = [
 		'order_id' => 'int',
 		'store_id' => 'int',
-		'test_mode' => 'bool',
 		'amount' => 'float',
 		'approved' => 'bool',
 	];
@@ -79,10 +76,14 @@ class Transaction extends Model
 		'trx_reference',
 		'approved',
 		'response',
-		'status'
+		'status',
+        'pdf'
 	];
 
 	public function package(){
+	    return $this->belongsTo(Package::class);
+    }
+	public function user(){
 	    return $this->belongsTo(Package::class);
     }
 }

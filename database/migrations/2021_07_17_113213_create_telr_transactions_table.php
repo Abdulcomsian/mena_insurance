@@ -37,7 +37,8 @@ class CreateTelrTransactionsTable extends Migration
             $table->string('trx_reference')->nullable()->comment = 'The transaction reference';
             $table->boolean('approved')->nullable()->comment = 'The transaction status is approved or failed';
             $table->json('response')->nullable()->comment = 'The transaction response';
-            $table->string('status',10)->comment = 'The transaction status is updated or not';
+            $table->string('status',10)->nullable()->comment = 'The transaction status is updated or not';
+            $table->string('pdf')->nullable()->comment = 'The transaction status is updated or not';
 
             $table->bigInteger('user_id')->unsigned();
             $table->foreign('user_id')->references('id')->on('users');
