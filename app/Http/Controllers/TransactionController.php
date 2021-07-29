@@ -6,6 +6,7 @@ use App\Models\Package;
 use App\Models\Subscription;
 use App\Models\Transaction;
 use App\Utils\SubscriptionStatus;
+use PDF;
 use Illuminate\Contracts\Encryption\DecryptException;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -24,7 +25,7 @@ class TransactionController extends Controller
                 'ivp_amount' => $package->price,
                 'ivp_currency' => 'AED',
                 'ivp_desc' => $package->description,
-//                'ivp_framed ' => 2,
+                'ivp_framed' => 1,
                 'return_auth' => url('/').'/transaction-success',
                 'return_can' => url('/').'/transaction-cancel',
                 'return_decl' => url('/').'/transaction-decline'
@@ -73,8 +74,8 @@ class TransactionController extends Controller
                 curl_close($ch);
                 $results = json_decode($results);
                 if(($results->order->status->code == 3) && ($results->order->transaction->status == "A" ||  $results->order->transaction->status == "H" )){
-                    self::saveTransaction($results);
-                    return redirect('/conformation');
+                    $result = self::saveTransaction($results);
+                    return redirect('/conformation',compact($result));
                 }
             }
         }catch (\Exception $exception){
@@ -85,25 +86,6 @@ class TransactionController extends Controller
     protected function saveTransaction($transaction){
         try {
             $package = Package::where('id',decrypt(session()->get('package_id')))->first();
-            Transaction::create([
-                'order_id' => $transaction->order->ref ?? null,
-                'cart_id' => $transaction->order->cartid ?? null,
-                'test_mode' => $transaction->test ?? null,
-                'amount' => $transaction->order->amount ?? null,
-                'description' => $transaction->order->description ?? null,
-                'billing_fname' => $transaction->order->customer->name->forenames ?? null,
-                'billing_sname' => $transaction->order->customer->name->surname ?? null,
-                'billing_address_1' => $transaction->order->customer->address->line1 ?? null,
-                'billing_address_2' => $transaction->order->customer->address->line2 ?? null,
-                'billing_city' => $transaction->order->customer->address->city ?? null,
-                'billing_region' => $transaction->test ?? null,
-                'billing_zip' => $transaction->order->customer->address->areacode ?? null,
-                'billing_country' => $transaction->order->customer->address->country ?? null,
-                'billing_email' => $transaction->order->customer->email ?? null,
-                'status' => $transaction->order->status->text ?? null,
-                'user_id' => Auth::id() ?? null,
-                'package_id' => $package->id ?? null,
-            ]);
             $sub = Subscription::where('user_id',Auth::id())->first();
             if (isset($sub)){
                 Subscription::where('user_id',Auth::id())->update([
@@ -123,21 +105,43 @@ class TransactionController extends Controller
                     'sanctions_balance' => $package->sanctions,
                 ]);
             }
+            $transaction = Transaction::create([
+                'order_id' => $transaction->order->ref ?? null,
+                'cart_id' => $transaction->order->cartid ?? null,
+                'test_mode' => $transaction->test ?? null,
+                'amount' => $transaction->order->amount ?? null,
+                'description' => $transaction->order->description ?? null,
+                'billing_fname' => $transaction->order->customer->name->forenames ?? null,
+                'billing_sname' => $transaction->order->customer->name->surname ?? null,
+                'billing_address_1' => $transaction->order->customer->address->line1 ?? null,
+                'billing_address_2' => $transaction->order->customer->address->line2 ?? null,
+                'billing_city' => $transaction->order->customer->address->city ?? null,
+                'billing_region' => $transaction->test ?? null,
+                'billing_zip' => $transaction->order->customer->address->areacode ?? null,
+                'billing_country' => $transaction->order->customer->address->country ?? null,
+                'billing_email' => $transaction->order->customer->email ?? null,
+                'status' => $transaction->order->status->text ?? null,
+                'user_id' => Auth::id() ?? null,
+                'package_id' => $package->id ?? null,
+            ]);
 
-            dump('Save Transaction');
+            $pdf = PDF::loadView('pdf-transaction-template',['transaction'=>$transaction]);
+            $path = public_path('/data/pdf');
+            $fileName = 'transaction_' .Auth::id().time() . '.' . 'pdf';
+            $pdf->setPaper('letter', 'landscape');
+            $pdf->save($path . '/' . $fileName);
+            $transaction->update(['pdf' => $fileName]);
         }catch (\Exception $exception){
             dd('Exception in save transaction',$exception->getMessage());
         }
 
     }
     public function cancel(Request $request){
-        dump('In cancel');
-        dd($request->all());
+        return 'Cancel Payment';
     }
 
     public function decline(Request $request){
-        dump('In decline');
-        dd($request->all());
+        return 'Decline Payment';
     }
 
     protected function createSubscription($package){
