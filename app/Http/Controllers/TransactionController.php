@@ -21,7 +21,7 @@ class TransactionController extends Controller
                 'ivp_method' => 'create',
                 'ivp_store' => env('IVP_STORE_ID'),
                 'ivp_authkey' => 'FmJq#sfCh9-BTRbp',
-                'ivp_cart' => uniqid(mt_rand(), true),
+                'ivp_cart' => uniqid(mt_rand()),
                 'ivp_test' => '1',
                 'ivp_amount' => $package->price,
                 'ivp_currency' => 'AED',
@@ -131,7 +131,7 @@ class TransactionController extends Controller
             $fileName = 'transaction_' .Auth::id().time() . '.' . 'pdf';
             $pdf->setPaper('letter', 'landscape');
             $pdf->save($path . '/' . $fileName);
-            $transaction->update(['pdf' => $fileName]);
+            $transaction->update(['pdf' => 'data/pdf/'.$fileName]);
 
             Auth::user()->notify(new TransactionEmail($transaction));
 

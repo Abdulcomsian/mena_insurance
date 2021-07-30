@@ -151,7 +151,7 @@
         <center>
             <table style="table-layout: fixed ;width: 100% ;">
                 <tr>
-                    <td style="width:37%;"><h4 class="">Order#:  <span style="font-weight:400;">{{ $transaction->order_id ?: '' }}</span></h4></td>
+                    <td style="width:37%;"><h4 class="">Cart#:  <span style="font-weight:400;">{{ $transaction->cart_id ?: '' }}</span></h4></td>
                 </tr>
             </table>
         </center>

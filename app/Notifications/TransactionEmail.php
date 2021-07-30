@@ -18,6 +18,7 @@ class TransactionEmail extends Notification
      * @return void
      */
     protected $transaction;
+
     public function __construct($transaction)
     {
         $this->transaction = $transaction;
@@ -44,7 +45,7 @@ class TransactionEmail extends Notification
     {
         return (new MailMessage)
                     ->line(Auth::user()->name .' your transaction is successfully completed click below "Transaction Details" button for more details:')
-                    ->action('Transaction Details', url('/history'))
+                    ->action('Transaction Details', url($this->transaction->pdf))
                     ->line('Thank you for using our application!');
     }
 
