@@ -154,7 +154,7 @@
                               <td>{{$item->package->name}}</td>
                               <td>{{$item->amount}}</td>
                               <td><span class="approved">{{$item->status}}</span></td>
-                              <td><a href="data/pdf/{{$item->pdf}}" download=""><img width="50%" src="{{asset('assets/img/pdf-icon.png')}}"
+                              <td><a href="{{$item->pdf}}" download=""><img width="50%" src="{{asset('assets/img/pdf-icon.png')}}"
                                                                                                                 alt=""></a></td>
                           </tr>
                       @endforeach
