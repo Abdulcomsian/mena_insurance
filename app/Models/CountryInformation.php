@@ -30,13 +30,6 @@ use Illuminate\Database\Eloquent\Model;
 class CountryInformation extends Model
 {
 	protected $table = 'country_information';
-	public $incrementing = false;
-	public $timestamps = false;
-
-	protected $casts = [
-		'id' => 'int',
-		'law_governing_ins' => 'boolean'
-	];
 
 	protected $dates = [
 		'created_date',

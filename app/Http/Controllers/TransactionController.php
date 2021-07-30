@@ -14,6 +14,11 @@ use Illuminate\Support\Facades\Auth;
 
 class TransactionController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware(['auth','verified']);
+    }
+
     public function create($id){
         try{
             $package = Package::where('id',decrypt($id))->first();
