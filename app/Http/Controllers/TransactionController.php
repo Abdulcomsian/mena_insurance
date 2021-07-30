@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Package;
 use App\Models\Subscription;
 use App\Models\Transaction;
+use App\Notifications\TransactionEmail;
 use App\Utils\SubscriptionStatus;
 use PDF;
 use Illuminate\Contracts\Encryption\DecryptException;
@@ -75,7 +76,7 @@ class TransactionController extends Controller
                 $results = json_decode($results);
                 if(($results->order->status->code == 3) && ($results->order->transaction->status == "A" ||  $results->order->transaction->status == "H" )){
                     $result = self::saveTransaction($results);
-                    return redirect('/conformation',compact($result));
+                    return redirect('/conformation');
                 }
             }
         }catch (\Exception $exception){
@@ -131,6 +132,9 @@ class TransactionController extends Controller
             $pdf->setPaper('letter', 'landscape');
             $pdf->save($path . '/' . $fileName);
             $transaction->update(['pdf' => $fileName]);
+
+            Auth::user()->notify(new TransactionEmail($transaction));
+
         }catch (\Exception $exception){
             dd('Exception in save transaction',$exception->getMessage());
         }
