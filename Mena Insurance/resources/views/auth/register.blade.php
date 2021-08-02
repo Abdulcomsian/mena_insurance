@@ -58,7 +58,7 @@ use Illuminate\Support\Facades\DB;
                             <select class="form-control" name="country">
 
                             @foreach($countries as $country)
-                                <option value="{{$country->id}}" {{$country->id == 224 ? 'selected' : ''}}>{{$country->country_name}}</option>
+                                <option value="{{$country->id}}">{{$country->country_name}}</option>
                             @endforeach
                             </select>
 
