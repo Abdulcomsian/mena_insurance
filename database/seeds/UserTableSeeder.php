@@ -17,6 +17,17 @@ class UserTableSeeder extends Seeder
             'name' => 'Assad Yaqoob',
             'email' => 'assad2595@gmail.com',
             'password' => Hash::make('password'),
+            'email_verified_at' => now(),
+            'type' => 'System User',
+            'status' => 'Active'
+        ]);
+        User::create([
+            'name' => 'Admin',
+            'email' => 'admin@menainsurance.com',
+            'password' => Hash::make('password'),
+            'email_verified_at' => now(),
+            'type' => 'Admin',
+            'status' => 'Active'
         ]);
     }
 }

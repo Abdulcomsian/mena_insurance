@@ -14,12 +14,12 @@ class CountryInformationTableSeeder extends Seeder
      */
     public function run()
     {
-        
+
 
         \DB::table('country_information')->delete();
-        
+
         \DB::table('country_information')->insert(array (
-            0 => 
+            0 =>
             array (
                 'id' => 34413,
                 'created_by' => 'admin',
@@ -33,8 +33,10 @@ class CountryInformationTableSeeder extends Seeder
                 'reg_authority_web_link' => 'http://www.moit.gov.ye/moit/',
                 'latitude' => NULL,
                 'longitude' => NULL,
+                'rate_in_dollar' => 0.0023,
+                'updated_at' => now(),
             ),
-            1 => 
+            1 =>
             array (
                 'id' => 34522,
                 'created_by' => 'admin',
@@ -48,8 +50,10 @@ class CountryInformationTableSeeder extends Seeder
                 'reg_authority_web_link' => 'https://en.hmb.gov.tr/',
                 'latitude' => NULL,
                 'longitude' => NULL,
+                'rate_in_dollar' => 0.0023,
+                'updated_at' => now(),
             ),
-            2 => 
+            2 =>
             array (
                 'id' => 35071,
                 'created_by' => 'admin',
@@ -63,8 +67,10 @@ class CountryInformationTableSeeder extends Seeder
                 'reg_authority_web_link' => 'http://www.sama.gov.sa/en-US/Laws/Pages/InsuranceLaws.aspx',
                 'latitude' => NULL,
                 'longitude' => NULL,
+                'rate_in_dollar' => 0.0023,
+                'updated_at' => now(),
             ),
-            3 => 
+            3 =>
             array (
                 'id' => 35424,
                 'created_by' => 'admin',
@@ -78,8 +84,10 @@ class CountryInformationTableSeeder extends Seeder
                 'reg_authority_web_link' => 'http://www.sisc.sy/',
                 'latitude' => NULL,
                 'longitude' => NULL,
+                'rate_in_dollar' => 0.0023,
+                'updated_at' => now(),
             ),
-            4 => 
+            4 =>
             array (
                 'id' => 35514,
                 'created_by' => 'admin',
@@ -93,8 +101,10 @@ class CountryInformationTableSeeder extends Seeder
                 'reg_authority_web_link' => 'http://www.qfcra.com/en-us/SitePages/Home.aspx',
                 'latitude' => NULL,
                 'longitude' => NULL,
+                'rate_in_dollar' => 0.0023,
+                'updated_at' => now(),
             ),
-            5 => 
+            5 =>
             array (
                 'id' => 35557,
                 'created_by' => 'admin',
@@ -108,8 +118,10 @@ class CountryInformationTableSeeder extends Seeder
                 'reg_authority_web_link' => 'http://www.qcb.gov.qa/English/Pages/default.aspx',
                 'latitude' => NULL,
                 'longitude' => NULL,
+                'rate_in_dollar' => 0.0023,
+                'updated_at' => now(),
             ),
-            6 => 
+            6 =>
             array (
                 'id' => 35615,
                 'created_by' => 'admin',
@@ -123,8 +135,10 @@ class CountryInformationTableSeeder extends Seeder
                 'reg_authority_web_link' => 'https://www.cma.gov.om/Home/InsuranceReports',
                 'latitude' => NULL,
                 'longitude' => NULL,
+                'rate_in_dollar' => 0.0023,
+                'updated_at' => now(),
             ),
-            7 => 
+            7 =>
             array (
                 'id' => 35711,
                 'created_by' => 'admin',
@@ -138,8 +152,10 @@ class CountryInformationTableSeeder extends Seeder
                 'reg_authority_web_link' => 'www.moci.gov.kw',
                 'latitude' => NULL,
                 'longitude' => NULL,
+                'rate_in_dollar' => 0.0023,
+                'updated_at' => now(),
             ),
-            8 => 
+            8 =>
             array (
                 'id' => 35977,
                 'created_by' => 'admin',
@@ -153,8 +169,10 @@ class CountryInformationTableSeeder extends Seeder
                 'reg_authority_web_link' => 'https://www.justice.gov.il',
                 'latitude' => NULL,
                 'longitude' => NULL,
+                'rate_in_dollar' => 0.0023,
+                'updated_at' => now(),
             ),
-            9 => 
+            9 =>
             array (
                 'id' => 36229,
                 'created_by' => 'admin',
@@ -168,8 +186,10 @@ class CountryInformationTableSeeder extends Seeder
                 'reg_authority_web_link' => 'http://www.insurancediwan.gov.iq/',
                 'latitude' => NULL,
                 'longitude' => NULL,
+                'rate_in_dollar' => 0.0023,
+                'updated_at' => now(),
             ),
-            10 => 
+            10 =>
             array (
                 'id' => 36437,
                 'created_by' => 'admin',
@@ -183,8 +203,10 @@ class CountryInformationTableSeeder extends Seeder
                 'reg_authority_web_link' => 'https://en.centinsur.ir/',
                 'latitude' => NULL,
                 'longitude' => NULL,
+                'rate_in_dollar' => 0.0023,
+                'updated_at' => now(),
             ),
-            11 => 
+            11 =>
             array (
                 'id' => 36688,
                 'created_by' => 'admin',
@@ -198,8 +220,10 @@ class CountryInformationTableSeeder extends Seeder
                 'reg_authority_web_link' => 'http://www.fra.gov.eg/jtags/efsa_en/index_en.jsp',
                 'latitude' => NULL,
                 'longitude' => NULL,
+                'rate_in_dollar' => 0.0023,
+                'updated_at' => now(),
             ),
-            12 => 
+            12 =>
             array (
                 'id' => 37023,
                 'created_by' => 'admin',
@@ -213,8 +237,10 @@ class CountryInformationTableSeeder extends Seeder
                 'reg_authority_web_link' => 'http://dfsa.ae/laws-and-rules',
                 'latitude' => NULL,
                 'longitude' => NULL,
+                'rate_in_dollar' => 0.0023,
+                'updated_at' => now(),
             ),
-            13 => 
+            13 =>
             array (
                 'id' => 37181,
                 'created_by' => 'admin',
@@ -228,8 +254,10 @@ class CountryInformationTableSeeder extends Seeder
                 'reg_authority_web_link' => 'https://www.cbb.gov.bh/page-p-profile.htm',
                 'latitude' => NULL,
                 'longitude' => NULL,
+                'rate_in_dollar' => 0.0023,
+                'updated_at' => now(),
             ),
-            14 => 
+            14 =>
             array (
                 'id' => 37465,
                 'created_by' => 'admin',
@@ -243,8 +271,10 @@ class CountryInformationTableSeeder extends Seeder
                 'reg_authority_web_link' => 'https://ia.gov.ae/en',
                 'latitude' => NULL,
                 'longitude' => NULL,
+                'rate_in_dollar' => 0.0023,
+                'updated_at' => now(),
             ),
-            15 => 
+            15 =>
             array (
                 'id' => 38167,
                 'created_by' => 'admin',
@@ -258,8 +288,10 @@ class CountryInformationTableSeeder extends Seeder
                 'reg_authority_web_link' => 'http://www.joif.org/Default.aspx',
                 'latitude' => NULL,
                 'longitude' => NULL,
+                'rate_in_dollar' => 0.0023,
+                'updated_at' => now(),
             ),
-            16 => 
+            16 =>
             array (
                 'id' => 38543,
                 'created_by' => 'admin',
@@ -273,8 +305,10 @@ class CountryInformationTableSeeder extends Seeder
                 'reg_authority_web_link' => 'http://mof.gov.cy/en/directorates-units/insurance-companies-control-service',
                 'latitude' => NULL,
                 'longitude' => NULL,
+                'rate_in_dollar' => 0.0023,
+                'updated_at' => now(),
             ),
-            17 => 
+            17 =>
             array (
                 'id' => 38892,
                 'created_by' => 'admin',
@@ -288,8 +322,10 @@ class CountryInformationTableSeeder extends Seeder
                 'reg_authority_web_link' => 'http://www.pcma.ps/portal/english/Pages/Home.aspx',
                 'latitude' => NULL,
                 'longitude' => NULL,
+                'rate_in_dollar' => 0.0023,
+                'updated_at' => now(),
             ),
-            18 => 
+            18 =>
             array (
                 'id' => 39910,
                 'created_by' => 'admin',
@@ -303,8 +339,10 @@ class CountryInformationTableSeeder extends Seeder
                 'reg_authority_web_link' => 'http://www.insurancecommission.gov.lb/',
                 'latitude' => NULL,
                 'longitude' => NULL,
+                'rate_in_dollar' => 0.0023,
+                'updated_at' => now(),
             ),
-            19 => 
+            19 =>
             array (
                 'id' => 40233,
                 'created_by' => 'admin',
@@ -318,8 +356,10 @@ class CountryInformationTableSeeder extends Seeder
                 'reg_authority_web_link' => 'http://www.mf.gov.dz/',
                 'latitude' => NULL,
                 'longitude' => NULL,
+                'rate_in_dollar' => 0.0023,
+                'updated_at' => now(),
             ),
-            20 => 
+            20 =>
             array (
                 'id' => 40306,
                 'created_by' => 'admin',
@@ -333,8 +373,10 @@ class CountryInformationTableSeeder extends Seeder
                 'reg_authority_web_link' => 'http://www.isacly.org/',
                 'latitude' => NULL,
                 'longitude' => NULL,
+                'rate_in_dollar' => 0.0023,
+                'updated_at' => now(),
             ),
-            21 => 
+            21 =>
             array (
                 'id' => 40380,
                 'created_by' => 'admin',
@@ -348,8 +390,10 @@ class CountryInformationTableSeeder extends Seeder
                 'reg_authority_web_link' => 'http://www.commerce.gov.mr/',
                 'latitude' => NULL,
                 'longitude' => NULL,
+                'rate_in_dollar' => 0.0023,
+                'updated_at' => now(),
             ),
-            22 => 
+            22 =>
             array (
                 'id' => 40412,
                 'created_by' => 'admin',
@@ -363,8 +407,10 @@ class CountryInformationTableSeeder extends Seeder
                 'reg_authority_web_link' => 'https://www.acaps.ma/en',
                 'latitude' => NULL,
                 'longitude' => NULL,
+                'rate_in_dollar' => 0.0023,
+                'updated_at' => now(),
             ),
-            23 => 
+            23 =>
             array (
                 'id' => 40589,
                 'created_by' => 'admin',
@@ -378,8 +424,10 @@ class CountryInformationTableSeeder extends Seeder
                 'reg_authority_web_link' => 'https://www.bankofsouthsudan.org/',
                 'latitude' => NULL,
                 'longitude' => NULL,
+                'rate_in_dollar' => 0.0023,
+                'updated_at' => now(),
             ),
-            24 => 
+            24 =>
             array (
                 'id' => 40621,
                 'created_by' => 'admin',
@@ -393,8 +441,10 @@ class CountryInformationTableSeeder extends Seeder
                 'reg_authority_web_link' => 'http://mof.gov.sd/en/about/welcom',
                 'latitude' => NULL,
                 'longitude' => NULL,
+                'rate_in_dollar' => 0.0023,
+                'updated_at' => now(),
             ),
-            25 => 
+            25 =>
             array (
                 'id' => 40778,
                 'created_by' => 'admin',
@@ -408,9 +458,11 @@ class CountryInformationTableSeeder extends Seeder
                 'reg_authority_web_link' => 'http://www.cga.gov.tn/index.php?id=104',
                 'latitude' => NULL,
                 'longitude' => NULL,
+                'rate_in_dollar' => 0.0023,
+                'updated_at' => now(),
             ),
         ));
-        
-        
+
+
     }
 }
