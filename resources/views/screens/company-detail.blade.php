@@ -9,7 +9,7 @@
         <div class="row">
             <div class="col-lg-12">
                 <div class="breadcrum">
-                    <a href="" class="backBtn"><i class="fa fa-chevron-left" aria-hidden="true"></i> Back</a>
+                    <a href="/" class="backBtn"><i class="fa fa-chevron-left" aria-hidden="true"></i> Back</a>
                     <span>Search result for <span class="current-text"><b>“{{$company_detail->company_name ?: '-'}}”</b></span></span>
                 </div>
             </div>
@@ -35,7 +35,35 @@
                                 <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
                                 <div class="card-body">
                                     <div class="chartDiv">
-                                        <canvas width="500" id="myChart"></canvas>
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                                <canvas width="500" id="myChart"></canvas>
+                                            </div>
+                                            <div class=col-md-6>
+                                                <ul style="margin-top: 20px;">
+                                                    <li style="position: relative; margin-bottom:20px;">
+                                                        <span style="top: 5px; position: absolute; width: 15px; height: 15px; margin-right: 10px; background-color: rgb(0, 97, 254); border-radius: 5px;"></span>
+                                                        <p style="margin-left: 20px; font-size: 14px;">International Oilfield Inspection Services Ltd</p>
+                                                    </li>
+                                                    <li style="position: relative; margin-bottom:20px;">
+                                                        <span style="top: 5px; position: absolute; width: 15px; height: 15px; margin-right: 10px; background-color: rgb(63, 213, 150); border-radius: 5px;"></span>
+                                                        <p style="margin-left: 20px; font-size: 14px;">Yemen Drilling</p>
+                                                    </li>
+                                                    <li style="position: relative; margin-bottom:20px;">
+                                                        <span style="top: 5px; position: absolute; width: 15px; height: 15px; margin-right: 10px; background-color: rgb(255, 196, 66); border-radius: 5px;"></span>
+                                                        <p style="margin-left: 20px; font-size: 14px;">Saddam AL-Hashdi</p>
+                                                    </li>
+                                                    <li style="position: relative; margin-bottom:20px;">
+                                                        <span style="top: 5px; position: absolute; width: 15px; height: 15px; margin-right: 10px; background-color: rgb(255, 128, 33); border-radius: 5px;"></span>
+                                                        <p style="margin-left: 20px; font-size: 14px;">Hussain AL-Hashdi</p>
+                                                    </li>
+                                                    <li style="position: relative; margin-bottom:20px;">
+                                                        <span style="top: 5px; position: absolute; width: 15px; height: 15px; margin-right: 10px; background-color: rgb(76, 175, 80); border-radius: 5px;"></span>
+                                                        <p style="margin-left: 20px; font-size: 14px;">International Oilfield Services</p>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                                 </div>
@@ -48,7 +76,7 @@
                                     </button>
                                 </h2>
                                 </div>
-                                <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
+                                <div id="collapseTwo" class="collapse show" aria-labelledby="headingTwo" data-parent="#accordionExample">
                                 <div class="card-body">
                                    <div class="row">
                                        <div class="col-lg-4 col-md-4">
@@ -100,7 +128,7 @@
                                     </button>
                                 </h2>
                                 </div>
-                                <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
+                                <div id="collapseThree" class="collapse show" aria-labelledby="headingThree" data-parent="#accordionExample">
                                     <div class="card-body">
                                     <h3 class="title">AM Best Ratings</h3>
                                         <div class="row">
@@ -134,8 +162,9 @@
                                                     <p>{{ $company_detail->company_accounting->other_rating  ?: '-' }}</p>
                                                 </div>
                                             </div>
-                                            <button style="color:#fff;">Sanction Status</button>
+                                            
                                         </div>
+                                        <button style="color:#fff;">Sanction Status</button>
                                     </div>
                                 </div>
                             </div>
@@ -147,7 +176,7 @@
                                     </button>
                                 </h2>
                                 </div>
-                                <div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-parent="#accordionExample">
+                                <div id="collapseFour" class="collapse show" aria-labelledby="headingFour" data-parent="#accordionExample">
                                     <div class="card-body">
                                         <div class="row">
                                             <div class="col-lg-6 col-md-6">
@@ -187,7 +216,7 @@
                                     </button>
                                 </h2>
                                 </div>
-                                <div id="collapseFive" class="collapse" aria-labelledby="headingFive" data-parent="#accordionExample">
+                                <div id="collapseFive" class="collapse show" aria-labelledby="headingFive" data-parent="#accordionExample">
                                     <div class="card-body">
                                         <div class="row">
                                             <div class="col-lg-6 col-md-6">
@@ -211,6 +240,9 @@
                                         </div>
                                     </div>
                                 </div>
+                            </div>
+                            <div class="card loginCard" style="padding: .75rem 1.25rem;">
+                                <h3>Please Logged in to view the Information </h3>
                             </div>
                         </div>
                     </div>
@@ -240,7 +272,8 @@
                             <div class="col-lg-6 col-md-6">
                                 <div class="insights-div">
                                     <h3>Website</h3>
-                                    <p><a href="{{ $company_detail->company_website ?: '-' }}" target="_blank">{{$company_detail->company_website ?: '-'}}</a></p>
+                                    <p>{{$company_detail->company_website ?: '-'}}</p>
+                                    <!-- <a href="{{ $company_detail->company_website ?: '-' }}" target="_blank"><p>{{$company_detail->company_website ?: '-'}}</p></a> -->
                                 </div>
                             </div>
                             <div class="col-lg-6 col-md-6">

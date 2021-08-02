@@ -67,24 +67,39 @@
         $('#payment_table').DataTable();
     });
 
-//     var ctx = document.getElementById("myChart").getContext('2d');
-//
-// var myChart = new Chart(ctx, {
-//     type: 'doughnut',
-//     data: {
-//         labels: ["T.C. Sosyal Güvenlik Kurumu Başkanlığı",	"Polis Bakım ve Yardım Sandığı"],
-//         datasets: [{
-//             data: [500,	20], // Specify the data values array
-//
-//             borderColor: ['#3fd596', '#0061fe'], // Add custom color border
-//             backgroundColor: ['#3fd596', '#0061fe'], // Add custom color background (Points and Fill)
-//             borderWidth: 1 // Specify bar border width
-//         }]},
-//     options: {
-//       responsive: true, // Instruct chart js to respond nicely.
-//       maintainAspectRatio: false, // Add to prevent default behaviour of full-width/height
-//     }
-// });
+    const data = {
+//         labels: [
+//     'International Oilfield Inspection Services Ltd',
+//     'Yemen Drilling',
+//     'Saddam AL-Hashdi',
+//     'Hussain AL-Hashdi',
+//     'International Oilfield Services'
+//   ],
+
+datasets: [{
+  label: 'My First Dataset',
+  data: [50, 50, 50, 50, 50],
+  backgroundColor: [
+    'rgb(0, 97, 254)',
+    'rgb(63, 213, 150)',
+    'rgb(255, 196, 66)',
+    'rgb(255, 128, 33)',
+    'rgb(76, 175, 80)'
+  ],
+}],
+options: {
+    responsive: true, // Instruct chart js to respond nicely.
+    maintainAspectRatio: false, // Add to prevent default behaviour of full-width/height 
+  }
+};
+const config = {
+type: 'doughnut',
+data: data,
+};
+var myChart = new Chart(
+      document.getElementById('myChart'),
+      config
+    );
 
     $(document).on('keyup', '#search', function(){
         var query = $('#search').val();
@@ -114,4 +129,5 @@
             $('#data').empty();
         }
     });
+ 
 </script>
