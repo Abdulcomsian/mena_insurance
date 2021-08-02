@@ -35,7 +35,35 @@
                                 <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
                                 <div class="card-body">
                                     <div class="chartDiv">
-                                        <canvas width="500" id="myChart"></canvas>
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                                <canvas width="500" id="myChart"></canvas>
+                                            </div>
+                                            <div class=col-md-6>
+                                                <ul style="margin-top: 20px;">
+                                                    <li style="position: relative; margin-bottom:20px;">
+                                                        <span style="top: 5px; position: absolute; width: 15px; height: 15px; margin-right: 10px; background-color: rgb(0, 97, 254); border-radius: 5px;"></span>
+                                                        <p style="margin-left: 20px; font-size: 14px;">International Oilfield Inspection Services Ltd</p>
+                                                    </li>
+                                                    <li style="position: relative; margin-bottom:20px;">
+                                                        <span style="top: 5px; position: absolute; width: 15px; height: 15px; margin-right: 10px; background-color: rgb(63, 213, 150); border-radius: 5px;"></span>
+                                                        <p style="margin-left: 20px; font-size: 14px;">Yemen Drilling</p>
+                                                    </li>
+                                                    <li style="position: relative; margin-bottom:20px;">
+                                                        <span style="top: 5px; position: absolute; width: 15px; height: 15px; margin-right: 10px; background-color: rgb(255, 196, 66); border-radius: 5px;"></span>
+                                                        <p style="margin-left: 20px; font-size: 14px;">Saddam AL-Hashdi</p>
+                                                    </li>
+                                                    <li style="position: relative; margin-bottom:20px;">
+                                                        <span style="top: 5px; position: absolute; width: 15px; height: 15px; margin-right: 10px; background-color: rgb(255, 128, 33); border-radius: 5px;"></span>
+                                                        <p style="margin-left: 20px; font-size: 14px;">Hussain AL-Hashdi</p>
+                                                    </li>
+                                                    <li style="position: relative; margin-bottom:20px;">
+                                                        <span style="top: 5px; position: absolute; width: 15px; height: 15px; margin-right: 10px; background-color: rgb(76, 175, 80); border-radius: 5px;"></span>
+                                                        <p style="margin-left: 20px; font-size: 14px;">International Oilfield Services</p>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                                 </div>

@@ -55,7 +55,7 @@ use Illuminate\Support\Facades\DB;
 
                              //dd($countries );
                             @endphp
-                            <select class="form-control" name="country">
+                            <select class="form-control" name="country" value="United Arab Emirates">
 
                             @foreach($countries as $country)
                                 <option value="{{$country->id}}">{{$country->country_name}}</option>
@@ -109,4 +109,11 @@ use Illuminate\Support\Facades\DB;
                 </div>
     </div>
 </section>
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<script>
+    $(".register-page select option").each(function(){
+    if ($(this).text() == "United Arab Emirates")
+        $(this).attr("selected","selected");
+    });
+</script>
 @endsection
