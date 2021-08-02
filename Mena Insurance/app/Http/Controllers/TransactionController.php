@@ -130,8 +130,11 @@ class TransactionController extends Controller
                 'status' => $transaction->order->status->text ?? null,
                 'user_id' => Auth::id() ?? null,
                 'package_id' => $package->id ?? null,
+                'card_type'=> $transaction->order->card->type ?? null,
+                'card_last4'=> $transaction->order->card->last4 ?? null,
+                'card_country'=> $transaction->order->card->country ?? null,
+                'card_first6'=> $transaction->order->card->first6 ?? null,
             ]);
-
             $pdf = PDF::loadView('pdf-transaction-template',['transaction'=>$transaction]);
             $path = public_path('/data/pdf');
             $fileName = 'transaction_' .Auth::id().time() . '.' . 'pdf';
@@ -140,9 +143,10 @@ class TransactionController extends Controller
             $transaction->update(['pdf' => 'data/pdf/'.$fileName]);
 
             Auth::user()->notify(new TransactionEmail($transaction));
-
+            toastr()->success('Payment is completed!');
         }catch (\Exception $exception){
-            dd('Exception in save transaction',$exception->getMessage());
+            toastr()->info('Server is busy,try again');
+//            dd('Exception in save transaction',$exception->getMessage());
         }
 
     }

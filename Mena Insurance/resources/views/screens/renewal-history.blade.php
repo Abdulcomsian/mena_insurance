@@ -143,6 +143,9 @@
                           <th>Package Name</th>
                           <th>Amount</th>
                           <th>Status</th>
+                          <th>Card Type</th>
+                          <th>Card First 6 Digits</th>
+                          <th>Card Last 4 Digits</th>
                           <th>Action</th>
                       </tr>
                       </thead>
@@ -151,10 +154,13 @@
                           <tr>
                               <td>{{$loop->iteration}}</td>
                               <td>{{date("d-M-Y",strtotime($item->created_at))  ?: '-'}}</td>
-                              <td>{{$item->package->name}}</td>
-                              <td>{{$item->amount}}</td>
+                              <td>{{$item->package->name ?: '-'}}</td>
+                              <td>{{$item->amount ?: '-'}}</td>
                               <td><span class="approved">{{$item->status}}</span></td>
-                              <td><a href="{{$item->pdf}}" download=""><img width="50%" src="{{asset('assets/img/pdf-icon.png')}}"
+                              <td>{{$item->card_type ?: '-'}}</td>
+                              <td>{{$item->card_first6 ?: '-'}}</td>
+                              <td>{{$item->card_last4 ?: '-'}}</td>
+                              <td><a href="{{$item->pdf}}" download=""><img width="35px" src="{{asset('assets/img/pdf-icon.png')}}"
                                                                                                                 alt=""></a></td>
                           </tr>
                       @endforeach

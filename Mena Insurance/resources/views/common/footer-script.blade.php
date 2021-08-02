@@ -49,7 +49,9 @@
  <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.js"></script>
 <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.25/js/jquery.dataTables.js"></script>
-
+@jquery
+@toastr_js
+@toastr_render
 <script>
     $(document).ready( function () {
         $("button.open-sidebar").click(function(){
