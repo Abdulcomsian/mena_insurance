@@ -898,7 +898,7 @@ button.open-sidebar{
 #addCard .removeText{
     color: #F24F2D;
     cursor: pointer;
-}
+} 
 
 #checkout_banner{
     padding: 100px 50px;
@@ -940,6 +940,12 @@ button.open-sidebar{
     }
 }
 @media only screen and (max-width: 992px) {
+    #checkout_detail{
+        padding: 100px 0px;
+    }
+    #checkout_detail .summary-detil{
+        margin-top: 30px;
+    }
     .side-bar{
         width: 35%;
     }
