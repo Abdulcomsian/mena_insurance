@@ -88,6 +88,7 @@ Route::get('/refund-policy', function () {
 Route::get('/thanks-for-registration', function () {
     return view('screens.thanks-for-registration');
 });
+// Hert
 Route::get('/checkout', function () {
     return view('screens.checkout');
 });
