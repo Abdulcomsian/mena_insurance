@@ -85,6 +85,12 @@ Route::get('/privacy-policy', function () {
 Route::get('/refund-policy', function () {
     return view('screens.refund');
 });
+Route::get('/thanks-for-registration', function () {
+    return view('screens.thanks-for-registration');
+});
+Route::get('/checkout', function () {
+    return view('screens.checkout');
+});
 
 Route::view('pdf','pdf');
 Route::view('pdf-template','pdf-transaction-template');
