@@ -53,10 +53,11 @@ class TransactionController extends Controller
                 dd('Url not exits',$results);
             }
         }catch (\Exception $exception){
-            return 'Something went wrong';
+            toastr()->error('Server is busy, try again!');
+            return redirect('/');
         }catch (DecryptException $decryptException){
-            return 'Something went wrong';
-        }
+            toastr()->error('Server is busy, try again!');
+            return redirect('/');        }
     }
 
 
@@ -85,7 +86,8 @@ class TransactionController extends Controller
                 }
             }
         }catch (\Exception $exception){
-            return 'Something went wrong';
+            toastr()->error('Server is busy, try again!');
+            return redirect('/');
         }
     }
 
@@ -141,7 +143,8 @@ class TransactionController extends Controller
             Auth::user()->notify(new TransactionEmail($transaction));
 
         }catch (\Exception $exception){
-            dd('Exception in save transaction',$exception->getMessage());
+            toastr()->error('Server is busy, try again!');
+            return redirect('/');
         }
 
     }
@@ -155,5 +158,14 @@ class TransactionController extends Controller
 
     protected function createSubscription($package){
 
+    }
+
+    public function paymentCheckout($id){
+        try {
+            $package = Package::where('id',decrypt($id))->first();
+            return view('screens.checkout',compact('package'));
+        }catch (\Exception $exception){
+            toastr()->error('Server is busy, try again!');
+        }
     }
 }

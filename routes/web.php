@@ -71,6 +71,8 @@ Route::get('transaction-cancel','TransactionController@cancel')->name('transacti
 Route::get('transaction-success','TransactionController@success')->name('transaction.success');
 Route::get('transaction-decline','TransactionController@decline')->name('transaction.decline');
 
+Route::get('checkout/{id}','TransactionController@paymentCheckout')->name('checkout');
+
 //Testing Routes
 Route::view('telr-testing','testing.telr');
 Route::get('telr-curl-testing','HomeController@telrCurlTesting');
@@ -88,9 +90,10 @@ Route::get('/refund-policy', function () {
 Route::get('/thanks-for-registration', function () {
     return view('screens.thanks-for-registration');
 });
-Route::get('/checkout', function () {
-    return view('screens.checkout');
-});
+//Route::get('/checkout', function () {
+//    return view('screens.checkout');
+//});
+
 
 Route::view('pdf','pdf');
 Route::view('pdf-template','pdf-transaction-template');

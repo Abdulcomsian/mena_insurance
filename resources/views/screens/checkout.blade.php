@@ -26,9 +26,9 @@
                         </thead>
                         <tbody>
                             <tr>
-                                <td>Silver</td>
-                                <td>10 Sanctions Search</td>
-                                <td>AED 100</td>
+                                <td>{{$package->name ?: '-'}}</td>
+                                <td>{{$package->sanctions ? $package->sanctions. ' Sanctions Search' : '-'}}</td>
+                                <td>{{$package->price ?: '-'}}</td>
                             </tr>
                         </tbody>
                     </table>
@@ -43,18 +43,18 @@
                         </li>
                         <li>
                             <span>Product Total:</span>
-                            <span>AED 100</span>
+                            <span>{{$package->price ? $package->price.' AED' : '-'}}</span>
                         </li>
-                        <li>
-                            <span>Delivery:</span>
-                            <span>FREE</span>
-                        </li>
+{{--                        <li>--}}
+{{--                            <span>Delivery:</span>--}}
+{{--                            <span>FREE</span>--}}
+{{--                        </li>--}}
                         <li class="totalDiv">
                             <span>Total:</span>
-                            <span>AED 100</span>
+                            <span>{{$package->price ? $package->price.' AED' : '-'}}</span>
                         </li>
                     </ul>
-                    <a href="">
+                    <a href="{{route('transaction.create',encrypt($package->id))}}">
                         <button>Proceed to Checkout</button>
                     </a>
                 </div>
