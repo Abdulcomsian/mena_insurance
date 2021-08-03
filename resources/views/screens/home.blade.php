@@ -159,7 +159,7 @@
                         @endguest
 
                         @auth
-                            <a href="{{route('transaction.create',encrypt($item->id))}}">
+                            <a href="{{route('checkout',encrypt($item->id))}}">
                                 <button>Order Now</button>
                             </a>
                         @endauth
