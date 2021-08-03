@@ -31,26 +31,32 @@ class userpagesController extends Controller
     }
 
     public  function update_account(Request $request,$id){
-        try {
+        $request->validate([
+            'name' => ['required', 'string', 'max:255'],
+            'email' => ['required', 'string', 'email', 'max:255','unique:users'],
+//            'password' => ['required', 'string', 'min:8', 'confirmed'],
+        ]);
+
+        if(isset($request->password)){
             $request->validate([
-                'name' => ['required', 'string', 'max:255'],
-                'email' => ['required', 'string', 'email', 'max:255'],
+                'password' => ['required', 'string', 'min:8', 'confirmed'],
             ]);
-            if(isset($request->password)){
-                $request->validate([
-                    'password' => ['required', 'string', 'min:8', 'confirmed'],
-                ]);
-                unset($request['password_confirmation'],$request['_token']);
-                $request['password'] = Hash::make($request['password']);
-                User::where('id',decrypt($id))->update($request->all());
-            }
-            else{
-                unset($request['password'],$request['password_confirmation'],$request['_token']);
-                User::where('id',decrypt($id))->update($request->all());
-            }
-            return redirect()->route('account')->with('success','Profile Updated Successfully!');
+            unset($request['password_confirmation'],$request['_token']);
+            $request['password'] = Hash::make($request['password']);
+        }
+        else{
+            unset($request['password'],$request['password_confirmation'],$request['_token']);
+        }
+
+        try {
+            User::where('id',decrypt($id))->update($request->all());
+
+            toastr()->success('Profile Updated Successfully!');
+            return redirect()->route('account');//->with('success','Profile Updated Successfully!');
         }catch (\Exception $exception){
-            return redirect()->route('account')->with('danger','Something went wrong');
+            dd($exception->getMessage());
+            toastr()->error('System is busy, try again');
+            return redirect()->route('account');//->with('danger','Something went wrong');
         }
     }
 
