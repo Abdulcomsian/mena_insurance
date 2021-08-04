@@ -46,7 +46,7 @@
                         </div>
                         <div class="col-lg-6 col-md-6">
                            <div class="inputDiv">
-                              <input type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ Auth::user()->name }}"  placeholder="Full Name">
+                              <input type="text" required class="form-control @error('name') is-invalid @enderror" name="name" value="{{ Auth::user()->name }}"  placeholder="Full Name">
                                @error('name')
                                <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
@@ -56,7 +56,7 @@
                         </div>
                         <div class="col-lg-6 col-md-6">
                            <div class="inputDiv">
-                              <input type="text" class="form-control @error('email') is-invalid @enderror"  name="email" value="{{ Auth::user()->email }}" placeholder="Email">
+                              <input type="email"  required class="form-control @error('email') is-invalid @enderror"  name="email" value="{{ Auth::user()->email }}" placeholder="Email">
                                @error('email')
                                <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
@@ -114,7 +114,7 @@
                         <div class="col-lg-6 col-md-6">
                            <div class="inputDiv">
 
-                              <input type="password" autocomplete="off" class="form-control  @error('password') is-invalid @enderror"  name="password" placeholder="Password">
+                              <input type="password" required autocomplete="off" class="form-control  @error('password') is-invalid @enderror"  name="password" placeholder="Password">
                                @error('password')
                                <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
@@ -124,7 +124,7 @@
                         </div>
                         <div class="col-lg-6 col-md-6">
                            <div class="inputDiv">
-                              <input type="password" autocomplete="off" class="form-control" name="password_confirmation" placeholder="Confirm Password">
+                              <input type="password" required autocomplete="off" class="form-control" name="password_confirmation" placeholder="Confirm Password">
                            </div>
                         </div>
                         <div class="col-lg-12">
