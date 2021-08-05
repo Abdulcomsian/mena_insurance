@@ -51,13 +51,13 @@
          @endguest
       </div>
    </nav>
-    @if(session('verified'))
-        <p class="alert alert-success">
-            <span  style="
-            border: 2px solid;
-            margin-right: 14px;
-            cursor: pointer;
-            " onclick="$('.alert').hide();">X</span>
-        You've successfully verified your email!</p>
-    @endif
+{{--    @if(session('verified'))--}}
+{{--        <p class="alert alert-success">--}}
+{{--            <span  style="--}}
+{{--            border: 2px solid;--}}
+{{--            margin-right: 14px;--}}
+{{--            cursor: pointer;--}}
+{{--            " onclick="$('.alert').hide();">X</span>--}}
+{{--        You've successfully verified your email!</p>--}}
+{{--    @endif--}}
 </section>

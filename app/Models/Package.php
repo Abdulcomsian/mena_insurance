@@ -14,5 +14,7 @@ class Package extends Model
         'price',
         'sanctions',
         'active',
+        'start_date',
+        'end_date'
     ];
 }
