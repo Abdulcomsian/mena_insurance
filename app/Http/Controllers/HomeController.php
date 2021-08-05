@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\CountryInformation;
 use App\Models\Package;
+use App\Utils\Status;
 use http\Env\Response;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -30,8 +31,8 @@ class HomeController extends Controller
     public function index()
     {
         try {
-            $packages = Package::where('status','active')
-                ->orderby('id','asc')
+            $packages = Package::where('status',Status::Active)
+                ->orderby('sanctions','asc')
                 ->get();
             $countries  = CountryInformation::orderby('country_name','asc')->get();
             return view('screens.home',compact('packages','countries'));
