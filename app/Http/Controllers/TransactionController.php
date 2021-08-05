@@ -7,6 +7,7 @@ use App\Models\Subscription;
 use App\Models\Transaction;
 use App\Notifications\TransactionEmail;
 use App\Utils\SubscriptionStatus;
+//use Barryvdh\DomPDF\PDF;
 use PDF;
 use Illuminate\Contracts\Encryption\DecryptException;
 use Illuminate\Http\Request;
@@ -86,6 +87,7 @@ class TransactionController extends Controller
                 }
             }
         }catch (\Exception $exception){
+            dd($exception->getMessage());
             toastr()->error('Server is busy, try again!');
             return redirect('/');
         }
@@ -129,6 +131,9 @@ class TransactionController extends Controller
                 'billing_country' => $transaction->order->customer->address->country ?? null,
                 'billing_email' => $transaction->order->customer->email ?? null,
                 'status' => $transaction->order->status->text ?? null,
+                'card_last4' => $transaction->order->card->last4 ?? null,
+                'card_first6' => $transaction->order->card->last6 ?? null,
+                'card_type' => $transaction->order->card->type ?? null,
                 'user_id' => Auth::id() ?? null,
                 'package_id' => $package->id ?? null,
             ]);
@@ -143,6 +148,7 @@ class TransactionController extends Controller
             Auth::user()->notify(new TransactionEmail($transaction));
 
         }catch (\Exception $exception){
+            dd($exception->getMessage());
             toastr()->error('Server is busy, try again!');
             return redirect('/');
         }

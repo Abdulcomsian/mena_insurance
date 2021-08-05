@@ -77,7 +77,10 @@ class Transaction extends Model
 		'approved',
 		'response',
 		'status',
-        'pdf'
+        'pdf',
+        'card_last4',
+        'card_first6',
+        'card_type',
 	];
 
 	public function package(){
