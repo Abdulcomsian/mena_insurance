@@ -24,6 +24,9 @@ class CreateTelrTransactionsTable extends Migration
 //            $table->string('success_url')->comment = 'The success URL';
 //            $table->string('canceled_url')->comment = 'The canceled URL';
 //            $table->string('declined_url')->comment = 'The declined URL';
+            $table->string('card_last4')->nullable()->comment = 'Billing first name';
+            $table->string('card_first6')->nullable()->comment = 'Billing first name';
+            $table->string('card_type')->nullable()->comment = 'Billing first name';
             $table->string('billing_fname')->nullable()->comment = 'Billing first name';
             $table->string('billing_sname')->nullable()->comment = 'Billing sur name';
             $table->string('billing_address_1')->nullable()->comment = 'Billing address 1';

@@ -46,8 +46,9 @@
 </div>
 <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
- <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.js"></script> -->
 <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.25/js/jquery.dataTables.js"></script>
 
 <script>
@@ -67,39 +68,39 @@
         $('#payment_table').DataTable();
     });
 
-    const data = {
-//         labels: [
-//     'International Oilfield Inspection Services Ltd',
-//     'Yemen Drilling',
-//     'Saddam AL-Hashdi',
-//     'Hussain AL-Hashdi',
-//     'International Oilfield Services'
-//   ],
+//     const data = {
+// //         labels: [
+// //     'International Oilfield Inspection Services Ltd',
+// //     'Yemen Drilling',
+// //     'Saddam AL-Hashdi',
+// //     'Hussain AL-Hashdi',
+// //     'International Oilfield Services'
+// //   ],
 
-datasets: [{
-  label: 'My First Dataset',
-  data: [50, 50, 50, 50, 50],
-  backgroundColor: [
-    'rgb(0, 97, 254)',
-    'rgb(63, 213, 150)',
-    'rgb(255, 196, 66)',
-    'rgb(255, 128, 33)',
-    'rgb(76, 175, 80)'
-  ],
-}],
-options: {
-    responsive: true, // Instruct chart js to respond nicely.
-    maintainAspectRatio: false, // Add to prevent default behaviour of full-width/height
-  }
-};
-const config = {
-type: 'doughnut',
-data: data,
-};
-var myChart = new Chart(
-      document.getElementById('myChart'),
-      config
-    );
+// datasets: [{
+//   label: 'My First Dataset',
+//   data: [50, 50, 50, 50, 50],
+//   backgroundColor: [
+//     'rgb(0, 97, 254)',
+//     'rgb(63, 213, 150)',
+//     'rgb(255, 196, 66)',
+//     'rgb(255, 128, 33)',
+//     'rgb(76, 175, 80)'
+//   ],
+// }],
+// options: {
+//     responsive: true, // Instruct chart js to respond nicely.
+//     maintainAspectRatio: false, // Add to prevent default behaviour of full-width/height
+//   }
+// };
+// const config = {
+// type: 'doughnut',
+// data: data,
+// };
+// var myChart = new Chart(
+//       document.getElementById('myChart'),
+//       config
+//     );
 
     $(document).on('keyup', '#search', function(){
         var query = $('#search').val();
@@ -129,4 +130,5 @@ var myChart = new Chart(
             $('#data').empty();
         }
     });
+
 </script>
