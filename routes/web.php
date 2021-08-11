@@ -67,9 +67,16 @@ Route::get('live_search', 'CompanyDetailController@liveSearch')->name('live_sear
 Route::get('company_detail/{id}','CompanyDetailController@show')->name('companydetail.show');
 
 Route::get('transaction-create/{id}','TransactionController@create')->name('transaction.create');
-Route::get('transaction-cancel','TransactionController@cancel')->name('transaction.cancel');
+Route::view('transaction-success-loading','screens.transaction-success-loading');
+Route::view('transaction-decline-loading','screens.transaction-decline-loading');
+Route::view('transaction-cancel-loading','screens.transaction-cancel-loading');
 Route::get('transaction-success','TransactionController@success')->name('transaction.success');
 Route::get('transaction-decline','TransactionController@decline')->name('transaction.decline');
+Route::get('transaction-cancel','TransactionController@cancel')->name('transaction.cancel');
+
+Route::view('cancel-payment','screens.payment-cancel');
+Route::view('decline-payment','screens.payment-decline');
+Route::view('success-payment','screens.payment-success');
 
 Route::get('checkout/{id}','TransactionController@paymentCheckout')->name('checkout');
 
