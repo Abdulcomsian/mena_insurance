@@ -2,6 +2,16 @@
 @extends('common.footer-script')
 @extends('common.header')
 @extends('common.navbar')
+@section('css')
+    <style>
+        #telr {
+            width: 100%;
+            min-width: 600px;
+            height: 600px;
+            frameborder: 0;
+        }
+    </style>
+@endsection
 @section('content')
 <section id="checkout_banner">
     <div class="container-fluid">
@@ -54,12 +64,48 @@
                             <span>{{$package->price ? $package->price.' AED' : '-'}}</span>
                         </li>
                     </ul>
-                    <a href="{{route('transaction.create',encrypt($package->id))}}">
-                        <button>Proceed to Checkout</button>
-                    </a>
+{{--                    <a href="{{route('transaction.create',encrypt($package->id))}}">--}}
+                        <button id="checkout">Proceed to Checkout</button>
+{{--                    </a>--}}
                 </div>
             </div>
         </div>
     </div>
 </section>
+<!-- Modal -->
+<div class="modal fade" id="payment_modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-body">
+                <iframe id="telr" src=""></iframe>
+            </div>
+        </div>
+    </div>
+</div>
+@endsection
+@section('script')
+    <script>
+        $('#checkout').click(function () {
+            console.log('Here in click function');
+            $.ajax({
+                url: "{{route('transaction.create',encrypt($package->id))}}",
+                method: 'GET',
+                // data: {query: query, country: country},
+                dataType: 'json',
+                success: function (data) {
+                    console.log(data);
+                    if(data.message == 'success') {
+                        $('#telr').attr('src',data.order_url);
+                        $('#payment_modal').modal('show');
+                    }
+                    else{
+                        $('#data').append(`<li class="list-group-item">No Result Found</li>`)
+                    }
+                },
+                error:function (){
+                    // $('#data').empty();
+                }
+            });
+        });
+    </script>
 @endsection

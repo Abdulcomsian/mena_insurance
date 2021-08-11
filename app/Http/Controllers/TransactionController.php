@@ -49,9 +49,16 @@ class TransactionController extends Controller
             if(isset( $results->order->url) && isset($results->order->ref)){
                 session()->put('package_id',$id);
                 session()->put('order_no',$results->order->ref);
-                return redirect($results->order->url);
+                $order_url = $results->order->url;
+                $data = [
+                    'message' => 'success',
+                    'order_url' => $order_url
+                ];
+                toastr()->error('Server is busy, try again!');
+                return response()->json($data);
+//                return view('screens.telr-payment',compact('order_url'));
             }else{
-                dd('Url not exits',$results);
+                toastr()->error('Server is busy, try again!');
             }
         }catch (\Exception $exception){
             toastr()->error('Server is busy, try again!');
