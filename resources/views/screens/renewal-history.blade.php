@@ -153,9 +153,20 @@
                               <td>{{date("d-M-Y",strtotime($item->created_at))  ?: '-'}}</td>
                               <td>{{$item->package->name}}</td>
                               <td>{{$item->amount}}</td>
-                              <td><span class="approved">{{$item->status}}</span></td>
-                              <td><a href="{{$item->pdf}}" download=""><img width="50%" src="{{asset('assets/img/pdf-icon.png')}}"
-                                                                                                                alt=""></a></td>
+                              @if($item->status == 'Paid')
+                                <td><span class="approved">{{$item->status}}</span></td>
+                              @else
+                                <td><span class="cancel">{{$item->status}}</span></td>
+                              @endif
+                              @isset($item->pdf)
+                                <td>
+                                    <a href="{{$item->pdf}}" download="">
+                                        <i class="fa fa-file-pdf-o fa-3x" aria-hidden="true"></i>
+                                    </a>
+                                </td>
+                              @else
+                                  <td>-</td>
+                              @endisset
                           </tr>
                       @endforeach
                       </tbody>

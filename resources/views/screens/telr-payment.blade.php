@@ -84,7 +84,6 @@
                     </button>
                 </div>
                 <div class="modal-body">
-                    <iframe id= "telr" src="{{$order_url}}"></iframe>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>

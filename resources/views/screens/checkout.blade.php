@@ -9,6 +9,7 @@
             min-width: 600px;
             height: 600px;
             frameborder: 0;
+            border: none;
         }
     </style>
 @endsection
@@ -77,7 +78,7 @@
     <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
         <div class="modal-content">
             <div class="modal-body">
-                <iframe id="telr" src=""></iframe>
+                <iframe id="telr" sandbox="allow-forms allow-modals allow-popups-to-escape-sandbox allow-popups allow-scripts allow-top-navigation allow-same-origin" src=""></iframe>
             </div>
         </div>
     </div>
@@ -87,6 +88,7 @@
     <script>
         $('#checkout').click(function () {
             console.log('Here in click function');
+            $(this).attr('disabled','true');
             $.ajax({
                 url: "{{route('transaction.create',encrypt($package->id))}}",
                 method: 'GET',
@@ -94,16 +96,18 @@
                 dataType: 'json',
                 success: function (data) {
                     console.log(data);
-                    if(data.message == 'success') {
+                    if(data.success == true) {
                         $('#telr').attr('src',data.order_url);
                         $('#payment_modal').modal('show');
                     }
                     else{
-                        $('#data').append(`<li class="list-group-item">No Result Found</li>`)
+                        alert('Server is busy,try again');
+                        window.location.reload();
                     }
                 },
                 error:function (){
-                    // $('#data').empty();
+                    alert('Server is busy,try again');
+                    window.location.reload();
                 }
             });
         });
