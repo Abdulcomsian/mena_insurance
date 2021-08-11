@@ -28,7 +28,7 @@
                             <a href="{{url('terms-condition')}}">Terms & Conditions</a>
                         </li>
                         <li>
-                            <a href="{{url('privacy-policy')}}">Privacy POlicy</a>
+                            <a href="{{url('privacy-policy')}}">Privacy Policy</a>
                         </li>
                         <li>
                             <a href="{{url('refund-policy')}}">Refund Policy</a>
