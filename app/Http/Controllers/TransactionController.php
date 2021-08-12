@@ -33,7 +33,7 @@ class TransactionController extends Controller
                 'ivp_test' => '1',
                 'ivp_amount' => $package->price,
                 'ivp_currency' => 'AED',
-                'ivp_desc' => $package->description,
+                'ivp_desc' => 'Not Set',
                 'ivp_framed' => 1,
 //                'return_auth' => url('/').'/transaction-success',
                 'return_auth' => url('/').'/transaction-success-loading',
@@ -50,12 +50,6 @@ class TransactionController extends Controller
             curl_close($ch);
             $results = json_decode($results);
             if(isset( $results->order->url) && isset($results->order->ref)){
-//                session()->put('package_id',$id);
-//                session()->put('order_no',$results->order->ref);
-                setcookie('package_id', $id, time() + (86400 * 30), "/"); //
-                setcookie('order_no', $results->order->ref, time() + (86400 * 30), "/"); //
-                setcookie('user_id', Auth::id(), time() + (86400 * 30), "/"); //
-
                 session()->put('package_id',$id);
                 session()->put('order_no',$results->order->ref);
                 $order_url = $results->order->url;
@@ -70,7 +64,7 @@ class TransactionController extends Controller
                     'success' => false,
                     'message' => 'Server is busy, try again!'
                 ];
-                return response()->json($data);
+                return response()->json($results);
 //                toastr()->error('Server is busy, try again!');
             }
         }catch (\Exception $exception){
@@ -94,7 +88,7 @@ class TransactionController extends Controller
         try {
                 $results = self::checkOrder();
                 $transaction = self::saveTransactionForSuccess($results);
-                return redirect('/conformation');
+                return redirect('success-payment');
 
                 //if(($results->order->status->code == 3) && ($results->order->transaction->status == "A" ||  $results->order->transaction->status == "H" )){
         }catch (\Exception $exception){
@@ -195,7 +189,8 @@ class TransactionController extends Controller
     public function cancel(Request $request){
         $results = self::checkOrder();
         if(isset($results)) {
-            self::saveTransactionForAll($results);
+            $transaction = self::saveTransactionForAll($results);
+            Auth::user()->notify(new TransactionEmail($transaction));
         }
         return redirect('cancel-payment');
     }
@@ -203,7 +198,9 @@ class TransactionController extends Controller
     public function decline(Request $request){
         $results = self::checkOrder();
         if(isset($results)) {
-            self::saveTransactionForAll($results);
+            $transaction = self::saveTransactionForAll($results);
+            Auth::user()->notify(new TransactionEmail($transaction));
+
         }
         return redirect('decline-payment');
     }
@@ -218,6 +215,7 @@ class TransactionController extends Controller
             return view('screens.checkout',compact('package'));
         }catch (\Exception $exception){
             toastr()->error('Server is busy, try again!');
+            return back();
         }
     }
 }

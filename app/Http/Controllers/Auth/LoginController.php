@@ -43,7 +43,8 @@ class LoginController extends Controller
     {
         if ($user->type == 'System User'){
             if ($user->status == 'Active'){
-//                return true;
+                    $user->last_login_at = now();
+                    $user->save();
             }else{
                 toastr()->error('Your Account is Inactive');
                 Auth::logout();

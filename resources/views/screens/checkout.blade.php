@@ -95,10 +95,11 @@
                 // data: {query: query, country: country},
                 dataType: 'json',
                 success: function (data) {
-                    console.log(data);
+                    $(this).removeAttr('disabled');
                     if(data.success == true) {
                         $('#telr').attr('src',data.order_url);
                         $('#payment_modal').modal('show');
+                        $(this).attr('disabled','false');
                     }
                     else{
                         alert('Server is busy,try again');
