@@ -3,8 +3,11 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
+use App\Notifications\WelcomeEmail;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Foundation\Auth\VerifiesEmails;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class VerificationController extends Controller
 {
@@ -36,9 +39,15 @@ class VerificationController extends Controller
      */
     public function __construct()
     {
-        session()->flash('notification','Please login to confirm your email!');
         $this->middleware('auth');
         $this->middleware('signed')->only('verify');
         $this->middleware('throttle:6,1')->only('verify', 'resend');
     }
+
+    protected function verified(Request $request)
+    {
+        toastr()->info('You,ve successfully verified your email!');
+        Auth::user()->notify(new WelcomeEmail());
+    }
+
 }
