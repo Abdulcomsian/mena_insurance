@@ -76,12 +76,11 @@
                     </div>
                     <p>
                         i Agree to <a href="">Term & Condition Privacy</a>
-                        and 
+                        and
                         <a href="">Refund Priacy</a>
                     </p>
-                    <a href="">
-                        <button>Proceed to Checkout</button>
-                    </a>
+                        <button id="checkout">Proceed to Checkout</button>
+
                 </div>
             </div>
         </div>
