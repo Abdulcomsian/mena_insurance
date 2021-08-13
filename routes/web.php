@@ -39,6 +39,10 @@ Route::get('/conformation', function () {
 Route::get('/search', function () {
     return view('screens.search-place');
 });
+
+Route::get('/search-all', function () {
+    return view('screens.search-all-companies');
+});
 // Route::get('/subcription', function () {
 //     return view('screens.subscription');
 // });
