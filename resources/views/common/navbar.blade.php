@@ -21,9 +21,9 @@
                      <button class="dropbtn"><i class="fa fa-user-circle-o" aria-hidden="true"></i></button>
                      <div class="dropdown-content">
                         <h3>Mena Insurance</h3>
-                        <a href="/subscription"><i class="fa fa-money" aria-hidden="true"></i> My Subscription</a>
+                        <a href="/subscription"><i class="fa fa-money" aria-hidden="true"></i> My Packages</a>
                         <a href="/account"><i class="fa fa-user" aria-hidden="true"></i> Account Setting</a>
-                        <a href="/history"><i class="fa fa-history" aria-hidden="true"></i> Renewal & Billing History</a>
+                        <a href="/history"><i class="fa fa-history" aria-hidden="true"></i> Billing History</a>
                         <a href="/payment"><i class="fa fa-id-card-o" aria-hidden="true"></i> Add Payment Method</a> 
                         <p class="logout">
                              <a  href="{{ route('logout') }}" onclick="event.preventDefault();

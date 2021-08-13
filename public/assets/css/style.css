@@ -29,7 +29,7 @@ table{
     display: none;
 }
 table thead{
-    height: 70px;
+    height: 50px;
     background: #2e953e;
     color: #fff;
 }
@@ -944,6 +944,36 @@ button.open-sidebar{
     border: none;
     box-shadow:none !important;
 }
+#checkout_detail .product-detil table thead{
+    height: 50px;
+}
+#checkout_detail .summary-detil p{
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 14px;
+}
+#checkout_detail .summary-detil p a{
+    color: #2e953e;
+    font-weight: 600;
+}
+.accordion .card-header .btn:after {
+    font-family: FontAwesome;
+    content: "\f107";
+    float: right;
+    color: grey;
+  }
+  
+ .accordion .card-header .btn[aria-expanded="true"]:after {
+    content: "\f106";
+  }
+  .headerBtn{
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 30px;
+  }
+  .headerBtn button{
+      width: auto;
+  }
 /**************** Search - All - Companies - CSS *****************/
 #search-section .search-result .filterDiv{
     border-radius: 8px;

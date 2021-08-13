@@ -63,6 +63,11 @@
                             <a class="dropdown-item" href="#">1356********56897</a>
                         </div>
                     </div>
+                    <p>
+                        i Agree to <a href="">Term & Condition Privacy</a>
+                        and 
+                        <a href="">Refund Priacy</a>
+                    </p>
                     <a href="">
                         <button>Proceed to Checkout</button>
                     </a>

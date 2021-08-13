@@ -9,13 +9,13 @@
          <button class="open-sidebar"><i class="fa fa-arrow-left" aria-hidden="true"></i></i></button>
             <ul class="nav nav-pills" role="tablist">
                <li class="nav-item">
-                  <a class="nav-link active"  href="{{url('subscription')}}"><img src="assets/img/Icons/Icon feather-home - off.png" alt="" class="img-fluid"><span><i class="fa fa-money" aria-hidden="true"></i> My Subscription</span> </a>
+                  <a class="nav-link active"  href="{{url('subscription')}}"><img src="assets/img/Icons/Icon feather-home - off.png" alt="" class="img-fluid"><span><i class="fa fa-money" aria-hidden="true"></i> My Packages</span> </a>
                </li>
                <li class="nav-item">
                   <a href="{{url('account')}}" class="nav-link my-project" > <img src="assets/img/Icons/Icon feather-search - off.png" alt="" class="img-fluid"><span><i class="fa fa-user" aria-hidden="true"></i> Account Setting</span> </a>
                </li>
                <li class="nav-item">
-                  <a href="{{url('history')}}" class="nav-link" > <img src="assets/img/Icons/Icon material-favorite-border - off.png" alt="" class="img-fluid"><span><i class="fa fa-history" aria-hidden="true"></i> Renewal & History Billing</span> </a>
+                  <a href="{{url('history')}}" class="nav-link" > <img src="assets/img/Icons/Icon material-favorite-border - off.png" alt="" class="img-fluid"><span><i class="fa fa-history" aria-hidden="true"></i> Billing History</span> </a>
                </li>
                <li class="nav-item">
                   <a href="{{url('payment')}}" class="nav-link" > <img src="assets/img/Icons/Icon material-history - off.png" alt="" class="img-fluid"><span><i class="fa fa-id-card-o" aria-hidden="true"></i> Add Payment Method</span> </a>
@@ -26,7 +26,11 @@
       <div id="subscription" class="home container-fluid tab-pane active">
          <div class="content-div">
             <button class="open-sidebar"><i class="fa fa-bars" aria-hidden="true"></i></button>
-            <h3>My Subscription</h3>
+            <div class="headerBtn">
+               <h3>My Packages</h3>
+               <a href="/"><button>Purchase Package</button></a>
+            </div>
+           
             <div class="table-div table-responsive">
                <table id="subscription_table" class="display">
                   <thead>
