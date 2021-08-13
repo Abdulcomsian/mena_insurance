@@ -55,12 +55,12 @@ table tbody td{
     border: none;
     background-color: transparent;
   }
-  
+
   .dropdown {
     position: relative;
     display: inline-block;
   }
-  
+
   .dropdown-content {
     display: none;
     position: absolute;
@@ -72,16 +72,16 @@ table tbody td{
     right:-15px;
     padding: 15px;
   }
-  
+
   .dropdown-content a {
     color:rgba(0,0,0,.5);
     padding: 12px 0px;
     text-decoration: none;
     display: block;
   }
-    
+
   .dropdown:hover .dropdown-content {display: block;}
-  
+
   .dropdown:hover .dropbtn {background-color: transparent;}
   .dropdown-content h3{
       font-size: 18px;
@@ -857,6 +857,10 @@ button{
 .approved{
     background: #00800069;
 }
+.cancel{
+    background: #ff00008f;
+}
+
 .paginate_button{
     color: #2e953e;
     padding: 10px;
@@ -898,7 +902,7 @@ button.open-sidebar{
 #addCard .removeText{
     color: #F24F2D;
     cursor: pointer;
-} 
+}
 
 #checkout_banner{
     padding: 100px 50px;

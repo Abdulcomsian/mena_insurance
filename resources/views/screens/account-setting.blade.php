@@ -29,7 +29,6 @@
              <button class="open-sidebar"><i class="fa fa-bars" aria-hidden="true"></i></button>
             <h3>My Profile</h3>
              <div class="form-div">
-                 @include('common.flash-message')
                  <form method="post" action="{{route('update_account',encrypt(\Illuminate\Support\Facades\Auth::id()))}}">
                @csrf
 
@@ -37,55 +36,95 @@
                      <div class="row">
                         <div class="col-lg-6 col-md-6">
                            <div class="inputDiv">
-                              <input type="text" class="form-control" name="company_name" value="{{ Auth::user()->company_name }}" placeholder="Company Name">
+                              <input type="text" class="form-control @error('company_name') is-invalid @enderror" name="company_name" value="{{ Auth::user()->company_name }}" placeholder="Company Name">
+                               @error('company_name')
+                               <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                               @enderror
                            </div>
                         </div>
                         <div class="col-lg-6 col-md-6">
                            <div class="inputDiv">
-                              <input type="text" class="form-control" name="name" value="{{ Auth::user()->name }}"  placeholder="Full Name">
+                              <input type="text" required class="form-control @error('name') is-invalid @enderror" name="name" value="{{ Auth::user()->name }}"  placeholder="Full Name">
+                               @error('name')
+                               <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                               @enderror
                            </div>
                         </div>
                         <div class="col-lg-6 col-md-6">
                            <div class="inputDiv">
-                              <input type="text" class="form-control"  name="email" value="{{ Auth::user()->email }}" placeholder="Email">
+                              <input type="email"  required class="form-control @error('email') is-invalid @enderror"  name="email" value="{{ Auth::user()->email }}" placeholder="Email">
+                               @error('email')
+                               <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                               @enderror
                            </div>
                         </div>
                         <div class="col-lg-6 col-md-6">
                            <div class="inputDiv">
-                              <input type="text" class="form-control" name="address" value="{{ Auth::user()->address }}" placeholder="Address">
+                              <input type="text" class="form-control @error('address') is-invalid @enderror" name="address" value="{{ Auth::user()->address }}" placeholder="Address">
+                               @error('address')
+                               <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                               @enderror
                            </div>
                         </div>
                         <div class="col-lg-6 col-md-6">
                            <div class="inputDiv">
-                              <select class="form-control" name="country_id">
+                              <select class="form-control @error('country_id') is-invalid @enderror" name="country_id">
 
                                  @foreach($countries as $country)
                                     <option @if(Auth::user()->country_id == $country->id) selected @endif value="{{$country->id}}">{{$country->country_name}}</option>
                                  @endforeach
                                  </select>
-                              <!-- <input type="text" class="form-control" value=""  placeholder="Country"> -->
+                               @error('country_id')
+                               <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
                            </div>
                         </div>
                         <div class="col-lg-6 col-md-6">
                            <div class="inputDiv">
-                              <input type="text" class="form-control"  name="mobile_number" value="{{ Auth::user()->mobile_number }}" placeholder="Mobile Number">
+                              <input type="text" class="form-control @error('mobile_number') is-invalid @enderror"  name="mobile_number" value="{{ Auth::user()->mobile_number }}" placeholder="Mobile Number">
+                               @error('mobile_number')
+                               <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                               @enderror
                            </div>
                         </div>
                          <div class="col-lg-6 col-md-6">
                            <div class="inputDiv">
-                              <input type="text" class="form-control"  name="office_number" value="{{ Auth::user()->office_number }}" placeholder="Office Number">
+                              <input type="text" class="form-control @error('office_number') is-invalid @enderror"  name="office_number" value="{{ Auth::user()->office_number }}" placeholder="Office Number">
+                               @error('office_number')
+                               <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                               @enderror
                            </div>
                         </div>
                      </div>
                       <div  class="row">
                         <div class="col-lg-6 col-md-6">
                            <div class="inputDiv">
-                              <input type="text" class="form-control" name="password" placeholder="Password">
+
+                              <input type="password" required autocomplete="off" class="form-control  @error('password') is-invalid @enderror"  name="password" placeholder="Password">
+                               @error('password')
+                               <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                               @enderror
                            </div>
                         </div>
                         <div class="col-lg-6 col-md-6">
                            <div class="inputDiv">
-                              <input type="text" class="form-control" name="password_confirmation" placeholder="Confrim Password">
+                              <input type="password" required autocomplete="off" class="form-control" name="password_confirmation" placeholder="Confirm Password">
                            </div>
                         </div>
                         <div class="col-lg-12">

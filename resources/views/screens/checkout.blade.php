@@ -2,6 +2,17 @@
 @extends('common.footer-script')
 @extends('common.header')
 @extends('common.navbar')
+@section('css')
+    <style>
+        #telr {
+            width: 100%;
+            min-width: 600px;
+            height: 600px;
+            frameborder: 0;
+            border: none;
+        }
+    </style>
+@endsection
 @section('content')
 <section id="checkout_banner">
     <div class="container-fluid">
@@ -26,9 +37,9 @@
                         </thead>
                         <tbody>
                             <tr>
-                                <td>Silver</td>
-                                <td>10 Sanctions Search</td>
-                                <td>AED 100</td>
+                                <td>{{$package->name ?: '-'}}</td>
+                                <td>{{$package->sanctions ? $package->sanctions. ' Sanctions Search' : '-'}}</td>
+                                <td>{{$package->price ?: '-'}}</td>
                             </tr>
                         </tbody>
                     </table>
@@ -43,15 +54,15 @@
                         </li>
                         <li>
                             <span>Product Total:</span>
-                            <span>AED 100</span>
+                            <span>{{$package->price ? $package->price.' AED' : '-'}}</span>
                         </li>
-                        <li>
-                            <span>Delivery:</span>
-                            <span>FREE</span>
-                        </li>
+{{--                        <li>--}}
+{{--                            <span>Delivery:</span>--}}
+{{--                            <span>FREE</span>--}}
+{{--                        </li>--}}
                         <li class="totalDiv">
                             <span>Total:</span>
-                            <span>AED 100</span>
+                            <span>{{$package->price ? $package->price.' AED' : '-'}}</span>
                         </li>
                     </ul>
                     <div class="dropdown">
@@ -76,4 +87,44 @@
         </div>
     </div>
 </section>
+<!-- Modal -->
+<div class="modal fade" id="payment_modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-body">
+                <iframe id="telr" sandbox="allow-forms allow-modals allow-popups-to-escape-sandbox allow-popups allow-scripts allow-top-navigation allow-same-origin" src=""></iframe>
+            </div>
+        </div>
+    </div>
+</div>
+@endsection
+@section('script')
+    <script>
+        $('#checkout').click(function () {
+            console.log('Here in click function');
+            $(this).attr('disabled','true');
+            $.ajax({
+                url: "{{route('transaction.create',encrypt($package->id))}}",
+                method: 'GET',
+                // data: {query: query, country: country},
+                dataType: 'json',
+                success: function (data) {
+                    $(this).removeAttr('disabled');
+                    if(data.success == true) {
+                        $('#telr').attr('src',data.order_url);
+                        $('#payment_modal').modal('show');
+                        $(this).attr('disabled','false');
+                    }
+                    else{
+                        alert('Server is busy,try again');
+                        window.location.reload();
+                    }
+                },
+                error:function (){
+                    alert('Server is busy,try again');
+                    window.location.reload();
+                }
+            });
+        });
+    </script>
 @endsection

@@ -19,7 +19,8 @@ class UserTableSeeder extends Seeder
             'password' => Hash::make('password'),
             'email_verified_at' => now(),
             'type' => 'System User',
-            'status' => 'Active'
+            'status' => 'Active',
+            'country_id' => 224,
         ]);
         User::create([
             'name' => 'Admin',
@@ -27,7 +28,8 @@ class UserTableSeeder extends Seeder
             'password' => Hash::make('password'),
             'email_verified_at' => now(),
             'type' => 'Admin',
-            'status' => 'Active'
+            'status' => 'Active',
+            'country_id' => 224,
         ]);
     }
 }

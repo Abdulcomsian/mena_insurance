@@ -163,6 +163,7 @@ return [
         Illuminate\View\ViewServiceProvider::class,
         TelrGateway\TelrServiceProvider::class,
         Barryvdh\DomPDF\ServiceProvider::class,
+        Yoeunes\Toastr\ToastrServiceProvider::class,
 
         /*
          * Package Service Providers...

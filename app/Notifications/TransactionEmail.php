@@ -43,10 +43,27 @@ class TransactionEmail extends Notification
      */
     public function toMail($notifiable)
     {
+        if($this->transaction->status == 'Paid'){
+            $url = url($this->transaction->pdf);
+            $action_text = 'Transaction Details';
+            $message = ' your transaction is successfully completed click below "Transaction Details" button for more details:';
+        }else{
+            $message = ' your transaction is '. $this->transaction->status .' click below "Login" and goto transactions menu for more details:';
+            $url =  url('login');
+            $action_text = 'Login';
+        }
+
         return (new MailMessage)
-                    ->line(Auth::user()->name .' your transaction is successfully completed click below "Transaction Details" button for more details:')
-                    ->action('Transaction Details', url($this->transaction->pdf))
-                    ->line('Thank you for using our application!');
+            ->line(Auth::user()->name .$message)
+            ->action($action_text ,$url)
+            ->line('Thank you for using our application!');
+
+//        return (new MailMessage)
+//                    ->line(Auth::user()->name .' your transaction is successfully completed click below "Transaction Details" button for more details:')
+//                    ->action('Transaction Details', url($this->transaction->pdf))
+//                    ->line('Thank you for using our application!');
+
+
     }
 
     /**

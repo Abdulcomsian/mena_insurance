@@ -5,6 +5,8 @@ namespace App\Http\Controllers\Auth;
 use App\Http\Controllers\Controller;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class LoginController extends Controller
 {
@@ -36,5 +38,23 @@ class LoginController extends Controller
     public function __construct()
     {
         $this->middleware('guest')->except('logout');
+    }
+    protected function authenticated(Request $request, $user)
+    {
+        if ($user->type == 'System User'){
+            if ($user->status == 'Active'){
+                    $user->last_login_at = now();
+                    $user->save();
+            }else{
+                toastr()->error('Your Account is Inactive');
+                Auth::logout();
+                return redirect('/login');
+            }
+        }else{
+            toastr()->error('These credentials do not match our records.');
+            Auth::logout();
+            return redirect('/login');
+        }
+
     }
 }
