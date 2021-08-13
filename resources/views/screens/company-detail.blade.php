@@ -301,11 +301,13 @@
                                 </div>
                             </div>
                         </div>
-                        <button style="color:#fff;">Sanction Status</button>
+                        <button data-toggle="modal" data-target="#sanctionModal" style="color:#fff;">Sanction Status</button>
                     </div>
                 </div>
             </div>
         </div>
     </div>
 </section>
+
 @endsection
+

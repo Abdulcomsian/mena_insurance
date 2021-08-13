@@ -54,6 +54,15 @@
                             <span>AED 100</span>
                         </li>
                     </ul>
+                    <div class="dropdown">
+                        <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
+                            Add New Card
+                        </button>
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item" href="#">1234**********9856</a>
+                            <a class="dropdown-item" href="#">1356********56897</a>
+                        </div>
+                    </div>
                     <a href="">
                         <button>Proceed to Checkout</button>
                     </a>
