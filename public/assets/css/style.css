@@ -29,7 +29,7 @@ table{
     display: none;
 }
 table thead{
-    height: 70px;
+    height: 50px;
     background: #2e953e;
     color: #fff;
 }
@@ -930,6 +930,54 @@ button.open-sidebar{
     font-size: 16px;
     font-weight: 600;
 }
+#checkout_detail .dropdown,
+#checkout_detail .dropdown .dropdown-menu{
+    width: 100%;
+}
+#checkout_detail .dropdown button{
+    background-color: transparent;
+    color: #000;
+    text-align: left;
+    border: none;
+    padding: 10px 10px 19px;
+    border-bottom: 1px solid #0000002b;
+    margin-bottom: 20px;
+}
+#checkout_detail .dropdown button:focus{
+    outline: none;
+    border: none;
+    box-shadow:none !important;
+}
+#checkout_detail .product-detil table thead{
+    height: 50px;
+}
+#checkout_detail .summary-detil p{
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 14px;
+}
+#checkout_detail .summary-detil p a{
+    color: #2e953e;
+    font-weight: 600;
+}
+.accordion .card-header .btn:after {
+    font-family: FontAwesome;
+    content: "\f107";
+    float: right;
+    color: grey;
+  }
+  
+ .accordion .card-header .btn[aria-expanded="true"]:after {
+    content: "\f106";
+  }
+  .headerBtn{
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 30px;
+  }
+  .headerBtn button{
+      width: auto;
+  }
 /**************** Search - All - Companies - CSS *****************/
 #search-section .search-result .filterDiv{
     border-radius: 8px;
@@ -952,7 +1000,92 @@ button.open-sidebar{
     float: right;
     color: rgb(118, 118, 118);
 }
-
+#search-section .search-result .filterDiv .companyDropDwown,
+#search-section .search-result .filterDiv .geographyDropDwown{
+    display: none;
+}
+#search-section .search-result .filterDiv .companyDropDwown ul,
+#search-section .search-result .filterDiv .geographyDropDwown ul{
+    padding: 20px 0px 0px;
+}
+#search-section .search-result .filterDiv .companyDropDwown ul li .inputDiv,
+#search-section .search-result .filterDiv .geographyDropDwown ul li .inputDiv{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+.companies-search-div .searchForm .inputDiv{
+    display: flex;
+    justify-content: space-between;
+}
+.companies-search-div .searchForm .inputDiv input{
+    font-size: 16px;
+    width: 80%;
+    padding: 20px 17px;
+    border-radius: 8px;
+    border: 1px solid #d9d9d9;
+}
+.companies-search-div .searchForm .inputDiv button{
+    width: 15%;
+}
+.companies-search-div .tabDiv{
+    margin: 30px 0px;
+}
+.companies-search-div .tabDiv .nav-pills .nav-link{
+    color: rgb(118, 118, 118);
+}
+.companies-search-div .tabDiv .nav-pills .nav-link.active, 
+.companies-search-div .tabDiv .nav-pills .show>.nav-link{
+    color: #2e953e !important;
+    background-color: transparent !important;
+    border-bottom: 2px solid;
+    border-radius: 0px !important;
+}
+.companies-search-div .tab-content{
+    width: 100%;
+}
+.companies-search-div .tab-content .company-div{
+    padding: 10px 10px 20px;
+    border-bottom: 1px solid #d9d9d9;
+}
+.companies-search-div .tab-content .company-div a{
+    color: #000;
+}
+.companies-search-div .tab-content .company-div h4{
+    font-size: 20px;
+}
+.companies-search-div .tab-content .company-div p{
+    font-size: 16px;
+    color: rgb(118, 118, 118);
+}
+#sanctionModal .modal-header button{
+    width: auto;
+}
+#sanctionModal .modal-footer button{
+    border: none;
+    padding: 15px;
+    border-radius: 5px;
+    background-color: #2e953e;
+}
+#sanctionModal .directorDiv{
+    padding: 20px;
+    display: none;
+}
+#sanctionModal .directorDiv textarea{
+    width: 100%;
+    border: 1px solid #d9d9d9;
+    padding: 15px;
+}
+#sanctionModal .directorDiv .checkDiv{
+    display: flex;
+    width: 100%;
+    flex-wrap: wrap;
+}
+#sanctionModal .directorDiv .checkDiv .checkBoxDiv{
+    width: 50%;
+}
+  
 /**************** Media - Query - CSS *****************/
 @media only screen and (max-width: 1200px) {
     .side-bar ul>li a{
@@ -966,6 +1099,14 @@ button.open-sidebar{
     }
 }
 @media only screen and (max-width: 992px) {
+    .companies-search-div .searchForm .inputDiv{
+        display: block;
+    }
+    .companies-search-div .searchForm .inputDiv input,
+    .companies-search-div .searchForm .inputDiv button{
+        width: 100%;
+        margin: 5px 0px;
+    }
     #checkout_detail{
         padding: 100px 0px;
     }

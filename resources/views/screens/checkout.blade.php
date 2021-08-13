@@ -65,9 +65,23 @@
                             <span>{{$package->price ? $package->price.' AED' : '-'}}</span>
                         </li>
                     </ul>
-{{--                    <a href="{{route('transaction.create',encrypt($package->id))}}">--}}
-                        <button id="checkout">Proceed to Checkout</button>
-{{--                    </a>--}}
+                    <div class="dropdown">
+                        <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
+                            Add New Card
+                        </button>
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item" href="#">1234**********9856</a>
+                            <a class="dropdown-item" href="#">1356********56897</a>
+                        </div>
+                    </div>
+                    <p>
+                        i Agree to <a href="">Term & Condition Privacy</a>
+                        and 
+                        <a href="">Refund Priacy</a>
+                    </p>
+                    <a href="">
+                        <button>Proceed to Checkout</button>
+                    </a>
                 </div>
             </div>
         </div>
