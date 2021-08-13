@@ -84,10 +84,6 @@ Route::view('success-payment','screens.payment-success');
 
 Route::get('checkout/{id}','TransactionController@paymentCheckout')->name('checkout');
 
-//Testing Routes
-Route::view('telr-testing','testing.telr');
-Route::get('telr-curl-testing','HomeController@telrCurlTesting');
-
 Route::get('/terms-condition', function () {
     return view('screens.terms');
 });
@@ -98,13 +94,18 @@ Route::get('/privacy-policy', function () {
 Route::get('/refund-policy', function () {
     return view('screens.refund');
 });
-Route::get('/thanks-for-registration', function () {
-    return view('screens.thanks-for-registration');
-});
+
+Route::view('/thanks-for-registration','auth.thanks-for-registration');
+Route::view('/successfully-registered','auth.login-success')->name('login.success');
+
 //Route::get('/checkout', function () {
 //    return view('screens.checkout');
 //});
 
+
+//Testing Routes
+Route::view('telr-testing','testing.telr');
+Route::get('telr-curl-testing','HomeController@telrCurlTesting');
 
 Route::view('pdf','pdf');
 Route::view('pdf-template','pdf-transaction-template');

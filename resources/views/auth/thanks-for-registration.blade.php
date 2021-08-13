@@ -1,4 +1,7 @@
+@extends('common.footer')
+@extends('common.footer-script')
 @extends('common.header')
+@extends('common.navbar')
 @section('content')
 <section id="payment-section">
     <div class="container">
@@ -7,8 +10,8 @@
                 <div class="payment-content">
                     <i class="fa fa-check" aria-hidden="true"></i>
                     <h2>Thanks for Registration!</h2>
-                    <p>Now you can Login a Account <a href="/login">Login</a></p>
-                    
+{{--                    <p>Now you can Login a Account <a href="/login">Login</a></p>--}}
+
                 </div>
             </div>
         </div>

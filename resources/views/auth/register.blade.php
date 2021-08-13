@@ -55,13 +55,17 @@ use Illuminate\Support\Facades\DB;
 
                              //dd($countries );
                             @endphp
-                            <select class="form-control" name="country" value="United Arab Emirates">
+                            <select class="form-control @error('address') is-invalid @enderror"  name="country_id" value="United Arab Emirates">
 
                             @foreach($countries as $country)
                                 <option value="{{$country->id}}">{{$country->country_name}}</option>
                             @endforeach
                             </select>
-
+                                @error('country_id')
+                                <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $message }}</strong>
+                                        </span>
+                                @enderror
                             </div>
                             <div class="inputDiv">
                                 <input class="form-control @error('mobile_number') is-invalid @enderror"  type="text" name="mobile_number" value="{{ old('mobile_number') }}"   placeholder="Mobile Number">

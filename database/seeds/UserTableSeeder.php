@@ -20,7 +20,7 @@ class UserTableSeeder extends Seeder
             'email_verified_at' => now(),
             'type' => 'System User',
             'status' => 'Active',
-            'country' => 224,
+            'country_id' => 224,
             'mobile_number' => '0123456789',
             'office_number' => '0123456789',
             'company_name' => 'XYZ',

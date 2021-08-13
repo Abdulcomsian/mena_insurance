@@ -26,7 +26,8 @@ class VerificationController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = RouteServiceProvider::HOME;
+//    protected $redirectTo = RouteServiceProvider::HOME;
+    protected $redirectTo = '/thanks-for-registration';
 
     /**
      * Create a new controller instance.
@@ -35,6 +36,7 @@ class VerificationController extends Controller
      */
     public function __construct()
     {
+        session()->flash('notification','Please login to confirm your email!');
         $this->middleware('auth');
         $this->middleware('signed')->only('verify');
         $this->middleware('throttle:6,1')->only('verify', 'resend');
