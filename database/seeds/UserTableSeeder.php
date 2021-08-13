@@ -21,6 +21,11 @@ class UserTableSeeder extends Seeder
             'type' => 'System User',
             'status' => 'Active',
             'country_id' => 224,
+            'mobile_number' => '0123456789',
+            'office_number' => '0123456789',
+            'company_name' => 'XYZ',
+            'address' => 'XYZ',
+
         ]);
         User::create([
             'name' => 'Admin',
@@ -30,6 +35,10 @@ class UserTableSeeder extends Seeder
             'type' => 'Admin',
             'status' => 'Active',
             'country_id' => 224,
+            'mobile_number' => '0123456789',
+            'office_number' => '0123456789',
+            'company_name' => 'XYZ',
+            'address' => 'XYZ',
         ]);
     }
 }

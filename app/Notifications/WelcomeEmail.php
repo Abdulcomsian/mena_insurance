@@ -41,10 +41,6 @@ class WelcomeEmail extends Notification
      */
     public function toMail($notifiable)
     {
-//        return (new MailMessage)
-//                    ->line('The introduction to the notification.')
-//                    ->action('Notification Action', url('/'))
-//                    ->line('Thank you for using our application!');
         return (new MailMessage)
                     ->line('Welcome '. Auth::user()->name .' to Mena Insurance, an online platform designed to help you access complete details of insurance companies. You are all set to begin..')
                     ->action('Mena Insurance', url('/'))

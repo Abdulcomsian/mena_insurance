@@ -5,7 +5,9 @@ namespace App\Http\Controllers\Auth;
 use App\Http\Controllers\Controller;
 use App\User;
 use App\Providers\RouteServiceProvider;
+use App\Utils\Status;
 use Illuminate\Foundation\Auth\RegistersUsers;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 
@@ -29,7 +31,8 @@ class RegisterController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = RouteServiceProvider::HOME;
+//    protected $redirectTo = RouteServiceProvider::HOME;
+//    protected $redirectTo = 'email/verify';
 
     /**
      * Create a new controller instance.
@@ -50,9 +53,16 @@ class RegisterController extends Controller
     protected function validator(array $data)
     {
         return Validator::make($data, [
+            'address' => ['required', 'max:255'],
+            'company_name' => ['required', 'max:255'],
+            'office_number' => ['required', 'max:255'],
+            'mobile_number' => ['required', 'string', 'max:255'],
+            'country_id' => ['required', 'max:255'],
             'name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'password' => ['required', 'string', 'min:8', 'confirmed'],
+        ],[
+            'country_id.required' => 'The country field is required',
         ]);
     }
 
@@ -68,12 +78,24 @@ class RegisterController extends Controller
         return User::create([
             'name' => $data['name'],
             'email' => $data['email'],
-            'country' => $data['country'],
+            'country_id' => $data['country_id'],
             'mobile_number' => $data['mobile_number'],
             'office_number' => $data['office_number'],
             'company_name' => $data['company_name'],
             'address' => $data['address'],
+            'status' => Status::Active,
             'password' => Hash::make($data['password']),
         ]);
+    }
+
+    protected function redirectTo()
+    {
+        $message = "You have successfully signed up. Please proceed to your mailbox to activate your account.";
+        toastr()->success($message);
+        return route('login.success');
+    }
+
+    protected function registered(Request $request, $user)
+    {
     }
 }
