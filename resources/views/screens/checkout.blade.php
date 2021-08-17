@@ -65,17 +65,18 @@
                             <span>{{$package->price ? $package->price.' AED' : '-'}}</span>
                         </li>
                     </ul>
-                    <div class="dropdown">
-                        <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
-                            Add New Card
-                        </button>
-                        <div class="dropdown-menu">
-                            <a class="dropdown-item" href="#">1234**********9856</a>
-                            <a class="dropdown-item" href="#">1356********56897</a>
-                        </div>
-                    </div>
+{{--                    <div class="dropdown">--}}
+{{--                        <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">--}}
+{{--                            Add New Card--}}
+{{--                        </button>--}}
+{{--                        <div class="dropdown-menu">--}}
+{{--                            <a class="dropdown-item" href="#">1234**********9856</a>--}}
+{{--                            <a class="dropdown-item" href="#">1356********56897</a>--}}
+{{--                        </div>--}}
+{{--                    </div>--}}
                     <p>
-                        I Agree to <a href="">Term & Condition Privacy</a>
+                        <input type="checkbox" id="privacy">
+                        I Agree to <a href="privacy-policy">Term & Condition Privacy</a>
                         and
                         <a href="">Refund Priacy</a>
                     </p>
@@ -100,30 +101,35 @@
     <script>
         $('#checkout').click(function () {
             console.log('Here in click function');
-            // $(this).attr('disabled','true');
-            $.ajax({
-                url: "{{route('transaction.create',encrypt($package->id))}}",
-                method: 'GET',
-                // data: {query: query, country: country},
-                dataType: 'json',
-                success: function (data) {
-                    $(this).removeAttr('disabled');
-                    if(data.success == true) {
-                        $('#telr').attr('src',data.order_url);
-                        $('#payment_modal').modal('show');
-                        $(this).attr('disabled','false');
+            if($('#privacy').prop("checked") == true){
+                $(this).attr('disabled','true');
+                $.ajax({
+                    url: "{{route('transaction.create',encrypt($package->id))}}",
+                    method: 'GET',
+                    // data: {query: query, country: country},
+                    dataType: 'json',
+                    success: function (data) {
+                        $(this).removeAttr('disabled');
+                        if(data.success == true) {
+                            $('#telr').attr('src',data.order_url);
+                            $('#payment_modal').modal('show');
+                            $(this).removeAttr('disabled');
+                        }
+                        else{
+                            // console.log(data);
+                            alert('Server is busy,try again');
+                            window.location.reload();
+                        }
+                    },
+                    error:function (){
+                        alert('Server is busy,try again');
+                        window.location.reload();
                     }
-                    else{
-                        console.log(data);
-                        // alert('Server is busy,try again');
-                        // window.location.reload();
-                    }
-                },
-                error:function (){
-                    alert('Server is busy,try again');
-                    window.location.reload();
-                }
-            });
+                });
+            }else {
+                console.log('Unchecked privacy');
+            }
+
         });
     </script>
 @endsection
