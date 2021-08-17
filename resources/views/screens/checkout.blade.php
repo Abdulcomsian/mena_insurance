@@ -114,8 +114,9 @@
                         $(this).attr('disabled','false');
                     }
                     else{
-                        alert('Server is busy,try again');
-                        window.location.reload();
+                        console.log(data);
+                        // alert('Server is busy,try again');
+                        // window.location.reload();
                     }
                 },
                 error:function (){

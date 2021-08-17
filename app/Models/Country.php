@@ -10,7 +10,7 @@ use Illuminate\Database\Eloquent\Model;
 
 /**
  * Class Country
- * 
+ *
  * @property int $id
  * @property string $country_name
  * @property int $PhoneCode
@@ -20,7 +20,6 @@ use Illuminate\Database\Eloquent\Model;
 class Country extends Model
 {
 	protected $table = 'countries';
-	public $timestamps = false;
 
 	protected $casts = [
 		'PhoneCode' => 'int'
@@ -28,6 +27,7 @@ class Country extends Model
 
 	protected $fillable = [
 		'country_name',
-		'PhoneCode'
+		'phone_code',
+		'country_code',
 	];
 }

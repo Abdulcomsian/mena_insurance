@@ -25,6 +25,7 @@ class TransactionController extends Controller
     public function create($id){
         try{
             $package = Package::where('id',decrypt($id))->first();
+            $username = explode(" ",Auth::user()->name,2);
             $params = array(
                 'ivp_method' => 'create',
                 'ivp_store' => env('IVP_STORE_ID'),
@@ -36,7 +37,13 @@ class TransactionController extends Controller
                 'ivp_desc' => 'Not Set',
                 'ivp_framed' => 1,
                 'bill_custref' => Auth::id(), //Using for storing cards
-//                'return_auth' => url('/').'/transaction-success',
+                'bill_fname' => $username[0],
+                'bill_sname' => $username[1] ? $username[1] : 'Not Set',
+                'bill_addr1' => Auth::user()->address,
+                'bill_phone' => Auth::user()->mobile_number,
+                'bill_city' => Auth::user()->city ?? null,
+                'bill_country' => Auth::user()->country->country_code,
+                'bill_email' => Auth::user()->email,
                 'return_auth' => url('/').'/transaction-success-loading',
                 'return_can' => url('/').'/transaction-cancel-loading',
                 'return_decl' => url('/').'/transaction-decline-loading'
@@ -182,6 +189,7 @@ class TransactionController extends Controller
             'card_last4' => $transaction->order->card->last4 ?? null,
             'card_first6' => $transaction->order->card->first6 ?? null,
             'card_type' => $transaction->order->card->type ?? null,
+            'trx_reference' => $transaction->order->transaction->ref ?? null,
             'user_id' => Auth::id() ?? null,
             'package_id' =>  $package_id ?? null
         ]);
