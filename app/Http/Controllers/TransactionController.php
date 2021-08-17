@@ -19,9 +19,18 @@ class TransactionController extends Controller
 {
     public function __construct()
     {
-//        $this->middleware(['auth','verified']);
+        $this->middleware(['auth','verified']);
     }
-
+    public function showCards(){
+        try {
+            $cards = Transaction::select('card_last4','card_first6','card_type')
+                ->distinct()
+                ->get();
+            return view('screens.add-card',compact('cards'));
+        }catch (\Exception $exception){
+            toastError('Something went wrong, try later');
+        }
+    }
     public function create($id){
         try{
             $package = Package::where('id',decrypt($id))->first();

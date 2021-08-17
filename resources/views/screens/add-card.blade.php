@@ -18,7 +18,7 @@
                   <a href="{{url('history')}}" class="nav-link " > <img src="assets/img/Icons/Icon material-favorite-border - off.png" alt="" class="img-fluid"><span><i class="fa fa-history" aria-hidden="true"></i> Billing History </span> </a>
                </li>
                <li class="nav-item">
-                  <a href="{{url('payment')}}" class="nav-link active" > <img src="assets/img/Icons/Icon material-history - off.png" alt="" class="img-fluid"><span><i class="fa fa-id-card-o" aria-hidden="true"></i> Add Payment Method</span> </a>
+                  <a href="{{url('payment')}}" class="nav-link active" > <img src="assets/img/Icons/Icon material-history - off.png" alt="" class="img-fluid"><span><i class="fa fa-id-card-o" aria-hidden="true"></i> Payment Method</span> </a>
                </li>
             </ul>
     </div>
@@ -152,7 +152,7 @@
                               <td>1 - July - 2021</td>
                               <td>Gold</td>
                               <td>AED 10</td>
-                              
+
                         </tr>
                         <tr>
                               <td>002</td>
@@ -177,36 +177,30 @@
          <div class="content-div">
             <button class="open-sidebar"><i class="fa fa-bars" aria-hidden="true"></i></button>
                <h3>Payment Method</h3>
-               <button data-toggle="modal" data-target="#addCardModal" class="addCadBtn">Add Card</button>
+{{--               <button data-toggle="modal" data-target="#addCardModal" class="addCadBtn">Add Card</button>--}}
                <div class="table-div table-responsive">
                     <table id="payment_table" class="display">
                      <thead>
                         <tr>
-                              <th>Bank Name</th>
+                              <th>Card Type</th>
                               <th>Card Number</th>
-                              <th>Date</th>
-                              <th>Action</th>
+{{--                              <th>Action</th>--}}
                         </tr>
                      </thead>
                      <tbody>
+                     @foreach($cards as $item)
                         <tr>
-                              <td>Bank Islami</td>
-                              <td>**** **** **** 1157</td>
-                              <td>1 - July - 2021</td>
-                              <td data-toggle="modal" data-target="#deleteCard" class="removeText">Remove</td>
+                              <td>{{$item->card_type}}</td>
+                              <td>{{trim(chunk_split(strrev($item->card_first6),4,' '))}}** **** {{$item->card_last4}}</td>
+{{--                              <td data-toggle="modal" data-target="#deleteCard" class="removeText">Remove</td>--}}
                         </tr>
-                        <tr>
-                              <td>Alfalah Bank</td>
-                              <td>**** **** **** 1157</td>
-                              <td>1 - July - 2021</td>
-                              <td data-toggle="modal" data-target="#deleteCard" class="removeText">Remove</td>
-                        </tr>
+                     @endforeach
                      </tbody>
                   </table>
                </div>
             </div>
       </div>
     </div>
-   
+
 </section>
 @endsection

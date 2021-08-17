@@ -178,7 +178,7 @@
          <div class="content-div">
             <button class="open-sidebar"><i class="fa fa-bars" aria-hidden="true"></i></button>
                <h3>Payment Method</h3>
-               <button data-toggle="modal" data-target="#addCardModal" class="addCadBtn">Add Card</button>
+{{--               <button data-toggle="modal" data-target="#addCardModal" class="addCadBtn">Add Card</button>--}}
                <div class="table-div table-responsive">
                     <table id="payment_table" class="display">
                      <thead>
@@ -186,7 +186,7 @@
                               <th>Bank Name</th>
                               <th>Card Number</th>
                               <th>Date</th>
-                              <th>Action</th>
+{{--                              <th>Action</th>--}}
                         </tr>
                      </thead>
                      <tbody>
@@ -194,13 +194,13 @@
                               <td>Bank Islami</td>
                               <td>**** **** **** 1157</td>
                               <td>1 - July - 2021</td>
-                              <td data-toggle="modal" data-target="#deleteCard" class="removeText">Remove</td>
+{{--                              <td data-toggle="modal" data-target="#deleteCard" class="removeText">Remove</td>--}}
                         </tr>
                         <tr>
                               <td>Alfalah Bank</td>
                               <td>**** **** **** 1157</td>
                               <td>1 - July - 2021</td>
-                              <td data-toggle="modal" data-target="#deleteCard" class="removeText">Remove</td>
+{{--                              <td data-toggle="modal" data-target="#deleteCard" class="removeText">Remove</td>--}}
                         </tr>
                      </tbody>
                   </table>

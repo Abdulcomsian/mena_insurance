@@ -21,14 +21,7 @@ Route::get('/contact', function () {
 Route::get('/about', function () {
     return view('screens.about');
 });
-// Route::get('/login2', function () {
-//     return view('screens.login');
-// });
-// Route::get('/registers', function () {
-//     //$countries = Countries::all();
-//     $countries = ["Pakistna", "India", "China"];
-//     return view('auth.register')->with("countries", $countries);
-// });
+
 Route::get('/forgot', function () {
     return view('screens.forgot');
 });
@@ -58,9 +51,9 @@ Route::post('account-update/{id}', 'userpagesController@update_account')->name('
 //});
 Route::get('history', 'userpagesController@history')->name('history');
 
-Route::get('/payment', function () {
-    return view('screens.add-card');
-});
+//Route::get('/payment', function () {
+//    return view('screens.add-card');
+//});
 
 Auth::routes(['verify' => true]);
 
@@ -77,6 +70,8 @@ Route::view('transaction-cancel-loading','screens.transaction-cancel-loading');
 Route::get('transaction-success','TransactionController@success')->name('transaction.success');
 Route::get('transaction-decline','TransactionController@decline')->name('transaction.decline');
 Route::get('transaction-cancel','TransactionController@cancel')->name('transaction.cancel');
+//Show payment cards list
+Route::get('/payment','TransactionController@showCards')->name('transaction.payment.cards');
 
 Route::view('cancel-payment','screens.payment-cancel');
 Route::view('decline-payment','screens.payment-decline');
