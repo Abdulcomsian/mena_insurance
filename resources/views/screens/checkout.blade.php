@@ -75,12 +75,11 @@
                         </div>
                     </div>
                     <p>
-                        i Agree to <a href="">Term & Condition Privacy</a>
+                        I Agree to <a href="">Term & Condition Privacy</a>
                         and
                         <a href="">Refund Priacy</a>
                     </p>
                         <button id="checkout">Proceed to Checkout</button>
-
                 </div>
             </div>
         </div>
@@ -101,7 +100,7 @@
     <script>
         $('#checkout').click(function () {
             console.log('Here in click function');
-            $(this).attr('disabled','true');
+            // $(this).attr('disabled','true');
             $.ajax({
                 url: "{{route('transaction.create',encrypt($package->id))}}",
                 method: 'GET',

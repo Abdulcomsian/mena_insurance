@@ -95,6 +95,7 @@
 <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.js"></script> -->
 <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.25/js/jquery.dataTables.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+@yield('script')
 <script>
  $(document).on('keyup', '#search', function(){
         var query = $('#search').val();
@@ -199,6 +200,6 @@
 //       config
 //     );
 
-   
-   
+
+
 </script>

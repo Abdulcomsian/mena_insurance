@@ -35,6 +35,7 @@ class TransactionController extends Controller
                 'ivp_currency' => 'AED',
                 'ivp_desc' => 'Not Set',
                 'ivp_framed' => 1,
+                'bill_custref' => Auth::id(), //Using for storing cards
 //                'return_auth' => url('/').'/transaction-success',
                 'return_auth' => url('/').'/transaction-success-loading',
                 'return_can' => url('/').'/transaction-cancel-loading',
