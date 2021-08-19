@@ -9,6 +9,36 @@ use Illuminate\Support\Facades\DB;
 
 class CompanyDetailController extends Controller
 {
+    public function searchAll(){
+        $countries = CountryInformation::select('country_name')
+            ->orderby('country_name','asc')
+            ->get();
+        return view('screens.search-all-companies',compact('countries'));
+
+    }
+
+    public function searchAllResult(Request $request){
+        if ($request->has('country')){
+            $companies = DB::table('company_detail')
+                ->select('id', 'country', 'company_name', 'company_type','company_website')
+                ->whereIn('country', $request['country'])
+                ->orderby('company_name','asc')
+                ->get();
+        }else{
+            $companies = [];
+        }
+
+        $request = $request->all();
+        $countries = CountryInformation::select('country_name')
+            ->orderby('country_name','asc')
+            ->get();
+        return view('screens.search-all-companies',compact('countries',
+            'companies',
+            'request'
+        ));
+
+    }
+
     public function liveSearch(Request $request){
         try{
             if ($request->country == 'All'){
