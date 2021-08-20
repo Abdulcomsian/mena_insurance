@@ -966,7 +966,7 @@ button.open-sidebar{
     float: right;
     color: grey;
   }
-  
+
  .accordion .card-header .btn[aria-expanded="true"]:after {
     content: "\f106";
   }
@@ -1035,7 +1035,7 @@ button.open-sidebar{
 .companies-search-div .tabDiv .nav-pills .nav-link{
     color: rgb(118, 118, 118);
 }
-.companies-search-div .tabDiv .nav-pills .nav-link.active, 
+.companies-search-div .tabDiv .nav-pills .nav-link.active,
 .companies-search-div .tabDiv .nav-pills .show>.nav-link{
     color: #2e953e !important;
     background-color: transparent !important;
@@ -1085,7 +1085,7 @@ button.open-sidebar{
 #sanctionModal .directorDiv .checkDiv .checkBoxDiv{
     width: 50%;
 }
-  
+
 /**************** Media - Query - CSS *****************/
 @media only screen and (max-width: 1200px) {
     .side-bar ul>li a{

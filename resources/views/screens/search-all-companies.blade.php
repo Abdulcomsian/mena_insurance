@@ -87,26 +87,16 @@
                                 </div>
                             </li>
                             <li class="geographyType">Geography <a href=""><i class="fa fa-chevron-right" aria-hidden="true"></i></a>
-                                <div class="geographyDropDwown">
-                                    <form action="">
+                                <div class="geographyDropDwown" @if(count($companies) > 0) style="display: block" @endif>
+                                    <form action="{{route('companydetail.search.result')}}" id="form">
                                         <ul>
                                             <li>
-                                                <div class="inputDiv">
-                                                    <p>TURKEY</p>
-                                                    <input type="checkbox" name="TURKEY" id="">
-                                                </div>
-                                                <div class="inputDiv">
-                                                    <p>UNITED ARAB EMIRATES(UAE)</p>
-                                                    <input type="checkbox" name="UNITED ARAB EMIRATES(UAE)" id="">
-                                                </div>
-                                                <div class="inputDiv">
-                                                    <p>LEBANON</p>
-                                                    <input type="checkbox" name="LEBANON" id="">
-                                                </div>
-                                                <div class="inputDiv">
-                                                    <p>EGYPT</p>
-                                                    <input type="checkbox" name="EGYPT" id="">
-                                                </div>
+                                                @foreach($countries as $item)
+                                                    <div class="inputDiv">
+                                                        <p>{{$item->country_name}}</p>
+                                                        <input type="checkbox" @isset($request['country']) {{ in_array($item->country_name,$request['country']) ? 'checked' : '' }} @endisset name="country[]" class="checkbox" value="{{$item->country_name}}">
+                                                    </div>
+                                                @endforeach
                                             </li>
                                         </ul>
                                     </form>
@@ -140,27 +130,18 @@
                         <div class="right-side commonDiv">
                         <div class="tab-content">
                             <div id="Companies" class="home container tab-pane active">
-                                
+                                @if(count($companies) > 0 )
+                                    @foreach($companies as $item)
                                     <div class="company-div">
-                                        <a href="">
-                                            <h4>Yemen General Insurance Co. (SYC)</h4>
-                                            <p>http://www.yginsurance.com/ • Joint Stock Company • YEMEN</p>
+                                        <a href="company_detail/{{$item->id}}">
+                                            <h4>{{$item->company_name}}</h4>
+                                            <p>{{$item->company_website ? $item->company_website . ' • ' : ''}}{{$item->company_type ? $item->company_type . ' • ' : '' }}{{$item->country ? $item->country . ' • ' : '' }}</p>
                                         </a>
                                     </div>
-                                    <div class="company-div">
-                                        <a href="">
-                                            <h4>Yemen General Insurance Co. (SYC)</h4>
-                                            <p>http://www.yginsurance.com/ • Joint Stock Company • YEMEN</p>
-                                        </a>
-                                    </div>
-                                    <div class="company-div">
-                                        <a href="">
-                                            <h4>Yemen General Insurance Co. (SYC)</h4>
-                                            <p>http://www.yginsurance.com/ • Joint Stock Company • YEMEN</p>
-                                        </a>
-                                    </div>
-                               
-                                
+                                    @endforeach
+                                @else
+                                   <p>No Result Found</p>
+                                @endif
                             </div>
                             <div id="People" class="home container tab-pane fade">
                             <div class="company-div">
@@ -189,4 +170,15 @@
         </div>
     </div>
 </section>
+@endsection
+@section('script')
+    
+    <script type="text/javascript">
+        $(function(){
+            $('.checkbox').on('change',function(){
+                $('#form').submit();
+            });
+        });
+    </script>
+
 @endsection

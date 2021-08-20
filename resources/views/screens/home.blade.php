@@ -31,7 +31,9 @@
 
                         </ul>
                     </div>
-                    <button>Search</button>
+                    <a href="{{route('companydetail.search.all')}}" class="btn btn-success mt-3">
+                        <buttonw>Search</buttonw>
+                    </a>
                 </form>
             </div>
         </div>
