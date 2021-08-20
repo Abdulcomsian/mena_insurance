@@ -87,7 +87,7 @@
                                 </div>
                             </li>
                             <li class="geographyType">Geography <a href=""><i class="fa fa-chevron-right" aria-hidden="true"></i></a>
-                                <div class="geographyDropDwown" @if(count($companies) > 0) style="display: block" @endif>
+                                <div class="geographyDropDwown" @isset($companies) style="display: block" @endisset>
                                     <form action="{{route('companydetail.search.result')}}" id="form">
                                         <ul>
                                             <li>
@@ -130,7 +130,7 @@
                         <div class="right-side commonDiv">
                         <div class="tab-content">
                             <div id="Companies" class="home container tab-pane active">
-                                @if(count($companies) > 0 )
+                                @isset($companies)
                                     @foreach($companies as $item)
                                     <div class="company-div">
                                         <a href="company_detail/{{$item->id}}">
@@ -141,7 +141,7 @@
                                     @endforeach
                                 @else
                                    <p>No Result Found</p>
-                                @endif
+                                @endisset
                             </div>
                             <div id="People" class="home container tab-pane fade">
                             <div class="company-div">
@@ -172,7 +172,6 @@
 </section>
 @endsection
 @section('script')
-    
     <script type="text/javascript">
         $(function(){
             $('.checkbox').on('change',function(){
