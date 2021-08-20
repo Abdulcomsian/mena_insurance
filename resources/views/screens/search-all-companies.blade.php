@@ -172,6 +172,7 @@
 </section>
 @endsection
 @section('script')
+    
     <script type="text/javascript">
         $(function(){
             $('.checkbox').on('change',function(){
@@ -179,4 +180,5 @@
             });
         });
     </script>
+
 @endsection
