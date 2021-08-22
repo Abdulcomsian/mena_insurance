@@ -6,7 +6,7 @@
 @section('content')
 <section id="subscription-section" class="common-section">
     <div class="side-bar">
-    <button class="open-sidebar"><i class="fa fa-arrow-left" aria-hidden="true"></i></i></button>
+    <button class="open-sidebar"><i class="fa fa-arrow-left" aria-hidden="true"></i></button>
     <ul class="nav nav-pills" role="tablist">
                <li class="nav-item">
                   <a class="nav-link "  href="{{url('subscription')}}"><img src="assets/img/Icons/Icon feather-home - off.png" alt="" class="img-fluid"><span><i class="fa fa-money" aria-hidden="true"></i> My Packages</span> </a>
@@ -18,7 +18,7 @@
                   <a href="{{url('history')}}" class="nav-link " > <img src="assets/img/Icons/Icon material-favorite-border - off.png" alt="" class="img-fluid"><span><i class="fa fa-history" aria-hidden="true"></i> Billing History</span> </a>
                </li>
                <li class="nav-item">
-                  <a href="{{url('payment')}}" class="nav-link " > <img src="assets/img/Icons/Icon material-history - off.png" alt="" class="img-fluid"><span><i class="fa fa-id-card-o" aria-hidden="true"></i> Add Payment Method</span> </a>
+                  <a href="{{url('payment')}}" class="nav-link " > <img src="assets/img/Icons/Icon material-history - off.png" alt="" class="img-fluid"><span><i class="fa fa-id-card-o" aria-hidden="true"></i> Payment Method</span> </a>
                </li>
             </ul>
     </div>

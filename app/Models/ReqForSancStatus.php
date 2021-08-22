@@ -10,7 +10,7 @@ use Illuminate\Database\Eloquent\Model;
 
 /**
  * Class ReqForSancStatus
- * 
+ *
  * @property int $id
  * @property string|null $comment
  * @property int $company_id
@@ -25,8 +25,6 @@ use Illuminate\Database\Eloquent\Model;
 class ReqForSancStatus extends Model
 {
 	protected $table = 'req_for_sanc_status';
-	public $incrementing = false;
-	public $timestamps = false;
 
 	protected $casts = [
 		'id' => 'int',
@@ -35,12 +33,11 @@ class ReqForSancStatus extends Model
 	];
 
 	protected $fillable = [
-		'comment',
+		'comments',
 		'company_id',
-		'email_id',
-		'mobile_number',
-		'reason',
 		'user_id',
-		'name'
+		'sanctions_type',
+        'status',
+		'board_of_directors',
 	];
 }

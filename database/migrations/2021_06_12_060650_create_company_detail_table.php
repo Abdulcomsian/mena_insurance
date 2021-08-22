@@ -14,7 +14,7 @@ class CreateCompanyDetailTable extends Migration
     public function up()
     {
         Schema::create('company_detail', function (Blueprint $table) {
-            $table->bigInteger('id')->primary();
+            $table->id();
             $table->string('created_by', 50);
             $table->dateTime('created_date', 6)->nullable();
             $table->string('last_modified_by', 50)->nullable();

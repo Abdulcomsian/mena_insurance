@@ -16,7 +16,9 @@ class Subscription extends Model
         'status',
         'user_id',
         'package_id',
-        'sanctions_balance',
+        'total_sanctions',
+        'remaining_sanctions',
+        'used_sanctions',
     ];
 
     public function user(){
