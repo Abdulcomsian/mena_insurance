@@ -62,6 +62,8 @@ Route::get('/home', 'HomeController@index')->name('home');
 //By Assad Yaqoob
 Route::get('live_search', 'CompanyDetailController@liveSearch')->name('live_search');
 Route::get('company_detail/{id}','CompanyDetailController@show')->name('companydetail.show');
+Route::get('getDirectors','CompanyDetailController@getDirectors')->name('getDirectors');
+Route::post('sanction/request','CompanyDetailController@sanctionRequest')->name('companydetail.request');
 Route::get('/search-all-by-countries','CompanyDetailController@searchAll')->name('companydetail.search.all');
 Route::get('/search-all','CompanyDetailController@searchAllResult')->name('companydetail.search.result');
 

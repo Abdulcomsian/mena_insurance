@@ -124,7 +124,8 @@ class TransactionController extends Controller
                     'package_name' => $package->name,
                     'price' => $package->price,
                     'status' => SubscriptionStatus::Approved,
-                    'sanctions_balance' => $package->sanctions + $sub->sanctions_balance,
+                    'remaining_sanctions' => $package->sanctions + $sub->remaining_sanctions,
+                    'total_sanctions' => $package->sanctions + $sub->total_sanctions,
                 ]);
             }else{
                 Subscription::create([
@@ -133,7 +134,8 @@ class TransactionController extends Controller
                     'price' => $package->price,
                     'status' => SubscriptionStatus::Approved,
                     'user_id' => Auth::id(),
-                    'sanctions_balance' => $package->sanctions,
+                    'remaining_sanctions' => $package->sanctions,
+                    'total_sanctions' => $package->sanctions,
                 ]);
             }
 

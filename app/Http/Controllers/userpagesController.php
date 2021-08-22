@@ -54,7 +54,6 @@ class userpagesController extends Controller
             toastr()->success('Profile Updated Successfully!');
             return redirect()->route('account');//->with('success','Profile Updated Successfully!');
         }catch (\Exception $exception){
-            dd($exception->getMessage());
             toastr()->error('System is busy, try again');
             return redirect()->route('account');//->with('danger','Something went wrong');
         }

@@ -18,7 +18,7 @@
                   <a href="{{url('history')}}" class="nav-link" > <img src="assets/img/Icons/Icon material-favorite-border - off.png" alt="" class="img-fluid"><span><i class="fa fa-history" aria-hidden="true"></i> Billing History</span> </a>
                </li>
                <li class="nav-item">
-                  <a href="{{url('payment')}}" class="nav-link" > <img src="assets/img/Icons/Icon material-history - off.png" alt="" class="img-fluid"><span><i class="fa fa-id-card-o" aria-hidden="true"></i> Add Payment Method</span> </a>
+                  <a href="{{url('payment')}}" class="nav-link" > <img src="assets/img/Icons/Icon material-history - off.png" alt="" class="img-fluid"><span><i class="fa fa-id-card-o" aria-hidden="true"></i> Payment Method</span> </a>
                </li>
             </ul>
     </div>
@@ -30,7 +30,7 @@
                <h3>My Packages</h3>
                <a href="/"><button>Purchase Package</button></a>
             </div>
-           
+
             <div class="table-div table-responsive">
                <table id="subscription_table" class="display">
                   <thead>
@@ -40,7 +40,9 @@
                            <th>Package Name</th>
                            <th>Amount</th>
                            <th>Status</th>
-                           <th>Balance Available</th>
+                           <th>Used Sanctions</th>
+                           <th>Remaining Sanctions</th>
+                           <th>Total Sanctions</th>
                      </tr>
                   </thead>
                   <tbody>
@@ -53,7 +55,9 @@
                            <td>
                                 <span class="{{strtolower($subscription->status)}}  ?: ''">{{$subscription->status  ?: '-'}}</span>
                            </td>
-                           <td>{{$subscription->sanctions_balance ?: '-'}}</td>
+                         <td>{{$subscription->used_sanctions ?: '0'}}</td>
+                         <td>{{$subscription->remaining_sanctions ?: '0'}}</td>
+                         <td>{{$subscription->total_sanctions ?: '0'}}</td>
                      </tr>
                   @else
                       <tr><td>No Subscription Found</td></tr>

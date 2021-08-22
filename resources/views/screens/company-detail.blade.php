@@ -165,8 +165,11 @@
                                                 </div>
 
                                             </div>
-                                            <button style="color:#fff;">Sanction Status</button>
-                                        </div>
+                                            @if($already_request_for_sanction == true)
+                                                <button style="color:#fff;">Sanction Status Requested In Progress</button>
+                                            @else
+                                                <button data-toggle="modal" id="sanction" data-target="#sanctionModal" style="color:#fff;">Sanction Status</button>
+                                            @endif                                        </div>
                                     </div>
                                 </div>
                                 <div class="card">
@@ -304,7 +307,15 @@
                                 </div>
                             </div>
                         </div>
-                        <button data-toggle="modal" data-target="#sanctionModal" style="color:#fff;">Sanction Status</button>
+                        @auth
+                            @if($already_request_for_sanction == true)
+                                <button style="color:#fff;">Sanction Status Requested In Progress</button>
+                            @else
+                                <button data-toggle="modal" id="sanction" data-target="#sanctionModal" style="color:#fff;">Sanction Status</button>
+                            @endif
+                        @else
+                            <button data-toggle="modal" data-target="#orderModal">Sanction Status</button>
+                        @endauth
                     </div>
                 </div>
             </div>
@@ -312,5 +323,106 @@
     </div>
 </section>
 
+@auth
+    <!-- Modal -->
+
+    <div class="modal fade" id="sanctionModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Sanction Types Search</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <form action="{{route('companydetail.request')}}" method="post">
+                    @csrf
+                    <input hidden value="{{$company_detail->id}}" name="company_id" id="company_id"/>
+                    <div class="modal-body">
+                        <div class="radioBtn">
+                            <input type="radio" id="{{\App\Utils\SanctionsType::Searchcompany}}" name="sanctions_type" value="{{\App\Utils\SanctionsType::Searchcompany}}">
+                                  <label for="{{\App\Utils\SanctionsType::Searchcompany}}">{{\App\Utils\SanctionsType::Searchcompany}}</label><br>
+                        </div>
+                        <div class="radioBtn">
+                            <input type="radio" id="{{\App\Utils\SanctionsType::FullcompanywithBoardsofDirector}}" name="sanctions_type" value="{{\App\Utils\SanctionsType::FullcompanywithBoardsofDirector}}">
+                                  <label for="{{\App\Utils\SanctionsType::FullcompanywithBoardsofDirector}}">{{\App\Utils\SanctionsType::FullcompanywithBoardsofDirector}}</label><br>
+                        </div>
+                        <div class="radioBtn">
+                            <input type="radio" id="{{\App\Utils\SanctionsType::CompanywithselectedBoardsofDirector}}" name="sanctions_type" value="{{\App\Utils\SanctionsType::CompanywithselectedBoardsofDirector}}" class="directorshow">
+                                  <label for="{{\App\Utils\SanctionsType::CompanywithselectedBoardsofDirector}}">{{\App\Utils\SanctionsType::CompanywithselectedBoardsofDirector}}</label><br>
+                        </div>
+                        <div class="directorDiv">
+                            <div class="checkDiv" id="data">
+                            </div>
+                            <textarea name="comments" id="" cols="30" rows="5" placeholder="Addtional Comments"></textarea>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+{{--                        <button type="submit" class="btn btn-primary" data-dismiss="modal">Seacrh</button>--}}
+                        <button type="submit" class="btn btn-primary">Seacrh</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+@else
+    <!-- Modal -->
+    <div class="modal fade" id="orderModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+
+                <div class="modal-body">
+                    <i class="fa fa-exclamation-triangle" aria-hidden="true"></i>
+                    <p>Mena Insurance,<br> Please sign up <b>or</b> Login to place an Order</p>
+                </div>
+                <div class="modal-footer">
+                    <a href="/login"><button type="button" class="btn btn-secondary">Login</button></a>
+                    <a href="/register"><button type="button" class="btn btn-secondary">Register</button></a>
+                </div>
+            </div>
+        </div>
+    </div>
+@endauth
+
+@endsection
+@section('script')
+    <script>
+        $(document).on('click', '#sanction', function(){
+            console.log('Here in fun');
+            var company_id = $('#company_id').val();
+            console.log(company_id);
+            if (company_id) {
+                $.ajax({
+                    url: "{{ route('getDirectors') }}",
+                    method: 'GET',
+                    data: {company_id: company_id},
+                    dataType: 'json',
+                    success: function (data) {
+                        console.log('data');
+                        console.log(data);
+                        $('#data').empty();
+                        if(data.length > 0) {
+                            $.each(data, function (index, item) {
+                                $('#data').append(`<div class="checkBoxDiv">
+                                                        <input type="checkbox" name="board_of_directors[]" value="${item.id}">
+                                                        <label for="">${item.designation +' '+ item.name}</label>
+                                                    </div>`)
+                            });
+                        }
+                        else{
+                            $('#data').append(`<div class="checkBoxDiv d-flex">
+                                                    <p>Board of director not exist</p>
+                                                    </div>`)
+                        }
+                    },
+                    error:function (){
+                        $('#data').empty();
+                    }
+                })
+            }else {
+                $('#data').empty();
+            }
+        });
+    </script>
 @endsection
 
