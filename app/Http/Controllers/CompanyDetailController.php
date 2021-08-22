@@ -66,20 +66,20 @@ class CompanyDetailController extends Controller
                         self::saveSanctionRequest($all_fields,$total_sanctions,$sub);
                     }else{
                         toastInfo('Your do not have sufficient sanctions to perform this operation, buy more sanctions !');
+                        return back();
                     }
                 }
                 elseif ($all_fields['sanctions_type'] == SanctionsType::FullcompanywithBoardsofDirector){
                     //Count all board of directors for this company
                     $directors_list = BoardOfDirector::where('company_id',$request->company_id)
-                        ->select('id')
-                        ->count();
-
-                    $total_sanctions = $directors_list+1; //Add 1 for company search
-
+                        ->pluck('id');
+                    $total_sanctions = count($directors_list)+1; //Add 1 for company search
                     if ($sub->remaining_sanctions >= $total_sanctions){
+                        $all_fields['board_of_directors'] = json_encode($directors_list);
                         self::saveSanctionRequest($all_fields,$total_sanctions,$sub);
                     }else{
                         toastInfo('Your do not have sufficient sanctions to perform this operation, buy more sanctions !');
+                        return back();
                     }
                 }
                 elseif ($all_fields['sanctions_type'] == SanctionsType::CompanywithselectedBoardsofDirector){
@@ -90,6 +90,7 @@ class CompanyDetailController extends Controller
                         self::saveSanctionRequest($all_fields,$total_sanctions,$sub);
                     }else{
                         toastInfo('Your do not have sufficient sanctions to perform this operation, buy more sanctions !');
+                        return back();
                     }
                 }
 
@@ -97,6 +98,7 @@ class CompanyDetailController extends Controller
                 return back();
             }else{
                 toastInfo('You do not have sufficient sanctions to perform this operation, buy sanctions !');
+                return back();
             }
         }catch (\Exception $exception){
             dd($exception->getMessage());
