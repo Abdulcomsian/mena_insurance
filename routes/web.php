@@ -36,24 +36,11 @@ Route::get('/search', function () {
 Route::get('/search-all', function () {
     return view('screens.search-all-companies');
 });
-// Route::get('/subcription', function () {
-//     return view('screens.subscription');
-// });
+
 Route::get('subscription', 'userpagesController@subcription')->name('subscription');
 Route::get('account', 'userpagesController@account')->name('account');
 Route::post('account-update/{id}', 'userpagesController@update_account')->name('update_account');
-
-// Route::get('account', function () {
-//     return view('screens.account-setting');
-// });
-//Route::get('/history', function () {
-//    return view('screens.renewal-history');
-//});
 Route::get('history', 'userpagesController@history')->name('history');
-
-//Route::get('/payment', function () {
-//    return view('screens.add-card');
-//});
 
 Auth::routes(['verify' => true]);
 
@@ -65,7 +52,7 @@ Route::get('company_detail/{id}','CompanyDetailController@show')->name('companyd
 Route::get('getDirectors','CompanyDetailController@getDirectors')->name('getDirectors');
 Route::post('sanction/request','CompanyDetailController@sanctionRequest')->name('companydetail.request');
 //Route::get('/search-all-by-countries','CompanyDetailController@searchAll')->name('companydetail.search.all');
-Route::get('/search-all','CompanyDetailController@searchAllResult')->name('companydetail.search.result');
+Route::get('search-all','CompanyDetailController@searchAllResult')->name('companydetail.search.result');
 
 Route::get('transaction-create/{id}','TransactionController@create')->name('transaction.create');
 Route::view('transaction-success-loading','screens.transaction-success-loading');

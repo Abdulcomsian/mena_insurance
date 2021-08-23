@@ -20,8 +20,12 @@ class userpagesController extends Controller
     public function subcription()
     {
         $user_id = Auth::user()->id;
-         $subscription = Subscription::where('user_id', '=', $user_id)->first();
-        return view('screens.subscription', compact("subscription"));
+        $subscription = Subscription::where('user_id', '=', $user_id)->first();
+        $transactions = Transaction::with('package')
+            ->where('user_id',Auth::id())
+            ->where('status','Paid')
+            ->orderby('id','desc')->get();
+        return view('screens.subscription', compact("subscription","transactions"));
     }
 
     public function account()

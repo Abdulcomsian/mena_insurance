@@ -114,7 +114,7 @@
                         <div class="col-lg-6 col-md-6">
                            <div class="inputDiv">
 
-                              <input type="password" required autocomplete="off" class="form-control  @error('password') is-invalid @enderror"  name="password" placeholder="Password">
+                              <input type="password" autocomplete="off" class="form-control  @error('password') is-invalid @enderror"  name="password" placeholder="Password">
                                @error('password')
                                <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
@@ -124,7 +124,7 @@
                         </div>
                         <div class="col-lg-6 col-md-6">
                            <div class="inputDiv">
-                              <input type="password" required autocomplete="off" class="form-control" name="password_confirmation" placeholder="Confirm Password">
+                              <input type="password" autocomplete="off" class="form-control" name="password_confirmation" placeholder="Confirm Password">
                            </div>
                         </div>
                         <div class="col-lg-12">
