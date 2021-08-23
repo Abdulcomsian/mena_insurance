@@ -96,7 +96,7 @@
                                         @if(count($peoples) > 0 )
                                             @foreach($peoples as $people)
                                                 <div class="company-div">
-                                                    <a href="">
+                                                    <a href="company_detail/{{$people->company_id}}">
                                                         <h4>{{trim($people->name)}}</h4>
                                                         <p><b>{{$people->designation}}</b> <i> {{' at '. $people->company_name }} </i> <b>{{ $people->country}}</b></p>
                                                     </a>
