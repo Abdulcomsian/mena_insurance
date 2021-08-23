@@ -18,22 +18,30 @@ class CompanyDetailController extends Controller
 {
     public function __construct()
     {
-        $this->middleware(['auth','verified'],['except' => ['liveSearch','show']]);
+        $this->middleware(['auth','verified'],['except' => ['liveSearch','show','searchAllResult','searchAll']]);
     }
 
     public function searchAll(){
         $countries = CountryInformation::select('country_name')
             ->orderby('country_name','asc')
             ->get();
-        return view('screens.search-all-companies',compact('countries'));
+        $companies = DB::table('company_detail')
+            ->select('id', 'country', 'company_name', 'company_type','company_website')
+            ->orderby('country','asc')
+            ->paginate(30);
+
+        return view('screens.search-all-companies',compact('countries','companies'));
 
     }
+
     private function saveSanctionRequest($all_fields,$total_sanctions,$sub){
         $sub['remaining_sanctions'] = $sub->remaining_sanctions - $total_sanctions;
         $sub['used_sanctions'] = $sub->used_sanctions + $total_sanctions;
         $sub->save();
         ReqForSancStatus::create($all_fields);
     }
+
+    //Sanction request from user
     public function sanctionRequest(Request $request){
         $validator = Validator::make($request->all(), [
             'company_id' => 'required|exists:company_detail,id',
@@ -101,13 +109,13 @@ class CompanyDetailController extends Controller
                 return back();
             }
         }catch (\Exception $exception){
-            dd($exception->getMessage());
             toastError('Something went wrong, try again');
             return back();
         }
 
     }
 
+    //Get list of board of directors when click on search status modal
     public function getDirectors(Request $request){
         $data = BoardOfDirector::where('company_id',$request->company_id)
             ->select('id','designation','name')
@@ -116,13 +124,16 @@ class CompanyDetailController extends Controller
         return response()->json($data);
     }
 
+    //Get list of companies when click on countries in checkboxes of full search page
     public function searchAllResult(Request $request){
         if ($request->has('country')){
             $companies = DB::table('company_detail')
                 ->select('id', 'country', 'company_name', 'company_type','company_website')
                 ->whereIn('country', $request['country'])
-                ->orderby('company_name','asc')
-                ->get();
+                ->orderby('country','asc')
+                ->paginate(30);
+            $companies->appends(['country' => $request['country']]);
+
         }else{
             $companies = [];
         }
