@@ -138,7 +138,7 @@
 <section id="healthform">
     <div class="container">
         <center> <img src="assets/img/logo.png"></center>
-        <center><h3>Mena Insuracne</h3></center>
+        <center><h3>Tax Invoice</h3></center>
         <center><h4>info@menainsurance.com</h4></center>
         <center>
             <table style="table-layout: fixed ;width: 100% ;">
@@ -151,7 +151,7 @@
         <center>
             <table style="table-layout: fixed ;width: 100% ;">
                 <tr>
-                    <td style="width:37%;"><h4 class="">Cart#:  <span style="font-weight:400;">{{ $transaction->cart_id ?: '' }}</span></h4></td>
+                    <td style="width:37%;"><h4 class="">Invoice #:  <span style="font-weight:400;">{{ $transaction->cart_id ?: '' }}</span></h4></td>
                 </tr>
             </table>
         </center>

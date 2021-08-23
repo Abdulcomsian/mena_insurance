@@ -149,9 +149,7 @@ class CompanyDetailController extends Controller
         return $query;
     }
     public function searchAllResult(Request $request){
-        dump($request->all());
         if ($request->filled('country') && $request['country'][0] == '0') {
-            dump('only all country');
             $companies = self::basicSearchQuery()->paginate(30);
             $companies_ids = self::basicSearchQuery()->pluck('id');
             if (count($companies_ids) > 0 ){
@@ -162,7 +160,6 @@ class CompanyDetailController extends Controller
             $companies->appends(['country' => $request['country']]);
         }
         elseif ($request->filled('country') && $request['company_name'] == null){
-            dump('country with company null');
             $companies = self::basicSearchQuery()->whereIn('country', $request['country'])
                 ->paginate(30);
             $companies_ids = self::basicSearchQuery()->whereIn('country', $request['country'])->pluck('id');
@@ -173,7 +170,6 @@ class CompanyDetailController extends Controller
             $companies->appends(['country' => $request['country']]);
         }
         elseif ($request->filled('country') && $request->filled('company_name')){
-            dump('country and company');
             $companies = self::basicSearchQuery()->whereIn('country', $request['country'])
                 ->where('company_name', 'like', '%' . $request['company_name'] . '%')
                 ->paginate(30);
@@ -188,7 +184,6 @@ class CompanyDetailController extends Controller
             $companies->appends(['country' => $request['country'],'company_name' =>$request['company_name']]);
         }
         elseif($request->filled('country') && $request->filled('company_name') && $request->filled('company_type')){
-            dump('country and company and type');
             $companies = self::basicSearchQuery()->whereIn('country', $request['country'])
                 ->whereIn('company_type',  $request['company_type'])
                 ->where('company_name', 'like', '%' . $request['company_name'] . '%')
@@ -204,7 +199,6 @@ class CompanyDetailController extends Controller
             $companies->appends(['country' => $request['country'],'company_name' =>$request['company_name'],'company_type' =>$request['company_type']]);
         }
         elseif($request->filled('company_type') && $request->filled('company_name')){
-            dump('company and type');
             $companies = self::basicSearchQuery()
                 ->whereIn('company_type',  $request['company_type'])
                 ->where('company_name', 'like', '%' . $request['company_name'] . '%')
@@ -220,7 +214,6 @@ class CompanyDetailController extends Controller
             $companies->appends(['company_name' =>$request['company_name'],'company_type' =>$request['company_type']]);
         }
         elseif ($request->filled('company_name')){
-            dump('only name');
             $companies = self::basicSearchQuery()
                 ->where('company_name', 'like', '%' . $request['company_name'] . '%')
                 ->paginate(30);
@@ -234,7 +227,6 @@ class CompanyDetailController extends Controller
             $companies->appends(['company_name' => $request['company_name']]);
         }
         elseif($request->filled('company_type')){
-            dump('only type');
             $companies = self::basicSearchQuery()
                 ->whereIn('company_type',  $request['company_type'])
                 ->paginate(30);
@@ -246,7 +238,6 @@ class CompanyDetailController extends Controller
             $companies->appends(['company_type' => $request['company_type']]);
         }
         else{
-            dump('else');
             $companies = [];
             $peoples = [];
         }

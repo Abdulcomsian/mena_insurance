@@ -28,37 +28,61 @@
             <button class="open-sidebar"><i class="fa fa-bars" aria-hidden="true"></i></button>
             <div class="headerBtn">
                <h3>My Packages</h3>
-               <a href="/"><button>Purchase Package</button></a>
+               <a href="http://beta.menainsurancekyc.com/#our-packages"><button>Purchase Package</button></a>
             </div>
-
+             <div class="table-div table-responsive">
+                 <table class="display">
+                     <thead>
+                     <tr>
+                         <th>Used Sanctions</th>
+                         <th>Remaining Sanctions</th>
+                         <th>Total Sanctions</th>
+                     </tr>
+                     </thead>
+                     <tbody>
+                     @if(isset($subscription))
+                         <tr>
+                             <td>{{$subscription->used_sanctions ?: '0'}}</td>
+                             <td>{{$subscription->remaining_sanctions ?: '0'}}</td>
+                             <td>{{$subscription->total_sanctions ?: '0'}}</td>
+                         </tr>
+                     @else
+                         <tr><td>No Data Found</td></tr>
+                     @endif
+                     </tbody>
+                 </table>
+             </div>
+             <hr>
             <div class="table-div table-responsive">
                <table id="subscription_table" class="display">
                   <thead>
                      <tr>
-                           <th>S.No</th>
-                           <th>Date</th>
-                           <th>Package Name</th>
-                           <th>Amount</th>
-                           <th>Status</th>
-                           <th>Used Sanctions</th>
-                           <th>Remaining Sanctions</th>
-                           <th>Total Sanctions</th>
+                        <th>Invoice #</th>
+                        <th>Date</th>
+                        <th>Package Name</th>
+                        <th>Amount</th>
+                        <th>Status</th>
+                        <th>Sanctions</th>
+                        <th>Card #</th>
+                        <th>Card Type</th>
                      </tr>
                   </thead>
                   <tbody>
-                  @if(isset($subscription))
+                  @if(isset($transactions))
+                      @foreach($transactions as $item)
                      <tr>
-                           <td>1</td>
-                           <td>{{date("d-M-Y",strtotime($subscription->created_at))  ?: '-'}}</td>
-                           <td>{{$subscription->package_name ?: '-'}}</td>
-                           <td>{{$subscription->price ?: '-'}}</td>
+                           <td>{{$item->cart_id  ?: '-'}}</td>
+                           <td>{{$item->created_at  ?: '-'}}</td>
+                           <td>{{$item->package->name ?: '-'}}</td>
+                           <td>{{$item->amount .' AED' ?: '-'}}</td>
                            <td>
-                                <span class="{{strtolower($subscription->status)}}  ?: ''">{{$subscription->status  ?: '-'}}</span>
+                                <span class="{{strtolower($item->status)}}  ?: ''">{{$item->status  ?: '-'}}</span>
                            </td>
-                         <td>{{$subscription->used_sanctions ?: '0'}}</td>
-                         <td>{{$subscription->remaining_sanctions ?: '0'}}</td>
-                         <td>{{$subscription->total_sanctions ?: '0'}}</td>
+                         <td>{{$item->package->sanctions ?: '-'}}</td>
+                         <td>{{$item->card_first6 .'******'. $item->card_last4}}</td>
+                         <td>{{$item->card_type ?: '-'}}</td>
                      </tr>
+                      @endforeach
                   @else
                       <tr><td>No Subscription Found</td></tr>
                   @endif

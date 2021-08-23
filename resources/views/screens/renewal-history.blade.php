@@ -152,7 +152,7 @@
                               <td>{{$loop->iteration}}</td>
                               <td>{{date("d-M-Y",strtotime($item->created_at))  ?: '-'}}</td>
                               <td>{{$item->package->name}}</td>
-                              <td>{{$item->amount}}</td>
+                              <td>{{$item->amount .' AED'}}</td>
                               @if($item->status == 'Paid')
                                 <td><span class="approved">{{$item->status}}</span></td>
                               @else

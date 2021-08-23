@@ -24,6 +24,8 @@ class TransactionController extends Controller
     public function showCards(){
         try {
             $cards = Transaction::select('card_last4','card_first6','card_type')
+                ->where('user_id',Auth::id())
+                ->where('status','Paid')
                 ->distinct()
                 ->get();
             return view('screens.add-card',compact('cards'));
