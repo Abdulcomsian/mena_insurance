@@ -14,12 +14,12 @@ class CompanyDetailTableSeeder extends Seeder
      */
     public function run()
     {
-        
+
 
         \DB::table('company_detail')->delete();
-        
+
         \DB::table('company_detail')->insert(array (
-            0 => 
+            0 =>
             array (
                 'id' => 34414,
                 'created_by' => 'admin',
@@ -46,7 +46,7 @@ class CompanyDetailTableSeeder extends Seeder
                 'trade_name' => '',
                 'alternative_names' => NULL,
             ),
-            1 => 
+            1 =>
             array (
                 'id' => 34417,
                 'created_by' => 'admin',
@@ -73,7 +73,7 @@ class CompanyDetailTableSeeder extends Seeder
                 'trade_name' => '',
                 'alternative_names' => NULL,
             ),
-            2 => 
+            2 =>
             array (
                 'id' => 34420,
                 'created_by' => 'admin',
@@ -100,7 +100,7 @@ class CompanyDetailTableSeeder extends Seeder
                 'trade_name' => '',
                 'alternative_names' => NULL,
             ),
-            3 => 
+            3 =>
             array (
                 'id' => 34423,
                 'created_by' => 'admin',
@@ -127,7 +127,7 @@ class CompanyDetailTableSeeder extends Seeder
                 'trade_name' => '',
                 'alternative_names' => NULL,
             ),
-            4 => 
+            4 =>
             array (
                 'id' => 34426,
                 'created_by' => 'admin',
@@ -154,7 +154,7 @@ class CompanyDetailTableSeeder extends Seeder
                 'trade_name' => '',
                 'alternative_names' => NULL,
             ),
-            5 => 
+            5 =>
             array (
                 'id' => 34429,
                 'created_by' => 'admin',
@@ -183,7 +183,7 @@ Republic of Yemen',
                 'trade_name' => '',
                 'alternative_names' => NULL,
             ),
-            6 => 
+            6 =>
             array (
                 'id' => 34432,
                 'created_by' => 'admin',
@@ -210,7 +210,7 @@ Republic of Yemen',
                 'trade_name' => '',
                 'alternative_names' => NULL,
             ),
-            7 => 
+            7 =>
             array (
                 'id' => 34435,
                 'created_by' => 'admin',
@@ -238,7 +238,7 @@ Correspondent to Talal Abu Ghazaleh',
                 'trade_name' => '',
                 'alternative_names' => NULL,
             ),
-            8 => 
+            8 =>
             array (
                 'id' => 34438,
                 'created_by' => 'admin',
@@ -265,7 +265,7 @@ Correspondent to Talal Abu Ghazaleh',
                 'trade_name' => '',
                 'alternative_names' => NULL,
             ),
-            9 => 
+            9 =>
             array (
                 'id' => 34441,
                 'created_by' => 'admin',
@@ -292,7 +292,7 @@ Correspondent to Talal Abu Ghazaleh',
                 'trade_name' => '',
                 'alternative_names' => NULL,
             ),
-            10 => 
+            10 =>
             array (
                 'id' => 34444,
                 'created_by' => 'admin',
@@ -320,7 +320,7 @@ Algeria St, Sana\'a - Yemen',
                 'trade_name' => '',
                 'alternative_names' => NULL,
             ),
-            11 => 
+            11 =>
             array (
                 'id' => 34447,
                 'created_by' => 'admin',
@@ -349,7 +349,7 @@ Sana’a . Al-Zubairi St. CAC Bank Building - 7th Floor',
                 'trade_name' => '',
                 'alternative_names' => NULL,
             ),
-            12 => 
+            12 =>
             array (
                 'id' => 34523,
                 'created_by' => 'admin',
@@ -376,7 +376,7 @@ Sana’a . Al-Zubairi St. CAC Bank Building - 7th Floor',
                 'trade_name' => '',
                 'alternative_names' => NULL,
             ),
-            13 => 
+            13 =>
             array (
                 'id' => 34526,
                 'created_by' => 'admin',
@@ -403,7 +403,7 @@ Sana’a . Al-Zubairi St. CAC Bank Building - 7th Floor',
                 'trade_name' => '',
                 'alternative_names' => NULL,
             ),
-            14 => 
+            14 =>
             array (
                 'id' => 34529,
                 'created_by' => 'admin',
@@ -430,7 +430,7 @@ Sana’a . Al-Zubairi St. CAC Bank Building - 7th Floor',
                 'trade_name' => '',
                 'alternative_names' => NULL,
             ),
-            15 => 
+            15 =>
             array (
                 'id' => 34532,
                 'created_by' => 'admin',
@@ -457,7 +457,7 @@ Sana’a . Al-Zubairi St. CAC Bank Building - 7th Floor',
                 'trade_name' => '',
                 'alternative_names' => NULL,
             ),
-            16 => 
+            16 =>
             array (
                 'id' => 34535,
                 'created_by' => 'admin',
@@ -484,7 +484,7 @@ Sana’a . Al-Zubairi St. CAC Bank Building - 7th Floor',
                 'trade_name' => '',
                 'alternative_names' => NULL,
             ),
-            17 => 
+            17 =>
             array (
                 'id' => 34538,
                 'created_by' => 'admin',
@@ -511,7 +511,7 @@ Sana’a . Al-Zubairi St. CAC Bank Building - 7th Floor',
                 'trade_name' => '',
                 'alternative_names' => NULL,
             ),
-            18 => 
+            18 =>
             array (
                 'id' => 34541,
                 'created_by' => 'admin',
@@ -538,7 +538,7 @@ Sana’a . Al-Zubairi St. CAC Bank Building - 7th Floor',
                 'trade_name' => '',
                 'alternative_names' => NULL,
             ),
-            19 => 
+            19 =>
             array (
                 'id' => 34544,
                 'created_by' => 'admin',
@@ -565,7 +565,7 @@ Sana’a . Al-Zubairi St. CAC Bank Building - 7th Floor',
                 'trade_name' => '',
                 'alternative_names' => NULL,
             ),
-            20 => 
+            20 =>
             array (
                 'id' => 34547,
                 'created_by' => 'admin',
@@ -592,7 +592,7 @@ Sana’a . Al-Zubairi St. CAC Bank Building - 7th Floor',
                 'trade_name' => '',
                 'alternative_names' => NULL,
             ),
-            21 => 
+            21 =>
             array (
                 'id' => 34550,
                 'created_by' => 'admin',
@@ -621,7 +621,7 @@ Maya Akar Center Block B Floor: 5
                 'trade_name' => '',
                 'alternative_names' => NULL,
             ),
-            22 => 
+            22 =>
             array (
                 'id' => 34553,
                 'created_by' => 'admin',
@@ -650,7 +650,7 @@ Levent 34330 Istanbul',
                 'trade_name' => '',
                 'alternative_names' => NULL,
             ),
-            23 => 
+            23 =>
             array (
                 'id' => 34556,
                 'created_by' => 'admin',
@@ -677,7 +677,7 @@ Levent 34330 Istanbul',
                 'trade_name' => '',
                 'alternative_names' => NULL,
             ),
-            24 => 
+            24 =>
             array (
                 'id' => 34559,
                 'created_by' => 'admin',
@@ -704,7 +704,7 @@ Levent 34330 Istanbul',
                 'trade_name' => '',
                 'alternative_names' => NULL,
             ),
-            25 => 
+            25 =>
             array (
                 'id' => 34562,
                 'created_by' => 'admin',
@@ -731,7 +731,7 @@ Levent 34330 Istanbul',
                 'trade_name' => '',
                 'alternative_names' => NULL,
             ),
-            26 => 
+            26 =>
             array (
                 'id' => 34565,
                 'created_by' => 'admin',
@@ -760,7 +760,7 @@ Levent 34330 Istanbul',
                 'trade_name' => '',
                 'alternative_names' => NULL,
             ),
-            27 => 
+            27 =>
             array (
                 'id' => 34568,
                 'created_by' => 'admin',
@@ -787,7 +787,7 @@ Levent 34330 Istanbul',
                 'trade_name' => '',
                 'alternative_names' => NULL,
             ),
-            28 => 
+            28 =>
             array (
                 'id' => 34571,
                 'created_by' => 'admin',
@@ -814,7 +814,7 @@ Levent 34330 Istanbul',
                 'trade_name' => '',
                 'alternative_names' => NULL,
             ),
-            29 => 
+            29 =>
             array (
                 'id' => 34574,
                 'created_by' => 'admin',
@@ -841,7 +841,7 @@ Levent 34330 Istanbul',
                 'trade_name' => '',
                 'alternative_names' => NULL,
             ),
-            30 => 
+            30 =>
             array (
                 'id' => 34577,
                 'created_by' => 'admin',
@@ -868,7 +868,7 @@ Levent 34330 Istanbul',
                 'trade_name' => '',
                 'alternative_names' => NULL,
             ),
-            31 => 
+            31 =>
             array (
                 'id' => 34580,
                 'created_by' => 'admin',
@@ -895,7 +895,7 @@ Levent 34330 Istanbul',
                 'trade_name' => '',
                 'alternative_names' => NULL,
             ),
-            32 => 
+            32 =>
             array (
                 'id' => 34583,
                 'created_by' => 'admin',
@@ -922,7 +922,7 @@ Levent 34330 Istanbul',
                 'trade_name' => '',
                 'alternative_names' => NULL,
             ),
-            33 => 
+            33 =>
             array (
                 'id' => 34586,
                 'created_by' => 'admin',
@@ -949,7 +949,7 @@ Levent 34330 Istanbul',
                 'trade_name' => '',
                 'alternative_names' => NULL,
             ),
-            34 => 
+            34 =>
             array (
                 'id' => 34589,
                 'created_by' => 'admin',
@@ -978,7 +978,7 @@ TURKEY',
                 'trade_name' => '',
                 'alternative_names' => NULL,
             ),
-            35 => 
+            35 =>
             array (
                 'id' => 34592,
                 'created_by' => 'admin',
@@ -1005,7 +1005,7 @@ TURKEY',
                 'trade_name' => '',
                 'alternative_names' => NULL,
             ),
-            36 => 
+            36 =>
             array (
                 'id' => 34595,
                 'created_by' => 'admin',
@@ -1032,7 +1032,7 @@ TURKEY',
                 'trade_name' => '',
                 'alternative_names' => NULL,
             ),
-            37 => 
+            37 =>
             array (
                 'id' => 34598,
                 'created_by' => 'admin',
@@ -1059,7 +1059,7 @@ TURKEY',
                 'trade_name' => '',
                 'alternative_names' => NULL,
             ),
-            38 => 
+            38 =>
             array (
                 'id' => 34601,
                 'created_by' => 'admin',
@@ -1087,7 +1087,7 @@ TURKEY',
                 'trade_name' => '',
                 'alternative_names' => NULL,
             ),
-            39 => 
+            39 =>
             array (
                 'id' => 34604,
                 'created_by' => 'admin',
@@ -1114,7 +1114,7 @@ TURKEY',
                 'trade_name' => '',
                 'alternative_names' => NULL,
             ),
-            40 => 
+            40 =>
             array (
                 'id' => 34607,
                 'created_by' => 'admin',
@@ -1141,7 +1141,7 @@ TURKEY',
                 'trade_name' => '',
                 'alternative_names' => NULL,
             ),
-            41 => 
+            41 =>
             array (
                 'id' => 34610,
                 'created_by' => 'admin',
@@ -1170,7 +1170,7 @@ Sarıyer / İstanbul',
                 'trade_name' => '',
                 'alternative_names' => NULL,
             ),
-            42 => 
+            42 =>
             array (
                 'id' => 34613,
                 'created_by' => 'admin',
@@ -1198,7 +1198,7 @@ Tarabya 34457 Sarıyer/ İstanbul',
                 'trade_name' => '',
                 'alternative_names' => NULL,
             ),
-            43 => 
+            43 =>
             array (
                 'id' => 34616,
                 'created_by' => 'admin',
@@ -1225,7 +1225,7 @@ Tarabya 34457 Sarıyer/ İstanbul',
                 'trade_name' => '',
                 'alternative_names' => NULL,
             ),
-            44 => 
+            44 =>
             array (
                 'id' => 34619,
                 'created_by' => 'admin',
@@ -1252,7 +1252,7 @@ Tarabya 34457 Sarıyer/ İstanbul',
                 'trade_name' => '',
                 'alternative_names' => NULL,
             ),
-            45 => 
+            45 =>
             array (
                 'id' => 34622,
                 'created_by' => 'admin',
@@ -1280,7 +1280,7 @@ Kadıköy / İSTANBUL',
                 'trade_name' => '',
                 'alternative_names' => NULL,
             ),
-            46 => 
+            46 =>
             array (
                 'id' => 34625,
                 'created_by' => 'admin',
@@ -1307,7 +1307,7 @@ Kadıköy / İSTANBUL',
                 'trade_name' => '',
                 'alternative_names' => NULL,
             ),
-            47 => 
+            47 =>
             array (
                 'id' => 34628,
                 'created_by' => 'admin',
@@ -1334,7 +1334,7 @@ Kadıköy / İSTANBUL',
                 'trade_name' => '',
                 'alternative_names' => NULL,
             ),
-            48 => 
+            48 =>
             array (
                 'id' => 34631,
                 'created_by' => 'admin',
@@ -1361,7 +1361,7 @@ Kadıköy / İSTANBUL',
                 'trade_name' => '',
                 'alternative_names' => NULL,
             ),
-            49 => 
+            49 =>
             array (
                 'id' => 34634,
                 'created_by' => 'admin',
@@ -1388,7 +1388,7 @@ Kadıköy / İSTANBUL',
                 'trade_name' => '',
                 'alternative_names' => NULL,
             ),
-            50 => 
+            50 =>
             array (
                 'id' => 34637,
                 'created_by' => 'admin',
@@ -1415,7 +1415,7 @@ Kadıköy / İSTANBUL',
                 'trade_name' => '',
                 'alternative_names' => NULL,
             ),
-            51 => 
+            51 =>
             array (
                 'id' => 34640,
                 'created_by' => 'admin',
@@ -1444,17 +1444,17 @@ Kanarya Sokak K2 Plaza No: 14 Kat: 2-3-4-5-6
                 'trade_name' => '',
                 'alternative_names' => NULL,
             ),
-            52 => 
+            52 =>
             array (
                 'id' => 34643,
                 'created_by' => 'admin',
                 'created_date' => '2020-10-08 08:15:01.338291',
                 'last_modified_by' => 'admin',
                 'last_modified_date' => '2020-10-08 08:15:01.338291',
-                'about' => 'Allianz Tower 
-Kucukbakkalkoy Mahallesi 
-Kayisdagi Cad. No: 1 
-34750 Atasehir Istanbul 
+                'about' => 'Allianz Tower
+Kucukbakkalkoy Mahallesi
+Kayisdagi Cad. No: 1
+34750 Atasehir Istanbul
 Turkey',
                 'auditor' => 'PwC Independent Auditing and Free Accounting Financial Consulting Inc.',
                 'company_email_id' => '',
@@ -1475,7 +1475,7 @@ Turkey',
                 'trade_name' => '',
                 'alternative_names' => NULL,
             ),
-            53 => 
+            53 =>
             array (
                 'id' => 34646,
                 'created_by' => 'admin',
@@ -1502,7 +1502,7 @@ Turkey',
                 'trade_name' => '',
                 'alternative_names' => NULL,
             ),
-            54 => 
+            54 =>
             array (
                 'id' => 34649,
                 'created_by' => 'admin',
@@ -1529,7 +1529,7 @@ Turkey',
                 'trade_name' => '',
                 'alternative_names' => NULL,
             ),
-            55 => 
+            55 =>
             array (
                 'id' => 34652,
                 'created_by' => 'admin',
@@ -1556,7 +1556,7 @@ Turkey',
                 'trade_name' => '',
                 'alternative_names' => NULL,
             ),
-            56 => 
+            56 =>
             array (
                 'id' => 34655,
                 'created_by' => 'admin',
@@ -1583,7 +1583,7 @@ Turkey',
                 'trade_name' => '',
                 'alternative_names' => NULL,
             ),
-            57 => 
+            57 =>
             array (
                 'id' => 34658,
                 'created_by' => 'admin',
@@ -1610,7 +1610,7 @@ Turkey',
                 'trade_name' => '',
                 'alternative_names' => NULL,
             ),
-            58 => 
+            58 =>
             array (
                 'id' => 34661,
                 'created_by' => 'admin',
@@ -1637,7 +1637,7 @@ Turkey',
                 'trade_name' => '',
                 'alternative_names' => NULL,
             ),
-            59 => 
+            59 =>
             array (
                 'id' => 34664,
                 'created_by' => 'admin',
@@ -1653,12 +1653,12 @@ No: 2 Kat 28-29
                 'company_name' => 'Cigna Finansın sigorta',
                 'company_type' => '',
                 'company_website' => 'https://www.cignafinans.com.tr/',
-                'contact_number' => 'Telephone	
+                'contact_number' => 'Telephone
 0 (216) 468 03 00',
                 'corporate_details' => NULL,
                 'country' => 'TURKEY',
                 'employee_count' => 0,
-                'fax_detail' => 'Fax	
+                'fax_detail' => 'Fax
 0 (216) 368 74 16',
                 'financial_report' => 'https://www.cignafinans.com.tr/sites/default/files/cigna-2017_eng_final.pdf',
                 'image_url' => NULL,
@@ -1669,7 +1669,7 @@ No: 2 Kat 28-29
                 'trade_name' => 'Cigna Finans Emeklilik Ve Hayat A.S',
                 'alternative_names' => NULL,
             ),
-            60 => 
+            60 =>
             array (
                 'id' => 34667,
                 'created_by' => 'admin',
@@ -1696,7 +1696,7 @@ No: 2 Kat 28-29
                 'trade_name' => 'Demir Saglik ve Hayat Sigorta A.S',
                 'alternative_names' => NULL,
             ),
-            61 => 
+            61 =>
             array (
                 'id' => 34670,
                 'created_by' => 'admin',
@@ -1705,7 +1705,7 @@ No: 2 Kat 28-29
                 'last_modified_date' => '2020-10-08 08:15:01.513680',
                 'about' => 'Kozyatağı Sarıkanarya Sok. No: 16 Yolbulan Plaza B Blok K: 5 34742 Kozyatağı / İSTANBUL',
                 'auditor' => 'KPMG Independent Audit andSerbest Muhasebeci Mali Musavirlik A.S',
-                'company_email_id' => 'musterihizmetleri@fibaemeklilik.com.tr  
+                'company_email_id' => 'musterihizmetleri@fibaemeklilik.com.tr
 fibaemeklilik@hs03.kep.tr',
                 'company_name' => 'Fiba Emeklilik ve Hayat A.S',
                 'company_type' => 'Joint Stock Company',
@@ -1724,7 +1724,7 @@ fibaemeklilik@hs03.kep.tr',
                 'trade_name' => '',
                 'alternative_names' => NULL,
             ),
-            62 => 
+            62 =>
             array (
                 'id' => 34673,
                 'created_by' => 'admin',
@@ -1751,7 +1751,7 @@ fibaemeklilik@hs03.kep.tr',
                 'trade_name' => '',
                 'alternative_names' => NULL,
             ),
-            63 => 
+            63 =>
             array (
                 'id' => 34676,
                 'created_by' => 'admin',
@@ -1778,7 +1778,7 @@ fibaemeklilik@hs03.kep.tr',
                 'trade_name' => '',
                 'alternative_names' => NULL,
             ),
-            64 => 
+            64 =>
             array (
                 'id' => 34679,
                 'created_by' => 'admin',
@@ -1805,7 +1805,7 @@ fibaemeklilik@hs03.kep.tr',
                 'trade_name' => '',
                 'alternative_names' => NULL,
             ),
-            65 => 
+            65 =>
             array (
                 'id' => 34682,
                 'created_by' => 'admin',
@@ -1832,7 +1832,7 @@ fibaemeklilik@hs03.kep.tr',
                 'trade_name' => '',
                 'alternative_names' => NULL,
             ),
-            66 => 
+            66 =>
             array (
                 'id' => 34685,
                 'created_by' => 'admin',
@@ -1860,7 +1860,7 @@ fibaemeklilik@hs03.kep.tr',
                 'trade_name' => '',
                 'alternative_names' => NULL,
             ),
-            67 => 
+            67 =>
             array (
                 'id' => 34688,
                 'created_by' => 'admin',
@@ -1887,14 +1887,14 @@ fibaemeklilik@hs03.kep.tr',
                 'trade_name' => '',
                 'alternative_names' => NULL,
             ),
-            68 => 
+            68 =>
             array (
                 'id' => 34691,
                 'created_by' => 'admin',
                 'created_date' => '2020-10-08 08:15:01.656870',
                 'last_modified_by' => 'admin',
                 'last_modified_date' => '2020-10-08 08:15:01.656870',
-                'about' => 'Maslak Mah. Sumer Sok. Maslak Office Building No: 4/92             
+                'about' => 'Maslak Mah. Sumer Sok. Maslak Office Building No: 4/92
 34485 Sarıyer / İSTANBUL',
                 'auditor' => 'KPMG Independent Audit and Independent Accountant Financial Consultancy Corporation',
                 'company_email_id' => 'info@nnhayatemeklilik.com.tr',
@@ -1915,7 +1915,7 @@ fibaemeklilik@hs03.kep.tr',
                 'trade_name' => '',
                 'alternative_names' => NULL,
             ),
-            69 => 
+            69 =>
             array (
                 'id' => 34694,
                 'created_by' => 'admin',
@@ -1942,7 +1942,7 @@ fibaemeklilik@hs03.kep.tr',
                 'trade_name' => '',
                 'alternative_names' => NULL,
             ),
-            70 => 
+            70 =>
             array (
                 'id' => 34697,
                 'created_by' => 'admin',
@@ -1969,7 +1969,7 @@ fibaemeklilik@hs03.kep.tr',
                 'trade_name' => '',
                 'alternative_names' => NULL,
             ),
-            71 => 
+            71 =>
             array (
                 'id' => 34700,
                 'created_by' => 'admin',
@@ -1996,7 +1996,7 @@ fibaemeklilik@hs03.kep.tr',
                 'trade_name' => '',
                 'alternative_names' => NULL,
             ),
-            72 => 
+            72 =>
             array (
                 'id' => 34703,
                 'created_by' => 'admin',
@@ -2023,7 +2023,7 @@ fibaemeklilik@hs03.kep.tr',
                 'trade_name' => '',
                 'alternative_names' => NULL,
             ),
-            73 => 
+            73 =>
             array (
                 'id' => 34706,
                 'created_by' => 'admin',
@@ -2050,7 +2050,7 @@ fibaemeklilik@hs03.kep.tr',
                 'trade_name' => '',
                 'alternative_names' => NULL,
             ),
-            74 => 
+            74 =>
             array (
                 'id' => 35072,
                 'created_by' => 'admin',
@@ -2077,7 +2077,7 @@ fibaemeklilik@hs03.kep.tr',
                 'trade_name' => 'MEDGULF',
                 'alternative_names' => NULL,
             ),
-            75 => 
+            75 =>
             array (
                 'id' => 35075,
                 'created_by' => 'admin',
@@ -2104,7 +2104,7 @@ fibaemeklilik@hs03.kep.tr',
                 'trade_name' => 'MALATH',
                 'alternative_names' => NULL,
             ),
-            76 => 
+            76 =>
             array (
                 'id' => 35078,
                 'created_by' => 'admin',
@@ -2131,7 +2131,7 @@ fibaemeklilik@hs03.kep.tr',
                 'trade_name' => 'Tawuniya',
                 'alternative_names' => NULL,
             ),
-            77 => 
+            77 =>
             array (
                 'id' => 35081,
                 'created_by' => 'admin',
@@ -2158,7 +2158,7 @@ fibaemeklilik@hs03.kep.tr',
         'trade_name' => 'SABB TAKAFUL',
         'alternative_names' => NULL,
     ),
-    78 => 
+    78 =>
     array (
         'id' => 35084,
         'created_by' => 'admin',
@@ -2185,7 +2185,7 @@ fibaemeklilik@hs03.kep.tr',
         'trade_name' => 'ATC',
         'alternative_names' => NULL,
     ),
-    79 => 
+    79 =>
     array (
         'id' => 35087,
         'created_by' => 'admin',
@@ -2212,7 +2212,7 @@ fibaemeklilik@hs03.kep.tr',
         'trade_name' => 'SALAMA',
         'alternative_names' => NULL,
     ),
-    80 => 
+    80 =>
     array (
         'id' => 35090,
         'created_by' => 'admin',
@@ -2239,7 +2239,7 @@ fibaemeklilik@hs03.kep.tr',
         'trade_name' => 'ARABIAN SHIELD',
         'alternative_names' => NULL,
     ),
-    81 => 
+    81 =>
     array (
         'id' => 35093,
         'created_by' => 'admin',
@@ -2266,7 +2266,7 @@ fibaemeklilik@hs03.kep.tr',
         'trade_name' => 'ALLIANZ SF',
         'alternative_names' => NULL,
     ),
-    82 => 
+    82 =>
     array (
         'id' => 35096,
         'created_by' => 'admin',
@@ -2293,7 +2293,7 @@ fibaemeklilik@hs03.kep.tr',
         'trade_name' => 'GULF UNION',
         'alternative_names' => NULL,
     ),
-    83 => 
+    83 =>
     array (
         'id' => 35099,
         'created_by' => 'admin',
@@ -2320,7 +2320,7 @@ fibaemeklilik@hs03.kep.tr',
         'trade_name' => 'ALETIHAD',
         'alternative_names' => NULL,
     ),
-    84 => 
+    84 =>
     array (
         'id' => 35102,
         'created_by' => 'admin',
@@ -2347,7 +2347,7 @@ fibaemeklilik@hs03.kep.tr',
         'trade_name' => 'WAFA INSURANCE',
         'alternative_names' => NULL,
     ),
-    85 => 
+    85 =>
     array (
         'id' => 35105,
         'created_by' => 'admin',
@@ -2374,7 +2374,7 @@ fibaemeklilik@hs03.kep.tr',
         'trade_name' => 'ALSAGR INSURANCE',
         'alternative_names' => NULL,
     ),
-    86 => 
+    86 =>
     array (
         'id' => 35108,
         'created_by' => 'admin',
@@ -2401,7 +2401,7 @@ fibaemeklilik@hs03.kep.tr',
         'trade_name' => 'WALAA',
         'alternative_names' => NULL,
     ),
-    87 => 
+    87 =>
     array (
         'id' => 35111,
         'created_by' => 'admin',
@@ -2428,7 +2428,7 @@ fibaemeklilik@hs03.kep.tr',
         'trade_name' => 'AICC',
         'alternative_names' => NULL,
     ),
-    88 => 
+    88 =>
     array (
         'id' => 35114,
         'created_by' => 'admin',
@@ -2455,7 +2455,7 @@ fibaemeklilik@hs03.kep.tr',
             'trade_name' => 'SAUDI RE',
             'alternative_names' => NULL,
         ),
-        89 => 
+        89 =>
         array (
             'id' => 35117,
             'created_by' => 'admin',
@@ -2482,7 +2482,7 @@ fibaemeklilik@hs03.kep.tr',
             'trade_name' => 'ALAHLIA',
             'alternative_names' => NULL,
         ),
-        90 => 
+        90 =>
         array (
             'id' => 35120,
             'created_by' => 'admin',
@@ -2509,7 +2509,7 @@ fibaemeklilik@hs03.kep.tr',
             'trade_name' => 'UCA',
             'alternative_names' => NULL,
         ),
-        91 => 
+        91 =>
         array (
             'id' => 35123,
             'created_by' => 'admin',
@@ -2536,7 +2536,7 @@ fibaemeklilik@hs03.kep.tr',
                 'trade_name' => 'ALRAJHI TAKAFUL',
                 'alternative_names' => NULL,
             ),
-            92 => 
+            92 =>
             array (
                 'id' => 35126,
                 'created_by' => 'admin',
@@ -2563,7 +2563,7 @@ fibaemeklilik@hs03.kep.tr',
                 'trade_name' => 'ACIG',
                 'alternative_names' => NULL,
             ),
-            93 => 
+            93 =>
             array (
                 'id' => 35129,
                 'created_by' => 'admin',
@@ -2590,7 +2590,7 @@ fibaemeklilik@hs03.kep.tr',
                     'trade_name' => 'ALALAMIYA',
                     'alternative_names' => NULL,
                 ),
-                94 => 
+                94 =>
                 array (
                     'id' => 35132,
                     'created_by' => 'admin',
@@ -2617,7 +2617,7 @@ fibaemeklilik@hs03.kep.tr',
                     'trade_name' => 'GULF GENERAL',
                     'alternative_names' => NULL,
                 ),
-                95 => 
+                95 =>
                 array (
                     'id' => 35135,
                     'created_by' => 'admin',
@@ -2644,7 +2644,7 @@ fibaemeklilik@hs03.kep.tr',
                     'trade_name' => 'BURUJ',
                     'alternative_names' => NULL,
                 ),
-                96 => 
+                96 =>
                 array (
                     'id' => 35138,
                     'created_by' => 'admin',
@@ -2671,7 +2671,7 @@ fibaemeklilik@hs03.kep.tr',
                     'trade_name' => 'WATANIYA',
                     'alternative_names' => NULL,
                 ),
-                97 => 
+                97 =>
                 array (
                     'id' => 35141,
                     'created_by' => 'admin',
@@ -2698,7 +2698,7 @@ fibaemeklilik@hs03.kep.tr',
                         'trade_name' => 'AMANA INSURANCE',
                         'alternative_names' => NULL,
                     ),
-                    98 => 
+                    98 =>
                     array (
                         'id' => 35144,
                         'created_by' => 'admin',
@@ -2725,7 +2725,7 @@ fibaemeklilik@hs03.kep.tr',
                         'trade_name' => 'ALINMA TOKIO M',
                         'alternative_names' => NULL,
                     ),
-                    99 => 
+                    99 =>
                     array (
                         'id' => 35147,
                         'created_by' => 'admin',
@@ -2752,7 +2752,7 @@ fibaemeklilik@hs03.kep.tr',
                         'trade_name' => 'ENAYA',
                         'alternative_names' => NULL,
                     ),
-                    100 => 
+                    100 =>
                     array (
                         'id' => 35150,
                         'created_by' => 'admin',
@@ -2779,7 +2779,7 @@ fibaemeklilik@hs03.kep.tr',
                         'trade_name' => 'JAZIRA TAKAFUL',
                         'alternative_names' => NULL,
                     ),
-                    101 => 
+                    101 =>
                     array (
                         'id' => 35153,
                         'created_by' => 'admin',
@@ -2806,7 +2806,7 @@ fibaemeklilik@hs03.kep.tr',
                         'trade_name' => 'SOLIDARITY',
                         'alternative_names' => NULL,
                     ),
-                    102 => 
+                    102 =>
                     array (
                         'id' => 35156,
                         'created_by' => 'admin',
@@ -2833,7 +2833,7 @@ fibaemeklilik@hs03.kep.tr',
                             'trade_name' => 'SAICO',
                             'alternative_names' => NULL,
                         ),
-                        103 => 
+                        103 =>
                         array (
                             'id' => 35159,
                             'created_by' => 'admin',
@@ -2860,7 +2860,7 @@ fibaemeklilik@hs03.kep.tr',
                             'trade_name' => 'BUPA ARABIA',
                             'alternative_names' => NULL,
                         ),
-                        104 => 
+                        104 =>
                         array (
                             'id' => 35162,
                             'created_by' => 'admin',
@@ -2887,7 +2887,7 @@ fibaemeklilik@hs03.kep.tr',
                                 'trade_name' => 'CHUBB',
                                 'alternative_names' => NULL,
                             ),
-                            105 => 
+                            105 =>
                             array (
                                 'id' => 35165,
                                 'created_by' => 'admin',
@@ -2914,7 +2914,7 @@ fibaemeklilik@hs03.kep.tr',
                                 'trade_name' => 'AXA COOPERATIVE',
                                 'alternative_names' => NULL,
                             ),
-                            106 => 
+                            106 =>
                             array (
                                 'id' => 35425,
                                 'created_by' => 'admin',
@@ -2941,7 +2941,7 @@ fibaemeklilik@hs03.kep.tr',
                                 'trade_name' => 'ATI',
                                 'alternative_names' => NULL,
                             ),
-                            107 => 
+                            107 =>
                             array (
                                 'id' => 35428,
                                 'created_by' => 'admin',
@@ -2968,7 +2968,7 @@ fibaemeklilik@hs03.kep.tr',
                                 'trade_name' => 'AICS',
                                 'alternative_names' => NULL,
                             ),
-                            108 => 
+                            108 =>
                             array (
                                 'id' => 35431,
                                 'created_by' => 'admin',
@@ -2995,7 +2995,7 @@ fibaemeklilik@hs03.kep.tr',
                                 'trade_name' => 'NIC',
                                 'alternative_names' => NULL,
                             ),
-                            109 => 
+                            109 =>
                             array (
                                 'id' => 35434,
                                 'created_by' => 'admin',
@@ -3022,7 +3022,7 @@ fibaemeklilik@hs03.kep.tr',
                                 'trade_name' => '',
                                 'alternative_names' => NULL,
                             ),
-                            110 => 
+                            110 =>
                             array (
                                 'id' => 35437,
                                 'created_by' => 'admin',
@@ -3049,7 +3049,7 @@ fibaemeklilik@hs03.kep.tr',
                                 'trade_name' => 'AROPE',
                                 'alternative_names' => NULL,
                             ),
-                            111 => 
+                            111 =>
                             array (
                                 'id' => 35440,
                                 'created_by' => 'admin',
@@ -3077,7 +3077,7 @@ Abd Elmalek Bin Marwan Street',
                                 'trade_name' => 'SIIC',
                                 'alternative_names' => NULL,
                             ),
-                            112 => 
+                            112 =>
                             array (
                                 'id' => 35443,
                                 'created_by' => 'admin',
@@ -3104,7 +3104,7 @@ Abd Elmalek Bin Marwan Street',
                                 'trade_name' => 'SKIC',
                                 'alternative_names' => NULL,
                             ),
-                            113 => 
+                            113 =>
                             array (
                                 'id' => 35446,
                                 'created_by' => 'admin',
@@ -3131,7 +3131,7 @@ Abd Elmalek Bin Marwan Street',
                                 'trade_name' => 'UIC',
                                 'alternative_names' => NULL,
                             ),
-                            114 => 
+                            114 =>
                             array (
                                 'id' => 35449,
                                 'created_by' => 'admin',
@@ -3158,7 +3158,7 @@ Abd Elmalek Bin Marwan Street',
                                 'trade_name' => 'ADIR',
                                 'alternative_names' => NULL,
                             ),
-                            115 => 
+                            115 =>
                             array (
                                 'id' => 35452,
                                 'created_by' => 'admin',
@@ -3186,7 +3186,7 @@ Al bezm St.',
                                 'trade_name' => 'SAIC',
                                 'alternative_names' => NULL,
                             ),
-                            116 => 
+                            116 =>
                             array (
                                 'id' => 35455,
                                 'created_by' => 'admin',
@@ -3213,7 +3213,7 @@ Al bezm St.',
                                 'trade_name' => '',
                                 'alternative_names' => NULL,
                             ),
-                            117 => 
+                            117 =>
                             array (
                                 'id' => 35458,
                                 'created_by' => 'admin',
@@ -3240,7 +3240,7 @@ Al bezm St.',
                                 'trade_name' => '',
                                 'alternative_names' => NULL,
                             ),
-                            118 => 
+                            118 =>
                             array (
                                 'id' => 35461,
                                 'created_by' => 'admin',
@@ -3268,7 +3268,7 @@ Al bezm St.',
                                 'trade_name' => '',
                                 'alternative_names' => NULL,
                             ),
-                            119 => 
+                            119 =>
                             array (
                                 'id' => 35464,
                                 'created_by' => 'admin',
@@ -3298,7 +3298,7 @@ P.O Box: 5178 Damascus, SYRIA',
                                 'trade_name' => '',
                                 'alternative_names' => NULL,
                             ),
-                            120 => 
+                            120 =>
                             array (
                                 'id' => 35515,
                                 'created_by' => 'admin',
@@ -3325,7 +3325,7 @@ P.O Box: 5178 Damascus, SYRIA',
                                 'trade_name' => 'AXA',
                                 'alternative_names' => NULL,
                             ),
-                            121 => 
+                            121 =>
                             array (
                                 'id' => 35518,
                                 'created_by' => 'admin',
@@ -3352,7 +3352,7 @@ P.O Box: 5178 Damascus, SYRIA',
                                 'trade_name' => 'AIG',
                                 'alternative_names' => NULL,
                             ),
-                            122 => 
+                            122 =>
                             array (
                                 'id' => 35521,
                                 'created_by' => 'admin',
@@ -3379,7 +3379,7 @@ P.O Box: 5178 Damascus, SYRIA',
                                 'trade_name' => 'ALICO',
                                 'alternative_names' => NULL,
                             ),
-                            123 => 
+                            123 =>
                             array (
                                 'id' => 35524,
                                 'created_by' => 'admin',
@@ -3406,7 +3406,7 @@ P.O Box: 5178 Damascus, SYRIA',
                                 'trade_name' => '',
                                 'alternative_names' => NULL,
                             ),
-                            124 => 
+                            124 =>
                             array (
                                 'id' => 35527,
                                 'created_by' => 'admin',
@@ -3437,7 +3437,7 @@ Qatar',
                                 'trade_name' => '',
                                 'alternative_names' => NULL,
                             ),
-                            125 => 
+                            125 =>
                             array (
                                 'id' => 35530,
                                 'created_by' => 'admin',
@@ -3464,7 +3464,7 @@ Qatar',
                                 'trade_name' => '',
                                 'alternative_names' => NULL,
                             ),
-                            126 => 
+                            126 =>
                             array (
                                 'id' => 35533,
                                 'created_by' => 'admin',
@@ -3491,7 +3491,7 @@ Qatar',
                                 'trade_name' => '',
                                 'alternative_names' => NULL,
                             ),
-                            127 => 
+                            127 =>
                             array (
                                 'id' => 35536,
                                 'created_by' => 'admin',
@@ -3520,7 +3520,7 @@ Doha – Qatar.',
                                 'trade_name' => '',
                                 'alternative_names' => NULL,
                             ),
-                            128 => 
+                            128 =>
                             array (
                                 'id' => 35539,
                                 'created_by' => 'admin',
@@ -3547,7 +3547,7 @@ Doha – Qatar.',
                                 'trade_name' => '',
                                 'alternative_names' => NULL,
                             ),
-                            129 => 
+                            129 =>
                             array (
                                 'id' => 35542,
                                 'created_by' => 'admin',
@@ -3577,7 +3577,7 @@ Doha, Qatar',
                                 'trade_name' => '',
                                 'alternative_names' => NULL,
                             ),
-                            130 => 
+                            130 =>
                             array (
                                 'id' => 35545,
                                 'created_by' => 'admin',
@@ -3608,7 +3608,7 @@ Qatar',
                                 'trade_name' => '',
                                 'alternative_names' => NULL,
                             ),
-                            131 => 
+                            131 =>
                             array (
                                 'id' => 35548,
                                 'created_by' => 'admin',
@@ -3635,7 +3635,7 @@ Qatar',
                                 'trade_name' => '',
                                 'alternative_names' => NULL,
                             ),
-                            132 => 
+                            132 =>
                             array (
                                 'id' => 35558,
                                 'created_by' => 'admin',
@@ -3662,7 +3662,7 @@ Qatar',
                                 'trade_name' => 'QATI',
                                 'alternative_names' => NULL,
                             ),
-                            133 => 
+                            133 =>
                             array (
                                 'id' => 35561,
                                 'created_by' => 'admin',
@@ -3689,7 +3689,7 @@ Qatar',
                                 'trade_name' => 'DOHI',
                                 'alternative_names' => NULL,
                             ),
-                            134 => 
+                            134 =>
                             array (
                                 'id' => 35564,
                                 'created_by' => 'admin',
@@ -3716,7 +3716,7 @@ Qatar',
                                 'trade_name' => 'QGRI',
                                 'alternative_names' => NULL,
                             ),
-                            135 => 
+                            135 =>
                             array (
                                 'id' => 35567,
                                 'created_by' => 'admin',
@@ -3743,7 +3743,7 @@ Qatar',
                                 'trade_name' => '',
                                 'alternative_names' => NULL,
                             ),
-                            136 => 
+                            136 =>
                             array (
                                 'id' => 35570,
                                 'created_by' => 'admin',
@@ -3770,7 +3770,7 @@ Qatar',
                                 'trade_name' => '',
                                 'alternative_names' => NULL,
                             ),
-                            137 => 
+                            137 =>
                             array (
                                 'id' => 35573,
                                 'created_by' => 'admin',
@@ -3797,7 +3797,7 @@ Qatar',
                                 'trade_name' => 'AKHI',
                                 'alternative_names' => NULL,
                             ),
-                            138 => 
+                            138 =>
                             array (
                                 'id' => 35576,
                                 'created_by' => 'admin',
@@ -3824,7 +3824,7 @@ Qatar',
                                 'trade_name' => 'QISI',
                                 'alternative_names' => NULL,
                             ),
-                            139 => 
+                            139 =>
                             array (
                                 'id' => 35579,
                                 'created_by' => 'admin',
@@ -3851,7 +3851,7 @@ Qatar',
                                 'trade_name' => '',
                                 'alternative_names' => NULL,
                             ),
-                            140 => 
+                            140 =>
                             array (
                                 'id' => 35582,
                                 'created_by' => 'admin',
@@ -3878,7 +3878,7 @@ Qatar',
                                 'trade_name' => '',
                                 'alternative_names' => NULL,
                             ),
-                            141 => 
+                            141 =>
                             array (
                                 'id' => 35585,
                                 'created_by' => 'admin',
@@ -3905,7 +3905,7 @@ Qatar',
                                 'trade_name' => '',
                                 'alternative_names' => NULL,
                             ),
-                            142 => 
+                            142 =>
                             array (
                                 'id' => 35588,
                                 'created_by' => 'admin',
@@ -3932,7 +3932,7 @@ Qatar',
                                 'trade_name' => '',
                                 'alternative_names' => NULL,
                             ),
-                            143 => 
+                            143 =>
                             array (
                                 'id' => 35591,
                                 'created_by' => 'admin',
@@ -3959,7 +3959,7 @@ Qatar',
                                 'trade_name' => '',
                                 'alternative_names' => NULL,
                             ),
-                            144 => 
+                            144 =>
                             array (
                                 'id' => 35594,
                                 'created_by' => 'admin',
@@ -3986,7 +3986,7 @@ Qatar',
                                 'trade_name' => '',
                                 'alternative_names' => NULL,
                             ),
-                            145 => 
+                            145 =>
                             array (
                                 'id' => 35597,
                                 'created_by' => 'admin',
@@ -4013,7 +4013,7 @@ Qatar',
                                 'trade_name' => '',
                                 'alternative_names' => NULL,
                             ),
-                            146 => 
+                            146 =>
                             array (
                                 'id' => 35616,
                                 'created_by' => 'admin',
@@ -4041,7 +4041,7 @@ P. O. Box 80, Muscat Grand Mall, PC 136',
                                 'trade_name' => 'AMAT',
                                 'alternative_names' => NULL,
                             ),
-                            147 => 
+                            147 =>
                             array (
                                 'id' => 35619,
                                 'created_by' => 'admin',
@@ -4054,7 +4054,7 @@ Sultanate of Oman.
 Location
 Building No: 115, Plot No: 330
 Block No: 146, Way No: 4202
-Landmark: 
+Landmark:
 Behind Shell Petrol Pump and adjacent to Sheraton Hotel and Atlas Hospital
 Greater Muttrah, Muscat
 Sultanate of Oman.',
@@ -4077,7 +4077,7 @@ Sultanate of Oman.',
                                 'trade_name' => 'NLIF',
                                 'alternative_names' => NULL,
                             ),
-                            148 => 
+                            148 =>
                             array (
                                 'id' => 35622,
                                 'created_by' => 'admin',
@@ -4104,7 +4104,7 @@ Sultanate of Oman.',
                                 'trade_name' => 'MCTI',
                                 'alternative_names' => NULL,
                             ),
-                            149 => 
+                            149 =>
                             array (
                                 'id' => 35625,
                                 'created_by' => 'admin',
@@ -4131,19 +4131,19 @@ Sultanate of Oman.',
                                 'trade_name' => 'AINS',
                                 'alternative_names' => NULL,
                             ),
-                            150 => 
+                            150 =>
                             array (
                                 'id' => 35628,
                                 'created_by' => 'admin',
                                 'created_date' => '2020-10-08 09:21:29.889716',
                                 'last_modified_by' => 'admin',
                                 'last_modified_date' => '2020-10-08 09:21:29.889716',
-                                'about' => 'P.O. Box 1002 
-Postal Code 112, Ruwi  
+                                'about' => 'P.O. Box 1002
+Postal Code 112, Ruwi
 Sultanate Of Oman.
 
 Phone: (+968) 24 705 305
-Fax: (+968) 24 782 801 
+Fax: (+968) 24 782 801
 Email: dhofar@dhofarinsurance.com',
                                 'auditor' => 'Grant Thornton',
                                 'company_email_id' => 'dhofar@dhofarinsurance.com',
@@ -4164,7 +4164,7 @@ Email: dhofar@dhofarinsurance.com',
                                 'trade_name' => 'DICS',
                                 'alternative_names' => NULL,
                             ),
-                            151 => 
+                            151 =>
                             array (
                                 'id' => 35631,
                                 'created_by' => 'admin',
@@ -4191,7 +4191,7 @@ Email: dhofar@dhofarinsurance.com',
                                 'trade_name' => 'OQIC',
                                 'alternative_names' => NULL,
                             ),
-                            152 => 
+                            152 =>
                             array (
                                 'id' => 35634,
                                 'created_by' => 'admin',
@@ -4220,7 +4220,7 @@ Sultanate of Oman',
                                 'trade_name' => 'OUIC',
                                 'alternative_names' => NULL,
                             ),
-                            153 => 
+                            153 =>
                             array (
                                 'id' => 35637,
                                 'created_by' => 'admin',
@@ -4252,7 +4252,7 @@ marketing@insurevic.com',
                                 'trade_name' => 'VISN',
                                 'alternative_names' => NULL,
                             ),
-                            154 => 
+                            154 =>
                             array (
                                 'id' => 35640,
                                 'created_by' => 'admin',
@@ -4279,7 +4279,7 @@ marketing@insurevic.com',
                                 'trade_name' => 'AFIC',
                                 'alternative_names' => NULL,
                             ),
-                            155 => 
+                            155 =>
                             array (
                                 'id' => 35643,
                                 'created_by' => 'admin',
@@ -4310,7 +4310,7 @@ CR No:1052000',
                                 'trade_name' => '',
                                 'alternative_names' => NULL,
                             ),
-                            156 => 
+                            156 =>
                             array (
                                 'id' => 35646,
                                 'created_by' => 'admin',
@@ -4344,7 +4344,7 @@ Email: info@takafuloman.om',
                                 'trade_name' => 'TAOI',
                                 'alternative_names' => NULL,
                             ),
-                            157 => 
+                            157 =>
                             array (
                                 'id' => 35649,
                                 'created_by' => 'admin',
@@ -4371,7 +4371,7 @@ Email: info@takafuloman.om',
                                 'trade_name' => '',
                                 'alternative_names' => NULL,
                             ),
-                            158 => 
+                            158 =>
                             array (
                                 'id' => 35652,
                                 'created_by' => 'admin',
@@ -4398,7 +4398,7 @@ Email: info@takafuloman.om',
                                 'trade_name' => '',
                                 'alternative_names' => NULL,
                             ),
-                            159 => 
+                            159 =>
                             array (
                                 'id' => 35655,
                                 'created_by' => 'admin',
@@ -4425,7 +4425,7 @@ Email: info@takafuloman.om',
                                 'trade_name' => '',
                                 'alternative_names' => NULL,
                             ),
-                            160 => 
+                            160 =>
                             array (
                                 'id' => 35658,
                                 'created_by' => 'admin',
@@ -4452,7 +4452,7 @@ Email: info@takafuloman.om',
                                 'trade_name' => '',
                                 'alternative_names' => NULL,
                             ),
-                            161 => 
+                            161 =>
                             array (
                                 'id' => 35661,
                                 'created_by' => 'admin',
@@ -4479,7 +4479,7 @@ Email: info@takafuloman.om',
                                 'trade_name' => '',
                                 'alternative_names' => NULL,
                             ),
-                            162 => 
+                            162 =>
                             array (
                                 'id' => 35664,
                                 'created_by' => 'admin',
@@ -4508,7 +4508,7 @@ New Delhi - 110002',
                                 'trade_name' => 'ORIENT',
                                 'alternative_names' => NULL,
                             ),
-                            163 => 
+                            163 =>
                             array (
                                 'id' => 35667,
                                 'created_by' => 'admin',
@@ -4537,7 +4537,7 @@ PO Box 417, Postal Code 100, Muscat, Oman',
                                 'trade_name' => '',
                                 'alternative_names' => NULL,
                             ),
-                            164 => 
+                            164 =>
                             array (
                                 'id' => 35670,
                                 'created_by' => 'admin',
@@ -4564,7 +4564,7 @@ PO Box 417, Postal Code 100, Muscat, Oman',
                                 'trade_name' => '',
                                 'alternative_names' => NULL,
                             ),
-                            165 => 
+                            165 =>
                             array (
                                 'id' => 35673,
                                 'created_by' => 'admin',
@@ -4595,7 +4595,7 @@ Ruwi, Oman',
                                 'trade_name' => '',
                                 'alternative_names' => NULL,
                             ),
-                            166 => 
+                            166 =>
                             array (
                                 'id' => 35712,
                                 'created_by' => 'admin',
@@ -4622,7 +4622,7 @@ Ruwi, Oman',
                                 'trade_name' => '',
                                 'alternative_names' => NULL,
                             ),
-                            167 => 
+                            167 =>
                             array (
                                 'id' => 35715,
                                 'created_by' => 'admin',
@@ -4649,7 +4649,7 @@ Ruwi, Oman',
                                 'trade_name' => '',
                                 'alternative_names' => NULL,
                             ),
-                            168 => 
+                            168 =>
                             array (
                                 'id' => 35718,
                                 'created_by' => 'admin',
@@ -4676,7 +4676,7 @@ Ruwi, Oman',
                                 'trade_name' => '',
                                 'alternative_names' => NULL,
                             ),
-                            169 => 
+                            169 =>
                             array (
                                 'id' => 35721,
                                 'created_by' => 'admin',
@@ -4703,7 +4703,7 @@ Ruwi, Oman',
                                 'trade_name' => '',
                                 'alternative_names' => NULL,
                             ),
-                            170 => 
+                            170 =>
                             array (
                                 'id' => 35724,
                                 'created_by' => 'admin',
@@ -4730,7 +4730,7 @@ Ruwi, Oman',
                                 'trade_name' => '',
                                 'alternative_names' => NULL,
                             ),
-                            171 => 
+                            171 =>
                             array (
                                 'id' => 35727,
                                 'created_by' => 'admin',
@@ -4757,7 +4757,7 @@ Ruwi, Oman',
                                 'trade_name' => 'FTIC',
                                 'alternative_names' => NULL,
                             ),
-                            172 => 
+                            172 =>
                             array (
                                 'id' => 35730,
                                 'created_by' => 'admin',
@@ -4784,7 +4784,7 @@ Ruwi, Oman',
                                 'trade_name' => '',
                                 'alternative_names' => NULL,
                             ),
-                            173 => 
+                            173 =>
                             array (
                                 'id' => 35733,
                                 'created_by' => 'admin',
@@ -4811,7 +4811,7 @@ Ruwi, Oman',
                             'trade_name' => 'GIRI transformed their brand name to Gulf Insurance Group-Kuwait (gig-Kuwait)',
                                 'alternative_names' => NULL,
                             ),
-                            174 => 
+                            174 =>
                             array (
                                 'id' => 35736,
                                 'created_by' => 'admin',
@@ -4838,7 +4838,7 @@ Ruwi, Oman',
                                 'trade_name' => '',
                                 'alternative_names' => NULL,
                             ),
-                            175 => 
+                            175 =>
                             array (
                                 'id' => 35739,
                                 'created_by' => 'admin',
@@ -4865,7 +4865,7 @@ Ruwi, Oman',
                                 'trade_name' => '',
                                 'alternative_names' => NULL,
                             ),
-                            176 => 
+                            176 =>
                             array (
                                 'id' => 35742,
                                 'created_by' => 'admin',
@@ -4892,7 +4892,7 @@ Ruwi, Oman',
                                 'trade_name' => '',
                                 'alternative_names' => NULL,
                             ),
-                            177 => 
+                            177 =>
                             array (
                                 'id' => 35745,
                                 'created_by' => 'admin',
@@ -4919,7 +4919,7 @@ Ruwi, Oman',
                                 'trade_name' => '',
                                 'alternative_names' => NULL,
                             ),
-                            178 => 
+                            178 =>
                             array (
                                 'id' => 35748,
                                 'created_by' => 'admin',
@@ -4946,7 +4946,7 @@ Ruwi, Oman',
                                 'trade_name' => '',
                                 'alternative_names' => NULL,
                             ),
-                            179 => 
+                            179 =>
                             array (
                                 'id' => 35751,
                                 'created_by' => 'admin',
@@ -4973,7 +4973,7 @@ Ruwi, Oman',
                                 'trade_name' => 'KQIC',
                                 'alternative_names' => NULL,
                             ),
-                            180 => 
+                            180 =>
                             array (
                                 'id' => 35754,
                                 'created_by' => 'admin',
@@ -5000,7 +5000,7 @@ Ruwi, Oman',
                                 'trade_name' => '',
                                 'alternative_names' => NULL,
                             ),
-                            181 => 
+                            181 =>
                             array (
                                 'id' => 35757,
                                 'created_by' => 'admin',
@@ -5027,7 +5027,7 @@ Ruwi, Oman',
                             'trade_name' => 'KIB Takaful Insurance Company (KSCC)',
                                 'alternative_names' => NULL,
                             ),
-                            182 => 
+                            182 =>
                             array (
                                 'id' => 35760,
                                 'created_by' => 'admin',
@@ -5054,7 +5054,7 @@ Ruwi, Oman',
                                 'trade_name' => '',
                                 'alternative_names' => NULL,
                             ),
-                            183 => 
+                            183 =>
                             array (
                                 'id' => 35763,
                                 'created_by' => 'admin',
@@ -5081,7 +5081,7 @@ Ruwi, Oman',
                                 'trade_name' => '',
                                 'alternative_names' => NULL,
                             ),
-                            184 => 
+                            184 =>
                             array (
                                 'id' => 35766,
                                 'created_by' => 'admin',
@@ -5108,7 +5108,7 @@ Ruwi, Oman',
                                 'trade_name' => '',
                                 'alternative_names' => NULL,
                             ),
-                            185 => 
+                            185 =>
                             array (
                                 'id' => 35769,
                                 'created_by' => 'admin',
@@ -5135,7 +5135,7 @@ Ruwi, Oman',
                                 'trade_name' => '',
                                 'alternative_names' => NULL,
                             ),
-                            186 => 
+                            186 =>
                             array (
                                 'id' => 35772,
                                 'created_by' => 'admin',
@@ -5162,7 +5162,7 @@ Ruwi, Oman',
                                 'trade_name' => 'AIIC',
                                 'alternative_names' => NULL,
                             ),
-                            187 => 
+                            187 =>
                             array (
                                 'id' => 35775,
                                 'created_by' => 'admin',
@@ -5189,7 +5189,7 @@ Ruwi, Oman',
                                 'trade_name' => 'DATIC',
                                 'alternative_names' => NULL,
                             ),
-                            188 => 
+                            188 =>
                             array (
                                 'id' => 35778,
                                 'created_by' => 'admin',
@@ -5216,7 +5216,7 @@ Ruwi, Oman',
                                 'trade_name' => '',
                                 'alternative_names' => NULL,
                             ),
-                            189 => 
+                            189 =>
                             array (
                                 'id' => 35781,
                                 'created_by' => 'admin',
@@ -5243,7 +5243,7 @@ Ruwi, Oman',
                                 'trade_name' => '',
                                 'alternative_names' => NULL,
                             ),
-                            190 => 
+                            190 =>
                             array (
                                 'id' => 35784,
                                 'created_by' => 'admin',
@@ -5270,7 +5270,7 @@ Ruwi, Oman',
                                 'trade_name' => '',
                                 'alternative_names' => NULL,
                             ),
-                            191 => 
+                            191 =>
                             array (
                                 'id' => 35787,
                                 'created_by' => 'admin',
@@ -5297,7 +5297,7 @@ Ruwi, Oman',
                                 'trade_name' => '',
                                 'alternative_names' => NULL,
                             ),
-                            192 => 
+                            192 =>
                             array (
                                 'id' => 35790,
                                 'created_by' => 'admin',
@@ -5324,7 +5324,7 @@ Ruwi, Oman',
                                 'trade_name' => '',
                                 'alternative_names' => NULL,
                             ),
-                            193 => 
+                            193 =>
                             array (
                                 'id' => 35793,
                                 'created_by' => 'admin',
@@ -5351,7 +5351,7 @@ Ruwi, Oman',
                                 'trade_name' => '',
                                 'alternative_names' => NULL,
                             ),
-                            194 => 
+                            194 =>
                             array (
                                 'id' => 35796,
                                 'created_by' => 'admin',
@@ -5378,7 +5378,7 @@ Ruwi, Oman',
                                 'trade_name' => '',
                                 'alternative_names' => NULL,
                             ),
-                            195 => 
+                            195 =>
                             array (
                                 'id' => 35799,
                                 'created_by' => 'admin',
@@ -5405,7 +5405,7 @@ Ruwi, Oman',
                                 'trade_name' => '',
                                 'alternative_names' => NULL,
                             ),
-                            196 => 
+                            196 =>
                             array (
                                 'id' => 35802,
                                 'created_by' => 'admin',
@@ -5432,7 +5432,7 @@ Ruwi, Oman',
                                 'trade_name' => '',
                                 'alternative_names' => NULL,
                             ),
-                            197 => 
+                            197 =>
                             array (
                                 'id' => 35805,
                                 'created_by' => 'admin',
@@ -5459,7 +5459,7 @@ Ruwi, Oman',
                                 'trade_name' => '',
                                 'alternative_names' => NULL,
                             ),
-                            198 => 
+                            198 =>
                             array (
                                 'id' => 35808,
                                 'created_by' => 'admin',
@@ -5486,7 +5486,7 @@ Ruwi, Oman',
                                 'trade_name' => '',
                                 'alternative_names' => NULL,
                             ),
-                            199 => 
+                            199 =>
                             array (
                                 'id' => 35811,
                                 'created_by' => 'admin',
@@ -5513,7 +5513,7 @@ Ruwi, Oman',
                                 'trade_name' => '',
                                 'alternative_names' => NULL,
                             ),
-                            200 => 
+                            200 =>
                             array (
                                 'id' => 35814,
                                 'created_by' => 'admin',
@@ -5540,7 +5540,7 @@ Ruwi, Oman',
                                 'trade_name' => '',
                                 'alternative_names' => NULL,
                             ),
-                            201 => 
+                            201 =>
                             array (
                                 'id' => 35978,
                                 'created_by' => 'admin',
@@ -5551,7 +5551,7 @@ Ruwi, Oman',
                                 'auditor' => '',
                                 'company_email_id' => '',
                                 'company_name' => 'Ezer Mortgage Insurance Company Ltd',
-                                'company_type' => 'Private  Company',
+                                'company_type' => 'Private Company',
                                 'company_website' => 'http://www.emiltd.com/',
                                 'contact_number' => '972-3-7546789',
                                 'corporate_details' => NULL,
@@ -5567,7 +5567,7 @@ Ruwi, Oman',
                                 'trade_name' => '',
                                 'alternative_names' => NULL,
                             ),
-                            202 => 
+                            202 =>
                             array (
                                 'id' => 35981,
                                 'created_by' => 'admin',
@@ -5578,7 +5578,7 @@ Ruwi, Oman',
                                 'auditor' => 'KPMG Somekh Chaikin',
                                 'company_email_id' => 'service@aig.co.il',
                                 'company_name' => 'AIG Israel Insurance company',
-                                'company_type' => 'Private  Company',
+                                'company_type' => 'Private Company',
                                 'company_website' => 'https://www.aig.co.il/',
                                 'contact_number' => '052-8880337 / 03-9272300',
                                 'corporate_details' => NULL,
@@ -5594,7 +5594,7 @@ Ruwi, Oman',
                                 'trade_name' => 'AIG',
                                 'alternative_names' => NULL,
                             ),
-                            203 => 
+                            203 =>
                             array (
                                 'id' => 35984,
                                 'created_by' => 'admin',
@@ -5605,7 +5605,7 @@ Ruwi, Oman',
                                 'auditor' => 'Ernst & Young',
                                 'company_email_id' => 'pniot@yashir.co.il',
                             'company_name' => 'IDI Insurance Company Ltd (IDIN)',
-                                'company_type' => 'Private  Company',
+                                'company_type' => 'Private Company',
                                 'company_website' => 'https://www.555.co.il/',
                                 'contact_number' => '03-5654021',
                                 'corporate_details' => NULL,
@@ -5621,7 +5621,7 @@ Ruwi, Oman',
                                 'trade_name' => 'IDIN',
                                 'alternative_names' => NULL,
                             ),
-                            204 => 
+                            204 =>
                             array (
                                 'id' => 35987,
                                 'created_by' => 'admin',
@@ -5632,7 +5632,7 @@ Ruwi, Oman',
                                 'auditor' => 'Ernst & Young',
                                 'company_email_id' => 'israel-m@ayalon-ins.co.il',
                                 'company_name' => 'Ayalon Insurance Company',
-                                'company_type' => 'Private  Company',
+                                'company_type' => 'Private Company',
                                 'company_website' => 'https://www.ayalon-ins.co.il/',
                                 'contact_number' => '972 1-700-727-227',
                                 'corporate_details' => NULL,
@@ -5648,7 +5648,7 @@ Ruwi, Oman',
                                 'trade_name' => 'AYAL',
                                 'alternative_names' => NULL,
                             ),
-                            205 => 
+                            205 =>
                             array (
                                 'id' => 35990,
                                 'created_by' => 'admin',
@@ -5659,7 +5659,7 @@ Ruwi, Oman',
                                 'auditor' => 'Ernst & Young',
                                 'company_email_id' => 'ocontact@ashra.gov.il',
                                 'company_name' => 'Ashra - The Israel Foreign Trade Risks Insurance Corporation Ltd',
-                                'company_type' => 'Public  Company',
+                                'company_type' => 'Public Company',
                                 'company_website' => 'https://www.ashra.gov.il/eng/',
                                 'contact_number' => '03-5631714',
                                 'corporate_details' => NULL,
@@ -5675,7 +5675,7 @@ Ruwi, Oman',
                                 'trade_name' => 'ASHRA',
                                 'alternative_names' => NULL,
                             ),
-                            206 => 
+                            206 =>
                             array (
                                 'id' => 35993,
                                 'created_by' => 'admin',
@@ -5686,7 +5686,7 @@ Ruwi, Oman',
                                 'auditor' => '',
                                 'company_email_id' => 'marketing@icic.co.il',
                                 'company_name' => 'B.S.S.H. - The Israeli Credit Insurance Company Ltd ICIC',
-                                'company_type' => 'Public  Company',
+                                'company_type' => 'Public Company',
                                 'company_website' => 'https://www.icic.co.il/eng/about-us.html',
                                 'contact_number' => '03-7962444',
                                 'corporate_details' => NULL,
@@ -5702,7 +5702,7 @@ Ruwi, Oman',
                                 'trade_name' => 'ICIC',
                                 'alternative_names' => NULL,
                             ),
-                            207 => 
+                            207 =>
                             array (
                                 'id' => 35996,
                                 'created_by' => 'admin',
@@ -5729,7 +5729,7 @@ Ruwi, Oman',
                                 'trade_name' => '',
                                 'alternative_names' => NULL,
                             ),
-                            208 => 
+                            208 =>
                             array (
                                 'id' => 35999,
                                 'created_by' => 'admin',
@@ -5740,7 +5740,7 @@ Ruwi, Oman',
                                 'auditor' => '',
                                 'company_email_id' => 'info@davidshield.com',
                                 'company_name' => 'David Shield Insurance Company Ltd',
-                                'company_type' => 'Private  Company',
+                                'company_type' => 'Private Company',
                                 'company_website' => 'https://www.davidshield.com/aboutus',
                                 'contact_number' => '972 9-892-0950',
                                 'corporate_details' => NULL,
@@ -5756,7 +5756,7 @@ Ruwi, Oman',
                                 'trade_name' => '',
                                 'alternative_names' => NULL,
                             ),
-                            209 => 
+                            209 =>
                             array (
                                 'id' => 36002,
                                 'created_by' => 'admin',
@@ -5767,7 +5767,7 @@ Ruwi, Oman',
                                 'auditor' => 'Ernst & Young',
                                 'company_email_id' => 'royd@hcsra.co.il',
                                 'company_name' => 'Hachshara Insurance company Ltd',
-                                'company_type' => 'Public  Company',
+                                'company_type' => 'Public Company',
                                 'company_website' => 'https://www.hcsra.co.il/Pages/HomePage.aspx',
                                 'contact_number' => '03-7962624',
                                 'corporate_details' => NULL,
@@ -5783,7 +5783,7 @@ Ruwi, Oman',
                                 'trade_name' => 'ILD INSUR B3',
                                 'alternative_names' => NULL,
                             ),
-                            210 => 
+                            210 =>
                             array (
                                 'id' => 36005,
                                 'created_by' => 'admin',
@@ -5794,7 +5794,7 @@ Ruwi, Oman',
                                 'auditor' => 'Ernst & Young',
                                 'company_email_id' => 'infom@fnx.co.il',
                                 'company_name' => 'Phoenix Insurance company Ltd',
-                                'company_type' => 'Public  Company',
+                                'company_type' => 'Public Company',
                                 'company_website' => 'https://investor-relations.fnx.co.il/#20',
                                 'contact_number' => '03-7332020',
                                 'corporate_details' => NULL,
@@ -5810,7 +5810,7 @@ Ruwi, Oman',
                                 'trade_name' => 'PNCP',
                                 'alternative_names' => NULL,
                             ),
-                            211 => 
+                            211 =>
                             array (
                                 'id' => 36008,
                                 'created_by' => 'admin',
@@ -5821,7 +5821,7 @@ Ruwi, Oman',
                                 'auditor' => 'KPMG Somekh Chaikin',
                                 'company_email_id' => 'meravra@harel-ins.co.il',
                                 'company_name' => 'Harel Insurance Company Ltd',
-                                'company_type' => 'Public  Company',
+                                'company_type' => 'Public Company',
                                 'company_website' => 'http://www.harel-group.com/',
                                 'contact_number' => '972 3-754-7777',
                                 'corporate_details' => NULL,
@@ -5837,7 +5837,7 @@ Ruwi, Oman',
                                 'trade_name' => 'HAREL',
                                 'alternative_names' => NULL,
                             ),
-                            212 => 
+                            212 =>
                             array (
                                 'id' => 36011,
                                 'created_by' => 'admin',
@@ -5848,7 +5848,7 @@ Ruwi, Oman',
                                 'auditor' => 'KPMG',
                                 'company_email_id' => 'service@we-sure.co.il',
                             'company_name' => 'We sure Insurance Company Ltd(And alignment insurance company ltd)',
-                                'company_type' => 'Private  Company',
+                                'company_type' => 'Private Company',
                                 'company_website' => 'https://www.we-sure.co.il/%d7%90%d7%95%d7%93%d7%95%d7%aa%d7%a0%d7%95/',
                                 'contact_number' => '6835 / 054-1466490',
                                 'corporate_details' => NULL,
@@ -5864,7 +5864,7 @@ Ruwi, Oman',
                                 'trade_name' => 'WE SURE',
                                 'alternative_names' => NULL,
                             ),
-                            213 => 
+                            213 =>
                             array (
                                 'id' => 36014,
                                 'created_by' => 'admin',
@@ -5875,7 +5875,7 @@ Ruwi, Oman',
                                 'auditor' => 'Ernst & Young / KPMG Somekh Chaikin',
                                 'company_email_id' => 'clalmishpatit@clal-ins.co.il',
                                 'company_name' => 'Clal Credit Insurance Ltd',
-                                'company_type' => 'Private  Company',
+                                'company_type' => 'Private Company',
                                 'company_website' => 'https://www.clalbit.co.il/',
                                 'contact_number' => '972 3 6387575',
                                 'corporate_details' => NULL,
@@ -5891,7 +5891,7 @@ Ruwi, Oman',
                                 'trade_name' => 'CLIS',
                                 'alternative_names' => NULL,
                             ),
-                            214 => 
+                            214 =>
                             array (
                                 'id' => 36017,
                                 'created_by' => 'admin',
@@ -5902,7 +5902,7 @@ Ruwi, Oman',
                                 'auditor' => 'Ernst & Young / KPMG Somekh Chaikin',
                                 'company_email_id' => 'clalmishpatit@clal-ins.co.il',
                                 'company_name' => 'Clal Insurance Company Ltd',
-                                'company_type' => 'Private  Company',
+                                'company_type' => 'Private Company',
                                 'company_website' => 'https://www.clalbit.co.il/',
                                 'contact_number' => '972 3 6387575',
                                 'corporate_details' => NULL,
@@ -5918,7 +5918,7 @@ Ruwi, Oman',
                                 'trade_name' => 'CLIS',
                                 'alternative_names' => NULL,
                             ),
-                            215 => 
+                            215 =>
                             array (
                                 'id' => 36020,
                                 'created_by' => 'admin',
@@ -5929,7 +5929,7 @@ Ruwi, Oman',
                                 'auditor' => 'Ernst & Young',
                                 'company_email_id' => '',
                                 'company_name' => 'Libra Insurance Company Ltd',
-                                'company_type' => 'Private  Company',
+                                'company_type' => 'Private Company',
                                 'company_website' => 'https://www.lbr.co.il/',
                                 'contact_number' => '972 73-394-9222',
                                 'corporate_details' => NULL,
@@ -5945,7 +5945,7 @@ Ruwi, Oman',
                                 'trade_name' => '',
                                 'alternative_names' => NULL,
                             ),
-                            216 => 
+                            216 =>
                             array (
                                 'id' => 36023,
                                 'created_by' => 'admin',
@@ -5956,7 +5956,7 @@ Ruwi, Oman',
                                 'auditor' => '',
                                 'company_email_id' => 'migdalhold@migdal.co.il',
                                 'company_name' => 'Migdal insurance company Ltd',
-                                'company_type' => 'Public  Company',
+                                'company_type' => 'Public Company',
                                 'company_website' => 'http://www.migdal.co.il/',
                                 'contact_number' => '972-7-6886-8962',
                                 'corporate_details' => NULL,
@@ -5972,7 +5972,7 @@ Ruwi, Oman',
                                 'trade_name' => 'MGDL',
                                 'alternative_names' => NULL,
                             ),
-                            217 => 
+                            217 =>
                             array (
                                 'id' => 36026,
                                 'created_by' => 'admin',
@@ -5983,7 +5983,7 @@ Ruwi, Oman',
                                 'auditor' => 'Ernst & Young',
                                 'company_email_id' => 'shimoni@menora.co.il',
                                 'company_name' => 'Menora Mivtachim Insurance Ltd',
-                                'company_type' => 'Public  Company',
+                                'company_type' => 'Public Company',
                                 'company_website' => 'http://www.menora.co.il/',
                                 'contact_number' => '972-3710-7864',
                                 'corporate_details' => NULL,
@@ -5999,7 +5999,7 @@ Ruwi, Oman',
                                 'trade_name' => 'MMHD',
                                 'alternative_names' => NULL,
                             ),
-                            218 => 
+                            218 =>
                             array (
                                 'id' => 36029,
                                 'created_by' => 'admin',
@@ -6010,7 +6010,7 @@ Ruwi, Oman',
                                 'auditor' => '',
                                 'company_email_id' => '',
                                 'company_name' => 'Inbal Insurance Company Ltd',
-                                'company_type' => 'Public  Company',
+                                'company_type' => 'Public Company',
                                 'company_website' => 'http://inbal.co.il/',
                                 'contact_number' => '972 3-977-8000',
                                 'corporate_details' => NULL,
@@ -6026,7 +6026,7 @@ Ruwi, Oman',
                                 'trade_name' => '',
                                 'alternative_names' => NULL,
                             ),
-                            219 => 
+                            219 =>
                             array (
                                 'id' => 36032,
                                 'created_by' => 'admin',
@@ -6037,7 +6037,7 @@ Ruwi, Oman',
                                 'auditor' => 'Ernst & Young',
                                 'company_email_id' => 'kanat@kanat.co.il',
                                 'company_name' => 'Kent - Fund for Natural Damage Insurance in Agriculture Ltd',
-                                'company_type' => 'Public  Company',
+                                'company_type' => 'Public Company',
                                 'company_website' => 'http://www.kanat.co.il/',
                                 'contact_number' => '03-6270200',
                                 'corporate_details' => NULL,
@@ -6053,7 +6053,7 @@ Ruwi, Oman',
                                 'trade_name' => '',
                                 'alternative_names' => NULL,
                             ),
-                            220 => 
+                            220 =>
                             array (
                                 'id' => 36035,
                                 'created_by' => 'admin',
@@ -6064,7 +6064,7 @@ Ruwi, Oman',
                                 'auditor' => 'KPMG',
                                 'company_email_id' => 'pz@shlomo-bit.co.il',
                                 'company_name' => 'Shlomo Insurance Company Ltd',
-                                'company_type' => 'Private  Company',
+                                'company_type' => 'Private Company',
                                 'company_website' => 'https://www.shlomo-bit.co.il/',
                                 'contact_number' => '6006/073-7111199',
                                 'corporate_details' => NULL,
@@ -6080,7 +6080,7 @@ Ruwi, Oman',
                                 'trade_name' => '',
                                 'alternative_names' => NULL,
                             ),
-                            221 => 
+                            221 =>
                             array (
                                 'id' => 36038,
                                 'created_by' => 'admin',
@@ -6091,7 +6091,7 @@ Ruwi, Oman',
                                 'auditor' => '',
                                 'company_email_id' => '',
                                 'company_name' => 'Shomera Insurance Company Ltd',
-                                'company_type' => 'Private  Company',
+                                'company_type' => 'Private Company',
                                 'company_website' => 'http://www.shomera.co.il/',
                                 'contact_number' => '972 3-925-8000',
                                 'corporate_details' => NULL,
@@ -6107,7 +6107,7 @@ Ruwi, Oman',
                                 'trade_name' => '',
                                 'alternative_names' => NULL,
                             ),
-                            222 => 
+                            222 =>
                             array (
                                 'id' => 36041,
                                 'created_by' => 'admin',
@@ -6118,7 +6118,7 @@ Ruwi, Oman',
                                 'auditor' => 'Ernst & Young',
                                 'company_email_id' => '',
                                 'company_name' => 'Shirbit Insurance Company',
-                                'company_type' => 'Private  Company',
+                                'company_type' => 'Private Company',
                                 'company_website' => 'https://www.shirbit.co.il/',
                                 'contact_number' => '07 686 2226',
                                 'corporate_details' => NULL,
@@ -6134,7 +6134,7 @@ Ruwi, Oman',
                                 'trade_name' => '',
                                 'alternative_names' => NULL,
                             ),
-                            223 => 
+                            223 =>
                             array (
                                 'id' => 36044,
                                 'created_by' => 'admin',
@@ -6161,7 +6161,7 @@ Ruwi, Oman',
                                 'trade_name' => '',
                                 'alternative_names' => NULL,
                             ),
-                            224 => 
+                            224 =>
                             array (
                                 'id' => 36047,
                                 'created_by' => 'admin',
@@ -6188,7 +6188,7 @@ Ruwi, Oman',
                                 'trade_name' => '',
                                 'alternative_names' => NULL,
                             ),
-                            225 => 
+                            225 =>
                             array (
                                 'id' => 36050,
                                 'created_by' => 'admin',
@@ -6215,7 +6215,7 @@ Ruwi, Oman',
                                 'trade_name' => '',
                                 'alternative_names' => NULL,
                             ),
-                            226 => 
+                            226 =>
                             array (
                                 'id' => 36053,
                                 'created_by' => 'admin',
@@ -6242,7 +6242,7 @@ Ruwi, Oman',
                                 'trade_name' => '',
                                 'alternative_names' => NULL,
                             ),
-                            227 => 
+                            227 =>
                             array (
                                 'id' => 36230,
                                 'created_by' => 'admin',
@@ -6269,7 +6269,7 @@ Ruwi, Oman',
                                 'trade_name' => '',
                                 'alternative_names' => NULL,
                             ),
-                            228 => 
+                            228 =>
                             array (
                                 'id' => 36233,
                                 'created_by' => 'admin',
@@ -6296,7 +6296,7 @@ Ruwi, Oman',
                                 'trade_name' => '',
                                 'alternative_names' => NULL,
                             ),
-                            229 => 
+                            229 =>
                             array (
                                 'id' => 36236,
                                 'created_by' => 'admin',
@@ -6307,7 +6307,7 @@ Ruwi, Oman',
                                 'auditor' => '',
                                 'company_email_id' => 'iraqre_ins@mof.gov.ig',
                                 'company_name' => 'Iraq Reinsurance Co',
-                                'company_type' => 'Public company',
+                                'company_type' => 'Public Company',
                                 'company_website' => '',
                             'contact_number' => '7192491- 7192582 (G.M.) 7192588',
                                 'corporate_details' => NULL,
@@ -6323,7 +6323,7 @@ Ruwi, Oman',
                                 'trade_name' => '',
                                 'alternative_names' => NULL,
                             ),
-                            230 => 
+                            230 =>
                             array (
                                 'id' => 36239,
                                 'created_by' => 'admin',
@@ -6350,7 +6350,7 @@ Ruwi, Oman',
                                 'trade_name' => 'NDSA',
                                 'alternative_names' => NULL,
                             ),
-                            231 => 
+                            231 =>
                             array (
                                 'id' => 36242,
                                 'created_by' => 'admin',
@@ -6377,7 +6377,7 @@ Ruwi, Oman',
                                 'trade_name' => 'Al Ameen',
                                 'alternative_names' => NULL,
                             ),
-                            232 => 
+                            232 =>
                             array (
                                 'id' => 36245,
                                 'created_by' => 'admin',
@@ -6404,7 +6404,7 @@ Ruwi, Oman',
                                 'trade_name' => '',
                                 'alternative_names' => NULL,
                             ),
-                            233 => 
+                            233 =>
                             array (
                                 'id' => 36248,
                                 'created_by' => 'admin',
@@ -6431,7 +6431,7 @@ Ruwi, Oman',
                                 'trade_name' => 'NHAM / Al Hamraa for Insurance',
                                 'alternative_names' => NULL,
                             ),
-                            234 => 
+                            234 =>
                             array (
                                 'id' => 36251,
                                 'created_by' => 'admin',
@@ -6458,7 +6458,7 @@ Ruwi, Oman',
                                 'trade_name' => 'Gulf Insurance / NGIR',
                                 'alternative_names' => NULL,
                             ),
-                            235 => 
+                            235 =>
                             array (
                                 'id' => 36254,
                                 'created_by' => 'admin',
@@ -6485,7 +6485,7 @@ Ruwi, Oman',
                                 'trade_name' => '',
                                 'alternative_names' => NULL,
                             ),
-                            236 => 
+                            236 =>
                             array (
                                 'id' => 36257,
                                 'created_by' => 'admin',
@@ -6512,7 +6512,7 @@ Ruwi, Oman',
                                 'trade_name' => '',
                                 'alternative_names' => NULL,
                             ),
-                            237 => 
+                            237 =>
                             array (
                                 'id' => 36260,
                                 'created_by' => 'admin',
@@ -6539,7 +6539,7 @@ Ruwi, Oman',
                                 'trade_name' => 'UIIC',
                                 'alternative_names' => NULL,
                             ),
-                            238 => 
+                            238 =>
                             array (
                                 'id' => 36263,
                                 'created_by' => 'admin',
@@ -6566,7 +6566,7 @@ Ruwi, Oman',
                                 'trade_name' => '',
                                 'alternative_names' => NULL,
                             ),
-                            239 => 
+                            239 =>
                             array (
                                 'id' => 36266,
                                 'created_by' => 'admin',
@@ -6593,7 +6593,7 @@ Ruwi, Oman',
                                 'trade_name' => 'Moallem Insurance/Moallem Insurance Co./M.I.C./Export and Investment Insurance Co.',
                                 'alternative_names' => NULL,
                             ),
-                            240 => 
+                            240 =>
                             array (
                                 'id' => 36269,
                                 'created_by' => 'admin',
@@ -6620,7 +6620,7 @@ Ruwi, Oman',
                                 'trade_name' => 'Trust House Insurance Company',
                                 'alternative_names' => NULL,
                             ),
-                            241 => 
+                            241 =>
                             array (
                                 'id' => 36272,
                                 'created_by' => 'admin',
@@ -6647,7 +6647,7 @@ Ruwi, Oman',
                                 'trade_name' => '',
                                 'alternative_names' => NULL,
                             ),
-                            242 => 
+                            242 =>
                             array (
                                 'id' => 36275,
                                 'created_by' => 'admin',
@@ -6674,7 +6674,7 @@ Ruwi, Oman',
                                 'trade_name' => '',
                                 'alternative_names' => NULL,
                             ),
-                            243 => 
+                            243 =>
                             array (
                                 'id' => 36278,
                                 'created_by' => 'admin',
@@ -6701,7 +6701,7 @@ Ruwi, Oman',
                                 'trade_name' => '',
                                 'alternative_names' => NULL,
                             ),
-                            244 => 
+                            244 =>
                             array (
                                 'id' => 36281,
                                 'created_by' => 'admin',
@@ -6728,7 +6728,7 @@ Ruwi, Oman',
                                 'trade_name' => '',
                                 'alternative_names' => NULL,
                             ),
-                            245 => 
+                            245 =>
                             array (
                                 'id' => 36284,
                                 'created_by' => 'admin',
@@ -6755,7 +6755,7 @@ Ruwi, Oman',
                                 'trade_name' => '',
                                 'alternative_names' => NULL,
                             ),
-                            246 => 
+                            246 =>
                             array (
                                 'id' => 36287,
                                 'created_by' => 'admin',
@@ -6782,7 +6782,7 @@ Ruwi, Oman',
                                 'trade_name' => '',
                                 'alternative_names' => NULL,
                             ),
-                            247 => 
+                            247 =>
                             array (
                                 'id' => 36290,
                                 'created_by' => 'admin',
@@ -6809,7 +6809,7 @@ Ruwi, Oman',
                                 'trade_name' => '',
                                 'alternative_names' => NULL,
                             ),
-                            248 => 
+                            248 =>
                             array (
                                 'id' => 36293,
                                 'created_by' => 'admin',
@@ -6836,7 +6836,7 @@ Ruwi, Oman',
                                 'trade_name' => '',
                                 'alternative_names' => NULL,
                             ),
-                            249 => 
+                            249 =>
                             array (
                                 'id' => 36296,
                                 'created_by' => 'admin',
@@ -6863,7 +6863,7 @@ Ruwi, Oman',
                                 'trade_name' => 'NAHF / Al Ahlia Co',
                                 'alternative_names' => NULL,
                             ),
-                            250 => 
+                            250 =>
                             array (
                                 'id' => 36299,
                                 'created_by' => 'admin',
@@ -6890,7 +6890,7 @@ Ruwi, Oman',
                                 'trade_name' => '',
                                 'alternative_names' => NULL,
                             ),
-                            251 => 
+                            251 =>
                             array (
                                 'id' => 36302,
                                 'created_by' => 'admin',
@@ -6917,7 +6917,7 @@ Ruwi, Oman',
                                 'trade_name' => '',
                                 'alternative_names' => NULL,
                             ),
-                            252 => 
+                            252 =>
                             array (
                                 'id' => 36305,
                                 'created_by' => 'admin',
@@ -6944,7 +6944,7 @@ Ruwi, Oman',
                                 'trade_name' => '',
                                 'alternative_names' => NULL,
                             ),
-                            253 => 
+                            253 =>
                             array (
                                 'id' => 36308,
                                 'created_by' => 'admin',
@@ -6971,7 +6971,7 @@ Ruwi, Oman',
                                 'trade_name' => '',
                                 'alternative_names' => NULL,
                             ),
-                            254 => 
+                            254 =>
                             array (
                                 'id' => 36311,
                                 'created_by' => 'admin',
@@ -6998,7 +6998,7 @@ Ruwi, Oman',
                                 'trade_name' => '',
                                 'alternative_names' => NULL,
                             ),
-                            255 => 
+                            255 =>
                             array (
                                 'id' => 36314,
                                 'created_by' => 'admin',
@@ -7025,7 +7025,7 @@ Ruwi, Oman',
                                 'trade_name' => '',
                                 'alternative_names' => NULL,
                             ),
-                            256 => 
+                            256 =>
                             array (
                                 'id' => 36317,
                                 'created_by' => 'admin',
@@ -7052,7 +7052,7 @@ Ruwi, Oman',
                                 'trade_name' => '',
                                 'alternative_names' => NULL,
                             ),
-                            257 => 
+                            257 =>
                             array (
                                 'id' => 36320,
                                 'created_by' => 'admin',
@@ -7079,7 +7079,7 @@ Ruwi, Oman',
                                 'trade_name' => '',
                                 'alternative_names' => NULL,
                             ),
-                            258 => 
+                            258 =>
                             array (
                                 'id' => 36323,
                                 'created_by' => 'admin',
@@ -7106,7 +7106,7 @@ Ruwi, Oman',
                                 'trade_name' => '',
                                 'alternative_names' => NULL,
                             ),
-                            259 => 
+                            259 =>
                             array (
                                 'id' => 36326,
                                 'created_by' => 'admin',
@@ -7133,7 +7133,7 @@ Ruwi, Oman',
                                 'trade_name' => '',
                                 'alternative_names' => NULL,
                             ),
-                            260 => 
+                            260 =>
                             array (
                                 'id' => 36329,
                                 'created_by' => 'admin',
@@ -7160,7 +7160,7 @@ Ruwi, Oman',
                                 'trade_name' => '',
                                 'alternative_names' => NULL,
                             ),
-                            261 => 
+                            261 =>
                             array (
                                 'id' => 36332,
                                 'created_by' => 'admin',
@@ -7187,7 +7187,7 @@ Ruwi, Oman',
                                 'trade_name' => '',
                                 'alternative_names' => NULL,
                             ),
-                            262 => 
+                            262 =>
                             array (
                                 'id' => 36335,
                                 'created_by' => 'admin',
@@ -7214,7 +7214,7 @@ Ruwi, Oman',
                                 'trade_name' => '',
                                 'alternative_names' => NULL,
                             ),
-                            263 => 
+                            263 =>
                             array (
                                 'id' => 36438,
                                 'created_by' => 'admin',
@@ -7241,7 +7241,7 @@ Ruwi, Oman',
                                 'trade_name' => 'Alborz 2 / BALB1',
                                 'alternative_names' => NULL,
                             ),
-                            264 => 
+                            264 =>
                             array (
                                 'id' => 36441,
                                 'created_by' => 'admin',
@@ -7268,7 +7268,7 @@ Ruwi, Oman',
                                 'trade_name' => '',
                                 'alternative_names' => NULL,
                             ),
-                            265 => 
+                            265 =>
                             array (
                                 'id' => 36444,
                                 'created_by' => 'admin',
@@ -7295,7 +7295,7 @@ Ruwi, Oman',
                                 'trade_name' => 'AIC/ ASIA1',
                                 'alternative_names' => NULL,
                             ),
-                            266 => 
+                            266 =>
                             array (
                                 'id' => 36447,
                                 'created_by' => 'admin',
@@ -7322,7 +7322,7 @@ Ruwi, Oman',
                                 'trade_name' => '',
                                 'alternative_names' => NULL,
                             ),
-                            267 => 
+                            267 =>
                             array (
                                 'id' => 36450,
                                 'created_by' => 'admin',
@@ -7349,7 +7349,7 @@ Ruwi, Oman',
                                 'trade_name' => '',
                                 'alternative_names' => NULL,
                             ),
-                            268 => 
+                            268 =>
                             array (
                                 'id' => 36453,
                                 'created_by' => 'admin',
@@ -7376,7 +7376,7 @@ Ruwi, Oman',
                                 'trade_name' => '',
                                 'alternative_names' => NULL,
                             ),
-                            269 => 
+                            269 =>
                             array (
                                 'id' => 36456,
                                 'created_by' => 'admin',
@@ -7403,7 +7403,7 @@ Ruwi, Oman',
                                 'trade_name' => '',
                                 'alternative_names' => NULL,
                             ),
-                            270 => 
+                            270 =>
                             array (
                                 'id' => 36459,
                                 'created_by' => 'admin',
@@ -7430,7 +7430,7 @@ Ruwi, Oman',
                                 'trade_name' => '',
                                 'alternative_names' => NULL,
                             ),
-                            271 => 
+                            271 =>
                             array (
                                 'id' => 36462,
                                 'created_by' => 'admin',
@@ -7457,7 +7457,7 @@ Ruwi, Oman',
                                 'trade_name' => '',
                                 'alternative_names' => NULL,
                             ),
-                            272 => 
+                            272 =>
                             array (
                                 'id' => 36465,
                                 'created_by' => 'admin',
@@ -7484,7 +7484,7 @@ Ruwi, Oman',
                                 'trade_name' => '',
                                 'alternative_names' => NULL,
                             ),
-                            273 => 
+                            273 =>
                             array (
                                 'id' => 36468,
                                 'created_by' => 'admin',
@@ -7511,7 +7511,7 @@ Ruwi, Oman',
                                 'trade_name' => '',
                                 'alternative_names' => NULL,
                             ),
-                            274 => 
+                            274 =>
                             array (
                                 'id' => 36471,
                                 'created_by' => 'admin',
@@ -7538,7 +7538,7 @@ Ruwi, Oman',
                                 'trade_name' => '',
                                 'alternative_names' => NULL,
                             ),
-                            275 => 
+                            275 =>
                             array (
                                 'id' => 36474,
                                 'created_by' => 'admin',
@@ -7565,7 +7565,7 @@ Ruwi, Oman',
                                 'trade_name' => '',
                                 'alternative_names' => NULL,
                             ),
-                            276 => 
+                            276 =>
                             array (
                                 'id' => 36477,
                                 'created_by' => 'admin',
@@ -7592,7 +7592,7 @@ Ruwi, Oman',
                                 'trade_name' => '',
                                 'alternative_names' => NULL,
                             ),
-                            277 => 
+                            277 =>
                             array (
                                 'id' => 36480,
                                 'created_by' => 'admin',
@@ -7619,7 +7619,7 @@ Ruwi, Oman',
                                 'trade_name' => '',
                                 'alternative_names' => NULL,
                             ),
-                            278 => 
+                            278 =>
                             array (
                                 'id' => 36483,
                                 'created_by' => 'admin',
@@ -7646,7 +7646,7 @@ Ruwi, Oman',
                                 'trade_name' => '',
                                 'alternative_names' => NULL,
                             ),
-                            279 => 
+                            279 =>
                             array (
                                 'id' => 36486,
                                 'created_by' => 'admin',
@@ -7673,7 +7673,7 @@ Ruwi, Oman',
                                 'trade_name' => '',
                                 'alternative_names' => NULL,
                             ),
-                            280 => 
+                            280 =>
                             array (
                                 'id' => 36489,
                                 'created_by' => 'admin',
@@ -7700,7 +7700,7 @@ Ruwi, Oman',
                                 'trade_name' => '',
                                 'alternative_names' => NULL,
                             ),
-                            281 => 
+                            281 =>
                             array (
                                 'id' => 36492,
                                 'created_by' => 'admin',
@@ -7727,7 +7727,7 @@ Ruwi, Oman',
                                 'trade_name' => '',
                                 'alternative_names' => NULL,
                             ),
-                            282 => 
+                            282 =>
                             array (
                                 'id' => 36495,
                                 'created_by' => 'admin',
@@ -7754,7 +7754,7 @@ Ruwi, Oman',
                                 'trade_name' => '',
                                 'alternative_names' => NULL,
                             ),
-                            283 => 
+                            283 =>
                             array (
                                 'id' => 36498,
                                 'created_by' => 'admin',
@@ -7781,7 +7781,7 @@ Ruwi, Oman',
                                 'trade_name' => '',
                                 'alternative_names' => NULL,
                             ),
-                            284 => 
+                            284 =>
                             array (
                                 'id' => 36501,
                                 'created_by' => 'admin',
@@ -7808,7 +7808,7 @@ Ruwi, Oman',
                                 'trade_name' => '',
                                 'alternative_names' => NULL,
                             ),
-                            285 => 
+                            285 =>
                             array (
                                 'id' => 36504,
                                 'created_by' => 'admin',
@@ -7835,7 +7835,7 @@ Ruwi, Oman',
                                 'trade_name' => '',
                                 'alternative_names' => NULL,
                             ),
-                            286 => 
+                            286 =>
                             array (
                                 'id' => 36507,
                                 'created_by' => 'admin',
@@ -7862,7 +7862,7 @@ Ruwi, Oman',
                                 'trade_name' => '',
                                 'alternative_names' => NULL,
                             ),
-                            287 => 
+                            287 =>
                             array (
                                 'id' => 36510,
                                 'created_by' => 'admin',
@@ -7889,7 +7889,7 @@ Ruwi, Oman',
                                 'trade_name' => '',
                                 'alternative_names' => NULL,
                             ),
-                            288 => 
+                            288 =>
                             array (
                                 'id' => 36513,
                                 'created_by' => 'admin',
@@ -7916,7 +7916,7 @@ Ruwi, Oman',
                                 'trade_name' => '',
                                 'alternative_names' => NULL,
                             ),
-                            289 => 
+                            289 =>
                             array (
                                 'id' => 36516,
                                 'created_by' => 'admin',
@@ -7943,7 +7943,7 @@ Ruwi, Oman',
                                 'trade_name' => '',
                                 'alternative_names' => NULL,
                             ),
-                            290 => 
+                            290 =>
                             array (
                                 'id' => 36519,
                                 'created_by' => 'admin',
@@ -7970,7 +7970,7 @@ Ruwi, Oman',
                                 'trade_name' => '',
                                 'alternative_names' => NULL,
                             ),
-                            291 => 
+                            291 =>
                             array (
                                 'id' => 36522,
                                 'created_by' => 'admin',
@@ -7997,7 +7997,7 @@ Ruwi, Oman',
                                 'trade_name' => 'KPI',
                                 'alternative_names' => NULL,
                             ),
-                            292 => 
+                            292 =>
                             array (
                                 'id' => 36689,
                                 'created_by' => 'admin',
@@ -8024,7 +8024,7 @@ Ruwi, Oman',
                                 'trade_name' => 'MIC',
                                 'alternative_names' => NULL,
                             ),
-                            293 => 
+                            293 =>
                             array (
                                 'id' => 36692,
                                 'created_by' => 'admin',
@@ -8051,7 +8051,7 @@ Ruwi, Oman',
                                 'trade_name' => 'MLIC',
                                 'alternative_names' => NULL,
                             ),
-                            294 => 
+                            294 =>
                             array (
                                 'id' => 36695,
                                 'created_by' => 'admin',
@@ -8078,7 +8078,7 @@ Ruwi, Oman',
                                 'trade_name' => '',
                                 'alternative_names' => NULL,
                             ),
-                            295 => 
+                            295 =>
                             array (
                                 'id' => 36698,
                                 'created_by' => 'admin',
@@ -8105,7 +8105,7 @@ Ruwi, Oman',
                                 'trade_name' => '',
                                 'alternative_names' => NULL,
                             ),
-                            296 => 
+                            296 =>
                             array (
                                 'id' => 36701,
                                 'created_by' => 'admin',
@@ -8132,7 +8132,7 @@ Ruwi, Oman',
                                 'trade_name' => 'DIC',
                                 'alternative_names' => NULL,
                             ),
-                            297 => 
+                            297 =>
                             array (
                                 'id' => 36704,
                                 'created_by' => 'admin',
@@ -8159,7 +8159,7 @@ Ruwi, Oman',
                                 'trade_name' => '',
                                 'alternative_names' => NULL,
                             ),
-                            298 => 
+                            298 =>
                             array (
                                 'id' => 36707,
                                 'created_by' => 'admin',
@@ -8186,7 +8186,7 @@ Ruwi, Oman',
                                 'trade_name' => '',
                                 'alternative_names' => NULL,
                             ),
-                            299 => 
+                            299 =>
                             array (
                                 'id' => 36710,
                                 'created_by' => 'admin',
@@ -8213,7 +8213,7 @@ Ruwi, Oman',
                                 'trade_name' => '',
                                 'alternative_names' => NULL,
                             ),
-                            300 => 
+                            300 =>
                             array (
                                 'id' => 36713,
                                 'created_by' => 'admin',
@@ -8240,7 +8240,7 @@ Ruwi, Oman',
                                 'trade_name' => '',
                                 'alternative_names' => NULL,
                             ),
-                            301 => 
+                            301 =>
                             array (
                                 'id' => 36716,
                                 'created_by' => 'admin',
@@ -8267,7 +8267,7 @@ Ruwi, Oman',
                                 'trade_name' => 'Previously, Pharaonic American Life Insurance Company- MetLife Alico',
                                 'alternative_names' => NULL,
                             ),
-                            302 => 
+                            302 =>
                             array (
                                 'id' => 36719,
                                 'created_by' => 'admin',
@@ -8294,7 +8294,7 @@ Ruwi, Oman',
                                 'trade_name' => '',
                                 'alternative_names' => NULL,
                             ),
-                            303 => 
+                            303 =>
                             array (
                                 'id' => 36722,
                                 'created_by' => 'admin',
@@ -8321,7 +8321,7 @@ Ruwi, Oman',
                                 'trade_name' => '',
                                 'alternative_names' => NULL,
                             ),
-                            304 => 
+                            304 =>
                             array (
                                 'id' => 36725,
                                 'created_by' => 'admin',
@@ -8348,7 +8348,7 @@ Ruwi, Oman',
                                 'trade_name' => '',
                                 'alternative_names' => NULL,
                             ),
-                            305 => 
+                            305 =>
                             array (
                                 'id' => 36728,
                                 'created_by' => 'admin',
@@ -8375,7 +8375,7 @@ Ruwi, Oman',
                                 'trade_name' => '',
                                 'alternative_names' => NULL,
                             ),
-                            306 => 
+                            306 =>
                             array (
                                 'id' => 36731,
                                 'created_by' => 'admin',
@@ -8402,7 +8402,7 @@ Ruwi, Oman',
                                 'trade_name' => '',
                                 'alternative_names' => NULL,
                             ),
-                            307 => 
+                            307 =>
                             array (
                                 'id' => 36734,
                                 'created_by' => 'admin',
@@ -8429,7 +8429,7 @@ Ruwi, Oman',
                                 'trade_name' => '',
                                 'alternative_names' => NULL,
                             ),
-                            308 => 
+                            308 =>
                             array (
                                 'id' => 36737,
                                 'created_by' => 'admin',
@@ -8456,7 +8456,7 @@ Ruwi, Oman',
                                 'trade_name' => '',
                                 'alternative_names' => NULL,
                             ),
-                            309 => 
+                            309 =>
                             array (
                                 'id' => 36740,
                                 'created_by' => 'admin',
@@ -8483,7 +8483,7 @@ Ruwi, Oman',
                                 'trade_name' => 'EGTAK',
                                 'alternative_names' => NULL,
                             ),
-                            310 => 
+                            310 =>
                             array (
                                 'id' => 36743,
                                 'created_by' => 'admin',
@@ -8510,7 +8510,7 @@ Ruwi, Oman',
                                 'trade_name' => '',
                                 'alternative_names' => NULL,
                             ),
-                            311 => 
+                            311 =>
                             array (
                                 'id' => 36746,
                                 'created_by' => 'admin',
@@ -8537,7 +8537,7 @@ Ruwi, Oman',
                                 'trade_name' => '',
                                 'alternative_names' => NULL,
                             ),
-                            312 => 
+                            312 =>
                             array (
                                 'id' => 36749,
                                 'created_by' => 'admin',
@@ -8564,7 +8564,7 @@ Ruwi, Oman',
                                 'trade_name' => '',
                                 'alternative_names' => NULL,
                             ),
-                            313 => 
+                            313 =>
                             array (
                                 'id' => 36752,
                                 'created_by' => 'admin',
@@ -8591,7 +8591,7 @@ Ruwi, Oman',
                                 'trade_name' => '',
                                 'alternative_names' => NULL,
                             ),
-                            314 => 
+                            314 =>
                             array (
                                 'id' => 36755,
                                 'created_by' => 'admin',
@@ -8618,7 +8618,7 @@ Ruwi, Oman',
                                 'trade_name' => '',
                                 'alternative_names' => NULL,
                             ),
-                            315 => 
+                            315 =>
                             array (
                                 'id' => 36758,
                                 'created_by' => 'admin',
@@ -8645,7 +8645,7 @@ Ruwi, Oman',
                                 'trade_name' => 'libano-suisse Takaful',
                                 'alternative_names' => NULL,
                             ),
-                            316 => 
+                            316 =>
                             array (
                                 'id' => 36761,
                                 'created_by' => 'admin',
@@ -8672,7 +8672,7 @@ Ruwi, Oman',
                                 'trade_name' => 'TMGT',
                                 'alternative_names' => NULL,
                             ),
-                            317 => 
+                            317 =>
                             array (
                                 'id' => 36764,
                                 'created_by' => 'admin',
@@ -8699,7 +8699,7 @@ Ruwi, Oman',
                                 'trade_name' => '',
                                 'alternative_names' => NULL,
                             ),
-                            318 => 
+                            318 =>
                             array (
                                 'id' => 36767,
                                 'created_by' => 'admin',
@@ -8726,7 +8726,7 @@ Ruwi, Oman',
                                 'trade_name' => 'OTIC',
                                 'alternative_names' => NULL,
                             ),
-                            319 => 
+                            319 =>
                             array (
                                 'id' => 36770,
                                 'created_by' => 'admin',
@@ -8753,7 +8753,7 @@ Ruwi, Oman',
                                 'trade_name' => '',
                                 'alternative_names' => NULL,
                             ),
-                            320 => 
+                            320 =>
                             array (
                                 'id' => 36773,
                                 'created_by' => 'admin',
@@ -8780,7 +8780,7 @@ Ruwi, Oman',
                                 'trade_name' => 'DLAC',
                                 'alternative_names' => NULL,
                             ),
-                            321 => 
+                            321 =>
                             array (
                                 'id' => 36776,
                                 'created_by' => 'admin',
@@ -8807,7 +8807,7 @@ Ruwi, Oman',
                                 'trade_name' => '',
                                 'alternative_names' => NULL,
                             ),
-                            322 => 
+                            322 =>
                             array (
                                 'id' => 36779,
                                 'created_by' => 'admin',
@@ -8834,7 +8834,7 @@ Ruwi, Oman',
                                 'trade_name' => '',
                                 'alternative_names' => NULL,
                             ),
-                            323 => 
+                            323 =>
                             array (
                                 'id' => 36782,
                                 'created_by' => 'admin',
@@ -8861,7 +8861,7 @@ Ruwi, Oman',
                                 'trade_name' => '',
                                 'alternative_names' => NULL,
                             ),
-                            324 => 
+                            324 =>
                             array (
                                 'id' => 36785,
                                 'created_by' => 'admin',
@@ -8888,7 +8888,7 @@ Ruwi, Oman',
                                 'trade_name' => '',
                                 'alternative_names' => NULL,
                             ),
-                            325 => 
+                            325 =>
                             array (
                                 'id' => 36788,
                                 'created_by' => 'admin',
@@ -8915,7 +8915,7 @@ Ruwi, Oman',
                                 'trade_name' => '',
                                 'alternative_names' => NULL,
                             ),
-                            326 => 
+                            326 =>
                             array (
                                 'id' => 36791,
                                 'created_by' => 'admin',
@@ -8942,7 +8942,7 @@ Ruwi, Oman',
                                 'trade_name' => '',
                                 'alternative_names' => NULL,
                             ),
-                            327 => 
+                            327 =>
                             array (
                                 'id' => 36794,
                                 'created_by' => 'admin',
@@ -8969,7 +8969,7 @@ Ruwi, Oman',
                                 'trade_name' => '',
                                 'alternative_names' => NULL,
                             ),
-                            328 => 
+                            328 =>
                             array (
                                 'id' => 36797,
                                 'created_by' => 'admin',
@@ -8996,7 +8996,7 @@ Ruwi, Oman',
                                 'trade_name' => 'NIC',
                                 'alternative_names' => NULL,
                             ),
-                            329 => 
+                            329 =>
                             array (
                                 'id' => 36800,
                                 'created_by' => 'admin',
@@ -9023,7 +9023,7 @@ Ruwi, Oman',
                                 'trade_name' => '',
                                 'alternative_names' => NULL,
                             ),
-                            330 => 
+                            330 =>
                             array (
                                 'id' => 37024,
                                 'created_by' => 'admin',
@@ -9050,7 +9050,7 @@ Ruwi, Oman',
                                 'trade_name' => 'BHSI',
                                 'alternative_names' => NULL,
                             ),
-                            331 => 
+                            331 =>
                             array (
                                 'id' => 37027,
                                 'created_by' => 'admin',
@@ -9077,7 +9077,7 @@ Ruwi, Oman',
                                 'trade_name' => '',
                                 'alternative_names' => NULL,
                             ),
-                            332 => 
+                            332 =>
                             array (
                                 'id' => 37030,
                                 'created_by' => 'admin',
@@ -9104,7 +9104,7 @@ Ruwi, Oman',
                                 'trade_name' => '',
                                 'alternative_names' => NULL,
                             ),
-                            333 => 
+                            333 =>
                             array (
                                 'id' => 37033,
                                 'created_by' => 'admin',
@@ -9131,7 +9131,7 @@ Ruwi, Oman',
                                 'trade_name' => 'RSA',
                                 'alternative_names' => NULL,
                             ),
-                            334 => 
+                            334 =>
                             array (
                                 'id' => 37036,
                                 'created_by' => 'admin',
@@ -9158,7 +9158,7 @@ Ruwi, Oman',
                                 'trade_name' => '',
                                 'alternative_names' => NULL,
                             ),
-                            335 => 
+                            335 =>
                             array (
                                 'id' => 37039,
                                 'created_by' => 'admin',
@@ -9185,7 +9185,7 @@ Ruwi, Oman',
                                 'trade_name' => '',
                                 'alternative_names' => NULL,
                             ),
-                            336 => 
+                            336 =>
                             array (
                                 'id' => 37042,
                                 'created_by' => 'admin',
@@ -9212,7 +9212,7 @@ Ruwi, Oman',
                                 'trade_name' => 'QBE Insurance, Middle East',
                                 'alternative_names' => NULL,
                             ),
-                            337 => 
+                            337 =>
                             array (
                                 'id' => 37045,
                                 'created_by' => 'admin',
@@ -9239,7 +9239,7 @@ Ruwi, Oman',
                                 'trade_name' => 'Gulf Re',
                                 'alternative_names' => NULL,
                             ),
-                            338 => 
+                            338 =>
                             array (
                                 'id' => 37048,
                                 'created_by' => 'admin',
@@ -9266,7 +9266,7 @@ Ruwi, Oman',
                                 'trade_name' => '',
                                 'alternative_names' => NULL,
                             ),
-                            339 => 
+                            339 =>
                             array (
                                 'id' => 37051,
                                 'created_by' => 'admin',
@@ -9293,7 +9293,7 @@ Ruwi, Oman',
                                 'trade_name' => 'EMIRATES RE',
                                 'alternative_names' => NULL,
                             ),
-                            340 => 
+                            340 =>
                             array (
                                 'id' => 37054,
                                 'created_by' => 'admin',
@@ -9320,7 +9320,7 @@ Ruwi, Oman',
                                 'trade_name' => '',
                                 'alternative_names' => NULL,
                             ),
-                            341 => 
+                            341 =>
                             array (
                                 'id' => 37057,
                                 'created_by' => 'admin',
@@ -9347,7 +9347,7 @@ Ruwi, Oman',
                                 'trade_name' => '',
                                 'alternative_names' => NULL,
                             ),
-                            342 => 
+                            342 =>
                             array (
                                 'id' => 37060,
                                 'created_by' => 'admin',
@@ -9374,7 +9374,7 @@ Ruwi, Oman',
                                 'trade_name' => '',
                                 'alternative_names' => NULL,
                             ),
-                            343 => 
+                            343 =>
                             array (
                                 'id' => 37063,
                                 'created_by' => 'admin',
@@ -9401,7 +9401,7 @@ Ruwi, Oman',
                                 'trade_name' => '',
                                 'alternative_names' => NULL,
                             ),
-                            344 => 
+                            344 =>
                             array (
                                 'id' => 37066,
                                 'created_by' => 'admin',
@@ -9428,7 +9428,7 @@ Ruwi, Oman',
                                 'trade_name' => '',
                                 'alternative_names' => NULL,
                             ),
-                            345 => 
+                            345 =>
                             array (
                                 'id' => 37069,
                                 'created_by' => 'admin',
@@ -9455,7 +9455,7 @@ Ruwi, Oman',
                                 'trade_name' => '',
                                 'alternative_names' => NULL,
                             ),
-                            346 => 
+                            346 =>
                             array (
                                 'id' => 37182,
                                 'created_by' => 'admin',
@@ -9482,7 +9482,7 @@ Ruwi, Oman',
                                 'trade_name' => '',
                                 'alternative_names' => NULL,
                             ),
-                            347 => 
+                            347 =>
                             array (
                                 'id' => 37185,
                                 'created_by' => 'admin',
@@ -9509,7 +9509,7 @@ Ruwi, Oman',
                                 'trade_name' => '',
                                 'alternative_names' => NULL,
                             ),
-                            348 => 
+                            348 =>
                             array (
                                 'id' => 37188,
                                 'created_by' => 'admin',
@@ -9536,7 +9536,7 @@ Ruwi, Oman',
                                 'trade_name' => 'ARIG',
                                 'alternative_names' => NULL,
                             ),
-                            349 => 
+                            349 =>
                             array (
                                 'id' => 37191,
                                 'created_by' => 'admin',
@@ -9563,7 +9563,7 @@ Ruwi, Oman',
                                 'trade_name' => '',
                                 'alternative_names' => NULL,
                             ),
-                            350 => 
+                            350 =>
                             array (
                                 'id' => 37194,
                                 'created_by' => 'admin',
@@ -9590,7 +9590,7 @@ Ruwi, Oman',
                                 'trade_name' => 'BKIC',
                                 'alternative_names' => NULL,
                             ),
-                            351 => 
+                            351 =>
                             array (
                                 'id' => 37197,
                                 'created_by' => 'admin',
@@ -9617,7 +9617,7 @@ Ruwi, Oman',
                                 'trade_name' => '',
                                 'alternative_names' => NULL,
                             ),
-                            352 => 
+                            352 =>
                             array (
                                 'id' => 37200,
                                 'created_by' => 'admin',
@@ -9644,7 +9644,7 @@ Ruwi, Oman',
                                 'trade_name' => '',
                                 'alternative_names' => NULL,
                             ),
-                            353 => 
+                            353 =>
                             array (
                                 'id' => 37203,
                                 'created_by' => 'admin',
@@ -9671,7 +9671,7 @@ Ruwi, Oman',
                                 'trade_name' => '',
                                 'alternative_names' => NULL,
                             ),
-                            354 => 
+                            354 =>
                             array (
                                 'id' => 37206,
                                 'created_by' => 'admin',
@@ -9698,7 +9698,7 @@ Ruwi, Oman',
                                 'trade_name' => '',
                                 'alternative_names' => NULL,
                             ),
-                            355 => 
+                            355 =>
                             array (
                                 'id' => 37209,
                                 'created_by' => 'admin',
@@ -9725,7 +9725,7 @@ Ruwi, Oman',
                                 'trade_name' => '',
                                 'alternative_names' => NULL,
                             ),
-                            356 => 
+                            356 =>
                             array (
                                 'id' => 37212,
                                 'created_by' => 'admin',
@@ -9752,7 +9752,7 @@ Ruwi, Oman',
                                 'trade_name' => '',
                                 'alternative_names' => NULL,
                             ),
-                            357 => 
+                            357 =>
                             array (
                                 'id' => 37215,
                                 'created_by' => 'admin',
@@ -9779,7 +9779,7 @@ Ruwi, Oman',
                                 'trade_name' => '',
                                 'alternative_names' => NULL,
                             ),
-                            358 => 
+                            358 =>
                             array (
                                 'id' => 37218,
                                 'created_by' => 'admin',
@@ -9806,7 +9806,7 @@ Ruwi, Oman',
                                 'trade_name' => '',
                                 'alternative_names' => NULL,
                             ),
-                            359 => 
+                            359 =>
                             array (
                                 'id' => 37221,
                                 'created_by' => 'admin',
@@ -9833,7 +9833,7 @@ Ruwi, Oman',
                                 'trade_name' => '',
                                 'alternative_names' => NULL,
                             ),
-                            360 => 
+                            360 =>
                             array (
                                 'id' => 37224,
                                 'created_by' => 'admin',
@@ -9860,7 +9860,7 @@ Ruwi, Oman',
                                 'trade_name' => '',
                                 'alternative_names' => NULL,
                             ),
-                            361 => 
+                            361 =>
                             array (
                                 'id' => 37227,
                                 'created_by' => 'admin',
@@ -9887,7 +9887,7 @@ Ruwi, Oman',
                                 'trade_name' => '',
                                 'alternative_names' => NULL,
                             ),
-                            362 => 
+                            362 =>
                             array (
                                 'id' => 37230,
                                 'created_by' => 'admin',
@@ -9914,7 +9914,7 @@ Ruwi, Oman',
                                 'trade_name' => '',
                                 'alternative_names' => NULL,
                             ),
-                            363 => 
+                            363 =>
                             array (
                                 'id' => 37233,
                                 'created_by' => 'admin',
@@ -9941,7 +9941,7 @@ Ruwi, Oman',
                                 'trade_name' => '',
                                 'alternative_names' => NULL,
                             ),
-                            364 => 
+                            364 =>
                             array (
                                 'id' => 37236,
                                 'created_by' => 'admin',
@@ -9968,7 +9968,7 @@ Ruwi, Oman',
                                 'trade_name' => '',
                                 'alternative_names' => NULL,
                             ),
-                            365 => 
+                            365 =>
                             array (
                                 'id' => 37239,
                                 'created_by' => 'admin',
@@ -9995,7 +9995,7 @@ Ruwi, Oman',
                                 'trade_name' => '',
                                 'alternative_names' => NULL,
                             ),
-                            366 => 
+                            366 =>
                             array (
                                 'id' => 37242,
                                 'created_by' => 'admin',
@@ -10022,7 +10022,7 @@ Ruwi, Oman',
                                 'trade_name' => '',
                                 'alternative_names' => NULL,
                             ),
-                            367 => 
+                            367 =>
                             array (
                                 'id' => 37245,
                                 'created_by' => 'admin',
@@ -10049,7 +10049,7 @@ Ruwi, Oman',
                                 'trade_name' => '',
                                 'alternative_names' => NULL,
                             ),
-                            368 => 
+                            368 =>
                             array (
                                 'id' => 37248,
                                 'created_by' => 'admin',
@@ -10076,7 +10076,7 @@ Ruwi, Oman',
                                 'trade_name' => '',
                                 'alternative_names' => NULL,
                             ),
-                            369 => 
+                            369 =>
                             array (
                                 'id' => 37251,
                                 'created_by' => 'admin',
@@ -10103,7 +10103,7 @@ Ruwi, Oman',
                                 'trade_name' => '',
                                 'alternative_names' => NULL,
                             ),
-                            370 => 
+                            370 =>
                             array (
                                 'id' => 37254,
                                 'created_by' => 'admin',
@@ -10130,7 +10130,7 @@ Ruwi, Oman',
                                 'trade_name' => 'AIC',
                                 'alternative_names' => NULL,
                             ),
-                            371 => 
+                            371 =>
                             array (
                                 'id' => 37257,
                                 'created_by' => 'admin',
@@ -10157,7 +10157,7 @@ Ruwi, Oman',
                                 'trade_name' => '',
                                 'alternative_names' => NULL,
                             ),
-                            372 => 
+                            372 =>
                             array (
                                 'id' => 37260,
                                 'created_by' => 'admin',
@@ -10184,7 +10184,7 @@ Ruwi, Oman',
                                 'trade_name' => '',
                                 'alternative_names' => NULL,
                             ),
-                            373 => 
+                            373 =>
                             array (
                                 'id' => 37263,
                                 'created_by' => 'admin',
@@ -10211,7 +10211,7 @@ Ruwi, Oman',
                                 'trade_name' => '',
                                 'alternative_names' => NULL,
                             ),
-                            374 => 
+                            374 =>
                             array (
                                 'id' => 37266,
                                 'created_by' => 'admin',
@@ -10238,7 +10238,7 @@ Ruwi, Oman',
                                 'trade_name' => '',
                                 'alternative_names' => NULL,
                             ),
-                            375 => 
+                            375 =>
                             array (
                                 'id' => 37269,
                                 'created_by' => 'admin',
@@ -10265,7 +10265,7 @@ Ruwi, Oman',
                                 'trade_name' => '',
                                 'alternative_names' => NULL,
                             ),
-                            376 => 
+                            376 =>
                             array (
                                 'id' => 37272,
                                 'created_by' => 'admin',
@@ -10292,7 +10292,7 @@ Ruwi, Oman',
                                 'trade_name' => '',
                                 'alternative_names' => NULL,
                             ),
-                            377 => 
+                            377 =>
                             array (
                                 'id' => 37275,
                                 'created_by' => 'admin',
@@ -10319,7 +10319,7 @@ Ruwi, Oman',
                                 'trade_name' => '',
                                 'alternative_names' => NULL,
                             ),
-                            378 => 
+                            378 =>
                             array (
                                 'id' => 37278,
                                 'created_by' => 'admin',
@@ -10346,7 +10346,7 @@ Ruwi, Oman',
                                 'trade_name' => '',
                                 'alternative_names' => NULL,
                             ),
-                            379 => 
+                            379 =>
                             array (
                                 'id' => 37281,
                                 'created_by' => 'admin',
@@ -10373,7 +10373,7 @@ Ruwi, Oman',
                                 'trade_name' => '',
                                 'alternative_names' => NULL,
                             ),
-                            380 => 
+                            380 =>
                             array (
                                 'id' => 37466,
                                 'created_by' => 'admin',
@@ -10381,7 +10381,7 @@ Ruwi, Oman',
                                 'last_modified_by' => 'admin',
                                 'last_modified_date' => '2020-10-09 06:19:11.297180',
                                 'about' => 'ADNIC Corporate Headquarters
-P.O. Box: 839 – Abu Dhabi 
+P.O. Box: 839 – Abu Dhabi
 Building No. 403',
                                 'auditor' => 'KPMG',
                                 'company_email_id' => 'adnic@adnic.ae',
@@ -10402,7 +10402,7 @@ Building No. 403',
                                 'trade_name' => 'ADNIC',
                                 'alternative_names' => '',
                             ),
-                            381 => 
+                            381 =>
                             array (
                                 'id' => 37469,
                                 'created_by' => 'admin',
@@ -10429,7 +10429,7 @@ Building No. 403',
                                 'trade_name' => 'TKFL',
                                 'alternative_names' => '',
                             ),
-                            382 => 
+                            382 =>
                             array (
                                 'id' => 37472,
                                 'created_by' => 'admin',
@@ -10456,7 +10456,7 @@ Building No. 403',
                                 'trade_name' => 'ALAIN',
                                 'alternative_names' => '',
                             ),
-                            383 => 
+                            383 =>
                             array (
                                 'id' => 37475,
                                 'created_by' => 'admin',
@@ -10483,7 +10483,7 @@ Building No. 403',
                                 'trade_name' => 'ABNIC',
                                 'alternative_names' => '',
                             ),
-                            384 => 
+                            384 =>
                             array (
                                 'id' => 37478,
                                 'created_by' => 'admin',
@@ -10510,7 +10510,7 @@ Building No. 403',
                                 'trade_name' => 'DHAFRA',
                                 'alternative_names' => '',
                             ),
-                            385 => 
+                            385 =>
                             array (
                                 'id' => 37481,
                                 'created_by' => 'admin',
@@ -10537,7 +10537,7 @@ Building No. 403',
                                 'trade_name' => 'AFNIC',
                                 'alternative_names' => '',
                             ),
-                            386 => 
+                            386 =>
                             array (
                                 'id' => 37484,
                                 'created_by' => 'admin',
@@ -10564,7 +10564,7 @@ Building No. 403',
                                 'trade_name' => '',
                                 'alternative_names' => '',
                             ),
-                            387 => 
+                            387 =>
                             array (
                                 'id' => 37487,
                                 'created_by' => 'admin',
@@ -10591,7 +10591,7 @@ Building No. 403',
                                 'trade_name' => 'AKIC',
                                 'alternative_names' => '',
                             ),
-                            388 => 
+                            388 =>
                             array (
                                 'id' => 37490,
                                 'created_by' => 'admin',
@@ -10618,7 +10618,7 @@ Building No. 403',
                                 'trade_name' => 'AWNIC',
                                 'alternative_names' => '',
                             ),
-                            389 => 
+                            389 =>
                             array (
                                 'id' => 37493,
                                 'created_by' => 'admin',
@@ -10645,7 +10645,7 @@ Building No. 403',
                                 'trade_name' => 'AXAGCIC',
                                 'alternative_names' => '',
                             ),
-                            390 => 
+                            390 =>
                             array (
                                 'id' => 37496,
                                 'created_by' => 'admin',
@@ -10672,7 +10672,7 @@ Building No. 403',
                                 'trade_name' => 'ALLIANCE',
                                 'alternative_names' => '',
                             ),
-                            391 => 
+                            391 =>
                             array (
                                 'id' => 37499,
                                 'created_by' => 'admin',
@@ -10699,7 +10699,7 @@ Building No. 403',
                                 'trade_name' => 'ASCANA',
                                 'alternative_names' => '',
                             ),
-                            392 => 
+                            392 =>
                             array (
                                 'id' => 37502,
                                 'created_by' => 'admin',
@@ -10726,7 +10726,7 @@ Building No. 403',
                                 'trade_name' => 'AXAGCIC',
                                 'alternative_names' => '',
                             ),
-                            393 => 
+                            393 =>
                             array (
                                 'id' => 37505,
                                 'created_by' => 'admin',
@@ -10753,7 +10753,7 @@ Building No. 403',
                                 'trade_name' => 'DARTAKAFUL',
                                 'alternative_names' => '',
                             ),
-                            394 => 
+                            394 =>
                             array (
                                 'id' => 37508,
                                 'created_by' => 'admin',
@@ -10780,7 +10780,7 @@ Building No. 403',
                                 'trade_name' => 'AMAN',
                                 'alternative_names' => '',
                             ),
-                            395 => 
+                            395 =>
                             array (
                                 'id' => 37511,
                                 'created_by' => 'admin',
@@ -10807,7 +10807,7 @@ Building No. 403',
                                 'trade_name' => 'DNIR',
                                 'alternative_names' => '',
                             ),
-                            396 => 
+                            396 =>
                             array (
                                 'id' => 37514,
                                 'created_by' => 'admin',
@@ -10834,7 +10834,7 @@ Building No. 403',
                                 'trade_name' => 'EIC',
                                 'alternative_names' => '',
                             ),
-                            397 => 
+                            397 =>
                             array (
                                 'id' => 37517,
                                 'created_by' => 'admin',
@@ -10861,7 +10861,7 @@ Building No. 403',
                                 'trade_name' => 'IH',
                                 'alternative_names' => '',
                             ),
-                            398 => 
+                            398 =>
                             array (
                                 'id' => 37520,
                                 'created_by' => 'admin',
@@ -10888,7 +10888,7 @@ Building No. 403',
                                 'trade_name' => 'METHAQ',
                                 'alternative_names' => '',
                             ),
-                            399 => 
+                            399 =>
                             array (
                                 'id' => 37523,
                                 'created_by' => 'admin',
@@ -10915,7 +10915,7 @@ Building No. 403',
                                 'trade_name' => '',
                                 'alternative_names' => '',
                             ),
-                            400 => 
+                            400 =>
                             array (
                                 'id' => 37526,
                                 'created_by' => 'admin',
@@ -10943,7 +10943,7 @@ complaints@tameen.ae',
                                 'trade_name' => 'OIC',
                                 'alternative_names' => '',
                             ),
-                            401 => 
+                            401 =>
                             array (
                                 'id' => 37529,
                                 'created_by' => 'admin',
@@ -10970,7 +10970,7 @@ complaints@tameen.ae',
                                 'trade_name' => 'ORIENT',
                                 'alternative_names' => '',
                             ),
-                            402 => 
+                            402 =>
                             array (
                                 'id' => 37532,
                                 'created_by' => 'admin',
@@ -10997,7 +10997,7 @@ complaints@tameen.ae',
                                 'trade_name' => 'RAKNIC',
                                 'alternative_names' => '',
                             ),
-                            403 => 
+                            403 =>
                             array (
                                 'id' => 37535,
                                 'created_by' => 'admin',
@@ -11024,7 +11024,7 @@ complaints@tameen.ae',
                                 'trade_name' => 'SALAMA',
                                 'alternative_names' => '',
                             ),
-                            404 => 
+                            404 =>
                             array (
                                 'id' => 37538,
                                 'created_by' => 'admin',
@@ -11051,7 +11051,7 @@ complaints@tameen.ae',
                                 'trade_name' => 'SICO',
                                 'alternative_names' => '',
                             ),
-                            405 => 
+                            405 =>
                             array (
                                 'id' => 37541,
                                 'created_by' => 'admin',
@@ -11079,7 +11079,7 @@ complaints@takafulemarat.com',
                                 'trade_name' => 'TAKAFUL-EM',
                                 'alternative_names' => '',
                             ),
-                            406 => 
+                            406 =>
                             array (
                                 'id' => 37544,
                                 'created_by' => 'admin',
@@ -11106,7 +11106,7 @@ complaints@takafulemarat.com',
                                 'trade_name' => '',
                                 'alternative_names' => '',
                             ),
-                            407 => 
+                            407 =>
                             array (
                                 'id' => 37547,
                                 'created_by' => 'admin',
@@ -11134,7 +11134,7 @@ P.O Box 119227 Dubai, United Arab Emirates',
                                 'trade_name' => 'UNION',
                                 'alternative_names' => '',
                             ),
-                            408 => 
+                            408 =>
                             array (
                                 'id' => 37550,
                                 'created_by' => 'admin',
@@ -11161,7 +11161,7 @@ P.O Box 119227 Dubai, United Arab Emirates',
                                 'trade_name' => 'NGI',
                                 'alternative_names' => '',
                             ),
-                            409 => 
+                            409 =>
                             array (
                                 'id' => 37553,
                                 'created_by' => 'admin',
@@ -11188,7 +11188,7 @@ P.O Box 119227 Dubai, United Arab Emirates',
                                 'trade_name' => 'OUTFL',
                                 'alternative_names' => '',
                             ),
-                            410 => 
+                            410 =>
                             array (
                                 'id' => 37556,
                                 'created_by' => 'admin',
@@ -11215,7 +11215,7 @@ P.O Box 119227 Dubai, United Arab Emirates',
                                 'trade_name' => 'WATANIA',
                                 'alternative_names' => '',
                             ),
-                            411 => 
+                            411 =>
                             array (
                                 'id' => 37559,
                                 'created_by' => 'admin',
@@ -11242,7 +11242,7 @@ P.O Box 119227 Dubai, United Arab Emirates',
                                 'trade_name' => 'FIDELITYUNITED',
                                 'alternative_names' => '',
                             ),
-                            412 => 
+                            412 =>
                             array (
                                 'id' => 37562,
                                 'created_by' => 'admin',
@@ -11269,7 +11269,7 @@ P.O Box 119227 Dubai, United Arab Emirates',
                                 'trade_name' => 'AMAN',
                                 'alternative_names' => '',
                             ),
-                            413 => 
+                            413 =>
                             array (
                                 'id' => 37565,
                                 'created_by' => 'admin',
@@ -11296,7 +11296,7 @@ P.O Box 119227 Dubai, United Arab Emirates',
                                 'trade_name' => 'ECI',
                                 'alternative_names' => '',
                             ),
-                            414 => 
+                            414 =>
                             array (
                                 'id' => 37568,
                                 'created_by' => 'admin',
@@ -11323,7 +11323,7 @@ P.O Box 119227 Dubai, United Arab Emirates',
                                 'trade_name' => 'AICL',
                                 'alternative_names' => '',
                             ),
-                            415 => 
+                            415 =>
                             array (
                                 'id' => 37571,
                                 'created_by' => 'admin',
@@ -11350,7 +11350,7 @@ P.O Box 119227 Dubai, United Arab Emirates',
                                 'trade_name' => '',
                                 'alternative_names' => '',
                             ),
-                            416 => 
+                            416 =>
                             array (
                                 'id' => 37574,
                                 'created_by' => 'admin',
@@ -11377,7 +11377,7 @@ P.O Box 119227 Dubai, United Arab Emirates',
                                 'trade_name' => '',
                                 'alternative_names' => '',
                             ),
-                            417 => 
+                            417 =>
                             array (
                                 'id' => 37577,
                                 'created_by' => 'admin',
@@ -11404,14 +11404,14 @@ P.O Box 119227 Dubai, United Arab Emirates',
                                 'trade_name' => 'AICL',
                                 'alternative_names' => '',
                             ),
-                            418 => 
+                            418 =>
                             array (
                                 'id' => 37580,
                                 'created_by' => 'admin',
                                 'created_date' => '2020-10-09 06:19:11.772883',
                                 'last_modified_by' => 'admin',
                                 'last_modified_date' => '2020-10-09 06:19:11.772883',
-                                'about' => 'Assicurazioni Generali S.p.A. 
+                                'about' => 'Assicurazioni Generali S.p.A.
 6th Floor, Rolex Tower,
 Sheikh Zayed Road,
 P.O. Box No. : 5910,
@@ -11435,7 +11435,7 @@ Dubai, United Arab Emirates.',
                                 'trade_name' => 'Generali UAE',
                                 'alternative_names' => '',
                             ),
-                            419 => 
+                            419 =>
                             array (
                                 'id' => 37583,
                                 'created_by' => 'admin',
@@ -11462,7 +11462,7 @@ Dubai, United Arab Emirates.',
                                 'trade_name' => 'AXA',
                                 'alternative_names' => '',
                             ),
-                            420 => 
+                            420 =>
                             array (
                                 'id' => 37586,
                                 'created_by' => 'admin',
@@ -11489,7 +11489,7 @@ Dubai, United Arab Emirates.',
                                 'trade_name' => '',
                                 'alternative_names' => '',
                             ),
-                            421 => 
+                            421 =>
                             array (
                                 'id' => 37589,
                                 'created_by' => 'admin',
@@ -11516,7 +11516,7 @@ Dubai, United Arab Emirates.',
                                 'trade_name' => 'GIC',
                                 'alternative_names' => '',
                             ),
-                            422 => 
+                            422 =>
                             array (
                                 'id' => 37592,
                                 'created_by' => 'admin',
@@ -11543,7 +11543,7 @@ Dubai, United Arab Emirates.',
                                 'trade_name' => 'IIC',
                                 'alternative_names' => '',
                             ),
-                            423 => 
+                            423 =>
                             array (
                                 'id' => 37595,
                                 'created_by' => 'admin',
@@ -11570,7 +11570,7 @@ Dubai, United Arab Emirates.',
                                 'trade_name' => 'JIC',
                                 'alternative_names' => '',
                             ),
-                            424 => 
+                            424 =>
                             array (
                                 'id' => 37598,
                                 'created_by' => 'admin',
@@ -11597,7 +11597,7 @@ Dubai, United Arab Emirates.',
                                 'trade_name' => 'LIC',
                                 'alternative_names' => '',
                             ),
-                            425 => 
+                            425 =>
                             array (
                                 'id' => 37601,
                                 'created_by' => 'admin',
@@ -11624,7 +11624,7 @@ Dubai, United Arab Emirates.',
                                 'trade_name' => 'MSI',
                                 'alternative_names' => '',
                             ),
-                            426 => 
+                            426 =>
                             array (
                                 'id' => 37604,
                                 'created_by' => 'admin',
@@ -11651,7 +11651,7 @@ Dubai, United Arab Emirates.',
                                 'trade_name' => 'NLG',
                                 'alternative_names' => '',
                             ),
-                            427 => 
+                            427 =>
                             array (
                                 'id' => 37607,
                                 'created_by' => 'admin',
@@ -11678,7 +11678,7 @@ Dubai, United Arab Emirates.',
                                 'trade_name' => '',
                                 'alternative_names' => '',
                             ),
-                            428 => 
+                            428 =>
                             array (
                                 'id' => 37610,
                                 'created_by' => 'admin',
@@ -11705,7 +11705,7 @@ Dubai, United Arab Emirates.',
                                 'trade_name' => '',
                                 'alternative_names' => '',
                             ),
-                            429 => 
+                            429 =>
                             array (
                                 'id' => 37613,
                                 'created_by' => 'admin',
@@ -11732,7 +11732,7 @@ Dubai, United Arab Emirates.',
                                 'trade_name' => 'QIC',
                                 'alternative_names' => '',
                             ),
-                            430 => 
+                            430 =>
                             array (
                                 'id' => 37616,
                                 'created_by' => 'admin',
@@ -11759,7 +11759,7 @@ Dubai, United Arab Emirates.',
                                 'trade_name' => 'RSA',
                                 'alternative_names' => '',
                             ),
-                            431 => 
+                            431 =>
                             array (
                                 'id' => 37619,
                                 'created_by' => 'admin',
@@ -11786,7 +11786,7 @@ Dubai, United Arab Emirates.',
                                 'trade_name' => 'SLIC',
                                 'alternative_names' => '',
                             ),
-                            432 => 
+                            432 =>
                             array (
                                 'id' => 37622,
                                 'created_by' => 'admin',
@@ -11813,7 +11813,7 @@ Dubai, United Arab Emirates.',
                                 'trade_name' => 'TMNCH',
                                 'alternative_names' => '',
                             ),
-                            433 => 
+                            433 =>
                             array (
                                 'id' => 37625,
                                 'created_by' => 'admin',
@@ -11840,7 +11840,7 @@ Dubai, United Arab Emirates.',
                                 'trade_name' => 'METLIFE ALICO',
                                 'alternative_names' => '',
                             ),
-                            434 => 
+                            434 =>
                             array (
                                 'id' => 37628,
                                 'created_by' => 'admin',
@@ -11867,7 +11867,7 @@ Dubai, United Arab Emirates.',
                                 'trade_name' => 'ZURICH INTERNATIONAL LIFE',
                                 'alternative_names' => '',
                             ),
-                            435 => 
+                            435 =>
                             array (
                                 'id' => 37631,
                                 'created_by' => 'admin',
@@ -11894,7 +11894,7 @@ Dubai, United Arab Emirates.',
                                 'trade_name' => 'ZURICH LIFE',
                                 'alternative_names' => '',
                             ),
-                            436 => 
+                            436 =>
                             array (
                                 'id' => 37634,
                                 'created_by' => 'admin',
@@ -11921,7 +11921,7 @@ Dubai, United Arab Emirates.',
                                 'trade_name' => '',
                                 'alternative_names' => '',
                             ),
-                            437 => 
+                            437 =>
                             array (
                                 'id' => 37637,
                                 'created_by' => 'admin',
@@ -11948,7 +11948,7 @@ Dubai, United Arab Emirates.',
                                 'trade_name' => 'AIG',
                                 'alternative_names' => '',
                             ),
-                            438 => 
+                            438 =>
                             array (
                                 'id' => 37640,
                                 'created_by' => 'admin',
@@ -11975,7 +11975,7 @@ Dubai, United Arab Emirates.',
                                 'trade_name' => 'DAMANA',
                                 'alternative_names' => '',
                             ),
-                            439 => 
+                            439 =>
                             array (
                                 'id' => 37643,
                                 'created_by' => 'admin',
@@ -12002,7 +12002,7 @@ Dubai, United Arab Emirates.',
                                 'trade_name' => 'MEDGULF',
                                 'alternative_names' => '',
                             ),
-                            440 => 
+                            440 =>
                             array (
                                 'id' => 37646,
                                 'created_by' => 'admin',
@@ -12029,7 +12029,7 @@ Dubai, United Arab Emirates.',
                                 'trade_name' => '',
                                 'alternative_names' => '',
                             ),
-                            441 => 
+                            441 =>
                             array (
                                 'id' => 37649,
                                 'created_by' => 'admin',
@@ -12056,7 +12056,7 @@ Dubai, United Arab Emirates.',
                                 'trade_name' => 'QGIRC',
                                 'alternative_names' => '',
                             ),
-                            442 => 
+                            442 =>
                             array (
                                 'id' => 39097,
                                 'created_by' => 'admin',
@@ -12083,7 +12083,7 @@ Dubai, United Arab Emirates.',
                                 'trade_name' => 'JOIN',
                                 'alternative_names' => NULL,
                             ),
-                            443 => 
+                            443 =>
                             array (
                                 'id' => 39100,
                                 'created_by' => 'admin',
@@ -12110,7 +12110,7 @@ Dubai, United Arab Emirates.',
                                 'trade_name' => 'MEIN',
                                 'alternative_names' => NULL,
                             ),
-                            444 => 
+                            444 =>
                             array (
                                 'id' => 39103,
                                 'created_by' => 'admin',
@@ -12137,7 +12137,7 @@ Dubai, United Arab Emirates.',
                                 'trade_name' => 'NAAI',
                                 'alternative_names' => NULL,
                             ),
-                            445 => 
+                            445 =>
                             array (
                                 'id' => 39106,
                                 'created_by' => 'admin',
@@ -12164,7 +12164,7 @@ Dubai, United Arab Emirates.',
                                 'trade_name' => 'UNIN',
                                 'alternative_names' => NULL,
                             ),
-                            446 => 
+                            446 =>
                             array (
                                 'id' => 39109,
                                 'created_by' => 'admin',
@@ -12191,7 +12191,7 @@ Dubai, United Arab Emirates.',
                                 'trade_name' => 'ARSI',
                                 'alternative_names' => NULL,
                             ),
-                            447 => 
+                            447 =>
                             array (
                                 'id' => 39112,
                                 'created_by' => 'admin',
@@ -12218,7 +12218,7 @@ Dubai, United Arab Emirates.',
                                 'trade_name' => 'AICJ',
                                 'alternative_names' => NULL,
                             ),
-                            448 => 
+                            448 =>
                             array (
                                 'id' => 39115,
                                 'created_by' => 'admin',
@@ -12245,7 +12245,7 @@ Dubai, United Arab Emirates.',
                                 'trade_name' => 'JERY',
                                 'alternative_names' => NULL,
                             ),
-                            449 => 
+                            449 =>
                             array (
                                 'id' => 39118,
                                 'created_by' => 'admin',
@@ -12272,7 +12272,7 @@ Dubai, United Arab Emirates.',
                                 'trade_name' => 'AAIN',
                                 'alternative_names' => NULL,
                             ),
-                            450 => 
+                            450 =>
                             array (
                                 'id' => 39121,
                                 'created_by' => 'admin',
@@ -12299,7 +12299,7 @@ Dubai, United Arab Emirates.',
                                 'trade_name' => 'JOFR',
                                 'alternative_names' => NULL,
                             ),
-                            451 => 
+                            451 =>
                             array (
                                 'id' => 39124,
                                 'created_by' => 'admin',
@@ -12326,7 +12326,7 @@ Dubai, United Arab Emirates.',
                                 'trade_name' => 'DICL',
                                 'alternative_names' => NULL,
                             ),
-                            452 => 
+                            452 =>
                             array (
                                 'id' => 39127,
                                 'created_by' => 'admin',
@@ -12353,7 +12353,7 @@ Dubai, United Arab Emirates.',
                                 'trade_name' => 'JEIC',
                                 'alternative_names' => NULL,
                             ),
-                            453 => 
+                            453 =>
                             array (
                                 'id' => 39130,
                                 'created_by' => 'admin',
@@ -12380,7 +12380,7 @@ Dubai, United Arab Emirates.',
                                 'trade_name' => '',
                                 'alternative_names' => NULL,
                             ),
-                            454 => 
+                            454 =>
                             array (
                                 'id' => 39133,
                                 'created_by' => 'admin',
@@ -12407,7 +12407,7 @@ Dubai, United Arab Emirates.',
                                 'trade_name' => 'PHIN',
                                 'alternative_names' => NULL,
                             ),
-                            455 => 
+                            455 =>
                             array (
                                 'id' => 39136,
                                 'created_by' => 'admin',
@@ -12434,7 +12434,7 @@ Dubai, United Arab Emirates.',
                                 'trade_name' => '',
                                 'alternative_names' => NULL,
                             ),
-                            456 => 
+                            456 =>
                             array (
                                 'id' => 39139,
                                 'created_by' => 'admin',
@@ -12461,7 +12461,7 @@ Dubai, United Arab Emirates.',
                                 'trade_name' => 'AIUI',
                                 'alternative_names' => NULL,
                             ),
-                            457 => 
+                            457 =>
                             array (
                                 'id' => 39142,
                                 'created_by' => 'admin',
@@ -12488,7 +12488,7 @@ Dubai, United Arab Emirates.',
                                     'trade_name' => 'ARAS',
                                     'alternative_names' => NULL,
                                 ),
-                                458 => 
+                                458 =>
                                 array (
                                     'id' => 39145,
                                     'created_by' => 'admin',
@@ -12515,7 +12515,7 @@ Dubai, United Arab Emirates.',
                                     'trade_name' => 'TIIC',
                                     'alternative_names' => NULL,
                                 ),
-                                459 => 
+                                459 =>
                                 array (
                                     'id' => 39148,
                                     'created_by' => 'admin',
@@ -12542,7 +12542,7 @@ Dubai, United Arab Emirates.',
                                     'trade_name' => 'JIJC',
                                     'alternative_names' => NULL,
                                 ),
-                                460 => 
+                                460 =>
                                 array (
                                     'id' => 39151,
                                     'created_by' => 'admin',
@@ -12569,7 +12569,7 @@ Dubai, United Arab Emirates.',
                                     'trade_name' => 'AMMI',
                                     'alternative_names' => NULL,
                                 ),
-                                461 => 
+                                461 =>
                                 array (
                                     'id' => 39154,
                                     'created_by' => 'admin',
@@ -12596,7 +12596,7 @@ Dubai, United Arab Emirates.',
                                     'trade_name' => 'ARGR',
                                     'alternative_names' => NULL,
                                 ),
-                                462 => 
+                                462 =>
                                 array (
                                     'id' => 39157,
                                     'created_by' => 'admin',
@@ -12623,7 +12623,7 @@ Dubai, United Arab Emirates.',
                                     'trade_name' => 'AOIC',
                                     'alternative_names' => NULL,
                                 ),
-                                463 => 
+                                463 =>
                                 array (
                                     'id' => 39160,
                                     'created_by' => 'admin',
@@ -12650,7 +12650,7 @@ Dubai, United Arab Emirates.',
                                     'trade_name' => 'MDGF',
                                     'alternative_names' => NULL,
                                 ),
-                                464 => 
+                                464 =>
                                 array (
                                     'id' => 39163,
                                     'created_by' => 'admin',
@@ -12677,7 +12677,7 @@ Dubai, United Arab Emirates.',
                                     'trade_name' => 'FINS',
                                     'alternative_names' => NULL,
                                 ),
-                                465 => 
+                                465 =>
                                 array (
                                     'id' => 39166,
                                     'created_by' => 'admin',
@@ -12704,7 +12704,7 @@ Dubai, United Arab Emirates.',
                                     'trade_name' => '',
                                     'alternative_names' => NULL,
                                 ),
-                                466 => 
+                                466 =>
                                 array (
                                     'id' => 39473,
                                     'created_by' => 'admin',
@@ -12731,7 +12731,7 @@ Dubai, United Arab Emirates.',
                                     'trade_name' => 'AIG',
                                     'alternative_names' => NULL,
                                 ),
-                                467 => 
+                                467 =>
                                 array (
                                     'id' => 39476,
                                     'created_by' => 'admin',
@@ -12758,7 +12758,7 @@ Dubai, United Arab Emirates.',
                                     'trade_name' => 'TIC',
                                     'alternative_names' => NULL,
                                 ),
-                                468 => 
+                                468 =>
                                 array (
                                     'id' => 39479,
                                     'created_by' => 'admin',
@@ -12785,7 +12785,7 @@ Dubai, United Arab Emirates.',
                                     'trade_name' => 'MIC',
                                     'alternative_names' => NULL,
                                 ),
-                                469 => 
+                                469 =>
                                 array (
                                     'id' => 39482,
                                     'created_by' => 'admin',
@@ -12812,7 +12812,7 @@ Dubai, United Arab Emirates.',
                                     'trade_name' => 'GUI',
                                     'alternative_names' => NULL,
                                 ),
-                                470 => 
+                                470 =>
                                 array (
                                     'id' => 39485,
                                     'created_by' => 'admin',
@@ -12839,7 +12839,7 @@ Dubai, United Arab Emirates.',
                                     'trade_name' => 'PIC',
                                     'alternative_names' => NULL,
                                 ),
-                                471 => 
+                                471 =>
                                 array (
                                     'id' => 39488,
                                     'created_by' => 'admin',
@@ -12866,7 +12866,7 @@ Dubai, United Arab Emirates.',
                                     'trade_name' => 'TRUST',
                                     'alternative_names' => NULL,
                                 ),
-                                472 => 
+                                472 =>
                                 array (
                                     'id' => 39491,
                                     'created_by' => 'admin',
@@ -12899,7 +12899,7 @@ Palestine',
                                     'trade_name' => '',
                                     'alternative_names' => NULL,
                                 ),
-                                473 => 
+                                473 =>
                                 array (
                                     'id' => 39494,
                                     'created_by' => 'admin',
@@ -12928,7 +12928,7 @@ Fax: +970-2-2956748',
                                     'trade_name' => 'MET',
                                     'alternative_names' => NULL,
                                 ),
-                                474 => 
+                                474 =>
                                 array (
                                     'id' => 39497,
                                     'created_by' => 'admin',
@@ -12955,7 +12955,7 @@ Fax: +970-2-2956748',
                                     'trade_name' => 'NIC',
                                     'alternative_names' => NULL,
                                 ),
-                                475 => 
+                                475 =>
                                 array (
                                     'id' => 39500,
                                     'created_by' => 'admin',
@@ -12982,7 +12982,7 @@ Fax: +970-2-2956748',
                                     'trade_name' => 'PMIF',
                                     'alternative_names' => NULL,
                                 ),
-                                476 => 
+                                476 =>
                                 array (
                                     'id' => 39503,
                                     'created_by' => 'admin',
@@ -13009,7 +13009,7 @@ Fax: +970-2-2956748',
                                     'trade_name' => 'ARAB INSURANCE',
                                     'alternative_names' => NULL,
                                 ),
-                                477 => 
+                                477 =>
                                 array (
                                     'id' => 39612,
                                     'created_by' => 'admin',
@@ -13038,7 +13038,7 @@ P.O.Box 26516
                                     'trade_name' => '',
                                     'alternative_names' => NULL,
                                 ),
-                                478 => 
+                                478 =>
                                 array (
                                     'id' => 39615,
                                     'created_by' => 'admin',
@@ -13067,7 +13067,7 @@ CY – 3086 Limassol',
                                     'trade_name' => '',
                                     'alternative_names' => NULL,
                                 ),
-                                479 => 
+                                479 =>
                                 array (
                                     'id' => 39618,
                                     'created_by' => 'admin',
@@ -13095,7 +13095,7 @@ P.O. Box 23415, 1683 Nicosia, Cyprus',
                                     'trade_name' => '',
                                     'alternative_names' => NULL,
                                 ),
-                                480 => 
+                                480 =>
                                 array (
                                     'id' => 39621,
                                     'created_by' => 'admin',
@@ -13125,7 +13125,7 @@ P.O.Box: 25131,
                                     'trade_name' => '',
                                     'alternative_names' => NULL,
                                 ),
-                                481 => 
+                                481 =>
                                 array (
                                     'id' => 39624,
                                     'created_by' => 'admin',
@@ -13152,7 +13152,7 @@ P.O.Box: 25131,
                                     'trade_name' => '',
                                     'alternative_names' => NULL,
                                 ),
-                                482 => 
+                                482 =>
                                 array (
                                     'id' => 39627,
                                     'created_by' => 'admin',
@@ -13182,7 +13182,7 @@ Cyprus',
                                     'trade_name' => '',
                                     'alternative_names' => NULL,
                                 ),
-                                483 => 
+                                483 =>
                                 array (
                                     'id' => 39630,
                                     'created_by' => 'admin',
@@ -13212,7 +13212,7 @@ Cyprus',
                                     'trade_name' => '',
                                     'alternative_names' => NULL,
                                 ),
-                                484 => 
+                                484 =>
                                 array (
                                     'id' => 39633,
                                     'created_by' => 'admin',
@@ -13241,7 +13241,7 @@ Cyprus',
                                     'trade_name' => '',
                                     'alternative_names' => NULL,
                                 ),
-                                485 => 
+                                485 =>
                                 array (
                                     'id' => 39636,
                                     'created_by' => 'admin',
@@ -13269,7 +13269,7 @@ Cyprus',
                                     'trade_name' => '',
                                     'alternative_names' => NULL,
                                 ),
-                                486 => 
+                                486 =>
                                 array (
                                     'id' => 39639,
                                     'created_by' => 'admin',
@@ -13298,7 +13298,7 @@ Strovolos Nicosia T.Th. 16272,
                                     'trade_name' => '',
                                     'alternative_names' => NULL,
                                 ),
-                                487 => 
+                                487 =>
                                 array (
                                     'id' => 39642,
                                     'created_by' => 'admin',
@@ -13327,7 +13327,7 @@ Strovolos Nicosia T.Th. 16272,
                                     'trade_name' => '',
                                     'alternative_names' => NULL,
                                 ),
-                                488 => 
+                                488 =>
                                 array (
                                     'id' => 39645,
                                     'created_by' => 'admin',
@@ -13357,7 +13357,7 @@ Nicosia, Cyprus',
                                     'trade_name' => '',
                                     'alternative_names' => NULL,
                                 ),
-                                489 => 
+                                489 =>
                                 array (
                                     'id' => 39648,
                                     'created_by' => 'admin',
@@ -13390,7 +13390,7 @@ Cyprus',
                                     'trade_name' => '',
                                     'alternative_names' => NULL,
                                 ),
-                                490 => 
+                                490 =>
                                 array (
                                     'id' => 39651,
                                     'created_by' => 'admin',
@@ -13417,7 +13417,7 @@ Cyprus',
                                     'trade_name' => '',
                                     'alternative_names' => NULL,
                                 ),
-                                491 => 
+                                491 =>
                                 array (
                                     'id' => 39654,
                                     'created_by' => 'admin',
@@ -13445,15 +13445,15 @@ Cyprus',
                                     'trade_name' => '',
                                     'alternative_names' => NULL,
                                 ),
-                                492 => 
+                                492 =>
                                 array (
                                     'id' => 39657,
                                     'created_by' => 'admin',
                                     'created_date' => '2020-10-13 08:21:32.297286',
                                     'last_modified_by' => 'admin',
                                     'last_modified_date' => '2020-10-13 08:21:32.297286',
-                                    'about' => '11, Florinis Street, 
-City Forum 5th floor, 
+                                    'about' => '11, Florinis Street,
+City Forum 5th floor,
 1065 Nicosia',
                                     'auditor' => '',
                                     'company_email_id' => '',
@@ -13474,7 +13474,7 @@ City Forum 5th floor,
                                     'trade_name' => '',
                                     'alternative_names' => NULL,
                                 ),
-                                493 => 
+                                493 =>
                                 array (
                                     'id' => 39660,
                                     'created_by' => 'admin',
@@ -13502,7 +13502,7 @@ EN',
                                     'trade_name' => 'Hellas Direct',
                                     'alternative_names' => NULL,
                                 ),
-                                494 => 
+                                494 =>
                                 array (
                                     'id' => 39663,
                                     'created_by' => 'admin',
@@ -13529,7 +13529,7 @@ EN',
                                     'trade_name' => '',
                                     'alternative_names' => NULL,
                                 ),
-                                495 => 
+                                495 =>
                                 array (
                                     'id' => 39666,
                                     'created_by' => 'admin',
@@ -13556,7 +13556,7 @@ EN',
                                     'trade_name' => '',
                                     'alternative_names' => NULL,
                                 ),
-                                496 => 
+                                496 =>
                                 array (
                                     'id' => 39669,
                                     'created_by' => 'admin',
@@ -13585,7 +13585,7 @@ Nicosia, Cyprus',
                                     'trade_name' => '',
                                     'alternative_names' => NULL,
                                 ),
-                                497 => 
+                                497 =>
                                 array (
                                     'id' => 39672,
                                     'created_by' => 'admin',
@@ -13612,7 +13612,7 @@ Nicosia, Cyprus',
                                     'trade_name' => '',
                                     'alternative_names' => NULL,
                                 ),
-                                498 => 
+                                498 =>
                                 array (
                                     'id' => 39675,
                                     'created_by' => 'admin',
@@ -13639,7 +13639,7 @@ Nicosia, Cyprus',
                                     'trade_name' => '',
                                     'alternative_names' => NULL,
                                 ),
-                                499 => 
+                                499 =>
                                 array (
                                     'id' => 39678,
                                     'created_by' => 'admin',
@@ -13668,14 +13668,14 @@ Nicosia, Cyprus',
                                 ),
                             ));
         \DB::table('company_detail')->insert(array (
-            0 => 
+            0 =>
             array (
                 'id' => 39681,
                 'created_by' => 'admin',
                 'created_date' => '2020-10-13 08:21:32.704924',
                 'last_modified_by' => 'admin',
                 'last_modified_date' => '2020-10-13 08:21:32.704924',
-                'about' => '66 Griva Digheni Avenue, 
+                'about' => '66 Griva Digheni Avenue,
 1095 Nicosia',
                 'auditor' => 'KPMG Limited',
                 'company_email_id' => '',
@@ -13696,14 +13696,14 @@ Nicosia, Cyprus',
                 'trade_name' => '',
                 'alternative_names' => NULL,
             ),
-            1 => 
+            1 =>
             array (
                 'id' => 39684,
                 'created_by' => 'admin',
                 'created_date' => '2020-10-13 08:21:32.719061',
                 'last_modified_by' => 'admin',
                 'last_modified_date' => '2020-10-13 08:21:32.719061',
-                'about' => '55 Digheni Akrita Avenue  & 1 Olympias 
+                'about' => '55 Digheni Akrita Avenue  & 1 Olympias
 1070 Nicosia',
                 'auditor' => '',
                 'company_email_id' => 'info@primeinsurance.eu',
@@ -13724,7 +13724,7 @@ Nicosia, Cyprus',
                 'trade_name' => '',
                 'alternative_names' => NULL,
             ),
-            2 => 
+            2 =>
             array (
                 'id' => 39687,
                 'created_by' => 'admin',
@@ -13752,7 +13752,7 @@ P.O. Box 22111, Nicosia 1517, Cyprus',
                 'trade_name' => '',
                 'alternative_names' => NULL,
             ),
-            3 => 
+            3 =>
             array (
                 'id' => 39690,
                 'created_by' => 'admin',
@@ -13779,7 +13779,7 @@ P.O. Box 22111, Nicosia 1517, Cyprus',
                 'trade_name' => '',
                 'alternative_names' => NULL,
             ),
-            4 => 
+            4 =>
             array (
                 'id' => 39693,
                 'created_by' => 'admin',
@@ -13809,7 +13809,7 @@ Cyprus',
                 'trade_name' => '',
                 'alternative_names' => NULL,
             ),
-            5 => 
+            5 =>
             array (
                 'id' => 39696,
                 'created_by' => 'admin',
@@ -13840,7 +13840,7 @@ Cyprus',
                 'trade_name' => '',
                 'alternative_names' => NULL,
             ),
-            6 => 
+            6 =>
             array (
                 'id' => 39699,
                 'created_by' => 'admin',
@@ -13870,7 +13870,7 @@ Building 359 P.O. Box: 58024
                 'trade_name' => '',
                 'alternative_names' => NULL,
             ),
-            7 => 
+            7 =>
             array (
                 'id' => 39702,
                 'created_by' => 'admin',
@@ -13897,7 +13897,7 @@ Building 359 P.O. Box: 58024
                 'trade_name' => '',
                 'alternative_names' => NULL,
             ),
-            8 => 
+            8 =>
             array (
                 'id' => 39705,
                 'created_by' => 'admin',
@@ -13927,7 +13927,7 @@ PO Box 21270, 1505 Nicosia',
                 'trade_name' => '',
                 'alternative_names' => NULL,
             ),
-            9 => 
+            9 =>
             array (
                 'id' => 39708,
                 'created_by' => 'admin',
@@ -13956,7 +13956,7 @@ T.Th. 40378, 6303 - Larnaca',
                 'trade_name' => '',
                 'alternative_names' => NULL,
             ),
-            10 => 
+            10 =>
             array (
                 'id' => 39711,
                 'created_by' => 'admin',
@@ -13983,7 +13983,7 @@ T.Th. 40378, 6303 - Larnaca',
                 'trade_name' => '',
                 'alternative_names' => NULL,
             ),
-            11 => 
+            11 =>
             array (
                 'id' => 40234,
                 'created_by' => 'admin',
@@ -14010,7 +14010,7 @@ T.Th. 40378, 6303 - Larnaca',
                 'trade_name' => 'CAAR',
                 'alternative_names' => NULL,
             ),
-            12 => 
+            12 =>
             array (
                 'id' => 40237,
                 'created_by' => 'admin',
@@ -14037,7 +14037,7 @@ T.Th. 40378, 6303 - Larnaca',
                 'trade_name' => 'SAA',
                 'alternative_names' => NULL,
             ),
-            13 => 
+            13 =>
             array (
                 'id' => 40240,
                 'created_by' => 'admin',
@@ -14064,7 +14064,7 @@ T.Th. 40378, 6303 - Larnaca',
                 'trade_name' => '',
                 'alternative_names' => NULL,
             ),
-            14 => 
+            14 =>
             array (
                 'id' => 40243,
                 'created_by' => 'admin',
@@ -14091,7 +14091,7 @@ T.Th. 40378, 6303 - Larnaca',
                 'trade_name' => '',
                 'alternative_names' => NULL,
             ),
-            15 => 
+            15 =>
             array (
                 'id' => 40246,
                 'created_by' => 'admin',
@@ -14118,7 +14118,7 @@ T.Th. 40378, 6303 - Larnaca',
                 'trade_name' => '',
                 'alternative_names' => NULL,
             ),
-            16 => 
+            16 =>
             array (
                 'id' => 40249,
                 'created_by' => 'admin',
@@ -14145,7 +14145,7 @@ T.Th. 40378, 6303 - Larnaca',
                 'trade_name' => 'CAAT',
                 'alternative_names' => NULL,
             ),
-            17 => 
+            17 =>
             array (
                 'id' => 40252,
                 'created_by' => 'admin',
@@ -14172,7 +14172,7 @@ T.Th. 40378, 6303 - Larnaca',
                 'trade_name' => '',
                 'alternative_names' => NULL,
             ),
-            18 => 
+            18 =>
             array (
                 'id' => 40255,
                 'created_by' => 'admin',
@@ -14199,7 +14199,7 @@ T.Th. 40378, 6303 - Larnaca',
                 'trade_name' => 'CIAR',
                 'alternative_names' => NULL,
             ),
-            19 => 
+            19 =>
             array (
                 'id' => 40258,
                 'created_by' => 'admin',
@@ -14226,7 +14226,7 @@ T.Th. 40378, 6303 - Larnaca',
                 'trade_name' => '',
                 'alternative_names' => NULL,
             ),
-            20 => 
+            20 =>
             array (
                 'id' => 40261,
                 'created_by' => 'admin',
@@ -14253,7 +14253,7 @@ T.Th. 40378, 6303 - Larnaca',
                 'trade_name' => '',
                 'alternative_names' => NULL,
             ),
-            21 => 
+            21 =>
             array (
                 'id' => 40264,
                 'created_by' => 'admin',
@@ -14280,7 +14280,7 @@ T.Th. 40378, 6303 - Larnaca',
                 'trade_name' => '',
                 'alternative_names' => NULL,
             ),
-            22 => 
+            22 =>
             array (
                 'id' => 40267,
                 'created_by' => 'admin',
@@ -14307,7 +14307,7 @@ T.Th. 40378, 6303 - Larnaca',
                 'trade_name' => '',
                 'alternative_names' => NULL,
             ),
-            23 => 
+            23 =>
             array (
                 'id' => 40270,
                 'created_by' => 'admin',
@@ -14334,7 +14334,7 @@ T.Th. 40378, 6303 - Larnaca',
                 'trade_name' => '',
                 'alternative_names' => NULL,
             ),
-            24 => 
+            24 =>
             array (
                 'id' => 40273,
                 'created_by' => 'admin',
@@ -14361,7 +14361,7 @@ T.Th. 40378, 6303 - Larnaca',
                 'trade_name' => '',
                 'alternative_names' => NULL,
             ),
-            25 => 
+            25 =>
             array (
                 'id' => 40276,
                 'created_by' => 'admin',
@@ -14388,7 +14388,7 @@ T.Th. 40378, 6303 - Larnaca',
                 'trade_name' => '',
                 'alternative_names' => NULL,
             ),
-            26 => 
+            26 =>
             array (
                 'id' => 40279,
                 'created_by' => 'admin',
@@ -14415,7 +14415,7 @@ T.Th. 40378, 6303 - Larnaca',
                 'trade_name' => '',
                 'alternative_names' => NULL,
             ),
-            27 => 
+            27 =>
             array (
                 'id' => 40282,
                 'created_by' => 'admin',
@@ -14442,7 +14442,7 @@ T.Th. 40378, 6303 - Larnaca',
                 'trade_name' => '',
                 'alternative_names' => NULL,
             ),
-            28 => 
+            28 =>
             array (
                 'id' => 40285,
                 'created_by' => 'admin',
@@ -14469,7 +14469,7 @@ T.Th. 40378, 6303 - Larnaca',
                 'trade_name' => '',
                 'alternative_names' => NULL,
             ),
-            29 => 
+            29 =>
             array (
                 'id' => 40288,
                 'created_by' => 'admin',
@@ -14496,7 +14496,7 @@ T.Th. 40378, 6303 - Larnaca',
                 'trade_name' => '',
                 'alternative_names' => NULL,
             ),
-            30 => 
+            30 =>
             array (
                 'id' => 40291,
                 'created_by' => 'admin',
@@ -14523,7 +14523,7 @@ T.Th. 40378, 6303 - Larnaca',
                 'trade_name' => '',
                 'alternative_names' => NULL,
             ),
-            31 => 
+            31 =>
             array (
                 'id' => 40294,
                 'created_by' => 'admin',
@@ -14550,7 +14550,7 @@ T.Th. 40378, 6303 - Larnaca',
                 'trade_name' => '',
                 'alternative_names' => NULL,
             ),
-            32 => 
+            32 =>
             array (
                 'id' => 40297,
                 'created_by' => 'admin',
@@ -14577,7 +14577,7 @@ T.Th. 40378, 6303 - Larnaca',
                 'trade_name' => '',
                 'alternative_names' => NULL,
             ),
-            33 => 
+            33 =>
             array (
                 'id' => 40300,
                 'created_by' => 'admin',
@@ -14604,7 +14604,7 @@ T.Th. 40378, 6303 - Larnaca',
                 'trade_name' => '',
                 'alternative_names' => NULL,
             ),
-            34 => 
+            34 =>
             array (
                 'id' => 40303,
                 'created_by' => 'admin',
@@ -14631,7 +14631,7 @@ T.Th. 40378, 6303 - Larnaca',
                 'trade_name' => '',
                 'alternative_names' => NULL,
             ),
-            35 => 
+            35 =>
             array (
                 'id' => 40307,
                 'created_by' => 'admin',
@@ -14658,7 +14658,7 @@ T.Th. 40378, 6303 - Larnaca',
                 'trade_name' => '',
                 'alternative_names' => NULL,
             ),
-            36 => 
+            36 =>
             array (
                 'id' => 40310,
                 'created_by' => 'admin',
@@ -14685,7 +14685,7 @@ T.Th. 40378, 6303 - Larnaca',
                 'trade_name' => '',
                 'alternative_names' => NULL,
             ),
-            37 => 
+            37 =>
             array (
                 'id' => 40313,
                 'created_by' => 'admin',
@@ -14712,7 +14712,7 @@ T.Th. 40378, 6303 - Larnaca',
                 'trade_name' => '',
                 'alternative_names' => NULL,
             ),
-            38 => 
+            38 =>
             array (
                 'id' => 40316,
                 'created_by' => 'admin',
@@ -14739,7 +14739,7 @@ T.Th. 40378, 6303 - Larnaca',
                 'trade_name' => '',
                 'alternative_names' => NULL,
             ),
-            39 => 
+            39 =>
             array (
                 'id' => 40319,
                 'created_by' => 'admin',
@@ -14766,7 +14766,7 @@ T.Th. 40378, 6303 - Larnaca',
                 'trade_name' => '',
                 'alternative_names' => NULL,
             ),
-            40 => 
+            40 =>
             array (
                 'id' => 40322,
                 'created_by' => 'admin',
@@ -14793,7 +14793,7 @@ T.Th. 40378, 6303 - Larnaca',
                 'trade_name' => 'AMIC',
                 'alternative_names' => NULL,
             ),
-            41 => 
+            41 =>
             array (
                 'id' => 40325,
                 'created_by' => 'admin',
@@ -14820,7 +14820,7 @@ T.Th. 40378, 6303 - Larnaca',
                 'trade_name' => '',
                 'alternative_names' => NULL,
             ),
-            42 => 
+            42 =>
             array (
                 'id' => 40328,
                 'created_by' => 'admin',
@@ -14847,7 +14847,7 @@ T.Th. 40378, 6303 - Larnaca',
                 'trade_name' => '',
                 'alternative_names' => NULL,
             ),
-            43 => 
+            43 =>
             array (
                 'id' => 40331,
                 'created_by' => 'admin',
@@ -14874,7 +14874,7 @@ T.Th. 40378, 6303 - Larnaca',
                 'trade_name' => '',
                 'alternative_names' => NULL,
             ),
-            44 => 
+            44 =>
             array (
                 'id' => 40334,
                 'created_by' => 'admin',
@@ -14901,7 +14901,7 @@ T.Th. 40378, 6303 - Larnaca',
                 'trade_name' => '',
                 'alternative_names' => NULL,
             ),
-            45 => 
+            45 =>
             array (
                 'id' => 40337,
                 'created_by' => 'admin',
@@ -14928,7 +14928,7 @@ T.Th. 40378, 6303 - Larnaca',
                 'trade_name' => '',
                 'alternative_names' => NULL,
             ),
-            46 => 
+            46 =>
             array (
                 'id' => 40340,
                 'created_by' => 'admin',
@@ -14955,7 +14955,7 @@ T.Th. 40378, 6303 - Larnaca',
                 'trade_name' => '',
                 'alternative_names' => NULL,
             ),
-            47 => 
+            47 =>
             array (
                 'id' => 40381,
                 'created_by' => 'admin',
@@ -14982,7 +14982,7 @@ T.Th. 40378, 6303 - Larnaca',
                 'trade_name' => 'AGM',
                 'alternative_names' => NULL,
             ),
-            48 => 
+            48 =>
             array (
                 'id' => 40384,
                 'created_by' => 'admin',
@@ -15009,7 +15009,7 @@ T.Th. 40378, 6303 - Larnaca',
                 'trade_name' => '',
                 'alternative_names' => NULL,
             ),
-            49 => 
+            49 =>
             array (
                 'id' => 40387,
                 'created_by' => 'admin',
@@ -15036,7 +15036,7 @@ T.Th. 40378, 6303 - Larnaca',
                 'trade_name' => '',
                 'alternative_names' => NULL,
             ),
-            50 => 
+            50 =>
             array (
                 'id' => 40390,
                 'created_by' => 'admin',
@@ -15063,7 +15063,7 @@ T.Th. 40378, 6303 - Larnaca',
                 'trade_name' => 'MAR',
                 'alternative_names' => NULL,
             ),
-            51 => 
+            51 =>
             array (
                 'id' => 40393,
                 'created_by' => 'admin',
@@ -15090,7 +15090,7 @@ T.Th. 40378, 6303 - Larnaca',
                 'trade_name' => 'NASR',
                 'alternative_names' => NULL,
             ),
-            52 => 
+            52 =>
             array (
                 'id' => 40396,
                 'created_by' => 'admin',
@@ -15117,7 +15117,7 @@ T.Th. 40378, 6303 - Larnaca',
                 'trade_name' => '',
                 'alternative_names' => NULL,
             ),
-            53 => 
+            53 =>
             array (
                 'id' => 40399,
                 'created_by' => 'admin',
@@ -15144,7 +15144,7 @@ T.Th. 40378, 6303 - Larnaca',
                 'trade_name' => 'SAR',
                 'alternative_names' => NULL,
             ),
-            54 => 
+            54 =>
             array (
                 'id' => 40402,
                 'created_by' => 'admin',
@@ -15171,7 +15171,7 @@ T.Th. 40378, 6303 - Larnaca',
                 'trade_name' => '',
                 'alternative_names' => NULL,
             ),
-            55 => 
+            55 =>
             array (
                 'id' => 40413,
                 'created_by' => 'admin',
@@ -15198,7 +15198,7 @@ T.Th. 40378, 6303 - Larnaca',
                 'trade_name' => '',
                 'alternative_names' => NULL,
             ),
-            56 => 
+            56 =>
             array (
                 'id' => 40416,
                 'created_by' => 'admin',
@@ -15225,7 +15225,7 @@ T.Th. 40378, 6303 - Larnaca',
             'trade_name' => 'Cie D\'Assurances Et De Réassurance Atlanta (Atlanta Assurances)',
                 'alternative_names' => NULL,
             ),
-            57 => 
+            57 =>
             array (
                 'id' => 40419,
                 'created_by' => 'admin',
@@ -15252,7 +15252,7 @@ T.Th. 40378, 6303 - Larnaca',
                 'trade_name' => '',
                 'alternative_names' => NULL,
             ),
-            58 => 
+            58 =>
             array (
                 'id' => 40422,
                 'created_by' => 'admin',
@@ -15279,7 +15279,7 @@ T.Th. 40378, 6303 - Larnaca',
                 'trade_name' => 'MCMA',
                 'alternative_names' => NULL,
             ),
-            59 => 
+            59 =>
             array (
                 'id' => 40425,
                 'created_by' => 'admin',
@@ -15306,7 +15306,7 @@ T.Th. 40378, 6303 - Larnaca',
                 'trade_name' => 'RMA',
                 'alternative_names' => NULL,
             ),
-            60 => 
+            60 =>
             array (
                 'id' => 40428,
                 'created_by' => 'admin',
@@ -15333,7 +15333,7 @@ T.Th. 40378, 6303 - Larnaca',
                 'trade_name' => 'Saham Assurance',
                 'alternative_names' => NULL,
             ),
-            61 => 
+            61 =>
             array (
                 'id' => 40431,
                 'created_by' => 'admin',
@@ -15360,7 +15360,7 @@ T.Th. 40378, 6303 - Larnaca',
                 'trade_name' => '',
                 'alternative_names' => NULL,
             ),
-            62 => 
+            62 =>
             array (
                 'id' => 40434,
                 'created_by' => 'admin',
@@ -15387,7 +15387,7 @@ T.Th. 40378, 6303 - Larnaca',
                 'trade_name' => '',
                 'alternative_names' => NULL,
             ),
-            63 => 
+            63 =>
             array (
                 'id' => 40437,
                 'created_by' => 'admin',
@@ -15414,7 +15414,7 @@ T.Th. 40378, 6303 - Larnaca',
                 'trade_name' => 'MAMDA',
                 'alternative_names' => NULL,
             ),
-            64 => 
+            64 =>
             array (
                 'id' => 40440,
                 'created_by' => 'admin',
@@ -15441,7 +15441,7 @@ T.Th. 40378, 6303 - Larnaca',
                 'trade_name' => 'CAT',
                 'alternative_names' => NULL,
             ),
-            65 => 
+            65 =>
             array (
                 'id' => 40443,
                 'created_by' => 'admin',
@@ -15468,7 +15468,7 @@ T.Th. 40378, 6303 - Larnaca',
                 'trade_name' => 'MATU',
                 'alternative_names' => NULL,
             ),
-            66 => 
+            66 =>
             array (
                 'id' => 40446,
                 'created_by' => 'admin',
@@ -15495,7 +15495,7 @@ T.Th. 40378, 6303 - Larnaca',
                 'trade_name' => 'La Marocaine Vie',
                 'alternative_names' => NULL,
             ),
-            67 => 
+            67 =>
             array (
                 'id' => 40449,
                 'created_by' => 'admin',
@@ -15522,7 +15522,7 @@ T.Th. 40378, 6303 - Larnaca',
                 'trade_name' => '',
                 'alternative_names' => NULL,
             ),
-            68 => 
+            68 =>
             array (
                 'id' => 40452,
                 'created_by' => 'admin',
@@ -15549,7 +15549,7 @@ T.Th. 40378, 6303 - Larnaca',
                 'trade_name' => '',
                 'alternative_names' => NULL,
             ),
-            69 => 
+            69 =>
             array (
                 'id' => 40455,
                 'created_by' => 'admin',
@@ -15576,7 +15576,7 @@ T.Th. 40378, 6303 - Larnaca',
                 'trade_name' => '',
                 'alternative_names' => NULL,
             ),
-            70 => 
+            70 =>
             array (
                 'id' => 40458,
                 'created_by' => 'admin',
@@ -15603,7 +15603,7 @@ T.Th. 40378, 6303 - Larnaca',
             'trade_name' => 'Maroc Assistance Internationale (MAI)',
                 'alternative_names' => NULL,
             ),
-            71 => 
+            71 =>
             array (
                 'id' => 40461,
                 'created_by' => 'admin',
@@ -15630,7 +15630,7 @@ T.Th. 40378, 6303 - Larnaca',
                 'trade_name' => '',
                 'alternative_names' => NULL,
             ),
-            72 => 
+            72 =>
             array (
                 'id' => 40464,
                 'created_by' => 'admin',
@@ -15657,7 +15657,7 @@ T.Th. 40378, 6303 - Larnaca',
                 'trade_name' => '',
                 'alternative_names' => NULL,
             ),
-            73 => 
+            73 =>
             array (
                 'id' => 40467,
                 'created_by' => 'admin',
@@ -15684,7 +15684,7 @@ T.Th. 40378, 6303 - Larnaca',
                 'trade_name' => '',
                 'alternative_names' => NULL,
             ),
-            74 => 
+            74 =>
             array (
                 'id' => 40470,
                 'created_by' => 'admin',
@@ -15711,7 +15711,7 @@ T.Th. 40378, 6303 - Larnaca',
                 'trade_name' => '',
                 'alternative_names' => NULL,
             ),
-            75 => 
+            75 =>
             array (
                 'id' => 40473,
                 'created_by' => 'admin',
@@ -15738,7 +15738,7 @@ T.Th. 40378, 6303 - Larnaca',
                 'trade_name' => '',
                 'alternative_names' => NULL,
             ),
-            76 => 
+            76 =>
             array (
                 'id' => 40476,
                 'created_by' => 'admin',
@@ -15765,7 +15765,7 @@ T.Th. 40378, 6303 - Larnaca',
                 'trade_name' => 'SMAEX',
                 'alternative_names' => NULL,
             ),
-            77 => 
+            77 =>
             array (
                 'id' => 40479,
                 'created_by' => 'admin',
@@ -15792,7 +15792,7 @@ T.Th. 40378, 6303 - Larnaca',
                 'trade_name' => 'SCR',
                 'alternative_names' => NULL,
             ),
-            78 => 
+            78 =>
             array (
                 'id' => 40482,
                 'created_by' => 'admin',
@@ -15819,7 +15819,7 @@ T.Th. 40378, 6303 - Larnaca',
                 'trade_name' => '',
                 'alternative_names' => NULL,
             ),
-            79 => 
+            79 =>
             array (
                 'id' => 40590,
                 'created_by' => 'admin',
@@ -15846,7 +15846,7 @@ T.Th. 40378, 6303 - Larnaca',
                 'trade_name' => '',
                 'alternative_names' => NULL,
             ),
-            80 => 
+            80 =>
             array (
                 'id' => 40593,
                 'created_by' => 'admin',
@@ -15873,7 +15873,7 @@ T.Th. 40378, 6303 - Larnaca',
                 'trade_name' => 'NICL',
                 'alternative_names' => NULL,
             ),
-            81 => 
+            81 =>
             array (
                 'id' => 40596,
                 'created_by' => 'admin',
@@ -15900,7 +15900,7 @@ T.Th. 40378, 6303 - Larnaca',
                 'trade_name' => 'NESICO',
                 'alternative_names' => NULL,
             ),
-            82 => 
+            82 =>
             array (
                 'id' => 40599,
                 'created_by' => 'admin',
@@ -15927,7 +15927,7 @@ T.Th. 40378, 6303 - Larnaca',
                 'trade_name' => '',
                 'alternative_names' => NULL,
             ),
-            83 => 
+            83 =>
             array (
                 'id' => 40602,
                 'created_by' => 'admin',
@@ -15954,7 +15954,7 @@ T.Th. 40378, 6303 - Larnaca',
                 'trade_name' => '',
                 'alternative_names' => NULL,
             ),
-            84 => 
+            84 =>
             array (
                 'id' => 40605,
                 'created_by' => 'admin',
@@ -15981,7 +15981,7 @@ T.Th. 40378, 6303 - Larnaca',
                 'trade_name' => 'SS',
                 'alternative_names' => NULL,
             ),
-            85 => 
+            85 =>
             array (
                 'id' => 40608,
                 'created_by' => 'admin',
@@ -16008,7 +16008,7 @@ T.Th. 40378, 6303 - Larnaca',
                 'trade_name' => '',
                 'alternative_names' => NULL,
             ),
-            86 => 
+            86 =>
             array (
                 'id' => 40611,
                 'created_by' => 'admin',
@@ -16035,7 +16035,7 @@ T.Th. 40378, 6303 - Larnaca',
                 'trade_name' => '',
                 'alternative_names' => NULL,
             ),
-            87 => 
+            87 =>
             array (
                 'id' => 40622,
                 'created_by' => 'admin',
@@ -16062,7 +16062,7 @@ T.Th. 40378, 6303 - Larnaca',
                 'trade_name' => '',
                 'alternative_names' => NULL,
             ),
-            88 => 
+            88 =>
             array (
                 'id' => 40625,
                 'created_by' => 'admin',
@@ -16089,7 +16089,7 @@ T.Th. 40378, 6303 - Larnaca',
                 'trade_name' => '',
                 'alternative_names' => NULL,
             ),
-            89 => 
+            89 =>
             array (
                 'id' => 40628,
                 'created_by' => 'admin',
@@ -16116,7 +16116,7 @@ T.Th. 40378, 6303 - Larnaca',
                 'trade_name' => '',
                 'alternative_names' => NULL,
             ),
-            90 => 
+            90 =>
             array (
                 'id' => 40631,
                 'created_by' => 'admin',
@@ -16143,7 +16143,7 @@ T.Th. 40378, 6303 - Larnaca',
                 'trade_name' => '',
                 'alternative_names' => NULL,
             ),
-            91 => 
+            91 =>
             array (
                 'id' => 40634,
                 'created_by' => 'admin',
@@ -16170,7 +16170,7 @@ T.Th. 40378, 6303 - Larnaca',
                 'trade_name' => '',
                 'alternative_names' => NULL,
             ),
-            92 => 
+            92 =>
             array (
                 'id' => 40637,
                 'created_by' => 'admin',
@@ -16197,7 +16197,7 @@ T.Th. 40378, 6303 - Larnaca',
                 'trade_name' => '',
                 'alternative_names' => NULL,
             ),
-            93 => 
+            93 =>
             array (
                 'id' => 40640,
                 'created_by' => 'admin',
@@ -16224,7 +16224,7 @@ T.Th. 40378, 6303 - Larnaca',
                 'trade_name' => '',
                 'alternative_names' => NULL,
             ),
-            94 => 
+            94 =>
             array (
                 'id' => 40643,
                 'created_by' => 'admin',
@@ -16251,7 +16251,7 @@ T.Th. 40378, 6303 - Larnaca',
                 'trade_name' => '',
                 'alternative_names' => NULL,
             ),
-            95 => 
+            95 =>
             array (
                 'id' => 40646,
                 'created_by' => 'admin',
@@ -16278,7 +16278,7 @@ T.Th. 40378, 6303 - Larnaca',
                 'trade_name' => '',
                 'alternative_names' => NULL,
             ),
-            96 => 
+            96 =>
             array (
                 'id' => 40649,
                 'created_by' => 'admin',
@@ -16305,7 +16305,7 @@ T.Th. 40378, 6303 - Larnaca',
                 'trade_name' => '',
                 'alternative_names' => NULL,
             ),
-            97 => 
+            97 =>
             array (
                 'id' => 40652,
                 'created_by' => 'admin',
@@ -16332,7 +16332,7 @@ T.Th. 40378, 6303 - Larnaca',
                 'trade_name' => '',
                 'alternative_names' => NULL,
             ),
-            98 => 
+            98 =>
             array (
                 'id' => 40655,
                 'created_by' => 'admin',
@@ -16359,7 +16359,7 @@ T.Th. 40378, 6303 - Larnaca',
                 'trade_name' => '',
                 'alternative_names' => NULL,
             ),
-            99 => 
+            99 =>
             array (
                 'id' => 40658,
                 'created_by' => 'admin',
@@ -16386,7 +16386,7 @@ T.Th. 40378, 6303 - Larnaca',
                 'trade_name' => '',
                 'alternative_names' => NULL,
             ),
-            100 => 
+            100 =>
             array (
                 'id' => 40661,
                 'created_by' => 'admin',
@@ -16413,7 +16413,7 @@ T.Th. 40378, 6303 - Larnaca',
                 'trade_name' => '',
                 'alternative_names' => NULL,
             ),
-            101 => 
+            101 =>
             array (
                 'id' => 40664,
                 'created_by' => 'admin',
@@ -16440,7 +16440,7 @@ T.Th. 40378, 6303 - Larnaca',
                 'trade_name' => '',
                 'alternative_names' => NULL,
             ),
-            102 => 
+            102 =>
             array (
                 'id' => 40667,
                 'created_by' => 'admin',
@@ -16467,7 +16467,7 @@ T.Th. 40378, 6303 - Larnaca',
                 'trade_name' => '',
                 'alternative_names' => NULL,
             ),
-            103 => 
+            103 =>
             array (
                 'id' => 40779,
                 'created_by' => 'admin',
@@ -16494,7 +16494,7 @@ T.Th. 40378, 6303 - Larnaca',
             'trade_name' => 'STAR/ Société Tunisienne d\'Assurances et de Réassurances (STAR)',
                 'alternative_names' => NULL,
             ),
-            104 => 
+            104 =>
             array (
                 'id' => 40782,
                 'created_by' => 'admin',
@@ -16521,7 +16521,7 @@ T.Th. 40378, 6303 - Larnaca',
                 'trade_name' => 'Lloyd Tunisien Societe d\'Assurances et de Reassurances',
                 'alternative_names' => NULL,
             ),
-            105 => 
+            105 =>
             array (
                 'id' => 40785,
                 'created_by' => 'admin',
@@ -16548,7 +16548,7 @@ T.Th. 40378, 6303 - Larnaca',
             'trade_name' => 'CARTE/ Company d\'Assurances et de Reassurances Tuniso-Europenne (CARTE)',
                 'alternative_names' => NULL,
             ),
-            106 => 
+            106 =>
             array (
                 'id' => 40788,
                 'created_by' => 'admin',
@@ -16575,7 +16575,7 @@ T.Th. 40378, 6303 - Larnaca',
                 'trade_name' => 'Groupe des Assurances de Tunisie',
                 'alternative_names' => NULL,
             ),
-            107 => 
+            107 =>
             array (
                 'id' => 40791,
                 'created_by' => 'admin',
@@ -16602,7 +16602,7 @@ T.Th. 40378, 6303 - Larnaca',
                 'trade_name' => 'Societe d\'Assurances SALIM/ BH Assurance',
                 'alternative_names' => NULL,
             ),
-            108 => 
+            108 =>
             array (
                 'id' => 40794,
                 'created_by' => 'admin',
@@ -16629,7 +16629,7 @@ T.Th. 40378, 6303 - Larnaca',
             'trade_name' => 'COMAR/Compagnie Méditérranéenne d\' Assurances et de Réassurances (Assurances COMAR)',
                 'alternative_names' => NULL,
             ),
-            109 => 
+            109 =>
             array (
                 'id' => 40797,
                 'created_by' => 'admin',
@@ -16656,7 +16656,7 @@ T.Th. 40378, 6303 - Larnaca',
                 'trade_name' => 'ASTREE/ASTREE Compagnie d\'Assurances et de Reassurances',
                 'alternative_names' => NULL,
             ),
-            110 => 
+            110 =>
             array (
                 'id' => 40800,
                 'created_by' => 'admin',
@@ -16683,7 +16683,7 @@ T.Th. 40378, 6303 - Larnaca',
                 'trade_name' => 'Assurances BIAT',
                 'alternative_names' => NULL,
             ),
-            111 => 
+            111 =>
             array (
                 'id' => 40803,
                 'created_by' => 'admin',
@@ -16710,7 +16710,7 @@ T.Th. 40378, 6303 - Larnaca',
                 'trade_name' => 'Assurances Maghrebia',
                 'alternative_names' => NULL,
             ),
-            112 => 
+            112 =>
             array (
                 'id' => 40806,
                 'created_by' => 'admin',
@@ -16737,7 +16737,7 @@ T.Th. 40378, 6303 - Larnaca',
                 'trade_name' => 'Zitouna Takaful',
                 'alternative_names' => NULL,
             ),
-            113 => 
+            113 =>
             array (
                 'id' => 40809,
                 'created_by' => 'admin',
@@ -16764,7 +16764,7 @@ T.Th. 40378, 6303 - Larnaca',
                 'trade_name' => 'El Amana Takaful',
                 'alternative_names' => NULL,
             ),
-            114 => 
+            114 =>
             array (
                 'id' => 40812,
                 'created_by' => 'admin',
@@ -16791,7 +16791,7 @@ T.Th. 40378, 6303 - Larnaca',
                 'trade_name' => 'At-Takafulia Insurance Company',
                 'alternative_names' => NULL,
             ),
-            115 => 
+            115 =>
             array (
                 'id' => 40815,
                 'created_by' => 'admin',
@@ -16818,7 +16818,7 @@ T.Th. 40378, 6303 - Larnaca',
                 'trade_name' => 'AMI/Assurances Mutuelles Ittihad',
                 'alternative_names' => NULL,
             ),
-            116 => 
+            116 =>
             array (
                 'id' => 40818,
                 'created_by' => 'admin',
@@ -16845,7 +16845,7 @@ T.Th. 40378, 6303 - Larnaca',
                 'trade_name' => 'Mutuelle Assurance de l\'Enseignement',
                 'alternative_names' => NULL,
             ),
-            117 => 
+            117 =>
             array (
                 'id' => 40821,
                 'created_by' => 'admin',
@@ -16872,7 +16872,7 @@ T.Th. 40378, 6303 - Larnaca',
                 'trade_name' => 'Caisse Tunisienne de Assurances Mutuelles Agricoles (CTAMA',
                     'alternative_names' => NULL,
                 ),
-                118 => 
+                118 =>
                 array (
                     'id' => 40824,
                     'created_by' => 'admin',
@@ -16899,7 +16899,7 @@ T.Th. 40378, 6303 - Larnaca',
                 'trade_name' => 'HAYETT/Compagnie d’Assurance Vie et de Capitalisation (HAYETT)',
                     'alternative_names' => NULL,
                 ),
-                119 => 
+                119 =>
                 array (
                     'id' => 40827,
                     'created_by' => 'admin',
@@ -16926,7 +16926,7 @@ T.Th. 40378, 6303 - Larnaca',
                     'trade_name' => 'GAT VIE',
                     'alternative_names' => NULL,
                 ),
-                120 => 
+                120 =>
                 array (
                     'id' => 40830,
                     'created_by' => 'admin',
@@ -16953,7 +16953,7 @@ T.Th. 40378, 6303 - Larnaca',
                     'trade_name' => 'Magherbia Vie insurance company',
                     'alternative_names' => NULL,
                 ),
-                121 => 
+                121 =>
                 array (
                     'id' => 40833,
                     'created_by' => 'admin',
@@ -16980,7 +16980,7 @@ T.Th. 40378, 6303 - Larnaca',
                     'trade_name' => '',
                     'alternative_names' => NULL,
                 ),
-                122 => 
+                122 =>
                 array (
                     'id' => 40836,
                     'created_by' => 'admin',
@@ -17009,7 +17009,7 @@ CARTE building - Lot BC4 - North Urban Center 1082 - TUNIS',
                     'trade_name' => 'CARTE VIE',
                     'alternative_names' => NULL,
                 ),
-                123 => 
+                123 =>
                 array (
                     'id' => 40839,
                     'created_by' => 'admin',
@@ -17036,7 +17036,7 @@ CARTE building - Lot BC4 - North Urban Center 1082 - TUNIS',
                 'trade_name' => 'Compagnie Tunisienne pour l\' Assurance du Commerce Exterieur (COTUNACE)',
                     'alternative_names' => NULL,
                 ),
-                124 => 
+                124 =>
                 array (
                     'id' => 40842,
                     'created_by' => 'admin',
@@ -17063,7 +17063,7 @@ CARTE building - Lot BC4 - North Urban Center 1082 - TUNIS',
                     'trade_name' => 'Tunisia  RE',
                     'alternative_names' => NULL,
                 ),
-                125 => 
+                125 =>
                 array (
                     'id' => 40845,
                     'created_by' => 'admin',
@@ -17090,7 +17090,7 @@ CARTE building - Lot BC4 - North Urban Center 1082 - TUNIS',
                     'trade_name' => 'Afrique Assistance',
                     'alternative_names' => NULL,
                 ),
-                126 => 
+                126 =>
                 array (
                     'id' => 40848,
                     'created_by' => 'admin',
@@ -17117,7 +17117,7 @@ CARTE building - Lot BC4 - North Urban Center 1082 - TUNIS',
                     'trade_name' => '',
                     'alternative_names' => NULL,
                 ),
-                127 => 
+                127 =>
                 array (
                     'id' => 40851,
                     'created_by' => 'admin',
@@ -17144,7 +17144,7 @@ CARTE building - Lot BC4 - North Urban Center 1082 - TUNIS',
                     'trade_name' => '',
                     'alternative_names' => NULL,
                 ),
-                128 => 
+                128 =>
                 array (
                     'id' => 41009,
                     'created_by' => 'admin',
@@ -17171,7 +17171,7 @@ CARTE building - Lot BC4 - North Urban Center 1082 - TUNIS',
                     'trade_name' => 'ADIR',
                     'alternative_names' => NULL,
                 ),
-                129 => 
+                129 =>
                 array (
                     'id' => 41012,
                     'created_by' => 'admin',
@@ -17198,7 +17198,7 @@ CARTE building - Lot BC4 - North Urban Center 1082 - TUNIS',
                 'trade_name' => 'American International Group, Inc. (AIG)',
                     'alternative_names' => NULL,
                 ),
-                130 => 
+                130 =>
                 array (
                     'id' => 41015,
                     'created_by' => 'admin',
@@ -17225,7 +17225,7 @@ CARTE building - Lot BC4 - North Urban Center 1082 - TUNIS',
                     'trade_name' => 'Formerly known as Main Insurance Company S.A.L.',
                     'alternative_names' => NULL,
                 ),
-                131 => 
+                131 =>
                 array (
                     'id' => 41018,
                     'created_by' => 'admin',
@@ -17252,7 +17252,7 @@ CARTE building - Lot BC4 - North Urban Center 1082 - TUNIS',
                     'trade_name' => '',
                     'alternative_names' => NULL,
                 ),
-                132 => 
+                132 =>
                 array (
                     'id' => 41021,
                     'created_by' => 'admin',
@@ -17279,7 +17279,7 @@ CARTE building - Lot BC4 - North Urban Center 1082 - TUNIS',
                     'trade_name' => '',
                     'alternative_names' => NULL,
                 ),
-                133 => 
+                133 =>
                 array (
                     'id' => 41024,
                     'created_by' => 'admin',
@@ -17306,7 +17306,7 @@ CARTE building - Lot BC4 - North Urban Center 1082 - TUNIS',
                     'trade_name' => '',
                     'alternative_names' => NULL,
                 ),
-                134 => 
+                134 =>
                 array (
                     'id' => 41027,
                     'created_by' => 'admin',
@@ -17333,7 +17333,7 @@ CARTE building - Lot BC4 - North Urban Center 1082 - TUNIS',
                     'trade_name' => '',
                     'alternative_names' => NULL,
                 ),
-                135 => 
+                135 =>
                 array (
                     'id' => 41030,
                     'created_by' => 'admin',
@@ -17360,7 +17360,7 @@ CARTE building - Lot BC4 - North Urban Center 1082 - TUNIS',
                     'trade_name' => '',
                     'alternative_names' => NULL,
                 ),
-                136 => 
+                136 =>
                 array (
                     'id' => 41033,
                     'created_by' => 'admin',
@@ -17387,7 +17387,7 @@ CARTE building - Lot BC4 - North Urban Center 1082 - TUNIS',
                 'trade_name' => 'ALICO (Metlife)',
                     'alternative_names' => NULL,
                 ),
-                137 => 
+                137 =>
                 array (
                     'id' => 41036,
                     'created_by' => 'admin',
@@ -17414,7 +17414,7 @@ CARTE building - Lot BC4 - North Urban Center 1082 - TUNIS',
                     'trade_name' => '',
                     'alternative_names' => NULL,
                 ),
-                138 => 
+                138 =>
                 array (
                     'id' => 41039,
                     'created_by' => 'admin',
@@ -17441,7 +17441,7 @@ CARTE building - Lot BC4 - North Urban Center 1082 - TUNIS',
                     'trade_name' => '',
                     'alternative_names' => NULL,
                 ),
-                139 => 
+                139 =>
                 array (
                     'id' => 41042,
                     'created_by' => 'admin',
@@ -17468,7 +17468,7 @@ CARTE building - Lot BC4 - North Urban Center 1082 - TUNIS',
                     'trade_name' => '',
                     'alternative_names' => NULL,
                 ),
-                140 => 
+                140 =>
                 array (
                     'id' => 41045,
                     'created_by' => 'admin',
@@ -17495,7 +17495,7 @@ CARTE building - Lot BC4 - North Urban Center 1082 - TUNIS',
                     'trade_name' => '',
                     'alternative_names' => NULL,
                 ),
-                141 => 
+                141 =>
                 array (
                     'id' => 41048,
                     'created_by' => 'admin',
@@ -17522,7 +17522,7 @@ CARTE building - Lot BC4 - North Urban Center 1082 - TUNIS',
                     'trade_name' => '',
                     'alternative_names' => NULL,
                 ),
-                142 => 
+                142 =>
                 array (
                     'id' => 41051,
                     'created_by' => 'admin',
@@ -17549,7 +17549,7 @@ CARTE building - Lot BC4 - North Urban Center 1082 - TUNIS',
                     'trade_name' => '',
                     'alternative_names' => NULL,
                 ),
-                143 => 
+                143 =>
                 array (
                     'id' => 41054,
                     'created_by' => 'admin',
@@ -17576,7 +17576,7 @@ CARTE building - Lot BC4 - North Urban Center 1082 - TUNIS',
                     'trade_name' => '',
                     'alternative_names' => NULL,
                 ),
-                144 => 
+                144 =>
                 array (
                     'id' => 41057,
                     'created_by' => 'admin',
@@ -17603,7 +17603,7 @@ CARTE building - Lot BC4 - North Urban Center 1082 - TUNIS',
                     'trade_name' => '',
                     'alternative_names' => NULL,
                 ),
-                145 => 
+                145 =>
                 array (
                     'id' => 41060,
                     'created_by' => 'admin',
@@ -17631,7 +17631,7 @@ Ashrafieh, Beirut, Lebanon',
                     'trade_name' => '',
                     'alternative_names' => NULL,
                 ),
-                146 => 
+                146 =>
                 array (
                     'id' => 41063,
                     'created_by' => 'admin',
@@ -17658,7 +17658,7 @@ Ashrafieh, Beirut, Lebanon',
                     'trade_name' => '',
                     'alternative_names' => NULL,
                 ),
-                147 => 
+                147 =>
                 array (
                     'id' => 41066,
                     'created_by' => 'admin',
@@ -17686,7 +17686,7 @@ Achrafieh, Beirut P.O.Box: 16-6720 - Beirut - Lebanon',
                     'trade_name' => '',
                     'alternative_names' => NULL,
                 ),
-                148 => 
+                148 =>
                 array (
                     'id' => 41069,
                     'created_by' => 'admin',
@@ -17713,7 +17713,7 @@ Achrafieh, Beirut P.O.Box: 16-6720 - Beirut - Lebanon',
                     'trade_name' => '',
                     'alternative_names' => NULL,
                 ),
-                149 => 
+                149 =>
                 array (
                     'id' => 41072,
                     'created_by' => 'admin',
@@ -17740,7 +17740,7 @@ Achrafieh, Beirut P.O.Box: 16-6720 - Beirut - Lebanon',
                     'trade_name' => '',
                     'alternative_names' => NULL,
                 ),
-                150 => 
+                150 =>
                 array (
                     'id' => 41075,
                     'created_by' => 'admin',
@@ -17767,7 +17767,7 @@ Achrafieh, Beirut P.O.Box: 16-6720 - Beirut - Lebanon',
                     'trade_name' => '',
                     'alternative_names' => NULL,
                 ),
-                151 => 
+                151 =>
                 array (
                     'id' => 41078,
                     'created_by' => 'admin',
@@ -17795,7 +17795,7 @@ P. O. Box: 16-6729 Ashrafieh 1100 2811 Beirut, Lebanon',
                     'trade_name' => 'CLA',
                     'alternative_names' => NULL,
                 ),
-                152 => 
+                152 =>
                 array (
                     'id' => 41081,
                     'created_by' => 'admin',
@@ -17822,7 +17822,7 @@ P. O. Box: 16-6729 Ashrafieh 1100 2811 Beirut, Lebanon',
                     'trade_name' => '',
                     'alternative_names' => NULL,
                 ),
-                153 => 
+                153 =>
                 array (
                     'id' => 41084,
                     'created_by' => 'admin',
@@ -17849,7 +17849,7 @@ P. O. Box: 16-6729 Ashrafieh 1100 2811 Beirut, Lebanon',
                     'trade_name' => '',
                     'alternative_names' => NULL,
                 ),
-                154 => 
+                154 =>
                 array (
                     'id' => 41087,
                     'created_by' => 'admin',
@@ -17877,7 +17877,7 @@ P.O.Box: 116349 Riad Solh, Beirut 1107 2210 Lebanon',
                     'trade_name' => '',
                     'alternative_names' => NULL,
                 ),
-                155 => 
+                155 =>
                 array (
                     'id' => 41090,
                     'created_by' => 'admin',
@@ -17906,7 +17906,7 @@ P.O. Box 11-7695 Riad El Solh, Beirut, Lebanon',
 Reinsurance S.A.L.',
                         'alternative_names' => NULL,
                     ),
-                    156 => 
+                    156 =>
                     array (
                         'id' => 41093,
                         'created_by' => 'admin',
@@ -17933,7 +17933,7 @@ Reinsurance S.A.L.',
                         'trade_name' => '',
                         'alternative_names' => NULL,
                     ),
-                    157 => 
+                    157 =>
                     array (
                         'id' => 41096,
                         'created_by' => 'admin',
@@ -17960,7 +17960,7 @@ Reinsurance S.A.L.',
                         'trade_name' => '',
                         'alternative_names' => NULL,
                     ),
-                    158 => 
+                    158 =>
                     array (
                         'id' => 41099,
                         'created_by' => 'admin',
@@ -17987,7 +17987,7 @@ Reinsurance S.A.L.',
                         'trade_name' => '',
                         'alternative_names' => NULL,
                     ),
-                    159 => 
+                    159 =>
                     array (
                         'id' => 41102,
                         'created_by' => 'admin',
@@ -18014,7 +18014,7 @@ Reinsurance S.A.L.',
                         'trade_name' => 'MEARCO',
                         'alternative_names' => NULL,
                     ),
-                    160 => 
+                    160 =>
                     array (
                         'id' => 41105,
                         'created_by' => 'admin',
@@ -18041,7 +18041,7 @@ Reinsurance S.A.L.',
                         'trade_name' => '',
                         'alternative_names' => NULL,
                     ),
-                    161 => 
+                    161 =>
                     array (
                         'id' => 41108,
                         'created_by' => 'admin',
@@ -18068,7 +18068,7 @@ Reinsurance S.A.L.',
                         'trade_name' => '',
                         'alternative_names' => NULL,
                     ),
-                    162 => 
+                    162 =>
                     array (
                         'id' => 41111,
                         'created_by' => 'admin',
@@ -18095,7 +18095,7 @@ Reinsurance S.A.L.',
                         'trade_name' => '',
                         'alternative_names' => NULL,
                     ),
-                    163 => 
+                    163 =>
                     array (
                         'id' => 41114,
                         'created_by' => 'admin',
@@ -18122,7 +18122,7 @@ Reinsurance S.A.L.',
                         'trade_name' => '',
                         'alternative_names' => NULL,
                     ),
-                    164 => 
+                    164 =>
                     array (
                         'id' => 41117,
                         'created_by' => 'admin',
@@ -18149,7 +18149,7 @@ Reinsurance S.A.L.',
                         'trade_name' => 'Sogécap Liban SAL',
                         'alternative_names' => NULL,
                     ),
-                    165 => 
+                    165 =>
                     array (
                         'id' => 41120,
                         'created_by' => 'admin',
@@ -18176,7 +18176,7 @@ Reinsurance S.A.L.',
                         'trade_name' => '',
                         'alternative_names' => NULL,
                     ),
-                    166 => 
+                    166 =>
                     array (
                         'id' => 41123,
                         'created_by' => 'admin',
@@ -18203,7 +18203,7 @@ Reinsurance S.A.L.',
                         'trade_name' => 'L.C.I',
                         'alternative_names' => NULL,
                     ),
-                    167 => 
+                    167 =>
                     array (
                         'id' => 41126,
                         'created_by' => 'admin',
@@ -18230,7 +18230,7 @@ Reinsurance S.A.L.',
                         'trade_name' => '',
                         'alternative_names' => NULL,
                     ),
-                    168 => 
+                    168 =>
                     array (
                         'id' => 41129,
                         'created_by' => 'admin',
@@ -18257,7 +18257,7 @@ Reinsurance S.A.L.',
                         'trade_name' => '',
                         'alternative_names' => NULL,
                     ),
-                    169 => 
+                    169 =>
                     array (
                         'id' => 41132,
                         'created_by' => 'admin',
@@ -18284,7 +18284,7 @@ Reinsurance S.A.L.',
                         'trade_name' => '',
                         'alternative_names' => NULL,
                     ),
-                    170 => 
+                    170 =>
                     array (
                         'id' => 41135,
                         'created_by' => 'admin',
@@ -18311,7 +18311,7 @@ Reinsurance S.A.L.',
                     'trade_name' => 'Union Franco Arabe d’Assurance et de Réassurances SAL (UFA)',
                         'alternative_names' => NULL,
                     ),
-                    171 => 
+                    171 =>
                     array (
                         'id' => 41138,
                         'created_by' => 'admin',
@@ -18338,7 +18338,7 @@ Reinsurance S.A.L.',
                         'trade_name' => '',
                         'alternative_names' => NULL,
                     ),
-                    172 => 
+                    172 =>
                     array (
                         'id' => 41141,
                         'created_by' => 'admin',
@@ -18365,7 +18365,7 @@ Reinsurance S.A.L.',
                         'trade_name' => '',
                         'alternative_names' => NULL,
                     ),
-                    173 => 
+                    173 =>
                     array (
                         'id' => 41144,
                         'created_by' => 'admin',
@@ -18393,7 +18393,7 @@ Reinsurance S.A.L.',
                         'alternative_names' => NULL,
                     ),
                 ));
-        
-        
+
+
     }
 }

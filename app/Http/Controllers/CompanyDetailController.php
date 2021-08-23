@@ -21,19 +21,6 @@ class CompanyDetailController extends Controller
         $this->middleware(['auth','verified'],['except' => ['liveSearch','show','searchAllResult','searchAll']]);
     }
 
-    public function searchAll(){
-        $countries = CountryInformation::select('country_name')
-            ->orderby('country_name','asc')
-            ->get();
-        $companies = DB::table('company_detail')
-            ->select('id', 'country', 'company_name', 'company_type','company_website')
-            ->orderby('country','asc')
-            ->paginate(30);
-
-        return view('screens.search-all-companies',compact('countries','companies'));
-
-    }
-
     private function saveSanctionRequest($all_fields,$total_sanctions,$sub){
         $sub['remaining_sanctions'] = $sub->remaining_sanctions - $total_sanctions;
         $sub['used_sanctions'] = $sub->used_sanctions + $total_sanctions;
@@ -124,27 +111,76 @@ class CompanyDetailController extends Controller
         return response()->json($data);
     }
 
+//    public function searchAll(){
+//        $countries = CountryInformation::select('country_name')
+//            ->orderby('country_name','asc')
+//            ->get();
+//        $companies = DB::table('company_detail')
+//            ->select('id', 'country', 'company_name', 'company_type','company_website')
+//            ->orderby('country','asc')
+//            ->paginate(30);
+//
+//        return view('screens.search-all-companies',compact('countries','companies'));
+//
+//    }
+
     //Get list of companies when click on countries in checkboxes of full search page
-    public function searchAllResult(Request $request){
-        if ($request->has('country')){
-            $companies = DB::table('company_detail')
+    private function basicSearchQuery(){
+        $query = DB::table('company_detail')
                 ->select('id', 'country', 'company_name', 'company_type','company_website')
-                ->whereIn('country', $request['country'])
-                ->orderby('country','asc')
+                ->orderby('country','asc');
+        return $query;
+    }
+    public function searchAllResult(Request $request){
+        dump($request->all());
+        if ($request->filled('country') && $request['country'][0] == '0') {
+            dump('only all country');
+            $companies = self::basicSearchQuery()
                 ->paginate(30);
             $companies->appends(['country' => $request['country']]);
+        }
+        elseif ($request->filled('country') && $request['company_name'] == null){
+            dump('country with company null');
 
-        }else{
+            $companies = self::basicSearchQuery()->whereIn('country', $request['country'])
+                ->paginate(30);
+            $companies->appends(['country' => $request['country']]);
+        }
+        elseif ($request->filled('country') && $request->filled('company_name')){
+            dump('country and company');
+
+            $companies = self::basicSearchQuery()->whereIn('country', $request['country'])
+                ->where('company_name', 'like', '%' . $request['company_name'] . '%')
+                ->paginate(30);
+            $companies->appends(['country' => $request['country'],'company_name' =>$request['company_name']]);
+        }
+        elseif ($request->filled('company_name')){
+            dump('only company');
+            $companies = self::basicSearchQuery()->where('company_name', 'like', '%' . $request['company_name'] . '%')
+                ->paginate(30);
+            $companies->appends(['company_name' => $request['company_name']]);
+        }
+        else{
+            dump('else');
             $companies = [];
         }
+
 
         $request = $request->all();
         $countries = CountryInformation::select('country_name')
             ->orderby('country_name','asc')
             ->get();
+        $companies_types = DB::table('company_detail')
+            ->select( 'company_type')
+            ->whereNotNull('company_type')
+            ->where('company_type', '<>', '')
+            ->orderby('company_type','asc')
+            ->distinct()
+            ->get();
         return view('screens.search-all-companies',compact('countries',
             'companies',
-            'request'
+            'request',
+        'companies_types'
         ));
 
     }
