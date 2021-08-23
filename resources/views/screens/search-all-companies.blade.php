@@ -2,7 +2,13 @@
 @extends('common.footer-script')
 @extends('common.header')
 @extends('common.navbar')
-
+<style>
+    .pagination-div{
+        display: flex;
+        justify-content: center;
+        margin-top: 17px;
+    }
+</style>
 @section('content')
 <section id="search-section" class="pad-100">
     <div class="container">
@@ -139,10 +145,14 @@
                                         </a>
                                     </div>
                                     @endforeach
+                                    <div class="pagination-div">
+                                        {{$companies->links()}}
+                                    </div>
                                 @else
                                    <p>No Result Found</p>
                                 @endisset
                             </div>
+
                             <div id="People" class="home container tab-pane fade">
                             <div class="company-div">
                                         <a href="">
