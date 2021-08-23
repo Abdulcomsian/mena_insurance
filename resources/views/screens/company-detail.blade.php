@@ -42,26 +42,23 @@
                                                 </div>
                                                 <div class=col-md-6>
                                                     <ul style="margin-top: 20px;">
+                                                        @php 
+                                                        $colors=[];
+                                                        $data=[];
+                                                        $i=0;
+                                                        @endphp
+                                                        @foreach( $market_share_satestics as $share)
+                                                         @php 
+                                                         $colorname='#' . str_pad(dechex(mt_rand(0, 0xFFFFFF)), 6,'0', STR_PAD_LEFT);
+                                                         $colors[$i]=$colorname;
+                                                         $data[$i]=$share->share_percentage;
+                                                         $i++
+                                                         @endphp
                                                         <li style="position: relative; margin-bottom:20px;">
-                                                            <span style="top: 5px; position: absolute; width: 15px; height: 15px; margin-right: 10px; background-color: rgb(0, 97, 254); border-radius: 5px;"></span>
-                                                            <p style="margin-left: 20px; font-size: 14px;">International Oilfield Inspection Services Ltd</p>
+                                                            <span style="top: 5px; position: absolute; width: 15px; height: 15px; margin-right: 10px; background-color: {{$colorname}}; border-radius: 5px;"></span>
+                                                            <p style="margin-left: 20px; font-size: 14px;">{{$share->name}}</p>
                                                         </li>
-                                                        <li style="position: relative; margin-bottom:20px;">
-                                                            <span style="top: 5px; position: absolute; width: 15px; height: 15px; margin-right: 10px; background-color: rgb(63, 213, 150); border-radius: 5px;"></span>
-                                                            <p style="margin-left: 20px; font-size: 14px;">Yemen Drilling</p>
-                                                        </li>
-                                                        <li style="position: relative; margin-bottom:20px;">
-                                                            <span style="top: 5px; position: absolute; width: 15px; height: 15px; margin-right: 10px; background-color: rgb(255, 196, 66); border-radius: 5px;"></span>
-                                                            <p style="margin-left: 20px; font-size: 14px;">Saddam AL-Hashdi</p>
-                                                        </li>
-                                                        <li style="position: relative; margin-bottom:20px;">
-                                                            <span style="top: 5px; position: absolute; width: 15px; height: 15px; margin-right: 10px; background-color: rgb(255, 128, 33); border-radius: 5px;"></span>
-                                                            <p style="margin-left: 20px; font-size: 14px;">Hussain AL-Hashdi</p>
-                                                        </li>
-                                                        <li style="position: relative; margin-bottom:20px;">
-                                                            <span style="top: 5px; position: absolute; width: 15px; height: 15px; margin-right: 10px; background-color: rgb(76, 175, 80); border-radius: 5px;"></span>
-                                                            <p style="margin-left: 20px; font-size: 14px;">International Oilfield Services</p>
-                                                        </li>
+                                                        @endforeach
                                                     </ul>
                                                 </div>
                                             </div>
@@ -386,6 +383,7 @@
 
 @endsection
 @section('script')
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/chart.js@3.5.1/dist/chart.min.js"></script>
     <script>
         $(document).on('click', '#sanction', function(){
             console.log('Here in fun');
@@ -423,6 +421,27 @@
                 $('#data').empty();
             }
         });
+    </script>
+
+    <!-- graphh work here -->
+    <script>
+    new Chart(document.getElementById("myChart"), {
+    type: 'pie',
+    data: {
+      // labels:"",
+      datasets: [{
+        label: "Population (millions)",
+        backgroundColor: @php echo json_encode($colors);@endphp,
+        data: @php echo json_encode($data);@endphp
+      }]
+    },
+    options: {
+      title: {
+        display: true,
+        text: 'Predicted world population (millions) in 2050'
+      }
+    }
+});
     </script>
 @endsection
 
