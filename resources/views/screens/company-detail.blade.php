@@ -424,24 +424,26 @@
     </script>
 
     <!-- graphh work here -->
+    @auth
     <script>
-    new Chart(document.getElementById("myChart"), {
-    type: 'pie',
-    data: {
-      // labels:"",
-      datasets: [{
-        label: "Population (millions)",
-        backgroundColor: @php echo json_encode($colors);@endphp,
-        data: @php echo json_encode($data);@endphp
-      }]
-    },
-    options: {
-      title: {
-        display: true,
-        text: 'Predicted world population (millions) in 2050'
-      }
-    }
-});
+            new Chart(document.getElementById("myChart"), {
+            type: 'pie',
+            data: {
+              // labels:"",
+              datasets: [{
+                label: "Population (millions)",
+                backgroundColor: @php echo json_encode($colors);@endphp,
+                data: @php echo json_encode($data);@endphp
+              }]
+            },
+            options: {
+              title: {
+                display: true,
+                text: 'Predicted world population (millions) in 2050'
+              }
+            }
+        });
     </script>
+    @endauth
 @endsection
 
