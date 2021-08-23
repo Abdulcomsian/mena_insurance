@@ -54,7 +54,7 @@
                             <div class="companies-search-div">
                                 <div class="searchForm">
                                     <div class="inputDiv">
-                                        <input type="text" required name="company_name" value="{{$request['company_name'] ?? ''}}" placeholder="Search for an Insurance Organization ">
+                                        <input type="text" name="company_name" value="{{$request['company_name'] ?? ''}}" placeholder="Search for an Insurance Organization ">
                                         <button class="search">Search</button>
                                     </div>
                                 </div>
@@ -65,16 +65,16 @@
                                 <div class="tabDiv">
                                     <ul class="nav nav-pills" role="tablist">
                                         <li class="nav-item">
-                                            <a class="nav-link active" data-toggle="pill" href="#Companies"><span>Companies</span> </a>
+                                            <a class="nav-link @if(str_contains(url()->full(),'people') == false) active @endif" data-toggle="pill" href="#Companies"><span>Companies</span> </a>
                                         </li>
                                         <li class="nav-item">
-                                            <a href="#People" class="nav-link my-project" data-toggle="pill"><span>People</span> </a>
+                                            <a href="#People" class="nav-link my-project @if(str_contains(url()->full(),'people') == true) active @endif" data-toggle="pill"><span>People</span> </a>
                                         </li>
                                     </ul>
                                 </div>
                                 <div class="right-side commonDiv">
                                 <div class="tab-content">
-                                    <div id="Companies" class="home container tab-pane active">
+                                    <div id="Companies" class="home container tab-pane @if(str_contains(url()->full(),'people') == false) active @endif">
                                         @if(count($companies) > 0)
                                             @foreach($companies as $item)
                                             <div class="company-div">
@@ -92,25 +92,22 @@
                                         @endif
                                     </div>
 
-                                    <div id="People" class="home container tab-pane fade">
-                                    <div class="company-div">
-                                                <a href="">
-                                                    <h4>Yemen General Insurance Co. (SYC)</h4>
-                                                    <p>http://www.yginsurance.com/ • Joint Stock Company • YEMEN</p>
-                                                </a>
+                                    <div id="People" class="home container tab-pane fade @if(str_contains(url()->full(),'people') == true) active show @endif">
+                                        @if(count($peoples) > 0 )
+                                            @foreach($peoples as $people)
+                                                <div class="company-div">
+                                                    <a href="">
+                                                        <h4>{{trim($people->name)}}</h4>
+                                                        <p><b>{{$people->designation}}</b> <i> {{' at '. $people->company_name }} </i> <b>{{ $people->country}}</b></p>
+                                                    </a>
+                                                </div>
+                                            @endforeach
+                                            <div class="pagination-div">
+                                                {{$peoples->links()}}
                                             </div>
-                                            <div class="company-div">
-                                                <a href="">
-                                                    <h4>Yemen General Insurance Co. (SYC)</h4>
-                                                    <p>http://www.yginsurance.com/ • Joint Stock Company • YEMEN</p>
-                                                </a>
-                                            </div>
-                                            <div class="company-div">
-                                                <a href="">
-                                                    <h4>Yemen General Insurance Co. (SYC)</h4>
-                                                    <p>http://www.yginsurance.com/ • Joint Stock Company • YEMEN</p>
-                                                </a>
-                                            </div>
+                                        @else
+                                            <p>No Result Found</p>
+                                        @endif
                                     </div>
                                 </div>
                             </div>
