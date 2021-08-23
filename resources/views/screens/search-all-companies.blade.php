@@ -20,23 +20,21 @@
                                 <h3>Filter</h3>
                                 <ul>
                                     <li class="companyType">Company Type <a href=""><i class="fa fa-chevron-right" aria-hidden="true"></i></a>
-                                        <div class="companyDropDwown">
-                                            <form action="">
+                                        <div class="companyDropDwown" @isset($request['company_type']) style="display: block" @endisset>
                                                 <ul>
                                                     <li>
                                                         @foreach($companies_types->unique('company_type') as $company_type)
                                                             <div class="inputDiv">
                                                                 <p>{{$company_type->company_type}}</p>
-                                                                <input type="checkbox" name="company_type[]" class="search" value="{{$company_type->company_type}}">
+                                                                <input  @isset($request['company_type']) {{ in_array($company_type->company_type,$request['company_type']) ? 'checked' : '' }} @endisset type="checkbox" name="company_type[]" class="search" value="{{$company_type->company_type}}">
                                                             </div>
                                                         @endforeach
                                                     </li>
                                                 </ul>
-                                            </form>
                                         </div>
                                     </li>
                                     <li class="geographyType">Geography <a href=""><i class="fa fa-chevron-right" aria-hidden="true"></i></a>
-                                        <div class="geographyDropDwown" @isset($companies) style="display: block" @endisset>
+                                        <div class="geographyDropDwown" @isset($request['country']) style="display: block" @endisset>
                                             <ul>
                                                 <li>
                                                     @foreach($countries as $item)

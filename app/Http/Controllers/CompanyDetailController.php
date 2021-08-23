@@ -132,36 +132,40 @@ class CompanyDetailController extends Controller
         return $query;
     }
     public function searchAllResult(Request $request){
-        dump($request->all());
         if ($request->filled('country') && $request['country'][0] == '0') {
-            dump('only all country');
             $companies = self::basicSearchQuery()
                 ->paginate(30);
             $companies->appends(['country' => $request['country']]);
         }
         elseif ($request->filled('country') && $request['company_name'] == null){
-            dump('country with company null');
-
             $companies = self::basicSearchQuery()->whereIn('country', $request['country'])
                 ->paginate(30);
             $companies->appends(['country' => $request['country']]);
         }
         elseif ($request->filled('country') && $request->filled('company_name')){
-            dump('country and company');
-
             $companies = self::basicSearchQuery()->whereIn('country', $request['country'])
                 ->where('company_name', 'like', '%' . $request['company_name'] . '%')
                 ->paginate(30);
             $companies->appends(['country' => $request['country'],'company_name' =>$request['company_name']]);
         }
         elseif ($request->filled('company_name')){
-            dump('only company');
             $companies = self::basicSearchQuery()->where('company_name', 'like', '%' . $request['company_name'] . '%')
                 ->paginate(30);
             $companies->appends(['company_name' => $request['company_name']]);
         }
+        elseif ($request->filled('country') && $request->filled('company_name') && $request->filled('company_type')){
+            $companies = self::basicSearchQuery()->whereIn('country', $request['country'])
+                ->where('company_type', 'like', '%' . $request['company_type'] . '%')
+                ->where('company_name', 'like', '%' . $request['company_name'] . '%')
+                ->paginate(30);
+            $companies->appends(['country' => $request['country'],'company_name' =>$request['company_name'],'company_type' =>$request['company_type']]);
+        }
+        elseif ($request->filled('company_type')){
+            $companies = self::basicSearchQuery()->where('company_type', 'like', '%' . $request['company_type'] . '%')
+                ->paginate(30);
+            $companies->appends(['company_type' => $request['company_type']]);
+        }
         else{
-            dump('else');
             $companies = [];
         }
 
