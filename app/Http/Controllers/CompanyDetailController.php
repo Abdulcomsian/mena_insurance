@@ -131,42 +131,124 @@ class CompanyDetailController extends Controller
                 ->orderby('country','asc');
         return $query;
     }
+
+    //Get list of board of directors
+    private function getListOfDirectors($companies){
+        $query =  BoardOfDirector::join('company_detail','board_of_director.company_id','=','company_detail.id')
+            ->whereIn('company_id',$companies)
+            ->select(
+                'board_of_director.id as b_o_d_id',
+                'designation',
+                'name',
+                'company_detail.id as company_id',
+                'company_detail.company_name as company_name',
+                'company_detail.country as country'
+            )
+            ->orderby('name','asc')
+            ->paginate(30,['*'],'people');
+        return $query;
+    }
     public function searchAllResult(Request $request){
+        dump($request->all());
         if ($request->filled('country') && $request['country'][0] == '0') {
-            $companies = self::basicSearchQuery()
-                ->paginate(30);
+            dump('only all country');
+            $companies = self::basicSearchQuery()->paginate(30);
+            $companies_ids = self::basicSearchQuery()->pluck('id');
+            if (count($companies_ids) > 0 ){
+                $peoples = self::getListOfDirectors($companies_ids);
+            }
+//            $peoples->setPageName('people');
+            $peoples->appends(['country' => $request['country']]);
             $companies->appends(['country' => $request['country']]);
         }
         elseif ($request->filled('country') && $request['company_name'] == null){
+            dump('country with company null');
             $companies = self::basicSearchQuery()->whereIn('country', $request['country'])
                 ->paginate(30);
+            $companies_ids = self::basicSearchQuery()->whereIn('country', $request['country'])->pluck('id');
+            if (count($companies_ids) > 0 ){
+                $peoples = self::getListOfDirectors($companies_ids);
+            }
+            $peoples->appends(['country' => $request['country']]);
             $companies->appends(['country' => $request['country']]);
         }
         elseif ($request->filled('country') && $request->filled('company_name')){
+            dump('country and company');
             $companies = self::basicSearchQuery()->whereIn('country', $request['country'])
                 ->where('company_name', 'like', '%' . $request['company_name'] . '%')
                 ->paginate(30);
+            $companies_ids = self::basicSearchQuery()
+                ->whereIn('country', $request['country'])
+                ->where('company_name', 'like', '%' . $request['company_name'] . '%')
+                ->pluck('id');
+            if (count($companies_ids) > 0 ){
+                $peoples = self::getListOfDirectors($companies_ids);
+            }
+            $peoples->appends(['country' => $request['country'],'company_name' =>$request['company_name']]);
             $companies->appends(['country' => $request['country'],'company_name' =>$request['company_name']]);
         }
-        elseif ($request->filled('company_name')){
-            $companies = self::basicSearchQuery()->where('company_name', 'like', '%' . $request['company_name'] . '%')
-                ->paginate(30);
-            $companies->appends(['company_name' => $request['company_name']]);
-        }
-        elseif ($request->filled('country') && $request->filled('company_name') && $request->filled('company_type')){
+        elseif($request->filled('country') && $request->filled('company_name') && $request->filled('company_type')){
+            dump('country and company and type');
             $companies = self::basicSearchQuery()->whereIn('country', $request['country'])
-                ->where('company_type', 'like', '%' . $request['company_type'] . '%')
+                ->whereIn('company_type',  $request['company_type'])
                 ->where('company_name', 'like', '%' . $request['company_name'] . '%')
                 ->paginate(30);
+            $companies_ids = self::basicSearchQuery()
+                ->whereIn('country', $request['country'])
+                ->whereIn('company_type',  $request['company_type'])
+                ->pluck('id');
+            if (count($companies_ids) > 0 ){
+                $peoples = self::getListOfDirectors($companies_ids);
+            }
+            $peoples->appends(['country' => $request['country'],'company_name' =>$request['company_name'],'company_type' =>$request['company_type']]);
             $companies->appends(['country' => $request['country'],'company_name' =>$request['company_name'],'company_type' =>$request['company_type']]);
         }
-        elseif ($request->filled('company_type')){
-            $companies = self::basicSearchQuery()->where('company_type', 'like', '%' . $request['company_type'] . '%')
+        elseif($request->filled('company_type') && $request->filled('company_name')){
+            dump('company and type');
+            $companies = self::basicSearchQuery()
+                ->whereIn('company_type',  $request['company_type'])
+                ->where('company_name', 'like', '%' . $request['company_name'] . '%')
                 ->paginate(30);
+            $companies_ids = self::basicSearchQuery()
+                ->whereIn('company_type',  $request['company_type'])
+                ->where('company_name', 'like', '%' . $request['company_name'] . '%')
+                ->pluck('id');
+            if (count($companies_ids) > 0 ){
+                $peoples = self::getListOfDirectors($companies_ids);
+            }
+            $peoples->appends(['company_name' =>$request['company_name'],'company_type' =>$request['company_type']]);
+            $companies->appends(['company_name' =>$request['company_name'],'company_type' =>$request['company_type']]);
+        }
+        elseif ($request->filled('company_name')){
+            dump('only name');
+            $companies = self::basicSearchQuery()
+                ->where('company_name', 'like', '%' . $request['company_name'] . '%')
+                ->paginate(30);
+            $companies_ids = self::basicSearchQuery()
+                ->where('company_name', 'like', '%' . $request['company_name'] . '%')
+                ->pluck('id');
+            if (count($companies_ids) > 0 ){
+                $peoples = self::getListOfDirectors($companies_ids);
+            }
+            $peoples->appends(['company_name' => $request['company_name']]);
+            $companies->appends(['company_name' => $request['company_name']]);
+        }
+        elseif($request->filled('company_type')){
+            dump('only type');
+            $companies = self::basicSearchQuery()
+                ->whereIn('company_type',  $request['company_type'])
+                ->paginate(30);
+            $companies_ids = self::basicSearchQuery()->whereIn('company_type',  $request['company_type'])->pluck('id');
+            if (count($companies_ids) > 0 ){
+                $peoples = self::getListOfDirectors($companies_ids);
+            }
+            $peoples->appends(['company_type' => $request['company_type']]);
             $companies->appends(['company_type' => $request['company_type']]);
         }
         else{
+            dump('else');
             $companies = [];
+            $peoples = [];
         }
 
 
@@ -184,7 +266,8 @@ class CompanyDetailController extends Controller
         return view('screens.search-all-companies',compact('countries',
             'companies',
             'request',
-        'companies_types'
+        'companies_types',
+        'peoples'
         ));
 
     }
