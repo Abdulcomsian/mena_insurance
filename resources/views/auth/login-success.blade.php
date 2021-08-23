@@ -9,7 +9,7 @@
                 <div class="col-lg-12">
                     <div class="payment-content">
                         <i class="fa fa-check" aria-hidden="true"></i>
-                        <h2>Registration was Successufl!</h2>
+                        <h2>Registration was Successful!</h2>
                         <p>{{ __('Please Verify Your Email Address') }}</p>
 
                         @if (session('resent'))
