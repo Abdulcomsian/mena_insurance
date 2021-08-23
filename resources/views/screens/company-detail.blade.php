@@ -340,11 +340,11 @@
                     <input hidden value="{{$company_detail->id}}" name="company_id" id="company_id"/>
                     <div class="modal-body">
                         <div class="radioBtn">
-                            <input type="radio" id="{{\App\Utils\SanctionsType::Searchcompany}}" name="sanctions_type" value="{{\App\Utils\SanctionsType::Searchcompany}}">
+                            <input class="search_company" type="radio" id="{{\App\Utils\SanctionsType::Searchcompany}}" name="sanctions_type" value="{{\App\Utils\SanctionsType::Searchcompany}}">
                                   <label for="{{\App\Utils\SanctionsType::Searchcompany}}">{{\App\Utils\SanctionsType::Searchcompany}}</label><br>
                         </div>
                         <div class="radioBtn">
-                            <input type="radio" id="{{\App\Utils\SanctionsType::FullcompanywithBoardsofDirector}}" name="sanctions_type" value="{{\App\Utils\SanctionsType::FullcompanywithBoardsofDirector}}">
+                            <input class="board_director" type="radio" id="{{\App\Utils\SanctionsType::FullcompanywithBoardsofDirector}}" name="sanctions_type" value="{{\App\Utils\SanctionsType::FullcompanywithBoardsofDirector}}">
                                   <label for="{{\App\Utils\SanctionsType::FullcompanywithBoardsofDirector}}">{{\App\Utils\SanctionsType::FullcompanywithBoardsofDirector}}</label><br>
                         </div>
                         <div class="radioBtn">
