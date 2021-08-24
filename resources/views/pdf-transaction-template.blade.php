@@ -207,7 +207,7 @@
                         <center>
                             <table style="table-layout: fixed ;width: 100% ;">
                                 <tr>
-                                    <td style="width:33%;"><h4 class="">Full Name:  <span style="font-weight:400;">{{ $transaction->billing_fname.' '.$transaction->billing_lname }}</span></h4></td>
+                                    <td style="width:33%;"><h4 class="">Full Name:  <span style="font-weight:400;">{{ $transaction->billing_fname.' '.$transaction->billing_sname }}</span></h4></td>
                                 </tr>
                             </table>
                         </center>

@@ -166,7 +166,7 @@
                                   <td><span class="cancel">{{$item->status}}</span></td>
                               @endif
                               <td>{{$item->package_sanctions ?: '-'}}</td>
-                              <td>{{$item->card_first6 .'******'. $item->card_last4}}</td>
+                              <td>{{$item->card_first6 ? $item->card_first6 .'******'. $item->card_last4 : '-'}}</td>
                               <td>{{$item->card_type ?: '-'}}</td>
                                 @isset($item->pdf)
                                   <td>
