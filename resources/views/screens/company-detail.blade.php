@@ -345,13 +345,13 @@
                                   <label for="{{\App\Utils\SanctionsType::FullcompanywithBoardsofDirector}}">{{\App\Utils\SanctionsType::FullcompanywithBoardsofDirector}}</label><br>
                         </div>
                         <div class="radioBtn">
-                            <input type="radio" id="{{\App\Utils\SanctionsType::CompanywithselectedBoardsofDirector}}" name="sanctions_type" value="{{\App\Utils\SanctionsType::CompanywithselectedBoardsofDirector}}" class="directorshow">
+                            <input type="radio" id="{{\App\Utils\SanctionsType::CompanywithselectedBoardsofDirector}}" name="sanctions_type" value="{{\App\Utils\SanctionsType::CompanywithselectedBoardsofDirector}}">
                                   <label for="{{\App\Utils\SanctionsType::CompanywithselectedBoardsofDirector}}">{{\App\Utils\SanctionsType::CompanywithselectedBoardsofDirector}}</label><br>
                         </div>
-                        <div class="directorDiv">
-                            <div class="checkDiv" id="data">
-                            </div>
-                            <textarea name="comments" id="" cols="30" rows="5" placeholder="Addtional Comments"></textarea>
+                        <div class="">
+                            <ul class="list-group"  id="data">
+                            </ul>
+                            <textarea name="comments" id="" cols="61" rows="5" placeholder="Addtional Comments"></textarea>
                         </div>
                     </div>
                     <div class="modal-footer">
@@ -386,9 +386,11 @@
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/chart.js@3.5.1/dist/chart.min.js"></script>
     <script>
         $(document).on('click', '#sanction', function(){
-            console.log('Here in fun');
+            $('#data').hide();
+            $('input[name="sanctions_type"]').prop('checked', false);
+            $('textarea[name="comments"]').val('');
+
             var company_id = $('#company_id').val();
-            console.log(company_id);
             if (company_id) {
                 $.ajax({
                     url: "{{ route('getDirectors') }}",
@@ -396,15 +398,14 @@
                     data: {company_id: company_id},
                     dataType: 'json',
                     success: function (data) {
-                        console.log('data');
-                        console.log(data);
                         $('#data').empty();
                         if(data.length > 0) {
                             $.each(data, function (index, item) {
-                                $('#data').append(`<div style="display: flex">
-                                                        1. <input style="margin-right: 5px !important; margin-top: 5px !important;" type="checkbox" name="board_of_directors[]" value="${item.id}">
-                                                        <label for="">${item.designation +' '+ item.name}</label>
-                                                    </div>`)
+                                $('#data').append(`<label><li class="list-group-item">
+                                                        ${index+1}&nbsp;&nbsp;
+                                                        <input style="margin-right: 5px !important; margin-top: 5px !important;" type="checkbox" name="board_of_directors[]" value="${item.id}">
+                                                        ${item.designation +' '+ item.name}
+                                                    </li></label>`)
                             });
                         }
                         else{
@@ -422,7 +423,19 @@
             }
         });
     </script>
-
+    <script>
+        //Sanction modal jquery for hide board of directors
+        $('input[name="sanctions_type"]').on("click", function() {
+           console.log('Here in function click');
+           let sanction = $(this).val();
+           if (sanction == "{{\App\Utils\SanctionsType::CompanywithselectedBoardsofDirector}}"){
+               $("#data").show();
+           }else {
+               $('input[name="board_of_directors[]"]').prop('checked', false);
+               $("#data").hide();
+           }
+        });
+    </script>
     <!-- graphh work here -->
     @auth
     <script>
