@@ -42,13 +42,13 @@
                                                 </div>
                                                 <div class=col-md-6>
                                                     <ul style="margin-top: 20px;">
-                                                        @php 
+                                                        @php
                                                         $colors=[];
                                                         $data=[];
                                                         $i=0;
                                                         @endphp
                                                         @foreach( $market_share_satestics as $share)
-                                                         @php 
+                                                         @php
                                                          $colorname='#' . str_pad(dechex(mt_rand(0, 0xFFFFFF)), 6,'0', STR_PAD_LEFT);
                                                          $colors[$i]=$colorname;
                                                          $data[$i]=$share->share_percentage;
@@ -401,8 +401,8 @@
                         $('#data').empty();
                         if(data.length > 0) {
                             $.each(data, function (index, item) {
-                                $('#data').append(`<div class="checkBoxDiv">
-                                                        <input type="checkbox" name="board_of_directors[]" value="${item.id}">
+                                $('#data').append(`<div style="display: flex">
+                                                        1. <input style="margin-right: 5px !important; margin-top: 5px !important;" type="checkbox" name="board_of_directors[]" value="${item.id}">
                                                         <label for="">${item.designation +' '+ item.name}</label>
                                                     </div>`)
                             });

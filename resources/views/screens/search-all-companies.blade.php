@@ -34,7 +34,7 @@
                                         </div>
                                     </li>
                                     <li class="geographyType">Geography <a href=""><i class="fa fa-chevron-right" aria-hidden="true"></i></a>
-                                        <div class="geographyDropDwown" @isset($request['country']) style="display: block" @endisset>
+                                        <div class="geographyDropDwown" @isset($request['country'][0]) @if($request['country'][0] != '0' && count($request['country']) > 0) style="display: block" @else style="display: none" @endif @endisset>
                                             <ul>
                                                 <li>
                                                     @foreach($countries as $item)
@@ -55,7 +55,7 @@
                                 <div class="searchForm">
                                     <div class="inputDiv">
                                         <input type="text" name="company_name" value="{{$request['company_name'] ?? ''}}" placeholder="Search for an Insurance Organization ">
-                                        <button class="search">Search</button>
+                                        <button class="search">Submit</button>
                                     </div>
                                 </div>
                                 <div class="breadcrum">
