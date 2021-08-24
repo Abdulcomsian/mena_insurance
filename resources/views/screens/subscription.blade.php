@@ -71,7 +71,7 @@
                   @if(isset($transactions))
                       @foreach($transactions as $item)
                      <tr>
-                           <td>{{$item->cart_id  ?: '-'}}</td>
+                           <td>{{$item->invoice_id  ?: '-'}}</td>
                            <td>{{$item->created_at  ?: '-'}}</td>
                            <td>{{$item->package->name ?: '-'}}</td>
                            <td>{{$item->amount .' AED' ?: '-'}}</td>

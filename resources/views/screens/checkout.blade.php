@@ -56,24 +56,16 @@
                             <span>Product Total:</span>
                             <span>{{$package->price ? $package->price.' AED' : '-'}}</span>
                         </li>
-{{--                        <li>--}}
-{{--                            <span>Delivery:</span>--}}
-{{--                            <span>FREE</span>--}}
-{{--                        </li>--}}
+                        <li>
+                            <span>VAT (5%):</span>
+                            <span>{{$vat ? $vat.' AED' : '-'}}</span>
+                        </li>
                         <li class="totalDiv">
                             <span>Total:</span>
-                            <span>{{$package->price ? $package->price.' AED' : '-'}}</span>
+                            <span>{{ $total ? $total.' AED' : '-'}}</span>
                         </li>
                     </ul>
-{{--                    <div class="dropdown">--}}
-{{--                        <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">--}}
-{{--                            Add New Card--}}
-{{--                        </button>--}}
-{{--                        <div class="dropdown-menu">--}}
-{{--                            <a class="dropdown-item" href="#">1234**********9856</a>--}}
-{{--                            <a class="dropdown-item" href="#">1356********56897</a>--}}
-{{--                        </div>--}}
-{{--                    </div>--}}
+
                     <p>
                         <input type="checkbox" id="privacy">
                         I Agree to <a href="privacy-policy">Term & Condition Privacy</a>

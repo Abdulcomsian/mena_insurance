@@ -12,7 +12,7 @@ use Illuminate\Database\Eloquent\Model;
 /**
  * Class Transaction
  *
- * @property string $cart_id
+ * @property string $invoice_id
  * @property int|null $order_id
  * @property int $store_id
  * @property bool $test_mode
@@ -53,12 +53,16 @@ class Transaction extends Model
 
 	protected $fillable = [
 		'order_id',
-		'cart_id',
+		'invoice_id',
 		'store_id',
 		'user_id',
         'package_id',
+        'package_name',
+        'package_sanctions',
+        'vat_amount',
+        'package_amount',
+        'total_amount',
 		'test_mode',
-		'amount',
 		'description',
 		'success_url',
 		'canceled_url',
