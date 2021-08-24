@@ -39,7 +39,7 @@
                             <tr>
                                 <td>{{$package->name ?: '-'}}</td>
                                 <td>{{$package->sanctions ? $package->sanctions. ' Sanctions Search' : '-'}}</td>
-                                <td>{{$package->price ?: '-'}}</td>
+                                <td>{{$package->price .' AED' ?: '-'}}</td>
                             </tr>
                         </tbody>
                     </table>

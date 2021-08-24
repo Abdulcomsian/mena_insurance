@@ -28,7 +28,7 @@
             <button class="open-sidebar"><i class="fa fa-bars" aria-hidden="true"></i></button>
             <div class="headerBtn">
                <h3>My Packages</h3>
-               <a href="http://beta.menainsurancekyc.com/#our-packages"><button>Purchase Package</button></a>
+               <a href="/#our-packages"><button>Purchase Package</button></a>
             </div>
              <div class="table-div table-responsive">
                  <table class="display">
@@ -47,7 +47,7 @@
                              <td>{{$subscription->total_sanctions ?: '0'}}</td>
                          </tr>
                      @else
-                         <tr><td>No Data Found</td></tr>
+                         <tr class="odd"><td valign="top" colspan="8" class="text-center dataTables_empty">No data available in table</td></tr>
                      @endif
                      </tbody>
                  </table>
@@ -60,7 +60,9 @@
                         <th>Invoice #</th>
                         <th>Date</th>
                         <th>Package Name</th>
-                        <th>Amount</th>
+                        <th>Package Price</th>
+                        <th>VAT</th>
+                        <th>Total Amount</th>
                         <th>Status</th>
                         <th>Sanctions</th>
                         <th>Card #</th>
@@ -73,12 +75,14 @@
                      <tr>
                            <td>{{$item->invoice_id  ?: '-'}}</td>
                            <td>{{$item->created_at  ?: '-'}}</td>
-                           <td>{{$item->package->name ?: '-'}}</td>
-                           <td>{{$item->amount .' AED' ?: '-'}}</td>
+                           <td>{{$item->package_name ?: '-'}}</td>
+                           <td>{{$item->package_amount .' AED' ?: '-'}}</td>
+                           <td>{{$item->vat_amount .' AED' ?: '-'}}</td>
+                           <td>{{$item->total_amount .' AED' ?: '-'}}</td>
                            <td>
                                 <span class="{{strtolower($item->status)}}  ?: ''">{{$item->status  ?: '-'}}</span>
                            </td>
-                         <td>{{$item->package->sanctions ?: '-'}}</td>
+                         <td>{{$item->package_sanctions ?: '-'}}</td>
                          <td>{{$item->card_first6 .'******'. $item->card_last4}}</td>
                          <td>{{$item->card_type ?: '-'}}</td>
                      </tr>

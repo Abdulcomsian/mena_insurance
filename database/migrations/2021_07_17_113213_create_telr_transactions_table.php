@@ -18,13 +18,11 @@ class CreateTelrTransactionsTable extends Migration
             $table->string('invoice_id')->unique()->comment = 'The unique cart id to be submit for telr transaction';
             $table->string('order_id')->unique()->comment = 'Order id ';
             $table->boolean('test_mode')->nullable();
-            $table->decimal('total_amount')->nullable()->comment = 'Map to ivp_amount the total or purchase';
+            $table->string('total_amount')->nullable()->comment = 'Map to ivp_amount the total or purchase';
             $table->string('package_name')->nullable()->comment = 'Package name';
             $table->string('package_sanctions')->nullable()->comment = 'Sanctions in package';
             $table->string('vat_amount')->nullable()->comment = 'VAT Amount is 5 % in AED';
             $table->string('package_amount')->nullable()->comment = 'Package amount';
-            $table->string('total_amount')->nullable()->comment = 'Total amount = vat amount + package amount';
-            $table->string('description')->nullable()->comment = 'Description should be limit to 64';
             $table->string('description')->nullable()->comment = 'Description should be limit to 64';
             $table->string('card_last4')->nullable()->comment = 'Billing first name';
             $table->string('card_first6')->nullable()->comment = 'Billing first name';
