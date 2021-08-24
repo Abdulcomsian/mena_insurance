@@ -7,6 +7,7 @@ use App\Models\CompanyDetail;
 use App\Models\CountryInformation;
 use App\Models\ReqForSancStatus;
 use App\Models\Subscription;
+use App\Models\Shareholder;
 use App\Utils\SanctionRequestStatus;
 use App\Utils\SanctionsType;
 use Illuminate\Http\Request;
@@ -288,6 +289,12 @@ class CompanyDetailController extends Controller
     public function show($id){
         try {
             $company_detail = CompanyDetail::where('id',$id)->with(['board_of_directors','company_accounting','market_share'])->first();
+            //market share satestics
+            $market_share_satestics=[];
+            if(isset($company_detail['market_share']->id))
+            {
+            $market_share_satestics=Shareholder::where('market_share_id',$company_detail['market_share']->id)->get();
+            }
             $dollar_rate = CountryInformation::where('country_name',$company_detail->country)->pluck('rate_in_dollar')->first();
             $res = preg_replace("/[^0-9\s]/", "", $company_detail->market_share->paid_up_shares);
             $dollar_rate = (float)$res * (float)$dollar_rate;
@@ -298,7 +305,7 @@ class CompanyDetailController extends Controller
                     ->where('status',SanctionRequestStatus::Pending)
                     ->exists();
             }
-            return view('screens.company-detail',compact('company_detail','dollar_rate','already_request_for_sanction'));
+            return view('screens.company-detail',compact('company_detail','dollar_rate','already_request_for_sanction','market_share_satestics'));
         }catch (\Exception $exception){
             return $exception->getMessage();
         }
