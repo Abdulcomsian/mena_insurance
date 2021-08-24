@@ -138,35 +138,45 @@
                   <table id="history_table" class="display">
                       <thead>
                       <tr>
-                          <th>S.No</th>
+                          <th>Invoice #</th>
                           <th>Date</th>
                           <th>Package Name</th>
-                          <th>Amount</th>
+                          <th>Package Price</th>
+                          <th>VAT</th>
+                          <th>Total Amount</th>
                           <th>Status</th>
+                          <th>Sanctions</th>
+                          <th>Card #</th>
+                          <th>Card Type</th>
                           <th>Action</th>
                       </tr>
                       </thead>
                       <tbody>
                       @foreach($transactions as $item)
                           <tr>
-                              <td>{{$loop->iteration}}</td>
-                              <td>{{date("d-M-Y",strtotime($item->created_at))  ?: '-'}}</td>
-                              <td>{{$item->package->name}}</td>
-                              <td>{{$item->amount .' AED'}}</td>
+                              <td>{{$item->invoice_id  ?: '-'}}</td>
+                              <td>{{$item->created_at  ?: '-'}}</td>
+                              <td>{{$item->package_name ?: '-'}}</td>
+                              <td>{{$item->package_amount .' AED' ?: '-'}}</td>
+                              <td>{{$item->vat_amount .' AED' ?: '-'}}</td>
+                              <td>{{$item->total_amount .' AED' ?: '-'}}</td>
                               @if($item->status == 'Paid')
-                                <td><span class="approved">{{$item->status}}</span></td>
+                                  <td><span class="approved">{{$item->status}}</span></td>
                               @else
-                                <td><span class="cancel">{{$item->status}}</span></td>
+                                  <td><span class="cancel">{{$item->status}}</span></td>
                               @endif
-                              @isset($item->pdf)
-                                <td>
-                                    <a href="{{$item->pdf}}" download="">
-                                        <i class="fa fa-file-pdf-o fa-3x" aria-hidden="true"></i>
-                                    </a>
-                                </td>
-                              @else
+                              <td>{{$item->package_sanctions ?: '-'}}</td>
+                              <td>{{$item->card_first6 .'******'. $item->card_last4}}</td>
+                              <td>{{$item->card_type ?: '-'}}</td>
+                                @isset($item->pdf)
+                                  <td>
+                                      <a href="{{$item->pdf}}" download="">
+                                          <i class="fa fa-file-pdf-o fa-3x" aria-hidden="true"></i>
+                                      </a>
+                                  </td>
+                                @else
                                   <td>-</td>
-                              @endisset
+                                @endisset
                           </tr>
                       @endforeach
                       </tbody>

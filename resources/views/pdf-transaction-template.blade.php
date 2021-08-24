@@ -138,74 +138,144 @@
 <section id="healthform">
     <div class="container">
         <center> <img src="assets/img/logo.png"></center>
-        <center><h3>Tax Invoice</h3></center>
+        <center><h3>Invoice</h3></center>
         <center><h4>info@menainsurance.com</h4></center>
-        <center>
-            <table style="table-layout: fixed ;width: 100% ;">
+        <table>
+            <thead>
                 <tr>
-                    <td style="width:33%;"><h3 class="">Payment Invoice:</h3></td>
-                    <td style="width:33%;"><h4 class=""><span>&nbsp;</span></h4></td>
+                    <td style="vertical-align: top !important;">
+                        <center>
+                            <table style="table-layout: fixed ;width: 100% ;">
+                                <tr>
+                                    <td style="width:33%;"><h3 class=""> From:</h3></td>
+                                    <td style="width:33%;"><h4 class=""><span>&nbsp;</span></h4></td>
+                                </tr>
+                            </table>
+                        </center>
+                        <center>
+                            <table style="table-layout: fixed ;width: 100% ;">
+                                <tr>
+                                    <td style="width:33%;"><h4 class="">Company Name:  <span style="font-weight:400;">Mena Insurance</span></h4></td>
+                                </tr>
+                            </table>
+                        </center>
+                        <center>
+                            <table style="table-layout: fixed ;width: 100% ;">
+                                <tr>
+                                    <td style="width:33%;"><h4 class="">Full Name:  <span style="font-weight:400;">Mena Insurance</span></h4></td>
+                                </tr>
+                            </table>
+                        </center>
+                        <center>
+                            <table style="table-layout: fixed ;width: 100% ;">
+                                <tr>
+                                    <td style="width:33%;"><h4 class="">Email:  <span style="font-weight:400;">info@menainsurance.com</span></h4></td>
+                                </tr>
+                            </table>
+                        </center>
+                        <center>
+                            <table style="table-layout: fixed ;width: 100% ;">
+                                <tr>
+                                    <td style="width:37%;"><h4 class="">Address#:  <span style="font-weight:400;">301, Business Venue Building, Umm Hurair Road, Oud Metha, Dubai, AE</span></h4></td>
+                                </tr>
+                            </table>
+                        </center>
+                    </td>
+                    <td style="align-content: flex-end">
+                        <center>
+                            <table style="table-layout: fixed ;width: 100% ;">
+                                <tr>
+                                    <td style="width:33%;"><h3 class=""> To:</h3></td>
+                                    <td style="width:33%;"><h4 class=""><span>&nbsp;</span></h4></td>
+                                </tr>
+                            </table>
+                        </center>
+                        <center>
+                            <table style="table-layout: fixed ;width: 100% ;">
+                                <tr>
+                                    <td style="width:37%;"><h4 class="">Invoice #:  <span style="font-weight:400;">{{ $transaction->invoice_id ?: '' }}</span></h4></td>
+                                </tr>
+                            </table>
+                        </center>
+                        <center>
+                            <table style="table-layout: fixed ;width: 100% ;">
+                                <tr>
+                                    <td style="width:33%;"><h4 class="">Company Name:  <span style="font-weight:400;">{{ \Illuminate\Support\Facades\Auth::user()->company_name ?: '-' }}</span></h4></td>
+                                </tr>
+                            </table>
+                        </center>
+                        <center>
+                            <table style="table-layout: fixed ;width: 100% ;">
+                                <tr>
+                                    <td style="width:33%;"><h4 class="">Full Name:  <span style="font-weight:400;">{{ $transaction->billing_fname.' '.$transaction->billing_lname }}</span></h4></td>
+                                </tr>
+                            </table>
+                        </center>
+                        <center>
+                            <table style="table-layout: fixed ;width: 100% ;">
+                                <tr>
+                                    <td style="width:33%;"><h4 class="">Email:  <span style="font-weight:400;">{{ $transaction->billing_email }}</span></h4></td>
+                                </tr>
+                            </table>
+                        </center>
+                        <center>
+                            <table style="table-layout: fixed ;width: 100% ;">
+                                <tr>
+                                    <td style="width:37%;"><h4 class="">Address#:  <span style="font-weight:400;">{{ $transaction->billing_address_1 }}</span></h4></td>
+                                </tr>
+                            </table>
+                        </center>
+                        <center>
+                            <table style="table-layout: fixed ;width: 100% ;">
+                                <tr>
+                                    <td style="width:37%;"><h4 class="">City:  <span style="font-weight:400;">{{ $transaction->billing_city }}</span></h4></td>
+                                </tr>
+                            </table>
+                        </center>
+                        <center>
+                            <table style="table-layout: fixed ;width: 100% ;">
+                                <tr style="margin:0px;padding:0px;border:1px solid #000;">
+                                    <td style="width:37%;"><h4 class="">Card #:  <span style="font-weight:400;">{{ $transaction->card_first6 .'******'.  $transaction->card_last4 }}</span></h4></td>
+                                </tr>
+                            </table>
+                        </center>
+                        <center>
+                            <table style="table-layout: fixed ;width: 100% ;">
+                                <tr style="margin:0px;padding:0px;border:1px solid #000;">
+                                    <td style="width:37%;"><h4 class="">Card Type:  <span style="font-weight:400;">{{ $transaction->card_type }}</span></h4></td>
+                                </tr>
+                            </table>
+                        </center>
+                        <center>
+                            <table style="margin-bottom:20px; table-layout: fixed ;width: 100% ;">
+                                <tr style="margin:0px;padding:0px;border:1px solid #000;">
+                                    <td style="width:37%;"><h4 class="">Date:  <span style="font-weight:400;">{{ $transaction->created_at }}</span></h4></td>
+                                </tr>
+                            </table>
+                        </center>
+                    </td>
                 </tr>
-            </table>
-        </center>
-        <center>
-            <table style="table-layout: fixed ;width: 100% ;">
-                <tr>
-                    <td style="width:37%;"><h4 class="">Invoice #:  <span style="font-weight:400;">{{ $transaction->cart_id ?: '' }}</span></h4></td>
-                </tr>
-            </table>
-        </center>
-        <center>
-            <table style="table-layout: fixed ;width: 100% ;">
-                <tr>
-                    <td style="width:33%;"><h4 class="">Full Name:  <span style="font-weight:400;">{{ $transaction->billing_fname.' '.$transaction->billing_lname }}</span></h4></td>
-                </tr>
-            </table>
-        </center>
-        <center>
-            <table style="table-layout: fixed ;width: 100% ;">
-                <tr>
-                    <td style="width:33%;"><h4 class="">Email:  <span style="font-weight:400;">{{ $transaction->billing_email }}</span></h4></td>
-                </tr>
-            </table>
-        </center>
-        <center>
-            <table style="table-layout: fixed ;width: 100% ;">
-                <tr>
-                    <td style="width:37%;"><h4 class="">Address#:  <span style="font-weight:400;">{{ $transaction->billing_address_1 }}</span></h4></td>
-                </tr>
-            </table>
-        </center>
-           <center>
-            <table style="table-layout: fixed ;width: 100% ;">
-                <tr>
-                    <td style="width:37%;"><h4 class="">City:  <span style="font-weight:400;">{{ $transaction->billing_city }}</span></h4></td>
-                </tr>
-            </table>
-        </center>
-        <center>
-            <table style="margin-bottom:20px; table-layout: fixed ;width: 100% ;">
-                <tr style="margin:0px;padding:0px;border:1px solid #000;">
-                    <td style="width:37%;"><h4 class="">Date:  <span style="font-weight:400;">{{ $transaction->created_at }}</span></h4></td>
-                </tr>
-            </table>
-        </center>
-
+            </thead>
+        </table>
         <center>
             <table class="entrytable">
                 <tr>
                     <th>S.No</th>
                     <th>Package</th>
-                    <th>Amount</th>
                     <th>Sanctions</th>
                     <th>Status</th>
+                    <th>Package Amount</th>
+                    <th>VAT (5%)</th>
+                    <th>Total</th>
                 </tr>
                 <tr style="text-align: center">
                     <td>1</td>
-                    <td>{{$transaction->package->name ?: '-'}}</td>
-                    <td>{{$transaction->amount ?: '-'}}</td>
-                    <td>{{$transaction->package->sanctions ?: '-'}}</td>
+                    <td>{{$transaction->package_name ?: '-'}}</td>
+                    <td>{{$transaction->package_sanctions ?: '-'}}</td>
                     <td>{{$transaction->status ?: '-'}}</td>
+                    <td>{{$transaction->package_amount .' AED' ?: '-'}}</td>
+                    <td>{{$transaction->vat_amount .' AED' ?: '-'}}</td>
+                    <td>{{$transaction->total_amount .' AED'?: '-'}}</td>
                 </tr>
             </table>
 
@@ -218,10 +288,10 @@
                 <!--<div class="footer">-->
                 <div class="row">
                     <p>
-                        <span> <strong>Address</strong>: 2 Green Lane, Penge, London SE20 7JA</span> <span> <strong>T:</strong> 0208 676 0605</span>  <span> <strong>F:</strong> 0208 676 0671 </span>    <span><strong>M:</strong> 07737 632206 </span>
+                        <span> <strong>Address</strong>301, Business Venue Building, Umm Hurair Road, Oud Metha, Dubai, AE</span> <span> <strong>T:</strong> 0123456789</span>  <span> <strong>F:</strong> 0123456789 </span>    <span><strong>M:</strong> 0123456789 </span>
                     </p>
                     <p>
-                        <span><strong>E</strong>:<a>info@topdecdecorating.com</a></span><span> <strong>W:</strong><a>info@topdecdecorating.com</a></span><span> <strong>Company Registration Number:</strong> 09010347</span>
+                        <span><strong>E</strong>:<a>info@menainsurance.com</a></span><span> <strong>W:</strong><a>{{Request::gethost()}}</a></span><span> <strong>Company Registration Number:</strong> 0123456</span>
                     </p>
                 </div>
                 <!--</div>-->

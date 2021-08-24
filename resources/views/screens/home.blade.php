@@ -32,7 +32,7 @@
                         </ul>
                     </div>
                     <a href="{{route('companydetail.search.result',['country'=>[0]])}}" class="btn btn-success mt-3">
-                        <buttonw>Search</buttonw>
+                        <buttonw>Submit</buttonw>
                     </a>
                 </form>
             </div>

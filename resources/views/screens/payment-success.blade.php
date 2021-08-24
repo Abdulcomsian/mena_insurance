@@ -1,4 +1,7 @@
+@extends('common.footer')
+@extends('common.footer-script')
 @extends('common.header')
+@extends('common.navbar')
 @section('content')
 <section id="payment-section">
     <div class="container">
