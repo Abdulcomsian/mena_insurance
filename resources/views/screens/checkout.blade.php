@@ -112,7 +112,7 @@
                     // data: {query: query, country: country},
                     dataType: 'json',
                     success: function (data) {
-                     console.log(data);
+                    // console.log(data);
                         $(this).removeAttr('disabled');
                         if(data.success == true) {
                             $('#telr').attr('src',data.order_url);
@@ -120,17 +120,17 @@
                             $(this).removeAttr('disabled');
                         }
                         else{
-                             console.log(data);
-                             alert('error in  Server is busy,try again');
-                            //window.location.reload();
+                           //  console.log(data);
+                             //alert('error in  Server is busy,try again');
+                            window.location.reload();
                         }
                     },
                     error:function (data){
                      console.log(data);
                         $(this).removeAttr('disabled');
                         
-                         alert('errorr in ajax. Server is busy,try again');
-                     //   window.location.reload();
+                        // alert('errorr in ajax. Server is busy,try again');
+                        window.location.reload();
                     }
                 });
             }else {
