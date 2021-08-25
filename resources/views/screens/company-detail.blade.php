@@ -1,3 +1,4 @@
+
 @extends('common.footer')
 @extends('common.footer-script')
 @extends('common.header')
@@ -206,7 +207,7 @@
                                                 <div class="col-lg-6 col-md-6">
                                                     <div class="insights-div">
                                                         <h3>Paid Up Capital</h3>
-                                                        <p>{{ $company_detail->market_share->paid_up_shares  ?: '-' }} (${{ $dollar_rate  ?: '-' }})</p>
+                                                        <p>{{ $company_detail->market_share->paid_up_shares  ?: '-' }} (USD {{ (int)$dollar_rate  ?: '-' }})</p>
                                                     </div>
                                                 </div>
                                                 <div class="col-lg-6 col-md-6">
