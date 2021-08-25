@@ -4,7 +4,7 @@
 @extends('common.navbar')
 @section('css')
     <style>
-        .list-group{
+        .list-group-style{
             max-height: 240px;
             margin-bottom: 10px;
             overflow:scroll;
@@ -361,7 +361,7 @@
                         <div class="">
                             <ul class="list-group"  id="data">
                             </ul>
-                            <textarea name="comments" id="" cols="61" rows="5" placeholder="Addtional Comments"></textarea>
+                            <textarea class=form-control" name="comments" id="" cols="61" rows="5" placeholder="Addtional Comments"></textarea>
                         </div>
                     </div>
                     <div class="modal-footer">
@@ -411,6 +411,7 @@
                         $('#data').empty();
                         if(data.length > 0) {
                             $.each(data, function (index, item) {
+                                $('#data').addClass('list-group-style');
                                 $('#data').append(`<label><li class="list-group-item">
                                                         ${index+1}&nbsp;&nbsp;
                                                         <input style="margin-right: 5px !important; margin-top: 5px !important;" type="checkbox" name="board_of_directors[]" value="${item.id}">
