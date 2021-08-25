@@ -68,7 +68,7 @@ use Illuminate\Support\Facades\DB;
                                 @enderror
                             </div>
                             <div class="inputDiv">
-                                <input class="form-control @error('mobile_number') is-invalid @enderror"  type="text" name="mobile_number" value="{{ old('mobile_number') }}"   placeholder="Mobile Number">
+                                <input class="form-control @error('mobile_number') is-invalid @enderror"  type="number" name="mobile_number" value="{{ old('mobile_number') }}"   placeholder="Mobile Number">
                                 @error('mobile_number')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
@@ -76,9 +76,17 @@ use Illuminate\Support\Facades\DB;
                                 @enderror
                             </div>
                             <div class="inputDiv">
-                                <input class="form-control @error('office_number') is-invalid @enderror"  type="text" name="office_number" value="{{ old('office_number') }}"   placeholder="Office Number">
+                                <input class="form-control @error('office_number') is-invalid @enderror"  type="number" name="office_number" value="{{ old('office_number') }}"   placeholder="Office Number">
                                 @error('office_number')
-                                        <span class="invalid-feedback" role="alert">
+                                <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $message }}</strong>
+                                        </span>
+                                @enderror
+                            </div>
+                            <div class="inputDiv">
+                                <input class="form-control @error('vat_number') is-invalid @enderror"  type="number" name="vat_number" value="{{ old('vat_number') }}"   placeholder="VAT Number">
+                                @error('vat_number')
+                                <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
                                         </span>
                                 @enderror

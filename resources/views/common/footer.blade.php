@@ -3,7 +3,7 @@
         <div class="row">
             <div class="col-lg-4 col-md-4">
                 <div class="footer-box">
-                    <img src="assets/img/logo.png" alt="" class="img-fluid">
+                    <img src="{{asset("assets/img/logo.png")}}" alt="" class="img-fluid">
                     <p>Callidus leads the industry in wealth management. Our independent RIA and broker services have over 20 years of industry experience.</p>
                     <div class="social-media">
                         <span class="facebook"><a href=""><i class="fa fa-facebook" aria-hidden="true"></i></a></span>
@@ -11,7 +11,7 @@
                         <span><a href=""><i class="fa fa-linkedin" aria-hidden="true"></i></a></span>
                         <span><a href=""><i class="fa fa-instagram" aria-hidden="true"></i></a></span>
                     </div>
-                    <div style="margin-top: 40px;width: 110px;"><img  src="assets/img/creditcard.png" alt="" class="img-fluid" /></div>
+                    <div style="margin-top: 40px;width: 110px;"><img  src="{{asset("assets/img/creditcard.png")}}" alt="" class="img-fluid" /></div>
                 </div>
             </div>
             <div class="col-lg-4 col-md-4">

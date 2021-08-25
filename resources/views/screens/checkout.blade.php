@@ -11,6 +11,12 @@
             frameborder: 0;
             border: none;
         }
+        .checkbox-validation {
+            text-align: left;
+            color: red;
+            font-size: 12px;
+            margin-top: -22px;
+        }
     </style>
 @endsection
 @section('content')
@@ -68,9 +74,12 @@
 
                     <p>
                         <input type="checkbox" id="privacy">
-                        I Agree to <a href="privacy-policy">Term & Condition Privacy</a>
+                        I Agree to <a href="/privacy-policy">Term & Condition Privacy</a>
                         and
-                        <a href="">Refund Priacy</a>
+                        <a href="/refund-policy">Refund Priacy</a>
+                    </p>
+                    <p class="checkbox-validation">
+                        Please checked Term & Condition Privacy and Refund Priacy
                     </p>
                         <button id="checkout">Proceed to Checkout</button>
                 </div>
@@ -91,9 +100,11 @@
 @endsection
 @section('script')
     <script>
+        $('.checkbox-validation').hide();
         $('#checkout').click(function () {
             console.log('Here in click function');
             if($('#privacy').prop("checked") == true){
+                $('.checkbox-validation').hide();
                 $(this).attr('disabled','true');
                 $.ajax({
                     url: "{{route('transaction.create',encrypt($package->id))}}",
@@ -109,16 +120,18 @@
                         }
                         else{
                             // console.log(data);
-                            alert('Server is busy,try again');
+                            // alert('Server is busy,try again');
                             window.location.reload();
                         }
                     },
                     error:function (){
-                        alert('Server is busy,try again');
+                        $(this).removeAttr('disabled');
+                        // alert('Server is busy,try again');
                         window.location.reload();
                     }
                 });
             }else {
+                $('.checkbox-validation').show();
                 console.log('Unchecked privacy');
             }
 

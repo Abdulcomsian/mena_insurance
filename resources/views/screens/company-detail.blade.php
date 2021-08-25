@@ -2,7 +2,16 @@
 @extends('common.footer-script')
 @extends('common.header')
 @extends('common.navbar')
-
+@section('css')
+    <style>
+        .list-group{
+            max-height: 240px;
+            margin-bottom: 10px;
+            overflow:scroll;
+            -webkit-overflow-scrolling: touch;
+        }
+    </style>
+@endsection
 @section('content')
 <section id="search-section" class="pad-100">
     <div class="container">
@@ -45,6 +54,7 @@
                                                         @php
                                                         $colors=[];
                                                         $data=[];
+                                                        $labels = [];
                                                         $i=0;
                                                         @endphp
                                                         @foreach( $market_share_satestics as $share)
@@ -52,11 +62,12 @@
                                                          $colorname='#' . str_pad(dechex(mt_rand(0, 0xFFFFFF)), 6,'0', STR_PAD_LEFT);
                                                          $colors[$i]=$colorname;
                                                          $data[$i]=$share->share_percentage;
+                                                         $labels[$i]=$share->name;
                                                          $i++
                                                          @endphp
                                                         <li style="position: relative; margin-bottom:20px;">
                                                             <span style="top: 5px; position: absolute; width: 15px; height: 15px; margin-right: 10px; background-color: {{$colorname}}; border-radius: 5px;"></span>
-                                                            <p style="margin-left: 20px; font-size: 14px;">{{$share->name}}</p>
+                                                            <p style="margin-left: 20px; font-size: 14px;">{{$share->share_percentage .'% '.$share->name}}</p>
                                                         </li>
                                                         @endforeach
                                                     </ul>
@@ -195,8 +206,7 @@
                                                 <div class="col-lg-6 col-md-6">
                                                     <div class="insights-div">
                                                         <h3>Paid Up Capital</h3>
-                                                        <p>{{ $company_detail->market_share->paid_up_shares  ?: '-' }}</p>
-                                                        <p>${{ $dollar_rate  ?: '-' }}</p>
+                                                        <p>{{ $company_detail->market_share->paid_up_shares  ?: '-' }} (${{ $dollar_rate  ?: '-' }})</p>
                                                     </div>
                                                 </div>
                                                 <div class="col-lg-6 col-md-6">
@@ -442,8 +452,8 @@
             new Chart(document.getElementById("myChart"), {
             type: 'pie',
             data: {
-              // labels:"",
-              datasets: [{
+            {{--labels: @php echo json_encode($labels);@endphp,--}}
+                datasets: [{
                 label: "Population (millions)",
                 backgroundColor: @php echo json_encode($colors);@endphp,
                 data: @php echo json_encode($data);@endphp
