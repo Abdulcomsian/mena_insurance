@@ -59,7 +59,7 @@ class RegisterController extends Controller
             'company_name' => ['required', 'max:255'],
             'office_number' => ['required', 'max:255'],
             'mobile_number' => ['required', 'string', 'max:255'],
-            'vat_number' => ['nullable','numeric', 'max:50'],
+            'vat_number' => ['nullable','numeric'],
             'country_id' => ['required', 'max:255'],
             'name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],

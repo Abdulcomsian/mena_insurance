@@ -12,15 +12,13 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
+//    Route::group(['middleware' =>['auth','verified']], function () {
+        Route::get('/contact', 'HomeController@contact');
+        Route::get('/about', 'HomeController@about');
+//    });
 
 Route::get('/', 'HomeController@index');
 
-Route::get('/contact', function () {
-    return view('screens.contact');
-});
-Route::get('/about', function () {
-    return view('screens.about');
-});
 
 Route::get('/forgot', function () {
     return view('screens.forgot');
@@ -83,11 +81,6 @@ Route::get('/refund-policy', function () {
 
 Route::view('/thanks-for-registration','auth.thanks-for-registration');
 Route::view('/successfully-registered','auth.login-success')->name('login.success');
-
-//Route::get('/checkout', function () {
-//    return view('screens.checkout');
-//});
-
 
 //Testing Routes
 Route::view('telr-testing','testing.telr');
