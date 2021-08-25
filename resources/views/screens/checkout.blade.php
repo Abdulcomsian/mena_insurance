@@ -119,15 +119,15 @@
                             $(this).removeAttr('disabled');
                         }
                         else{
-                            // console.log(data);
-                            // alert('Server is busy,try again');
-                            window.location.reload();
+                             console.log(data);
+                             alert('Server is busy,try again');
+                            //window.location.reload();
                         }
                     },
                     error:function (){
                         $(this).removeAttr('disabled');
                         // alert('Server is busy,try again');
-                        window.location.reload();
+                     //   window.location.reload();
                     }
                 });
             }else {
