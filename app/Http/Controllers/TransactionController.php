@@ -38,7 +38,7 @@ class TransactionController extends Controller
             $package = Package::where('id',decrypt($id))->first();
             $total = $package->price * 0.05 + $package->price;
             $username = explode(" ",Auth::user()->name,2);
-            if(count($username) > 0 ){
+            if(count($username) > 1 ){
                 $last_name = $username[1];
             }else{
              $last_name ='Not Set';
