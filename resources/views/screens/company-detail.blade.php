@@ -68,7 +68,7 @@
                                                          @endphp
                                                         <li style="position: relative; margin-bottom:20px;">
                                                             <span style="top: 5px; position: absolute; width: 15px; height: 15px; margin-right: 10px; background-color: {{$colorname}}; border-radius: 5px;"></span>
-                                                            <p style="margin-left: 20px; font-size: 14px;">{{$share->name . ' (' . $share->share_percentage .' %)'}}</p>
+                                                            <p style="margin-left: 20px; font-size: 14px;">{{$share->name . ' (' . $share->share_percentage .'%)'}}</p>
                                                         </li>
                                                         @endforeach
                                                     </ul>
