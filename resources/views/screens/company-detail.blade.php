@@ -54,6 +54,7 @@
                                                         @php
                                                         $colors=[];
                                                         $data=[];
+                                                        $labels = [];
                                                         $i=0;
                                                         @endphp
                                                         @foreach( $market_share_satestics as $share)
@@ -61,11 +62,12 @@
                                                          $colorname='#' . str_pad(dechex(mt_rand(0, 0xFFFFFF)), 6,'0', STR_PAD_LEFT);
                                                          $colors[$i]=$colorname;
                                                          $data[$i]=$share->share_percentage;
+                                                         $labels[$i]=$share->name;
                                                          $i++
                                                          @endphp
                                                         <li style="position: relative; margin-bottom:20px;">
                                                             <span style="top: 5px; position: absolute; width: 15px; height: 15px; margin-right: 10px; background-color: {{$colorname}}; border-radius: 5px;"></span>
-                                                            <p style="margin-left: 20px; font-size: 14px;">{{$share->name}}</p>
+                                                            <p style="margin-left: 20px; font-size: 14px;">{{$share->share_percentage .'% '.$share->name}}</p>
                                                         </li>
                                                         @endforeach
                                                     </ul>
@@ -450,8 +452,8 @@
             new Chart(document.getElementById("myChart"), {
             type: 'pie',
             data: {
-              // labels:"",
-              datasets: [{
+            {{--labels: @php echo json_encode($labels);@endphp,--}}
+                datasets: [{
                 label: "Population (millions)",
                 backgroundColor: @php echo json_encode($colors);@endphp,
                 data: @php echo json_encode($data);@endphp
