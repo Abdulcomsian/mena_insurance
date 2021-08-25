@@ -38,6 +38,11 @@ class TransactionController extends Controller
             $package = Package::where('id',decrypt($id))->first();
             $total = $package->price * 0.05 + $package->price;
             $username = explode(" ",Auth::user()->name,2);
+            if(count($username) > 0 ){
+                $last_name = $username[1];
+            }else{
+             $last_name ='Not Set';
+            }
             $params = array(
                 'ivp_method' => 'create',
                 'ivp_store' => env('IVP_STORE_ID'),
@@ -50,7 +55,7 @@ class TransactionController extends Controller
                 'ivp_framed' => 1,
                 'bill_custref' => Auth::id(), //Using for storing cards
                 'bill_fname' => $username[0],
-                'bill_sname' => $username[1] ? $username[1] : 'Not Set',
+                'bill_sname' => $last_name,
                 'bill_addr1' => Auth::user()->address,
                 'bill_phone' => Auth::user()->mobile_number,
                 'bill_city' => Auth::user()->city ?? null,
