@@ -10,6 +10,7 @@ use App\Models\Subscription;
 use App\Models\Shareholder;
 use App\Utils\SanctionRequestStatus;
 use App\Utils\SanctionsType;
+use App\Utils\Status;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
@@ -128,6 +129,7 @@ class CompanyDetailController extends Controller
     //Get list of companies when click on countries in checkboxes of full search page
     private function basicSearchQuery(){
         $query = DB::table('company_detail')
+                ->where('status',Status::Active)
                 ->select('id', 'country', 'company_name', 'company_type','company_website')
                 ->orderby('country','asc');
         return $query;

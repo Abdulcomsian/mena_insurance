@@ -91,7 +91,7 @@
                         </div>
                         <div class="col-lg-6 col-md-6">
                            <div class="inputDiv">
-                              <input type="text" class="form-control @error('mobile_number') is-invalid @enderror"  name="mobile_number" value="{{ Auth::user()->mobile_number }}" placeholder="Mobile Number">
+                              <input type="number" class="form-control @error('mobile_number') is-invalid @enderror"  name="mobile_number" value="{{ Auth::user()->mobile_number }}" placeholder="Mobile Number">
                                @error('mobile_number')
                                <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
@@ -101,8 +101,18 @@
                         </div>
                          <div class="col-lg-6 col-md-6">
                            <div class="inputDiv">
-                              <input type="text" class="form-control @error('office_number') is-invalid @enderror"  name="office_number" value="{{ Auth::user()->office_number }}" placeholder="Office Number">
+                              <input type="number" class="form-control @error('office_number') is-invalid @enderror"  name="office_number" value="{{ Auth::user()->office_number }}" placeholder="Office Number">
                                @error('office_number')
+                               <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                               @enderror
+                           </div>
+                        </div>
+                         <div class="col-lg-6 col-md-6">
+                           <div class="inputDiv">
+                              <input type="number" class="form-control @error('vat_number') is-invalid @enderror"  name="vat_number" value="{{ Auth::user()->vat_number }}" placeholder="Office Number">
+                               @error('vat_number')
                                <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>

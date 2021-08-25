@@ -2,7 +2,16 @@
 @extends('common.footer-script')
 @extends('common.header')
 @extends('common.navbar')
-
+@section('css')
+    <style>
+        .list-group{
+            max-height: 240px;
+            margin-bottom: 10px;
+            overflow:scroll;
+            -webkit-overflow-scrolling: touch;
+        }
+    </style>
+@endsection
 @section('content')
 <section id="search-section" class="pad-100">
     <div class="container">
@@ -195,8 +204,7 @@
                                                 <div class="col-lg-6 col-md-6">
                                                     <div class="insights-div">
                                                         <h3>Paid Up Capital</h3>
-                                                        <p>{{ $company_detail->market_share->paid_up_shares  ?: '-' }}</p>
-                                                        <p>${{ $dollar_rate  ?: '-' }}</p>
+                                                        <p>{{ $company_detail->market_share->paid_up_shares  ?: '-' }} (${{ $dollar_rate  ?: '-' }})</p>
                                                     </div>
                                                 </div>
                                                 <div class="col-lg-6 col-md-6">

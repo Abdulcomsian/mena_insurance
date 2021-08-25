@@ -83,7 +83,8 @@ class CompanyDetail extends Model
 		'location',
 		'toll_free_number',
 		'trade_name',
-		'alternative_names'
+		'alternative_names',
+		'status',
 	];
 
 	public function board_of_directors()

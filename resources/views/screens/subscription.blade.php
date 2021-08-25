@@ -34,8 +34,8 @@
                  <table class="display">
                      <thead>
                      <tr>
-                         <th>Used Sanctions</th>
-                         <th>Remaining Sanctions</th>
+                         <th>Consumed Sanctions Search Count</th>
+                         <th>Balanced Sanctions Search Count</th>
                          <th>Total Sanctions</th>
                      </tr>
                      </thead>

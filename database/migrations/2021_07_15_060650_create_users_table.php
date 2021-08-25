@@ -24,6 +24,7 @@ class CreateUsersTable extends Migration
             $table->string('company_name')->nullable();
             $table->string('mobile_number')->nullable();
             $table->string('address')->nullable();
+            $table->integer('vat_number')->nullable();
             $table->string('status')->default('Active');
             $table->string('type')->default('System User');
             $table->unsignedBigInteger('country_id')->nullable();
