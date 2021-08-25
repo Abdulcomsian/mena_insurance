@@ -105,7 +105,7 @@
             console.log('Here in click function');
             if($('#privacy').prop("checked") == true){
                 $('.checkbox-validation').hide();
-                $(this).attr('disabled','true');
+                //$(this).attr('disabled','true');
                 $.ajax({
                     url: "{{route('transaction.create',encrypt($package->id))}}",
                     method: 'GET',
@@ -120,13 +120,14 @@
                         }
                         else{
                              console.log(data);
-                             alert('Server is busy,try again');
+                             alert('error in  Server is busy,try again');
                             //window.location.reload();
                         }
                     },
                     error:function (){
                         $(this).removeAttr('disabled');
-                        // alert('Server is busy,try again');
+                        
+                         alert('errorr in ajax. Server is busy,try again');
                      //   window.location.reload();
                     }
                 });
