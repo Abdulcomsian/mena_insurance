@@ -112,6 +112,7 @@
                     // data: {query: query, country: country},
                     dataType: 'json',
                     success: function (data) {
+                     console.log(data);
                         $(this).removeAttr('disabled');
                         if(data.success == true) {
                             $('#telr').attr('src',data.order_url);
@@ -124,7 +125,8 @@
                             //window.location.reload();
                         }
                     },
-                    error:function (){
+                    error:function (data){
+                     console.log(data);
                         $(this).removeAttr('disabled');
                         
                          alert('errorr in ajax. Server is busy,try again');
