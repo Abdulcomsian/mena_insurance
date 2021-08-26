@@ -41,4 +41,8 @@ class ReqForSancStatus extends Model
 		'board_of_directors',
         'sanctions'
 	];
+
+	public function company(){
+	    return $this->belongsTo(CompanyDetail::class,'company_id');
+    }
 }

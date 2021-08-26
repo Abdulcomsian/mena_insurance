@@ -23,6 +23,16 @@ class CompanyDetailController extends Controller
         $this->middleware(['auth','verified'],['except' => ['liveSearch','show','searchAllResult','searchAll']]);
     }
 
+    //Show sanction search history to user
+    public function showSanctionStatusHistory(){
+        $sanctions = ReqForSancStatus::with(['company'=>function($company){
+          $company->select('id','company_name','country');
+        }])
+            ->where('user_id',Auth::id())
+            ->orderBy('id','desc')
+            ->get();
+        return view('screens.sanctions-history',compact('sanctions'));
+    }
     //Save request for sanction status of company
     private function saveSanctionRequest($all_fields,$total_sanctions,$sub){
         $sub['remaining_sanctions'] = $sub->remaining_sanctions - $total_sanctions;
