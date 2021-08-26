@@ -34,7 +34,8 @@ class HomeController extends Controller
     {
         if (Auth::check()){
             if (Auth::user()->email_verified_at == null){
-                return redirect('email/verify');
+                session()->flash('message','Please Verify Your Email Address');
+                return redirect('/must-verify-email');
             }else{
                 $packages = Package::where('status',Status::Active)
                     ->whereDate('start_date', '<=', Carbon::now())
@@ -60,7 +61,8 @@ class HomeController extends Controller
     public function about(){
         if (Auth::check()){
             if (Auth::user()->email_verified_at == null){
-                return redirect('email/verify');
+                session()->flash('message','Please Verify Your Email Address');
+                return redirect('/must-verify-email');
             }else{
                 return view('screens.contact');
             }
@@ -72,7 +74,8 @@ class HomeController extends Controller
     public function contact(){
         if (Auth::check()){
             if (Auth::user()->email_verified_at == null){
-                return redirect('email/verify');
+                session()->flash('message','Please Verify Your Email Address');
+                return redirect('/must-verify-email');
             }else{
                 return view('screens.about');
             }

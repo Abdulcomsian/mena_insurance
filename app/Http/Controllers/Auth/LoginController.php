@@ -44,7 +44,9 @@ class LoginController extends Controller
         if ($user->type == 'System User'){
 
             if ($user->email_verified_at == null){
-                return redirect('email/verify');
+                Auth::logout();
+                session()->flash('message','Please Verify Your Email Address');
+                return redirect('/must-verify-email');
             }
             if ($user->status == 'Active'){
                     $user->last_login_at = now();

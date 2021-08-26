@@ -85,6 +85,8 @@ Route::view('/thanks-for-registration','auth.thanks-for-registration');
 //Show thanks page after successfull registeration of user
 Route::view('/successfully-registered','auth.login-success')->name('login.success');
 
+Route::view('/must-verify-email','auth.verify')->name('must.verify.email');
+
 //Show payment cards list
 Route::get('/sanction-status-history','CompanyDetailController@showSanctionStatusHistory')->name('show.sanction.status.history');
 
