@@ -64,10 +64,10 @@ class HomeController extends Controller
                 session()->flash('message','Please Verify Your Email Address');
                 return redirect('/must-verify-email');
             }else{
-                return view('screens.contact');
+                return view('screens.about');
             }
         }else{
-            return view('screens.contact');
+            return view('screens.about');
         }
     }
 

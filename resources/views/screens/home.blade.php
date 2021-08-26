@@ -63,7 +63,7 @@
                         <h3>
                             <a href="#">Sanction Screening</a>
                         </h3>
-                        <p>We can assist youinsanctions screening checks against watchlists and AML Sanctions list like OFAC, UN and EU, UAE to identify and report suspicious activities. Our reports are accurate optimizing your cost to comply.<p><br><br></p></p>
+                        <p>We can assist you in sanctions screening checks against watchlists and AML Sanctions list like OFAC, UN and EU, UAE to identify and report suspicious activities. Our reports are accurate optimizing your cost to comply.<p><br><br></p></p>
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-4">
