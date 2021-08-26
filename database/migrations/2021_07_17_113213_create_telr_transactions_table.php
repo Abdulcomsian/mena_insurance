@@ -48,7 +48,7 @@ class CreateTelrTransactionsTable extends Migration
 
             $table->bigInteger('package_id')->unsigned();
             $table->foreign('package_id')->references('id')->on('packages');
-
+            $table->timestamp('cancelled_at')->nullable();
             $table->softDeletes();
             $table->timestamps();
         });

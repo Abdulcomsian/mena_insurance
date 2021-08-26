@@ -96,3 +96,28 @@ Route::get('telr-curl-testing','HomeController@telrCurlTesting');
 
 Route::view('pdf','pdf');
 Route::view('pdf-template','pdf-transaction-template');
+
+Route::get('test-refund',function () {
+    $params = array(
+        'ivp_store' => env('IVP_STORE_ID'),
+        'ivp_authkey' => 'FmJq#sfCh9-BTRbp',
+        'ivp_trantype' => 'refund',
+        'ivp_tranclass' => 'C/Auth',
+        'ivp_currency' => 'AED',
+        'ivp_amount' => 210.00,
+        'tran_ref' => '040027102799',
+        'ivp_test' => 1,
+    );
+    $ch = curl_init();
+
+//    curl_setopt($ch, CURLOPT_URL, "https://secure.telr.com/gateway/order.json");
+    curl_setopt($ch, CURLOPT_URL, "https://secure.telr.com/gateway/remote.txt");
+    curl_setopt($ch, CURLOPT_POST, count($params));
+    curl_setopt($ch, CURLOPT_POSTFIELDS, $params);
+    curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+    curl_setopt($ch, CURLOPT_HTTPHEADER, array('Expect:'));
+    $results = curl_exec($ch);
+    curl_close($ch);
+    $results = json_decode($results);
+    return $results;
+});
