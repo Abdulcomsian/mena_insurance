@@ -16,21 +16,22 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-6 col-md-6">
-                <div class="content-div">
+                <div class="content-div" style="padding-top:0px;">
                     <h2>How to Find Us</h2>
                     <p>If you have any questions, just fill in the contact form, and we will answer you shortly. If you are living nearby, come visit AllRisk at one of our comfortable offices.</p>
                     <div class="address-detail">
                         <h4>Headquarters</h4>
-                        <p>9863 - 9867 MILL ROAD, CAMBRIDGE, MG09 99HT.</p>
-                        <p>Telephone: +1 800 603 6035</p>
-                        <p>Email: <a href="">mail@demolink.org</a></p>
+                        <p>PO Box 121361, Business Venue Bldg Opp. Al Nasr Club,Umm Hurair Road Bur Dubai, UAE</p>
+                        <p>Telephone: +971 4 396 9097</p>
+                        <p>Website: www.callidusmena.com</p>
+                        <p>Email: <a href="#">solutions@callidusmena.com</a></p>
                     </div>
-                    <div class="address-detail">
+                    <!-- <div class="address-detail">
                         <h4>Support Centre</h4>
                         <p>9863 - 9867 MILL ROAD, CAMBRIDGE, MG09 99HT.</p>
                         <p>Telephone: +1 800 603 6035</p>
                         <p>Email: <a href="">mail@demolink.org</a></p>
-                    </div>
+                    </div> -->
                 </div>
             </div>
             <div class="col-lg-6 col-md-6">
