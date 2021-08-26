@@ -1,15 +1,19 @@
-
 @extends('common.footer')
 @extends('common.footer-script')
 @extends('common.header')
 @extends('common.navbar')
 @section('css')
+
+{{--    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css" id="theme-styles">--}}
     <style>
         .list-group-style{
-            max-height: 240px;
+            max-height: 200px;
             margin-bottom: 10px;
             overflow:scroll;
             -webkit-overflow-scrolling: touch;
+        }
+        .swal2-styled{
+            width: 40% !important;
         }
     </style>
 @endsection
@@ -343,23 +347,27 @@
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
-                <form action="{{route('companydetail.request')}}" method="post">
+                <form action="{{route('companydetail.request')}}" method="post" id="sanction_form">
                     @csrf
                     <input hidden value="{{$company_detail->id}}" name="company_id" id="company_id"/>
                     <div class="modal-body">
+                        <P style="color: red" id="sanction_type_validation"></P>
                         <div class="radioBtn">
                             <input type="radio" id="{{\App\Utils\SanctionsType::Searchcompany}}" name="sanctions_type" value="{{\App\Utils\SanctionsType::Searchcompany}}">
                                   <label for="{{\App\Utils\SanctionsType::Searchcompany}}">{{\App\Utils\SanctionsType::Searchcompany}}</label><br>
                         </div>
-                        <div class="radioBtn">
-                            <input type="radio" id="{{\App\Utils\SanctionsType::FullcompanywithBoardsofDirector}}" name="sanctions_type" value="{{\App\Utils\SanctionsType::FullcompanywithBoardsofDirector}}">
-                                  <label for="{{\App\Utils\SanctionsType::FullcompanywithBoardsofDirector}}">{{\App\Utils\SanctionsType::FullcompanywithBoardsofDirector}}</label><br>
-                        </div>
-                        <div class="radioBtn">
-                            <input type="radio" id="{{\App\Utils\SanctionsType::CompanywithselectedBoardsofDirector}}" name="sanctions_type" value="{{\App\Utils\SanctionsType::CompanywithselectedBoardsofDirector}}">
-                                  <label for="{{\App\Utils\SanctionsType::CompanywithselectedBoardsofDirector}}">{{\App\Utils\SanctionsType::CompanywithselectedBoardsofDirector}}</label><br>
-                        </div>
+                        @if(count($company_detail->board_of_directors) > 0)
+                            <div class="radioBtn">
+                                <input type="radio" id="{{\App\Utils\SanctionsType::FullcompanywithBoardsofDirector}}" name="sanctions_type" value="{{\App\Utils\SanctionsType::FullcompanywithBoardsofDirector}}">
+                                      <label for="{{\App\Utils\SanctionsType::FullcompanywithBoardsofDirector}}">{{\App\Utils\SanctionsType::FullcompanywithBoardsofDirector}}</label><br>
+                            </div>
+                            <div class="radioBtn">
+                                <input type="radio" id="{{\App\Utils\SanctionsType::CompanywithselectedBoardsofDirector}}" name="sanctions_type" value="{{\App\Utils\SanctionsType::CompanywithselectedBoardsofDirector}}">
+                                      <label for="{{\App\Utils\SanctionsType::CompanywithselectedBoardsofDirector}}">{{\App\Utils\SanctionsType::CompanywithselectedBoardsofDirector}}</label><br>
+                            </div>
+                        @endif
                         <div class="">
+                            <P style="color: red" id="bod_validation"></P>
                             <ul class="list-group"  id="data">
                             </ul>
                             <textarea class=form-control" name="comments" id="" cols="61" rows="5" placeholder="Addtional Comments"></textarea>
@@ -367,7 +375,7 @@
                     </div>
                     <div class="modal-footer">
 {{--                        <button type="submit" class="btn btn-primary" data-dismiss="modal">Seacrh</button>--}}
-                        <button type="submit" class="btn btn-primary">Seacrh</button>
+                        <button type="button" onclick="confirmSanctinRequest()" class="btn btn-primary">Seacrh</button>
                     </div>
                 </form>
             </div>
@@ -395,6 +403,60 @@
 @endsection
 @section('script')
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/chart.js@3.5.1/dist/chart.min.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    <script>
+        $('#sanction_type_validation').hide();
+        $('#bod_validation').hide();
+        function confirmSanctinRequest(){
+            console.log('Here in confirm sanction request');
+            let sanction_type = $('input[name="sanctions_type"]:checked').val();
+            console.log(sanction_type);
+            if(sanction_type == undefined){
+                $('#sanction_type_validation').text('Please select any sanction type first').show();
+            }else{
+                $('#sanction_type_validation').hide();
+                $('#bod_validation').hide();
+                let total_sanctions;
+                if(sanction_type == "{{\App\Utils\SanctionsType::Searchcompany}}") {
+                    total_sanctions = 1;
+                }
+                else if(sanction_type == "{{\App\Utils\SanctionsType::FullcompanywithBoardsofDirector}}"){
+                    total_sanctions = "{{count($company_detail->board_of_directors) + 1}}";
+                 }
+                else if(sanction_type == "{{\App\Utils\SanctionsType::CompanywithselectedBoardsofDirector}}") {
+                    console.log('Here is checked bod');
+                    let bod = $('input:checkbox:checked').length;
+                    if (bod > 0 ){
+                        total_sanctions = bod + 1;
+                    }else {
+                        $('#bod_validation').text('Please select at least one board of director').show();
+                        return false;
+                    }
+                }
+                console.log(total_sanctions);
+                    Swal.fire({
+                    title: 'Are you sure to submit this request?',
+                    text: "Consumed sanctions " + total_sanctions,
+                    icon: 'warning',
+                    showCancelButton: true,
+                    confirmButtonColor: '#3085d6',
+                    cancelButtonColor: '#d33',
+                    confirmButtonText: 'Yes, submit it!'
+                }).then((result) => {
+                    if (result.isConfirmed) {
+                        $('#sanction_form').submit();
+                        Swal.fire(
+                            'Submitted!',
+                            'Your request has been submitted.',
+                            'success'
+                        )
+                    }
+                })
+            }
+        }
+
+    </script>
     <script>
         $(document).on('click', '#sanction', function(){
             $('#data').hide();
@@ -402,7 +464,9 @@
             $('textarea[name="comments"]').val('');
 
             var company_id = $('#company_id').val();
-            if (company_id) {
+            var bod = "{{count($company_detail->board_of_directors)}}";
+
+            if (company_id && bod > 0) {
                 $.ajax({
                     url: "{{ route('getDirectors') }}",
                     method: 'GET',

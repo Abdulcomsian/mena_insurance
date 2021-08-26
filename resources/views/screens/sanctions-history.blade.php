@@ -17,9 +17,10 @@
                      <thead>
                         <tr>
                           <th>Company</th>
-                          <th>Sanctions_type</th>
+                          <th>Sanctions Type</th>
                           <th>Status</th>
                           <th>Consumed Sanctions Balance</th>
+                          <th>Date</th>
                         </tr>
                      </thead>
                      <tbody>
@@ -35,6 +36,7 @@
                                     @endif
                                 </td>
                                 <td>{{$sanction->sanctions}}</td>
+                                <td>{{$sanction->created_at}}</td>
                             </tr>
                          @endforeach
                      </tbody>
