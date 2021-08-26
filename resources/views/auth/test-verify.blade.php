@@ -9,8 +9,12 @@
                 <div class="col-lg-12">
                     <div class="payment-content">
                         <i class="fa fa-check" aria-hidden="true"></i>
-                        <h2>Registration was Successful!</h2>
-                        <p>{{ __('Please Verify Your Email Address') }}</p>
+                        @if($message = Session::has('message'))
+                            <h3>Please Verify Your Email Address</h3>
+                        @else
+                            <h2>Registration was Completed!</h2>
+                            <p>{{ __('Please Verify Your Email Address') }}</p>
+                        @endif
 
                         @if (session('resent'))
                             <div class="alert alert-success" role="alert">
@@ -19,7 +23,11 @@
                         @endif
 
                         {{ __('Before proceeding, please check your email for a verification link.') }}
-
+                        {{ __('If you did not receive the email') }},
+                        <form class="d-inline" method="POST" action="{{ route('verification.resend') }}">
+                            @csrf
+                            <button type="submit" class="btn btn-link p-0 m-0 align-baseline">{{ __('click here to request another') }}</button>.
+                        </form>
                     </div>
                 </div>
             </div>
