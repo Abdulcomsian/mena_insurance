@@ -8,6 +8,9 @@ use App\Models\CountryInformation;
 use App\Models\ReqForSancStatus;
 use App\Models\Subscription;
 use App\Models\Shareholder;
+use App\Notifications\NewSanctionRequestForAdmin;
+use App\Notifications\SanctionRequestEmail;
+use App\User;
 use App\Utils\SanctionRequestStatus;
 use App\Utils\SanctionsType;
 use App\Utils\Status;
@@ -39,7 +42,7 @@ class CompanyDetailController extends Controller
         $sub['used_sanctions'] = $sub->used_sanctions + $total_sanctions;
         $sub->save();
         $all_fields['sanctions'] = $total_sanctions;
-        ReqForSancStatus::create($all_fields);
+        return ReqForSancStatus::create($all_fields);
     }
 
     //Sanction request from user
@@ -68,11 +71,12 @@ class CompanyDetailController extends Controller
             $all_fields['user_id'] = Auth::id();
             $all_fields['status'] = SanctionRequestStatus::Pending;
             $sub = Auth::user()->subscription;
+            $sanction_request =  null;
             if(isset($sub) && $sub->remaining_sanctions > 0){
                 if ($all_fields['sanctions_type'] == SanctionsType::Searchcompany) {
                     $total_sanctions = 1;
                     if ($sub->remaining_sanctions >= $total_sanctions){
-                        self::saveSanctionRequest($all_fields,$total_sanctions,$sub);
+                        $sanction_request = self::saveSanctionRequest($all_fields,$total_sanctions,$sub);
                     }else{
                         toastInfo('Your do not have sufficient sanctions to perform this operation, buy more sanctions !');
                         return back();
@@ -85,7 +89,7 @@ class CompanyDetailController extends Controller
                     $total_sanctions = count($directors_list)+1; //Add 1 for company search
                     if ($sub->remaining_sanctions >= $total_sanctions){
                         $all_fields['board_of_directors'] = json_encode($directors_list);
-                        self::saveSanctionRequest($all_fields,$total_sanctions,$sub);
+                        $sanction_request = self::saveSanctionRequest($all_fields,$total_sanctions,$sub);
                     }else{
                         toastInfo('Your do not have sufficient sanctions to perform this operation, buy more sanctions !');
                         return back();
@@ -96,14 +100,23 @@ class CompanyDetailController extends Controller
 
                     if ($sub->remaining_sanctions >= $total_sanctions){
                         $all_fields['board_of_directors'] = json_encode($request->board_of_directors);
-                        self::saveSanctionRequest($all_fields,$total_sanctions,$sub);
+                        $sanction_request = self::saveSanctionRequest($all_fields,$total_sanctions,$sub);
                     }else{
                         toastInfo('Your do not have sufficient sanctions to perform this operation, buy more sanctions !');
                         return back();
                     }
                 }
-
                 toastSuccess('Your request is successfully submitted for "Sanction Result"');
+                $company_details = CompanyDetail::where('id',$request->company_id)
+                    ->select('company_name','country')
+                    ->first();
+
+                Auth::user()->notify(new SanctionRequestEmail($company_details));
+
+                $admins = User::where('type','Admin')->get();
+                foreach ($admins as $admin){
+                    $admin->notify(new NewSanctionRequestForAdmin($company_details));
+                }
                 return back();
             }else{
                 toastInfo('You do not have sufficient sanctions to perform this operation, buy sanctions !');
