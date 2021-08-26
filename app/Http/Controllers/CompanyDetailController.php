@@ -23,10 +23,12 @@ class CompanyDetailController extends Controller
         $this->middleware(['auth','verified'],['except' => ['liveSearch','show','searchAllResult','searchAll']]);
     }
 
+    //Save request for sanction status of company
     private function saveSanctionRequest($all_fields,$total_sanctions,$sub){
         $sub['remaining_sanctions'] = $sub->remaining_sanctions - $total_sanctions;
         $sub['used_sanctions'] = $sub->used_sanctions + $total_sanctions;
         $sub->save();
+        $all_fields['sanctions'] = $total_sanctions;
         ReqForSancStatus::create($all_fields);
     }
 
@@ -112,19 +114,6 @@ class CompanyDetailController extends Controller
             ->get();
         return response()->json($data);
     }
-
-//    public function searchAll(){
-//        $countries = CountryInformation::select('country_name')
-//            ->orderby('country_name','asc')
-//            ->get();
-//        $companies = DB::table('company_detail')
-//            ->select('id', 'country', 'company_name', 'company_type','company_website')
-//            ->orderby('country','asc')
-//            ->paginate(30);
-//
-//        return view('screens.search-all-companies',compact('countries','companies'));
-//
-//    }
 
     //Get list of companies when click on countries in checkboxes of full search page
     private function basicSearchQuery(){

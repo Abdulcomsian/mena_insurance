@@ -39,5 +39,6 @@ class ReqForSancStatus extends Model
 		'sanctions_type',
         'status',
 		'board_of_directors',
+        'sanctions'
 	];
 }
