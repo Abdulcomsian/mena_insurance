@@ -85,6 +85,7 @@ class Transaction extends Model
         'card_last4',
         'card_first6',
         'card_type',
+        'cancelled_at'
 	];
 
 	public function package(){
