@@ -105,13 +105,14 @@
             console.log('Here in click function');
             if($('#privacy').prop("checked") == true){
                 $('.checkbox-validation').hide();
-                $(this).attr('disabled','true');
+                //$(this).attr('disabled','true');
                 $.ajax({
                     url: "{{route('transaction.create',encrypt($package->id))}}",
                     method: 'GET',
                     // data: {query: query, country: country},
                     dataType: 'json',
                     success: function (data) {
+                    // console.log(data);
                         $(this).removeAttr('disabled');
                         if(data.success == true) {
                             $('#telr').attr('src',data.order_url);
@@ -119,14 +120,16 @@
                             $(this).removeAttr('disabled');
                         }
                         else{
-                            // console.log(data);
-                            // alert('Server is busy,try again');
+                           //  console.log(data);
+                             //alert('error in  Server is busy,try again');
                             window.location.reload();
                         }
                     },
-                    error:function (){
+                    error:function (data){
+                     console.log(data);
                         $(this).removeAttr('disabled');
-                        // alert('Server is busy,try again');
+                        
+                        // alert('errorr in ajax. Server is busy,try again');
                         window.location.reload();
                     }
                 });

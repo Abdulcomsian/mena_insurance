@@ -1,3 +1,4 @@
+
 @extends('common.footer')
 @extends('common.footer-script')
 @extends('common.header')
@@ -67,7 +68,7 @@
                                                          @endphp
                                                         <li style="position: relative; margin-bottom:20px;">
                                                             <span style="top: 5px; position: absolute; width: 15px; height: 15px; margin-right: 10px; background-color: {{$colorname}}; border-radius: 5px;"></span>
-                                                            <p style="margin-left: 20px; font-size: 14px;">{{$share->share_percentage .'% '.$share->name}}</p>
+                                                            <p style="margin-left: 20px; font-size: 14px;">{{$share->name . ' (' . $share->share_percentage .'%)'}}</p>
                                                         </li>
                                                         @endforeach
                                                     </ul>
@@ -206,7 +207,7 @@
                                                 <div class="col-lg-6 col-md-6">
                                                     <div class="insights-div">
                                                         <h3>Paid Up Capital</h3>
-                                                        <p>{{ $company_detail->market_share->paid_up_shares  ?: '-' }} (${{ $dollar_rate  ?: '-' }})</p>
+                                                        <p>{{ $company_detail->market_share->paid_up_shares  ?: '-' }} (USD {{ (int)$dollar_rate  ?: '-' }})</p>
                                                     </div>
                                                 </div>
                                                 <div class="col-lg-6 col-md-6">
