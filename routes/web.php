@@ -59,6 +59,7 @@ Route::view('transaction-cancel-loading','screens.transaction-cancel-loading');
 Route::get('transaction-success','TransactionController@success')->name('transaction.success');
 Route::get('transaction-decline','TransactionController@decline')->name('transaction.decline');
 Route::get('transaction-cancel','TransactionController@cancel')->name('transaction.cancel');
+
 //Show payment cards list
 Route::get('/payment','TransactionController@showCards')->name('transaction.payment.cards');
 
@@ -79,8 +80,13 @@ Route::get('/refund-policy', function () {
     return view('screens.refund');
 });
 
+//Show this page after verifying email address
 Route::view('/thanks-for-registration','auth.thanks-for-registration');
+//Show thanks page after successfull registeration of user
 Route::view('/successfully-registered','auth.login-success')->name('login.success');
+
+//Show payment cards list
+Route::get('/sanction-status-history','CompanyDetailController@showSanctionStatusHistory')->name('show.sanction.status.history');
 
 //Testing Routes
 Route::view('telr-testing','testing.telr');
