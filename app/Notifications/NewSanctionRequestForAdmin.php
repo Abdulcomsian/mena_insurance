@@ -6,8 +6,9 @@ use Illuminate\Bus\Queueable;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Notifications\Messages\MailMessage;
 use Illuminate\Notifications\Notification;
+use Illuminate\Support\Facades\Auth;
 
-class SanctionRequestEmail extends Notification
+class NewSanctionRequestForAdmin extends Notification
 {
     use Queueable;
 
@@ -21,6 +22,7 @@ class SanctionRequestEmail extends Notification
     {
         $this->company_details = $company_details;
     }
+
 
     /**
      * Get the notification's delivery channels.
@@ -42,8 +44,8 @@ class SanctionRequestEmail extends Notification
     public function toMail($notifiable)
     {
         return (new MailMessage)
-                    ->line('Your sanction status request for company <strong>'. $this->company_details->company_name .','. $this->company_details->country .'</strong> is successfully submitted. Click below "Sanction Status Details" button for more details:')
-                    ->action('Sanction Status Details', url('/sanction-status-history'))
+                    ->line('New sanction status request for company <strong>'.$this->company_details->company_name.', '. $this->company_details->country.'</strong> has been submitted by <strong>'. Auth::user()->name.'</strong>.')
+                    ->line('For more details, please login to admin panel and click on "Sanction Request".')
                     ->line('Thank you for using our application!');
     }
 
