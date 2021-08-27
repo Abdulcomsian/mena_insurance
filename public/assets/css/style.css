@@ -1103,6 +1103,19 @@ button.open-sidebar{
 .page-link{
     color: #000;
 }
+.misson-box{
+    width: 100%;
+    max-width: 350px;
+    margin: auto;
+    margin-right: 0;
+}
+.vision-box{
+    width: 100%;
+    max-width: 350px;
+    margin: auto;
+    height: 514px;
+    margin-left: 0;
+}
 /**************** Media - Query - CSS *****************/
 @media only screen and (max-width: 1200px) {
     .side-bar ul>li a{
