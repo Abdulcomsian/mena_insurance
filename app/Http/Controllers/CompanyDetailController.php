@@ -129,6 +129,22 @@ class CompanyDetailController extends Controller
 
     }
 
+    //Check user sanctions balanced
+    public function checkSanctionsBalanced(Request $request){
+        try {
+            $total_sanctions_required = $request->total_sanctions;
+            $sub = Auth::user()->subscription;
+            $result = false;
+            if (isset($sub) && ($sub->remaining_sanctions >= $total_sanctions_required)){
+                $result = true;
+            }
+            return response()->json($result);
+        }catch (\Exception $exception){
+            return response()->json(false);
+        }
+
+    }
+
     //Get list of board of directors when click on search status modal
     public function getDirectors(Request $request){
         $data = BoardOfDirector::where('company_id',$request->company_id)

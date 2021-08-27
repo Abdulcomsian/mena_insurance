@@ -13,7 +13,7 @@
             <button class="open-sidebar"><i class="fa fa-bars" aria-hidden="true"></i></button>
             <h3>My Subscription</h3>
             <div class="table-div table-responsive">
-            <table id="subscription_table" class="display">
+            <table class="display">
                   <thead>
                      <tr>
                            <th>ID</th>
@@ -120,7 +120,7 @@
             <button class="open-sidebar"><i class="fa fa-bars" aria-hidden="true"></i></button>
                <h3>My Billing History</h3>
                <div class="table-div table-responsive">
-                  <table id="history_table" class="display">
+                  <table id="datatable" class="display">
                       <thead>
                       <tr>
                           <th>Invoice #</th>

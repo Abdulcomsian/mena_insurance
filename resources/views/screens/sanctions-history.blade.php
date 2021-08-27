@@ -13,7 +13,7 @@
             <button class="open-sidebar"><i class="fa fa-bars" aria-hidden="true"></i></button>
                <h3>Sanctions History</h3>
              <div class="table-div table-responsive">
-                 <table id="subscription_table" class="display">
+                 <table id="datatable" class="display">
                      <thead>
                         <tr>
                           <th>Company</th>

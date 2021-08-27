@@ -15,6 +15,27 @@
         .swal2-styled{
             width: 40% !important;
         }
+        textarea {
+            -webkit-box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            box-sizing: border-box;
+            width: 100%;
+        }
+        @media only screen and (max-width: 360px) {
+            .modal-dialog {
+                padding-top: 50%;
+            }
+        }
+        .buy-package{
+            border-radius: .25em;
+            background: initial;
+            color: #fff;
+            font-size: 1em;
+        }
+        .buy-package:hover{
+            color: #fff;
+            background: initial;
+        }
     </style>
 @endsection
 @section('content')
@@ -72,7 +93,7 @@
                                                          @endphp
                                                         <li style="position: relative; margin-bottom:20px;">
                                                             <span style="top: 5px; position: absolute; width: 15px; height: 15px; margin-right: 10px; background-color: {{$colorname}}; border-radius: 5px;"></span>
-                                                            <p style="margin-left: 20px; font-size: 14px;">{{$share->name . ' (' . $share->share_percentage .'%)'}}</p>
+                                                            <p style="margin-left: 20px; font-size: 14px;">{{$share->name}} ({{ $share->share_percentage ?? '0' }}%)</p>
                                                         </li>
                                                         @endforeach
                                                     </ul>
@@ -211,7 +232,7 @@
                                                 <div class="col-lg-6 col-md-6">
                                                     <div class="insights-div">
                                                         <h3>Paid Up Capital</h3>
-                                                        <p>{{ $company_detail->market_share->paid_up_shares  ?: '-' }} (USD {{ (int)$dollar_rate  ?: '-' }})</p>
+                                                        <p>{{ $company_detail->market_share->paid_up_shares  ?: '-' }} (USD {{ number_format((int)$dollar_rate)  ?: '-' }})</p>
                                                     </div>
                                                 </div>
                                                 <div class="col-lg-6 col-md-6">
@@ -374,8 +395,7 @@
                         </div>
                     </div>
                     <div class="modal-footer">
-{{--                        <button type="submit" class="btn btn-primary" data-dismiss="modal">Seacrh</button>--}}
-                        <button type="button" onclick="confirmSanctinRequest()" class="btn btn-primary">Seacrh</button>
+                        <button type="button" onclick="confirmSanctinRequest()" class="btn btn-primary">Submit</button>
                     </div>
                 </form>
             </div>
@@ -408,6 +428,30 @@
     <script>
         $('#sanction_type_validation').hide();
         $('#bod_validation').hide();
+
+        function checkSanctionsBalanced(total_sanctions){
+            console.log('Here in check sanctions');
+            $.ajax({
+                url: "{{ route('check.sanctions.balanced') }}",
+                method: 'GET',
+                data: {total_sanctions: total_sanctions},
+                dataType: 'json',
+                success: function (result) {
+                    console.log('success');
+                    console.log(result);
+                    if (result == true){
+                        submitAlert(total_sanctions);
+                    }else {
+                        purchasePackageAlert(total_sanctions);
+                    }
+                },
+                error:function (data){
+                    console.log('error');
+                    console.log(data);
+                }
+            })
+
+        }
         function confirmSanctinRequest(){
             console.log('Here in confirm sanction request');
             let sanction_type = $('input[name="sanctions_type"]:checked').val();
@@ -417,6 +461,7 @@
             }else{
                 $('#sanction_type_validation').hide();
                 $('#bod_validation').hide();
+
                 let total_sanctions;
                 if(sanction_type == "{{\App\Utils\SanctionsType::Searchcompany}}") {
                     total_sanctions = 1;
@@ -434,26 +479,49 @@
                         return false;
                     }
                 }
-                console.log(total_sanctions);
-                    Swal.fire({
-                    title: 'Are you sure to submit this request?',
-                    text: "Consumed sanctions " + total_sanctions,
-                    icon: 'warning',
-                    showCancelButton: true,
-                    confirmButtonColor: '#3085d6',
-                    cancelButtonColor: '#d33',
-                    confirmButtonText: 'Yes, submit it!'
-                }).then((result) => {
-                    if (result.isConfirmed) {
-                        $('#sanction_form').submit();
-                        Swal.fire(
-                            'Submitted!',
-                            'Your request has been submitted.',
-                            'success'
-                        )
-                    }
-                })
+                checkSanctionsBalanced(total_sanctions);
             }
+        }
+        function purchasePackageAlert(total_sanctions) {
+            Swal.fire({
+                title: 'Please buy sanctions to fulfill this request',
+                text: "Required sanctions for this request is " + total_sanctions,
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#3085d6',
+                cancelButtonColor: '#d33',
+                confirmButtonText: '<a class="buy-package" href="/#our-packages">Buy Package</a>'
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    $('#sanction_form').submit();
+                    Swal.fire(
+                        'Submitted!',
+                        'Your request has been submitted.',
+                        'success'
+                    )
+                }
+            })
+        }
+
+        function submitAlert(total_sanctions) {
+            Swal.fire({
+                title: 'Are you sure to submit this request?',
+                text: "Consumed sanctions " + total_sanctions,
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#3085d6',
+                cancelButtonColor: '#d33',
+                confirmButtonText: 'Yes, submit it!'
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    $('#sanction_form').submit();
+                    Swal.fire(
+                        'Submitted!',
+                        'Your request has been submitted.',
+                        'success'
+                    )
+                }
+            })
         }
 
     </script>

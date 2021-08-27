@@ -39,7 +39,7 @@
              </div>
              <hr>
             <div class="table-div table-responsive">
-               <table id="subscription_table" class="display">
+               <table id="datatable" class="display">
                   <thead>
                      <tr>
                         <th>Invoice #</th>
@@ -84,4 +84,10 @@
     </div>
 
 </section>
+
+@endsection
+@section('script')
+    <script>
+
+    </script>
 @endsection

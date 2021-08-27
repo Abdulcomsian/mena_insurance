@@ -53,7 +53,7 @@ class TransactionController extends Controller
                 'ivp_currency' => 'AED',
                 'ivp_desc' => 'Not Set',
                 'ivp_framed' => 1,
-                'bill_custref' => Auth::id(), //Using for storing cards
+                'bill_custref' => Auth::user()->unique_id, //Using for storing cards
                 'bill_fname' => $username[0],
                 'bill_sname' => $last_name,
                 'bill_addr1' => Auth::user()->address,

@@ -25,6 +25,7 @@ class UserTableSeeder extends Seeder
             'office_number' => '0123456789',
             'company_name' => 'XYZ',
             'address' => 'XYZ',
+            'unique_id' => uniqid(time()),
 
         ]);
 
@@ -40,6 +41,7 @@ class UserTableSeeder extends Seeder
             'office_number' => '0123456789',
             'company_name' => 'XYZ',
             'address' => 'XYZ',
+            'unique_id' => uniqid(time()),
 
         ]);
         User::create([
@@ -54,6 +56,7 @@ class UserTableSeeder extends Seeder
             'office_number' => '0123456789',
             'company_name' => 'XYZ',
             'address' => 'XYZ',
+            'unique_id' => uniqid(time()),
 
         ]);
         User::create([
@@ -68,6 +71,7 @@ class UserTableSeeder extends Seeder
             'office_number' => '0123456789',
             'company_name' => 'XYZ',
             'address' => 'XYZ',
+            'unique_id' => uniqid(time()),
 
         ]);
         User::create([
@@ -82,6 +86,8 @@ class UserTableSeeder extends Seeder
             'office_number' => '0123456789',
             'company_name' => 'XYZ',
             'address' => 'XYZ',
+            'unique_id' => uniqid(time()),
+
         ]);
     }
 }
