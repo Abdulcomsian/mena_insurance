@@ -9,6 +9,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\User;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Validation\Rule;
 
 class userpagesController extends Controller
 {
@@ -20,8 +21,12 @@ class userpagesController extends Controller
     public function subcription()
     {
         $user_id = Auth::user()->id;
-         $subscription = Subscription::where('user_id', '=', $user_id)->first();
-        return view('screens.subscription', compact("subscription"));
+        $subscription = Subscription::where('user_id', '=', $user_id)->first();
+        $transactions = Transaction::with('package')
+            ->where('user_id',Auth::id())
+            ->where('status','Paid')
+            ->orderby('id','desc')->get();
+        return view('screens.subscription', compact("subscription","transactions"));
     }
 
     public function account()
@@ -31,12 +36,19 @@ class userpagesController extends Controller
     }
 
     public  function update_account(Request $request,$id){
+        $decrypt_id = decrypt($id);
         $request->validate([
             'name' => ['required', 'string', 'max:255'],
-            'email' => ['required', 'string', 'email', 'max:255','unique:users'],
-//            'password' => ['required', 'string', 'min:8', 'confirmed'],
+            'email' => ['required', 'string', 'email', 'max:255', Rule::unique('users')->ignore($decrypt_id)],
+            'address' => ['required', 'max:255'],
+            'company_name' => ['required', 'max:255'],
+            'office_number' => ['required', 'max:255'],
+            'mobile_number' => ['required', 'string', 'max:255'],
+            'vat_number' => ['nullable','numeric'],
+            'country_id' => ['required', 'max:255'],
+        ],[
+            'country_id.required' => 'The country field is required',
         ]);
-
         if(isset($request->password)){
             $request->validate([
                 'password' => ['required', 'string', 'min:8', 'confirmed'],
@@ -49,7 +61,7 @@ class userpagesController extends Controller
         }
 
         try {
-            User::where('id',decrypt($id))->update($request->all());
+            User::where('id',$decrypt_id)->update($request->all());
 
             toastr()->success('Profile Updated Successfully!');
             return redirect()->route('account');//->with('success','Profile Updated Successfully!');

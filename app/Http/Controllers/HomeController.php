@@ -8,6 +8,7 @@ use App\Utils\Status;
 use Carbon\Carbon;
 use http\Env\Response;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use mysql_xdevapi\Exception;
 use phpDocumentor\Reflection\Types\True_;
@@ -31,7 +32,21 @@ class HomeController extends Controller
      */
     public function index()
     {
-        try {
+        if (Auth::check()){
+            if (Auth::user()->email_verified_at == null){
+                session()->flash('message','Please Verify Your Email Address');
+                return redirect('/must-verify-email');
+            }else{
+                $packages = Package::where('status',Status::Active)
+                    ->whereDate('start_date', '<=', Carbon::now())
+                    ->whereDate('end_date', '>=', Carbon::now())
+                    ->orderby('sanctions','asc')
+                    ->limit(3)
+                    ->get();
+                $countries  = CountryInformation::orderby('country_name','asc')->get();
+                return view('screens.home',compact('packages','countries'));
+            }
+        }else{
             $packages = Package::where('status',Status::Active)
                 ->whereDate('start_date', '<=', Carbon::now())
                 ->whereDate('end_date', '>=', Carbon::now())
@@ -40,13 +55,33 @@ class HomeController extends Controller
                 ->get();
             $countries  = CountryInformation::orderby('country_name','asc')->get();
             return view('screens.home',compact('packages','countries'));
-        }catch (\Exception $exception){
-            return 'Something went wrong';
         }
     }
 
-    public function telrCurlTesting(){
-        dump('Here in controller');
+    public function about(){
+        if (Auth::check()){
+            if (Auth::user()->email_verified_at == null){
+                session()->flash('message','Please Verify Your Email Address');
+                return redirect('/must-verify-email');
+            }else{
+                return view('screens.about');
+            }
+        }else{
+            return view('screens.about');
+        }
+    }
+
+    public function contact(){
+        if (Auth::check()){
+            if (Auth::user()->email_verified_at == null){
+                session()->flash('message','Please Verify Your Email Address');
+                return redirect('/must-verify-email');
+            }else{
+                return view('screens.contact');
+            }
+        }else{
+            return view('screens.contact');
+        }
     }
 
 }

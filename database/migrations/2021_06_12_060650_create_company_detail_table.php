@@ -38,6 +38,7 @@ class CreateCompanyDetailTable extends Migration
             $table->string('toll_free_number')->nullable();
             $table->string('trade_name')->nullable();
             $table->longText('alternative_names')->nullable();
+            $table->string('status')->nullable();
             $table->timestamps();
         });
     }

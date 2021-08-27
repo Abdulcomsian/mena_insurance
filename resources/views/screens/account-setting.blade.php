@@ -5,23 +5,7 @@
 
 @section('content')
 <section id="subscription-section" class="common-section">
-    <div class="side-bar">
-    <button class="open-sidebar"><i class="fa fa-arrow-left" aria-hidden="true"></i></button>
-    <ul class="nav nav-pills" role="tablist">
-               <li class="nav-item">
-                  <a class="nav-link "  href="{{url('subscription')}}"><img src="assets/img/Icons/Icon feather-home - off.png" alt="" class="img-fluid"><span><i class="fa fa-money" aria-hidden="true"></i> My Packages</span> </a>
-               </li>
-               <li class="nav-item">
-                  <a href="{{url('account')}}" class="nav-link active my-project " > <img src="assets/img/Icons/Icon feather-search - off.png" alt="" class="img-fluid"><span><i class="fa fa-user" aria-hidden="true"></i> Account Setting</span> </a>
-               </li>
-               <li class="nav-item">
-                  <a href="{{url('history')}}" class="nav-link " > <img src="assets/img/Icons/Icon material-favorite-border - off.png" alt="" class="img-fluid"><span><i class="fa fa-history" aria-hidden="true"></i> Billing History</span> </a>
-               </li>
-               <li class="nav-item">
-                  <a href="{{url('payment')}}" class="nav-link " > <img src="assets/img/Icons/Icon material-history - off.png" alt="" class="img-fluid"><span><i class="fa fa-id-card-o" aria-hidden="true"></i> Payment Method</span> </a>
-               </li>
-            </ul>
-    </div>
+   @include('common.side-bar')
     <div class="tab-content main-admin-content">
 
       <div id="account" class="home container-fluid tab-pane active">
@@ -91,7 +75,7 @@
                         </div>
                         <div class="col-lg-6 col-md-6">
                            <div class="inputDiv">
-                              <input type="text" class="form-control @error('mobile_number') is-invalid @enderror"  name="mobile_number" value="{{ Auth::user()->mobile_number }}" placeholder="Mobile Number">
+                              <input type="number" class="form-control @error('mobile_number') is-invalid @enderror"  name="mobile_number" value="{{ Auth::user()->mobile_number }}" placeholder="Mobile Number">
                                @error('mobile_number')
                                <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
@@ -101,8 +85,18 @@
                         </div>
                          <div class="col-lg-6 col-md-6">
                            <div class="inputDiv">
-                              <input type="text" class="form-control @error('office_number') is-invalid @enderror"  name="office_number" value="{{ Auth::user()->office_number }}" placeholder="Office Number">
+                              <input type="number" class="form-control @error('office_number') is-invalid @enderror"  name="office_number" value="{{ Auth::user()->office_number }}" placeholder="Office Number">
                                @error('office_number')
+                               <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                               @enderror
+                           </div>
+                        </div>
+                         <div class="col-lg-6 col-md-6">
+                           <div class="inputDiv">
+                              <input type="number" class="form-control @error('vat_number') is-invalid @enderror"  name="vat_number" value="{{ Auth::user()->vat_number }}" placeholder="Office Number">
+                               @error('vat_number')
                                <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>
@@ -114,7 +108,7 @@
                         <div class="col-lg-6 col-md-6">
                            <div class="inputDiv">
 
-                              <input type="password" required autocomplete="off" class="form-control  @error('password') is-invalid @enderror"  name="password" placeholder="Password">
+                              <input type="password" autocomplete="off" class="form-control  @error('password') is-invalid @enderror"  name="password" placeholder="Password">
                                @error('password')
                                <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
@@ -124,7 +118,7 @@
                         </div>
                         <div class="col-lg-6 col-md-6">
                            <div class="inputDiv">
-                              <input type="password" required autocomplete="off" class="form-control" name="password_confirmation" placeholder="Confirm Password">
+                              <input type="password" autocomplete="off" class="form-control" name="password_confirmation" placeholder="Confirm Password">
                            </div>
                         </div>
                         <div class="col-lg-12">

@@ -2,7 +2,21 @@
 @extends('common.footer-script')
 @extends('common.header')
 @extends('common.navbar')
+@section('css')
 
+{{--    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css" id="theme-styles">--}}
+    <style>
+        .list-group-style{
+            max-height: 200px;
+            margin-bottom: 10px;
+            overflow:scroll;
+            -webkit-overflow-scrolling: touch;
+        }
+        .swal2-styled{
+            width: 40% !important;
+        }
+    </style>
+@endsection
 @section('content')
 <section id="search-section" class="pad-100">
     <div class="container">
@@ -42,26 +56,25 @@
                                                 </div>
                                                 <div class=col-md-6>
                                                     <ul style="margin-top: 20px;">
+                                                        @php
+                                                        $colors=[];
+                                                        $data=[];
+                                                        $labels = [];
+                                                        $i=0;
+                                                        @endphp
+                                                        @foreach( $market_share_satestics as $share)
+                                                         @php
+                                                         $colorname='#' . str_pad(dechex(mt_rand(0, 0xFFFFFF)), 6,'0', STR_PAD_LEFT);
+                                                         $colors[$i]=$colorname;
+                                                         $data[$i]=$share->share_percentage;
+                                                         $labels[$i]=$share->name;
+                                                         $i++
+                                                         @endphp
                                                         <li style="position: relative; margin-bottom:20px;">
-                                                            <span style="top: 5px; position: absolute; width: 15px; height: 15px; margin-right: 10px; background-color: rgb(0, 97, 254); border-radius: 5px;"></span>
-                                                            <p style="margin-left: 20px; font-size: 14px;">International Oilfield Inspection Services Ltd</p>
+                                                            <span style="top: 5px; position: absolute; width: 15px; height: 15px; margin-right: 10px; background-color: {{$colorname}}; border-radius: 5px;"></span>
+                                                            <p style="margin-left: 20px; font-size: 14px;">{{$share->name . ' (' . $share->share_percentage .'%)'}}</p>
                                                         </li>
-                                                        <li style="position: relative; margin-bottom:20px;">
-                                                            <span style="top: 5px; position: absolute; width: 15px; height: 15px; margin-right: 10px; background-color: rgb(63, 213, 150); border-radius: 5px;"></span>
-                                                            <p style="margin-left: 20px; font-size: 14px;">Yemen Drilling</p>
-                                                        </li>
-                                                        <li style="position: relative; margin-bottom:20px;">
-                                                            <span style="top: 5px; position: absolute; width: 15px; height: 15px; margin-right: 10px; background-color: rgb(255, 196, 66); border-radius: 5px;"></span>
-                                                            <p style="margin-left: 20px; font-size: 14px;">Saddam AL-Hashdi</p>
-                                                        </li>
-                                                        <li style="position: relative; margin-bottom:20px;">
-                                                            <span style="top: 5px; position: absolute; width: 15px; height: 15px; margin-right: 10px; background-color: rgb(255, 128, 33); border-radius: 5px;"></span>
-                                                            <p style="margin-left: 20px; font-size: 14px;">Hussain AL-Hashdi</p>
-                                                        </li>
-                                                        <li style="position: relative; margin-bottom:20px;">
-                                                            <span style="top: 5px; position: absolute; width: 15px; height: 15px; margin-right: 10px; background-color: rgb(76, 175, 80); border-radius: 5px;"></span>
-                                                            <p style="margin-left: 20px; font-size: 14px;">International Oilfield Services</p>
-                                                        </li>
+                                                        @endforeach
                                                     </ul>
                                                 </div>
                                             </div>
@@ -198,8 +211,7 @@
                                                 <div class="col-lg-6 col-md-6">
                                                     <div class="insights-div">
                                                         <h3>Paid Up Capital</h3>
-                                                        <p>{{ $company_detail->market_share->paid_up_shares  ?: '-' }}</p>
-                                                        <p>${{ $dollar_rate  ?: '-' }}</p>
+                                                        <p>{{ $company_detail->market_share->paid_up_shares  ?: '-' }} (USD {{ (int)$dollar_rate  ?: '-' }})</p>
                                                     </div>
                                                 </div>
                                                 <div class="col-lg-6 col-md-6">
@@ -335,31 +347,35 @@
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
-                <form action="{{route('companydetail.request')}}" method="post">
+                <form action="{{route('companydetail.request')}}" method="post" id="sanction_form">
                     @csrf
                     <input hidden value="{{$company_detail->id}}" name="company_id" id="company_id"/>
                     <div class="modal-body">
+                        <P style="color: red" id="sanction_type_validation"></P>
                         <div class="radioBtn">
                             <input class="search_company" type="radio" id="{{\App\Utils\SanctionsType::Searchcompany}}" name="sanctions_type" value="{{\App\Utils\SanctionsType::Searchcompany}}">
                                   <label for="{{\App\Utils\SanctionsType::Searchcompany}}">{{\App\Utils\SanctionsType::Searchcompany}}</label><br>
                         </div>
-                        <div class="radioBtn">
-                            <input class="board_director" type="radio" id="{{\App\Utils\SanctionsType::FullcompanywithBoardsofDirector}}" name="sanctions_type" value="{{\App\Utils\SanctionsType::FullcompanywithBoardsofDirector}}">
-                                  <label for="{{\App\Utils\SanctionsType::FullcompanywithBoardsofDirector}}">{{\App\Utils\SanctionsType::FullcompanywithBoardsofDirector}}</label><br>
-                        </div>
-                        <div class="radioBtn">
-                            <input type="radio" id="{{\App\Utils\SanctionsType::CompanywithselectedBoardsofDirector}}" name="sanctions_type" value="{{\App\Utils\SanctionsType::CompanywithselectedBoardsofDirector}}" class="directorshow">
-                                  <label for="{{\App\Utils\SanctionsType::CompanywithselectedBoardsofDirector}}">{{\App\Utils\SanctionsType::CompanywithselectedBoardsofDirector}}</label><br>
-                        </div>
-                        <div class="directorDiv">
-                            <div class="checkDiv" id="data">
+                        @if(count($company_detail->board_of_directors) > 0)
+                            <div class="radioBtn">
+                                <input type="radio" id="{{\App\Utils\SanctionsType::FullcompanywithBoardsofDirector}}" name="sanctions_type" value="{{\App\Utils\SanctionsType::FullcompanywithBoardsofDirector}}">
+                                      <label for="{{\App\Utils\SanctionsType::FullcompanywithBoardsofDirector}}">{{\App\Utils\SanctionsType::FullcompanywithBoardsofDirector}}</label><br>
                             </div>
-                            <textarea name="comments" id="" cols="30" rows="5" placeholder="Addtional Comments"></textarea>
+                            <div class="radioBtn">
+                                <input type="radio" id="{{\App\Utils\SanctionsType::CompanywithselectedBoardsofDirector}}" name="sanctions_type" value="{{\App\Utils\SanctionsType::CompanywithselectedBoardsofDirector}}">
+                                      <label for="{{\App\Utils\SanctionsType::CompanywithselectedBoardsofDirector}}">{{\App\Utils\SanctionsType::CompanywithselectedBoardsofDirector}}</label><br>
+                            </div>
+                        @endif
+                        <div class="">
+                            <P style="color: red" id="bod_validation"></P>
+                            <ul class="list-group"  id="data">
+                            </ul>
+                            <textarea class=form-control" name="comments" id="" cols="61" rows="5" placeholder="Addtional Comments"></textarea>
                         </div>
                     </div>
                     <div class="modal-footer">
 {{--                        <button type="submit" class="btn btn-primary" data-dismiss="modal">Seacrh</button>--}}
-                        <button type="submit" class="btn btn-primary">Seacrh</button>
+                        <button type="button" onclick="confirmSanctinRequest()" class="btn btn-primary">Seacrh</button>
                     </div>
                 </form>
             </div>
@@ -386,27 +402,86 @@
 
 @endsection
 @section('script')
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/chart.js@3.5.1/dist/chart.min.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    <script>
+        $('#sanction_type_validation').hide();
+        $('#bod_validation').hide();
+        function confirmSanctinRequest(){
+            console.log('Here in confirm sanction request');
+            let sanction_type = $('input[name="sanctions_type"]:checked').val();
+            console.log(sanction_type);
+            if(sanction_type == undefined){
+                $('#sanction_type_validation').text('Please select any sanction type first').show();
+            }else{
+                $('#sanction_type_validation').hide();
+                $('#bod_validation').hide();
+                let total_sanctions;
+                if(sanction_type == "{{\App\Utils\SanctionsType::Searchcompany}}") {
+                    total_sanctions = 1;
+                }
+                else if(sanction_type == "{{\App\Utils\SanctionsType::FullcompanywithBoardsofDirector}}"){
+                    total_sanctions = "{{count($company_detail->board_of_directors) + 1}}";
+                 }
+                else if(sanction_type == "{{\App\Utils\SanctionsType::CompanywithselectedBoardsofDirector}}") {
+                    console.log('Here is checked bod');
+                    let bod = $('input:checkbox:checked').length;
+                    if (bod > 0 ){
+                        total_sanctions = bod + 1;
+                    }else {
+                        $('#bod_validation').text('Please select at least one board of director').show();
+                        return false;
+                    }
+                }
+                console.log(total_sanctions);
+                    Swal.fire({
+                    title: 'Are you sure to submit this request?',
+                    text: "Consumed sanctions " + total_sanctions,
+                    icon: 'warning',
+                    showCancelButton: true,
+                    confirmButtonColor: '#3085d6',
+                    cancelButtonColor: '#d33',
+                    confirmButtonText: 'Yes, submit it!'
+                }).then((result) => {
+                    if (result.isConfirmed) {
+                        $('#sanction_form').submit();
+                        Swal.fire(
+                            'Submitted!',
+                            'Your request has been submitted.',
+                            'success'
+                        )
+                    }
+                })
+            }
+        }
+
+    </script>
     <script>
         $(document).on('click', '#sanction', function(){
-            console.log('Here in fun');
+            $('#data').hide();
+            $('input[name="sanctions_type"]').prop('checked', false);
+            $('textarea[name="comments"]').val('');
+
             var company_id = $('#company_id').val();
-            console.log(company_id);
-            if (company_id) {
+            var bod = "{{count($company_detail->board_of_directors)}}";
+
+            if (company_id && bod > 0) {
                 $.ajax({
                     url: "{{ route('getDirectors') }}",
                     method: 'GET',
                     data: {company_id: company_id},
                     dataType: 'json',
                     success: function (data) {
-                        console.log('data');
-                        console.log(data);
                         $('#data').empty();
                         if(data.length > 0) {
                             $.each(data, function (index, item) {
-                                $('#data').append(`<div class="checkBoxDiv">
-                                                        <input type="checkbox" name="board_of_directors[]" value="${item.id}">
-                                                        <label for="">${item.designation +' '+ item.name}</label>
-                                                    </div>`)
+                                $('#data').addClass('list-group-style');
+                                $('#data').append(`<label><li class="list-group-item">
+                                                        ${index+1}&nbsp;&nbsp;
+                                                        <input style="margin-right: 5px !important; margin-top: 5px !important;" type="checkbox" name="board_of_directors[]" value="${item.id}">
+                                                        ${item.designation +' '+ item.name}
+                                                    </li></label>`)
                             });
                         }
                         else{
@@ -424,5 +499,40 @@
             }
         });
     </script>
+    <script>
+        //Sanction modal jquery for hide board of directors
+        $('input[name="sanctions_type"]').on("click", function() {
+           console.log('Here in function click');
+           let sanction = $(this).val();
+           if (sanction == "{{\App\Utils\SanctionsType::CompanywithselectedBoardsofDirector}}"){
+               $("#data").show();
+           }else {
+               $('input[name="board_of_directors[]"]').prop('checked', false);
+               $("#data").hide();
+           }
+        });
+    </script>
+    <!-- graphh work here -->
+    @auth
+    <script>
+            new Chart(document.getElementById("myChart"), {
+            type: 'pie',
+            data: {
+            {{--labels: @php echo json_encode($labels);@endphp,--}}
+                datasets: [{
+                label: "Population (millions)",
+                backgroundColor: @php echo json_encode($colors);@endphp,
+                data: @php echo json_encode($data);@endphp
+              }]
+            },
+            options: {
+              title: {
+                display: true,
+                text: 'Predicted world population (millions) in 2050'
+              }
+            }
+        });
+    </script>
+    @endauth
 @endsection
 

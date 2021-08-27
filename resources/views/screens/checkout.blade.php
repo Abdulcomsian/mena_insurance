@@ -11,6 +11,12 @@
             frameborder: 0;
             border: none;
         }
+        .checkbox-validation {
+            text-align: left;
+            color: red;
+            font-size: 12px;
+            margin-top: -22px;
+        }
     </style>
 @endsection
 @section('content')
@@ -39,8 +45,16 @@
                             <tr>
                                 <td>{{$package->name ?: '-'}}</td>
                                 <td>{{$package->sanctions ? $package->sanctions. ' Sanctions Search' : '-'}}</td>
-                                <td>{{$package->price ?: '-'}}</td>
+                                <td>{{$package->price .' AED' ?: '-'}}</td>
                             </tr>
+                            <tr colspan="3" >
+                            <td style="border:none;"></td>
+                            <td style="border:none;"></td>
+                                <td style="border:none;float:right;">
+                                <span style=""><img  style="width:200px;" src="{{asset("assets/img/creditcard2.png")}}" alt="" class="img-fluid" /></span>
+                                </td>
+                            </tr>
+
                         </tbody>
                     </table>
                 </div>
@@ -56,29 +70,25 @@
                             <span>Product Total:</span>
                             <span>{{$package->price ? $package->price.' AED' : '-'}}</span>
                         </li>
-{{--                        <li>--}}
-{{--                            <span>Delivery:</span>--}}
-{{--                            <span>FREE</span>--}}
-{{--                        </li>--}}
+                        <li>
+                            <span>VAT (5%):</span>
+                            <span>{{$vat ? $vat.' AED' : '-'}}</span>
+                        </li>
                         <li class="totalDiv">
                             <span>Total:</span>
-                            <span>{{$package->price ? $package->price.' AED' : '-'}}</span>
+                            <span>{{ $total ? $total.' AED' : '-'}}</span>
                         </li>
                     </ul>
-{{--                    <div class="dropdown">--}}
-{{--                        <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">--}}
-{{--                            Add New Card--}}
-{{--                        </button>--}}
-{{--                        <div class="dropdown-menu">--}}
-{{--                            <a class="dropdown-item" href="#">1234**********9856</a>--}}
-{{--                            <a class="dropdown-item" href="#">1356********56897</a>--}}
-{{--                        </div>--}}
-{{--                    </div>--}}
+
                     <p>
                         <input type="checkbox" id="privacy">
-                        I Agree to <a href="privacy-policy">Term & Condition Privacy</a>
+                        I Agree to <a href="/privacy-policy">Term & Condition Privacy</a>
                         and
-                        <a href="">Refund Priacy</a>
+                        <a href="/refund-policy">Refund Priacy</a>
+                    </p>
+                    
+                    <p class="checkbox-validation">
+                        Please checked Term & Condition Privacy and Refund Priacy
                     </p>
                         <button id="checkout">Proceed to Checkout</button>
                 </div>
@@ -99,16 +109,19 @@
 @endsection
 @section('script')
     <script>
+        $('.checkbox-validation').hide();
         $('#checkout').click(function () {
             console.log('Here in click function');
             if($('#privacy').prop("checked") == true){
-                $(this).attr('disabled','true');
+                $('.checkbox-validation').hide();
+                //$(this).attr('disabled','true');
                 $.ajax({
                     url: "{{route('transaction.create',encrypt($package->id))}}",
                     method: 'GET',
                     // data: {query: query, country: country},
                     dataType: 'json',
                     success: function (data) {
+                    // console.log(data);
                         $(this).removeAttr('disabled');
                         if(data.success == true) {
                             $('#telr').attr('src',data.order_url);
@@ -116,17 +129,21 @@
                             $(this).removeAttr('disabled');
                         }
                         else{
-                            // console.log(data);
-                            alert('Server is busy,try again');
+                           //  console.log(data);
+                             //alert('error in  Server is busy,try again');
                             window.location.reload();
                         }
                     },
-                    error:function (){
-                        alert('Server is busy,try again');
+                    error:function (data){
+                     console.log(data);
+                        $(this).removeAttr('disabled');
+                        
+                        // alert('errorr in ajax. Server is busy,try again');
                         window.location.reload();
                     }
                 });
             }else {
+                $('.checkbox-validation').show();
                 console.log('Unchecked privacy');
             }
 

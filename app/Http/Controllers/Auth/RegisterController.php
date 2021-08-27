@@ -59,6 +59,7 @@ class RegisterController extends Controller
             'company_name' => ['required', 'max:255'],
             'office_number' => ['required', 'max:255'],
             'mobile_number' => ['required', 'string', 'max:255'],
+            'vat_number' => ['nullable','numeric'],
             'country_id' => ['required', 'max:255'],
             'name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
@@ -85,6 +86,7 @@ class RegisterController extends Controller
             'office_number' => $data['office_number'],
             'company_name' => $data['company_name'],
             'address' => $data['address'],
+            'vat_number' => $data['vat_number'],
             'status' => Status::Active,
             'password' => Hash::make($data['password']),
         ]);

@@ -9,8 +9,8 @@
         <div class="row">
             <div class="col-lg-12">
                 <div class="bannerContent">
-                    <h1>Professional Investment Management</h1>
-                    <p>Join 30.000+ Clients that Entrust Their Money to Us</p>
+                    <h1>MENA INSURANCE KYC</h1>
+                    <p>Integrated KYC & Sanctions solution for MENA insurance market</p>
                 </div>
             </div>
             <div class="col-lg-12">
@@ -31,8 +31,8 @@
 
                         </ul>
                     </div>
-                    <a href="{{route('companydetail.search.all')}}" class="btn btn-success mt-3">
-                        <buttonw>Search</buttonw>
+                    <a href="{{route('companydetail.search.result',['country'=>[0]])}}" class="btn btn-success mt-3">
+                        <buttonw>Submit</buttonw>
                     </a>
                 </form>
             </div>
@@ -52,27 +52,27 @@
                     <div class="services-box">
                         <img src="assets/img/eye.png" alt="">
                         <h3>
-                            <a href="">Market Research</a>
+                            <a href="#">Market Research</a>
                         </h3>
-                        <p>Assessment of viability, stability and profitability of a business, sub-business or project.</p>
+                        <p>In the challenging Legal & Regulatory landscape, extensive research enable innovation in processes and services. We are responsive to the market needs in collecting, analyzing, and evaluating the Insurance/Reinsurance sector trends across MENA. We are keen to expand our reach globally. </p>
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-4">
                     <div class="services-box">
                         <img src="assets/img/hand.png" alt="">
                         <h3>
-                            <a href="">Investment Management</a>
+                            <a href="#">Sanction Screening</a>
                         </h3>
-                        <p>Assessment of viability, stability and profitability of a business, sub-business or project.</p>
+                        <p>We can assist you in sanctions screening checks against watchlists and AML Sanctions list like OFAC, UN and EU, UAE to identify and report suspicious activities. Our reports are accurate optimizing your cost to comply.<p><br><br></p></p>
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-4">
                     <div class="services-box">
                         <img src="assets/img/user.png" alt="">
                         <h3>
-                            <a href="">Sales & Trading</a>
+                            <a href="#">KYC</a>
                         </h3>
-                        <p>Assessment of viability, stability and profitability of a business, sub-business or project.</p>
+                        <p>Our team of KYC professionals assist you in onboarding Individuals and Legal entities. Companies are aware that traditional audit methodologies are not sufficient to meet the increasing Regulatory requirements. To ensure seamless onboarding & ongoing monitoring you need expert advice from our MLROs. </p>
                     </div>
                 </div>
             </div>
@@ -93,10 +93,27 @@
                     </div>
                     <div class="description-div">
                         <h3>
-                            Competent Professionals
+                        Dynamic Professionals
                         </h3>
                         <p>
-                            We work in an atmosphere of trust and camaraderie, where partners help each other.
+                        Team of Highly trained subject matter experts in international sanctions and regulatory compliance will assist you in sanction check and KYC documentations on request </p>
+
+                        <p>Our professionalsact as outsourced compliance officer and Money Laundering Reporting Officers and experts in this field.
+
+                        </p>
+                    </div>
+                </li>
+              
+                <li>
+                    <div class="icon-div">
+                        <img src="assets/img/mt-1421-home-icon06.png" alt="" class="img-fluid">
+                    </div>
+                    <div class="description-div">
+                        <h3>
+                        Accurate Insights
+                        </h3>
+                        <p>
+                        Research about various organizations with cross-verified data garnered from diverse trustworthy digital sources, functioning as a catalyst for compliance services.
                         </p>
                     </div>
                 </li>
@@ -106,30 +123,32 @@
                     </div>
                     <div class="description-div">
                         <h3>
-                            Superior Service
+                        Up-to-date Information
                         </h3>
                         <p>
-                            We work in an atmosphere of trust and camaraderie, where partners help each other.
+                        Periodical update of every organizational detail by a functional team would never allow your decision to be influenced by obsolete data</p>
+
+<p>Considering the ever-changing nature of the legal and regulatory environment we perform research and analysis on a timely basis
+
                         </p>
                     </div>
                 </li>
                 <li>
                     <div class="icon-div">
-                        <img src="assets/img/mt-1421-home-icon06.png" alt="" class="img-fluid">
+                        <img src="assets/img/mt-1421-home-icon05.png" alt="" class="img-fluid">
                     </div>
                     <div class="description-div">
                         <h3>
-                            Competitive Pricing
+                        One-stop solution
                         </h3>
                         <p>
-                            We work in an atmosphere of trust and camaraderie, where partners help each other.
-                        </p>
+                        An encyclopaedia of information ranging from company profile to sanction status to provide a holistic view of every insurance and insurance related businesses or professions
                     </div>
                 </li>
             </ul>
-            <a href="">
+            <!-- <a href="">
                 Make An Appointment
-            </a>
+            </a> -->
         </div>
     </div>
 </section>

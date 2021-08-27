@@ -5,23 +5,8 @@
 
 @section('content')
 <section id="subscription-section" class="common-section">
-    <div class="side-bar">
-         <button class="open-sidebar"><i class="fa fa-arrow-left" aria-hidden="true"></i></i></button>
-         <ul class="nav nav-pills" role="tablist">
-               <li class="nav-item">
-                  <a class="nav-link "  href="{{url('subscription')}}"><img src="assets/img/Icons/Icon feather-home - off.png" alt="" class="img-fluid"><span><i class="fa fa-money" aria-hidden="true"></i> My Packages</span> </a>
-               </li>
-               <li class="nav-item">
-                  <a href="{{url('account')}}" class="nav-link my-project " > <img src="assets/img/Icons/Icon feather-search - off.png" alt="" class="img-fluid"><span><i class="fa fa-user" aria-hidden="true"></i> Account Setting</span> </a>
-               </li>
-               <li class="nav-item">
-                  <a href="{{url('history')}}" class="nav-link active" > <img src="assets/img/Icons/Icon material-favorite-border - off.png" alt="" class="img-fluid"><span><i class="fa fa-history" aria-hidden="true"></i>Billing History</span> </a>
-               </li>
-               <li class="nav-item">
-                  <a href="{{url('payment')}}" class="nav-link" > <img src="assets/img/Icons/Icon material-history - off.png" alt="" class="img-fluid"><span><i class="fa fa-id-card-o" aria-hidden="true"></i> Payment Method</span> </a>
-               </li>
-            </ul>
-    </div>
+    @include('common.side-bar')
+
     <div class="tab-content main-admin-content">
       <div id="subscription" class="home container-fluid tab-pane fade">
          <div class="content-div">
@@ -138,35 +123,45 @@
                   <table id="history_table" class="display">
                       <thead>
                       <tr>
-                          <th>S.No</th>
+                          <th>Invoice #</th>
                           <th>Date</th>
                           <th>Package Name</th>
-                          <th>Amount</th>
+                          <th>Package Price</th>
+                          <th>VAT</th>
+                          <th>Total Amount</th>
                           <th>Status</th>
+                          <th>Sanctions</th>
+                          <th>Card #</th>
+                          <th>Card Type</th>
                           <th>Action</th>
                       </tr>
                       </thead>
                       <tbody>
                       @foreach($transactions as $item)
                           <tr>
-                              <td>{{$loop->iteration}}</td>
-                              <td>{{date("d-M-Y",strtotime($item->created_at))  ?: '-'}}</td>
-                              <td>{{$item->package->name}}</td>
-                              <td>{{$item->amount}}</td>
+                              <td>{{$item->invoice_id  ?: '-'}}</td>
+                              <td>{{$item->created_at  ?: '-'}}</td>
+                              <td>{{$item->package_name ?: '-'}}</td>
+                              <td>{{$item->package_amount .' AED' ?: '-'}}</td>
+                              <td>{{$item->vat_amount .' AED' ?: '-'}}</td>
+                              <td>{{$item->total_amount .' AED' ?: '-'}}</td>
                               @if($item->status == 'Paid')
-                                <td><span class="approved">{{$item->status}}</span></td>
+                                  <td><span class="approved">{{$item->status}}</span></td>
                               @else
-                                <td><span class="cancel">{{$item->status}}</span></td>
+                                  <td><span class="cancel">{{$item->status}}</span></td>
                               @endif
-                              @isset($item->pdf)
-                                <td>
-                                    <a href="{{$item->pdf}}" download="">
-                                        <i class="fa fa-file-pdf-o fa-3x" aria-hidden="true"></i>
-                                    </a>
-                                </td>
-                              @else
+                              <td>{{$item->package_sanctions ?: '-'}}</td>
+                              <td>{{$item->card_first6 ? $item->card_first6 .'******'. $item->card_last4 : '-'}}</td>
+                              <td>{{$item->card_type ?: '-'}}</td>
+                                @isset($item->pdf)
+                                  <td>
+                                      <a href="{{$item->pdf}}" download="">
+                                          <i class="fa fa-file-pdf-o fa-3x" aria-hidden="true"></i>
+                                      </a>
+                                  </td>
+                                @else
                                   <td>-</td>
-                              @endisset
+                                @endisset
                           </tr>
                       @endforeach
                       </tbody>

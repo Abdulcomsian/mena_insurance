@@ -42,12 +42,17 @@ class LoginController extends Controller
     protected function authenticated(Request $request, $user)
     {
         if ($user->type == 'System User'){
+
+            if ($user->email_verified_at == null){
+                Auth::logout();
+                session()->flash('message','Please Verify Your Email Address');
+                return redirect('/must-verify-email');
+            }
             if ($user->status == 'Active'){
                     $user->last_login_at = now();
                     $user->save();
             }else{
                 toastr()->error('Your Account is Inactive');
-                Auth::logout();
                 return redirect('/login');
             }
         }else{

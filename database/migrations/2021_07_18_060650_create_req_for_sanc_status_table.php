@@ -26,6 +26,8 @@ class CreateReqForSancStatusTable extends Migration
             $table->string('sanctions_type');
             $table->string('status');
             $table->string('board_of_directors')->nullable();
+            $table->string('sanctions')->nullable();
+            $table->longText('admin_comments')->nullable();
             $table->timestamps();
 
         });

@@ -24,6 +24,8 @@ class TransactionController extends Controller
     public function showCards(){
         try {
             $cards = Transaction::select('card_last4','card_first6','card_type')
+                ->where('user_id',Auth::id())
+                ->where('status','Paid')
                 ->distinct()
                 ->get();
             return view('screens.add-card',compact('cards'));
@@ -34,20 +36,26 @@ class TransactionController extends Controller
     public function create($id){
         try{
             $package = Package::where('id',decrypt($id))->first();
+            $total = $package->price * 0.05 + $package->price;
             $username = explode(" ",Auth::user()->name,2);
+            if(count($username) > 1 ){
+                $last_name = $username[1];
+            }else{
+             $last_name ='Not Set';
+            }
             $params = array(
                 'ivp_method' => 'create',
                 'ivp_store' => env('IVP_STORE_ID'),
                 'ivp_authkey' => 'FmJq#sfCh9-BTRbp',
                 'ivp_cart' => uniqid(mt_rand()),
                 'ivp_test' => '1',
-                'ivp_amount' => $package->price,
+                'ivp_amount' => $total,
                 'ivp_currency' => 'AED',
                 'ivp_desc' => 'Not Set',
                 'ivp_framed' => 1,
                 'bill_custref' => Auth::id(), //Using for storing cards
                 'bill_fname' => $username[0],
-                'bill_sname' => $username[1] ? $username[1] : 'Not Set',
+                'bill_sname' => $last_name,
                 'bill_addr1' => Auth::user()->address,
                 'bill_phone' => Auth::user()->mobile_number,
                 'bill_city' => Auth::user()->city ?? null,
@@ -70,29 +78,30 @@ class TransactionController extends Controller
                 session()->put('package_id',$id);
                 session()->put('order_no',$results->order->ref);
                 $order_url = $results->order->url;
-//                return redirect($results->order->url);
                 $data = [
                     'success' => true,
                     'order_url' => $order_url
                 ];
                 return response()->json($data);
             }else{
+                            return response()->json($results);
+
                 $data = [
                     'success' => false,
                     'message' => 'Server is busy, try again!'
                 ];
                 return response()->json($results);
-//                toastr()->error('Server is busy, try again!');
             }
         }catch (\Exception $exception){
+            return response()->json($exception->getMessage());
             $data = [
                 'success' => false,
                 'message' => 'Server is busy, try again!'
             ];
             return response()->json($data);
-//            toastr()->error('Server is busy, try again!');
-//            return redirect('/');
         }catch (DecryptException $decryptException){
+                        return response()->json($exception->getMessage());
+
             $data = [
                 'success' => false,
                 'message' => 'Server is busy, try again!'
@@ -149,8 +158,8 @@ class TransactionController extends Controller
             $transaction->update(['pdf' => 'data/pdf/'.$fileName]);
             Auth::user()->notify(new TransactionEmail($transaction));
         }catch (\Exception $exception){
-            toastr()->error('Server is busy, try again!');
             dd($exception->getMessage());
+            toastr()->error('Server is busy, try again!');
             return redirect('/');
         }
 
@@ -180,12 +189,11 @@ class TransactionController extends Controller
         }
     }
     protected function saveTransactionForAll($transaction){
-        $package_id = decrypt(session()->get('package_id'));
+        $package = Package::where('id',decrypt(session()->get('package_id')))->first();
         $transaction = Transaction::create([
             'order_id' => $transaction->order->ref ?? null,
-            'cart_id' => $transaction->order->cartid ?? null,
+            'invoice_id' => $transaction->order->cartid ?? null,
             'test_mode' => $transaction->test ?? null,
-            'amount' => $transaction->order->amount ?? null,
             'description' => $transaction->order->description ?? null,
             'billing_fname' => $transaction->order->customer->name->forenames ?? null,
             'billing_sname' => $transaction->order->customer->name->surname ?? null,
@@ -202,7 +210,12 @@ class TransactionController extends Controller
             'card_type' => $transaction->order->card->type ?? null,
             'trx_reference' => $transaction->order->transaction->ref ?? null,
             'user_id' => Auth::id() ?? null,
-            'package_id' =>  $package_id ?? null
+            'package_id' =>  $package->id ?? null,
+            'package_name' =>  $package->name ?? null,
+            'package_sanctions' =>  $package->sanctions ?? null,
+            'vat_amount' =>  $package->price * 0.05 ?? null,
+            'package_amount' => $package->price ?? null,
+            'total_amount' => $transaction->order->amount ?? null,
         ]);
         return $transaction;
     }
@@ -232,7 +245,9 @@ class TransactionController extends Controller
     public function paymentCheckout($id){
         try {
             $package = Package::where('id',decrypt($id))->first();
-            return view('screens.checkout',compact('package'));
+            $vat = $package->price * 0.05;
+            $total = $vat + $package->price;
+            return view('screens.checkout',compact('package','total','vat'));
         }catch (\Exception $exception){
             toastr()->error('Server is busy, try again!');
             return back();
