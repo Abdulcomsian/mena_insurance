@@ -5,14 +5,36 @@ use Illuminate\Support\Facades\DB;
 
 @extends('common.header')
 @section('content')
+<style type="text/css">
+    #pageloader
+{
+  background: rgba( 255, 255, 255, 0.8 );
+  display: none;
+  height: 100%;
+  position: fixed;
+  width: 100%;
+  z-index: 9999;
+}
 
+#pageloader img
+{
+  left: 50%;
+  margin-left: -32px;
+  margin-top: -32px;
+  position: absolute;
+  top: 50%;
+}
+</style>
+<div id="pageloader">
+ <img src="http://cdnjs.cloudflare.com/ajax/libs/semantic-ui/0.16.1/images/loader-large.gif" alt="processing..." />
+</div>
 <section id="comon-div" class="register-page">
     <div class="left-side">
     </div>
     <div class="right-side">
         <div class="right-side-content">
             <img src="assets/img/logo.png" alt="">
-                    <form method="POST" action="{{ route('register') }}">
+                    <form method="POST" action="{{ route('register') }}" id="registerform">
                         @csrf
                         <div class="form-div">
                             <h2>Sign Up</h2>
@@ -128,4 +150,10 @@ use Illuminate\Support\Facades\DB;
         $(this).attr("selected","selected");
     });
 </script>
+<script>
+     $('#registerform').submit(function() {
+       $("#pageloader").fadeIn('slow'); 
+       return true;
+     });
+ </script>
 @endsection
