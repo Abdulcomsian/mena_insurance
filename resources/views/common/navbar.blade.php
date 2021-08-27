@@ -13,6 +13,7 @@
                         <a href="/account"><i class="fa fa-user" aria-hidden="true"></i> Account Setting</a>
                         <a href="/history"><i class="fa fa-history" aria-hidden="true"></i> Billing History</a>
                         <a href="/payment"><i class="fa fa-id-card-o" aria-hidden="true"></i> Payment Method</a>
+                        <a href="/sanction-status-history"><i class="fa fa-id-card-o" aria-hidden="true"></i> Sanction Searches</a>
                         <p class="logout">
                              <a  href="{{ route('logout') }}" onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
