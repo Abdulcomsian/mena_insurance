@@ -96,8 +96,18 @@ table tbody td{
     border-bottom: none !important;
     font-size: 16px !important;
   }
-
-
+.nav-item .active{
+    color: #2e953e !important;
+    font-weight: 500;
+}
+#mainHeader .buttonLoginUser{
+    display: flex;
+    align-items: center;
+}
+#mainHeader .buttonLoginUser p,
+#mainHeader .buttonLoginUser .dropdown{
+    display: none;
+}
 #mainHeader .navbar{
     box-shadow: 0 8px 6px -6px rgb(0 0 0 / 40%);
     padding: 0px 50px;
@@ -1076,14 +1086,34 @@ button.open-sidebar{
     padding: 15px;
 }
 #sanctionModal .directorDiv .checkDiv{
-    display: flex;
     width: 100%;
     flex-wrap: wrap;
 }
 #sanctionModal .directorDiv .checkDiv .checkBoxDiv{
-    width: 50%;
+    width: 100%;
 }
-
+.page-item.active .page-link {
+    z-index: 3;
+    color: #fff;
+    background-color: #2e953e;
+    border-color: #2e953e;
+}
+.page-link{
+    color: #000;
+}
+.misson-box{
+    width: 100%;
+    max-width: 350px;
+    margin: auto;
+    margin-right: 0;
+}
+.vision-box{
+    width: 100%;
+    max-width: 350px;
+    margin: auto;
+    height: 514px;
+    margin-left: 0;
+}
 /**************** Media - Query - CSS *****************/
 @media only screen and (max-width: 1200px) {
     .side-bar ul>li a{
@@ -1097,7 +1127,15 @@ button.open-sidebar{
     }
 }
 @media only screen and (max-width: 992px) {
-    .companies-search-div .searchForm .inputDiv{
+    .pagination-div{
+        display: block;
+    }
+    .pagination-div .pagination{
+        overflow: scroll;
+    }
+    .companies-search-div .searchForm .inputDiv,
+    #mainHeader .buttonLoginUser p,
+    #mainHeader .buttonLoginUser .dropdown{
         display: block;
     }
     .companies-search-div .searchForm .inputDiv input,
@@ -1132,6 +1170,10 @@ button.open-sidebar{
     }
 }
 @media only screen and (max-width: 768px) {
+    #comon-div .right-side form button{
+        width: 100%;
+        max-width: 70%;
+    }
     .side-bar ul>li a.active{
         color: #fff !important;
     }
@@ -1230,13 +1272,6 @@ button.open-sidebar{
     }
 }
 @media only screen and (max-width: 468px) {
-    #homeBanner .selectInput{
-        display: block;
-    }
-    #homeBanner .selectInput input{
-        margin-left: 0px;
-        margin-top: 20px;
-    }
     #homeBanner .selectInput select{
         width: 100%;
     }
@@ -1249,3 +1284,44 @@ button.open-sidebar{
     color: #000000 !important;
     margin-bottom: 20px !important;
     letter-spacing: 1px !important;}
+
+    @media only screen and (max-width: 576px) {
+        #footer .footer-box ul.quick-list li:before{
+            content: none;
+        }
+        .package-box{
+            margin-bottom: 80px;
+        }
+        #why-choose .content-div ul>li{
+            display: block;
+            margin-bottom: 30px;
+        }
+        #why-choose .content-div .list-div .icon-div{
+            margin-bottom: 20px;
+        }
+        #why-choose .content-div .description-div{
+            max-width: 100%;
+        }
+        #homeBanner .selectDiv:after{
+            right: -75px;
+        }
+        #homeBanner .selectInput select{
+            min-width: 100px;
+        }
+        #homeBanner .selectInput input{
+            margin-left: 150px;
+        }
+        #mainHeader .navbar{
+            padding: 0px 20px;
+        }
+        #mainHeader .buttonLoginUser p{
+            font-size: 14px;
+        }
+        .navbar-toggler-icon{
+            width: 20px;
+            height: 20px;
+        }
+        #mainHeader .navbar-toggler{
+            padding: 5px 10px;
+        }
+    }

@@ -66,14 +66,14 @@
         </div>
     </div>
 </section>
-<section id="our-services" class="pad-100">
+<section id="our-services">
 <div class="container">
 
 <div class="multi-services">
             <div class="row">
                 <div class="col-lg-6 col-md-6">
                
-                    <div class="services-box">
+                    <div class="services-box misson-box">
                     <img src="assets/img/hand.png" alt="">
                         
                         <h3>
@@ -84,7 +84,7 @@
                     </div>
                 </div>
                 <div class="col-lg-6 col-md-6">
-                    <div class="services-box">
+                    <div class="services-box vision-box">
                     <img src="assets/img/eye.png" alt="">
                         <h3>
                             <a href="#">OUR VISION</a>

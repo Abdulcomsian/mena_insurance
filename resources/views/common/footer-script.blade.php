@@ -84,8 +84,12 @@
         }
     });
     $(document).ready( function () {
+        
         $(".radioBtn input.directorshow").click(function(){
           if($("#sanctionModal .directorDiv").css("display")=="none"){
+            $("#sanctionModal .directorDiv").css("display","block")
+          }
+          else if($("#sanctionModal .directorDiv .checkDiv").css("display")=="none"){
             $("#sanctionModal .directorDiv").css("display","block")
           } else{
             $("#sanctionModal .directorDiv").css("display","none")
@@ -109,6 +113,12 @@
             $(".geographyType a").html("<i class='fa fa-chevron-right' aria-hidden='true'></i>")
           }
         })
+        $(".search_company").click(function(){
+          if($(".directorDiv").css("display")=="block"){
+            $(".directorDiv .checkDiv").css("display","none")
+          }
+        })
+       
         $("button.open-sidebar").click(function(){
 
             if($(".side-bar").css("display")=="none"){
@@ -161,7 +171,5 @@
 //       document.getElementById('myChart'),
 //       config
 //     );
-
-
 
 </script>

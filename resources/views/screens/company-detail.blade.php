@@ -374,7 +374,7 @@
                     <div class="modal-body">
                         <P style="color: red" id="sanction_type_validation"></P>
                         <div class="radioBtn">
-                            <input type="radio" id="{{\App\Utils\SanctionsType::Searchcompany}}" name="sanctions_type" value="{{\App\Utils\SanctionsType::Searchcompany}}">
+                            <input class="search_company" type="radio" id="{{\App\Utils\SanctionsType::Searchcompany}}" name="sanctions_type" value="{{\App\Utils\SanctionsType::Searchcompany}}">
                                   <label for="{{\App\Utils\SanctionsType::Searchcompany}}">{{\App\Utils\SanctionsType::Searchcompany}}</label><br>
                         </div>
                         @if(count($company_detail->board_of_directors) > 0)
