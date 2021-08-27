@@ -47,6 +47,14 @@
                                 <td>{{$package->sanctions ? $package->sanctions. ' Sanctions Search' : '-'}}</td>
                                 <td>{{$package->price .' AED' ?: '-'}}</td>
                             </tr>
+                            <tr colspan="3" >
+                            <td style="border:none;"></td>
+                            <td style="border:none;"></td>
+                                <td style="border:none;float:right;">
+                                <span style=""><img  style="width:200px;" src="{{asset("assets/img/creditcard2.png")}}" alt="" class="img-fluid" /></span>
+                                </td>
+                            </tr>
+
                         </tbody>
                     </table>
                 </div>
@@ -78,6 +86,7 @@
                         and
                         <a href="/refund-policy">Refund Priacy</a>
                     </p>
+                    
                     <p class="checkbox-validation">
                         Please checked Term & Condition Privacy and Refund Priacy
                     </p>
