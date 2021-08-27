@@ -55,7 +55,7 @@ use Illuminate\Support\Facades\DB;
 
                              //dd($countries );
                             @endphp
-                            <select class="form-control @error('address') is-invalid @enderror"  name="country_id" value="United Arab Emirates">
+                            <select class="form-control @error('country_id') is-invalid @enderror"  name="country_id">
 
                             @foreach($countries as $country)
                                 <option value="{{$country->id}}">{{$country->country_name}}</option>

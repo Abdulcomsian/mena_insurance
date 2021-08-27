@@ -77,7 +77,6 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
-
         return User::create([
             'name' => $data['name'],
             'email' => $data['email'],
@@ -89,6 +88,7 @@ class RegisterController extends Controller
             'vat_number' => $data['vat_number'],
             'status' => Status::Active,
             'password' => Hash::make($data['password']),
+            'unique_id' => uniqid(time())
         ]);
     }
 

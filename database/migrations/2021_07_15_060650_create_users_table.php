@@ -27,6 +27,7 @@ class CreateUsersTable extends Migration
             $table->integer('vat_number')->nullable();
             $table->string('status')->default('Active');
             $table->string('type')->default('System User');
+            $table->string('unique_id')->unique();
             $table->unsignedBigInteger('country_id')->nullable();
             $table->foreign('country_id')->references('id')->on('countries');
             $table->rememberToken();

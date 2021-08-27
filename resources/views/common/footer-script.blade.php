@@ -119,11 +119,15 @@
                 $(".side-bar").css("display","none")
             }
         })
-        $('#subscription_table').DataTable();
-        $('#history_table').DataTable();
-        $('#payment_table').DataTable();
+        $('#datatable').DataTable({
+            "oLanguage": {
+                "sEmptyTable": "No records available in table",
+                "sInfo":  "Showing _START_ to _END_ of _TOTAL_ records",
+                "sInfoEmpty": "No records to show",
+                "sInfoFiltered": " - filtering from _MAX_ records"
+            }
+        });
     });
-
 //     const data = {
 // //         labels: [
 // //     'International Oilfield Inspection Services Ltd',

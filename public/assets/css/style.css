@@ -38,9 +38,7 @@ table tbody td{
     padding: 15px;
     font-size: 13px;
 }
-#subscription_table_filter input,
-#history_table_filter input,
-#payment_table_filter input{
+#datatable_filter input{
     border: none;
     border-bottom: 1px solid #2e953e;
 }

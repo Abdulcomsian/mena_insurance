@@ -162,14 +162,12 @@
          <div class="content-div">
             <button class="open-sidebar"><i class="fa fa-bars" aria-hidden="true"></i></button>
                <h3>Payment Method</h3>
-{{--               <button data-toggle="modal" data-target="#addCardModal" class="addCadBtn">Add Card</button>--}}
                <div class="table-div table-responsive">
-                    <table id="payment_table" class="display">
+                    <table id="datatable" class="display">
                      <thead>
                         <tr>
                               <th>Card Type</th>
                               <th>Card Number</th>
-{{--                              <th>Action</th>--}}
                         </tr>
                      </thead>
                      <tbody>
@@ -177,7 +175,6 @@
                         <tr>
                               <td>{{$item->card_type}}</td>
                               <td>{{trim(chunk_split(strrev($item->card_first6),4,' '))}}** **** {{$item->card_last4}}</td>
-{{--                              <td data-toggle="modal" data-target="#deleteCard" class="removeText">Remove</td>--}}
                         </tr>
                      @endforeach
                      </tbody>
@@ -186,6 +183,5 @@
             </div>
       </div>
     </div>
-
 </section>
 @endsection
