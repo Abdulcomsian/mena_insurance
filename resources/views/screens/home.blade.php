@@ -244,32 +244,26 @@
         </div>
         <div class="number-div">
             <div class="row">
-                <div class="col-lg-3 col-md-3">
+                <div class="col-lg-4 col-md-4">
                     <div class="number-icon-div">
                         <img src="assets/img/hand.png" alt="" class="img-fluid">
-                        <p>1450</p>
-                        <span>Happy Clients</span>
+                        <p>26</p>
+                        <span>Countries</span>
                     </div>
                 </div>
-                <div class="col-lg-3 col-md-3">
+                <div class="col-lg-4 col-md-4">
                     <div class="number-icon-div">
                         <img src="assets/img/mt-1421-home-icon08.png" alt="" class="img-fluid">
-                        <p>23</p>
+                        <p>674</p>
                         <span>Insurance Products</span>
                     </div>
                 </div>
-                <div class="col-lg-3 col-md-3">
-                    <div class="number-icon-div">
-                        <img src="assets/img/mt-1421-home-icon09.png" alt="" class="img-fluid">
-                        <p>10</p>
-                        <span>Years of Experience</span>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-3">
+                
+                <div class="col-lg-4 col-md-4">
                     <div class="number-icon-div">
                         <img src="assets/img/user.png" alt="" class="img-fluid">
-                        <p>196</p>
-                        <span>Professional Agents</span>
+                        <p>25000+</p>
+                        <span>Unique Data</span>
                     </div>
                 </div>
             </div>
@@ -298,7 +292,7 @@
                             </div>
                             <div class="author-div">
                                 <h5>Alan Smith</h5>
-                                <span>Freelancer</span>
+                                <span>Director</span>
                             </div>
                         </div>
                     </div>

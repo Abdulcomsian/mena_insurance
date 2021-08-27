@@ -50,8 +50,8 @@
                             <a href="">solutions@callidusmena.com</a>
                         </li>
                         <li class="address">
-                            <a href="#">PO Box 121361, Business Venue Bldg
-Opp. Al Nasr Club, Umm Hurair Road
+                            <a href="#">PO Box 121361, Business Venue Bldg<br>
+Opp. Al Nasr Club, Umm Hurair Road<br>
 Bur Dubai, UAE
 </a>
                         </li>
