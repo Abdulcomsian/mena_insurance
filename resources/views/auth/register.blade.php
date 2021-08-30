@@ -80,7 +80,7 @@ use Illuminate\Support\Facades\DB;
                             <select class="form-control @error('country_id') is-invalid @enderror"  name="country_id">
 
                             @foreach($countries as $country)
-                                <option value="{{$country->id}}">{{$country->country_name}}</option>
+                                <option value="{{$country->id}}" {{$country->id == 237 ? 'selected' : ''}}>{{$country->country_name}}</option>
                             @endforeach
                             </select>
                                 @error('country_id')
@@ -152,7 +152,7 @@ use Illuminate\Support\Facades\DB;
 </script>
 <script>
      $('#registerform').submit(function() {
-       $("#pageloader").fadeIn('slow'); 
+       $("#pageloader").fadeIn('slow');
        return true;
      });
  </script>
