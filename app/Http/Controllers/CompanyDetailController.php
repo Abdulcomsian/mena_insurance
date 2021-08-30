@@ -180,14 +180,15 @@ class CompanyDetailController extends Controller
         return $query;
     }
     public function searchAllResult(Request $request){
+        $companies = [];
+        $peoples = [];
         if ($request->filled('country') && $request['country'][0] == '0') {
             $companies = self::basicSearchQuery()->paginate(30);
             $companies_ids = self::basicSearchQuery()->pluck('id');
             if (count($companies_ids) > 0 ){
                 $peoples = self::getListOfDirectors($companies_ids);
+                $peoples->appends(['country' => $request['country']]);
             }
-//            $peoples->setPageName('people');
-            $peoples->appends(['country' => $request['country']]);
             $companies->appends(['country' => $request['country']]);
         }
         elseif ($request->filled('country') && $request['company_name'] == null){
@@ -196,8 +197,8 @@ class CompanyDetailController extends Controller
             $companies_ids = self::basicSearchQuery()->whereIn('country', $request['country'])->pluck('id');
             if (count($companies_ids) > 0 ){
                 $peoples = self::getListOfDirectors($companies_ids);
+                $peoples->appends(['country' => $request['country']]);
             }
-            $peoples->appends(['country' => $request['country']]);
             $companies->appends(['country' => $request['country']]);
         }
         elseif ($request->filled('country') && $request->filled('company_name')){
@@ -210,8 +211,8 @@ class CompanyDetailController extends Controller
                 ->pluck('id');
             if (count($companies_ids) > 0 ){
                 $peoples = self::getListOfDirectors($companies_ids);
+                $peoples->appends(['country' => $request['country'],'company_name' =>$request['company_name']]);
             }
-            $peoples->appends(['country' => $request['country'],'company_name' =>$request['company_name']]);
             $companies->appends(['country' => $request['country'],'company_name' =>$request['company_name']]);
         }
         elseif($request->filled('country') && $request->filled('company_name') && $request->filled('company_type')){
@@ -225,8 +226,8 @@ class CompanyDetailController extends Controller
                 ->pluck('id');
             if (count($companies_ids) > 0 ){
                 $peoples = self::getListOfDirectors($companies_ids);
+                $peoples->appends(['country' => $request['country'],'company_name' =>$request['company_name'],'company_type' =>$request['company_type']]);
             }
-            $peoples->appends(['country' => $request['country'],'company_name' =>$request['company_name'],'company_type' =>$request['company_type']]);
             $companies->appends(['country' => $request['country'],'company_name' =>$request['company_name'],'company_type' =>$request['company_type']]);
         }
         elseif($request->filled('company_type') && $request->filled('company_name')){
@@ -240,8 +241,8 @@ class CompanyDetailController extends Controller
                 ->pluck('id');
             if (count($companies_ids) > 0 ){
                 $peoples = self::getListOfDirectors($companies_ids);
+                $peoples->appends(['company_name' =>$request['company_name'],'company_type' =>$request['company_type']]);
             }
-            $peoples->appends(['company_name' =>$request['company_name'],'company_type' =>$request['company_type']]);
             $companies->appends(['company_name' =>$request['company_name'],'company_type' =>$request['company_type']]);
         }
         elseif ($request->filled('company_name')){
@@ -253,8 +254,8 @@ class CompanyDetailController extends Controller
                 ->pluck('id');
             if (count($companies_ids) > 0 ){
                 $peoples = self::getListOfDirectors($companies_ids);
+                $peoples->appends(['company_name' => $request['company_name']]);
             }
-            $peoples->appends(['company_name' => $request['company_name']]);
             $companies->appends(['company_name' => $request['company_name']]);
         }
         elseif($request->filled('company_type')){
@@ -264,8 +265,8 @@ class CompanyDetailController extends Controller
             $companies_ids = self::basicSearchQuery()->whereIn('company_type',  $request['company_type'])->pluck('id');
             if (count($companies_ids) > 0 ){
                 $peoples = self::getListOfDirectors($companies_ids);
+                $peoples->appends(['company_type' => $request['company_type']]);
             }
-            $peoples->appends(['company_type' => $request['company_type']]);
             $companies->appends(['company_type' => $request['company_type']]);
         }
         else{

@@ -19,7 +19,7 @@
                           <th>Company</th>
                           <th>Sanctions Type</th>
                           <th>Status</th>
-                          <th>Consumed Sanctions Balance</th>
+                          <th>Sanction Credits</th>
                           <th>Date</th>
                         </tr>
                      </thead>
