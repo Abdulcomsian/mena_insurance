@@ -28,6 +28,8 @@ class CreateReqForSancStatusTable extends Migration
             $table->string('board_of_directors')->nullable();
             $table->string('sanctions')->nullable();
             $table->longText('admin_comments')->nullable();
+            $table->timestamp('result_date')->nullable();
+            $table->timestamp('cancel_date')->nullable();
             $table->timestamps();
 
         });
