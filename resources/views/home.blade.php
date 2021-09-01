@@ -487,7 +487,7 @@
         </div>
     </div>
 </section>
-<section id="people-say" >
+<!-- <section id="people-say" >
     <div class="container">
         <div class="row">
             <div class="col-lg-12">
@@ -543,7 +543,7 @@
             </div>
         </div>
     </div>
-</section>
+</section> -->
 <!-- Modal -->
 <div class="modal fade" id="orderModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
