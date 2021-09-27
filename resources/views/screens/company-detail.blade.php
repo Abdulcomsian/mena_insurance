@@ -271,7 +271,7 @@
                                                 <div class="col-lg-6 col-md-6">
                                                     <div class="insights-div">
                                                     <h3>Last Updated</h3>
-                                                    <p>{{ $company_detail->last_modified_date->diffForHumans() }}</p>
+                                                    <p>{{ $company_detail->updated_at->diffForHumans() }}</p>
                                                 </div>
                                                 </div>
                                             </div>
