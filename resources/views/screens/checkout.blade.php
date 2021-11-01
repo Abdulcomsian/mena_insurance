@@ -91,7 +91,7 @@
         </div>
     </section>
     <!-- Modal -->
-    <div class="modal fade" id="payment_modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal fade" data-keyboard="false" data-backdrop="static" id="payment_modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
             <div class="modal-content">
                 <div class="modal-body">
@@ -123,8 +123,7 @@
                             $(this).removeAttr('disabled');
                         }
                         else{
-                            //  console.log(data);
-                            //alert('error in  Server is busy,try again');
+                            alert('Something went wrong, try again');
                             window.location.reload();
                         }
                     },
