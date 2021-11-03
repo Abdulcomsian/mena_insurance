@@ -1,5 +1,6 @@
 <?php
 
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -12,12 +13,12 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
+Route::get('/', 'HomeController@index');
 //    Route::group(['middleware' =>['auth','verified']], function () {
-        Route::get('/contact', 'HomeController@contact');
-        Route::get('/about', 'HomeController@about');
+Route::get('/contact', 'HomeController@contact');
+Route::get('/about', 'HomeController@about');
 //    });
 
-Route::get('/', 'HomeController@index');
 
 
 Route::get('/forgot', function () {
@@ -99,3 +100,5 @@ Route::get('telr-curl-testing','HomeController@telrCurlTesting');
 
 Route::view('pdf','pdf');
 Route::view('pdf-template','pdf-transaction-template');
+//Testing API methods
+Route::get('testing-api','HomeController@TestingApi');

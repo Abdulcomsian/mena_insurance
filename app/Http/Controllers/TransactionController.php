@@ -7,6 +7,7 @@ use App\Models\Subscription;
 use App\Models\Transaction;
 use App\Notifications\TransactionEmail;
 use App\Utils\SubscriptionStatus;
+
 //use Barryvdh\DomPDF\PDF;
 use Hamcrest\Core\DummyToStringClass;
 use PDF;
@@ -19,29 +20,33 @@ class TransactionController extends Controller
 {
     public function __construct()
     {
-        $this->middleware(['auth','verified']);
+        $this->middleware(['auth', 'verified']);
     }
-    public function showCards(){
+
+    public function showCards()
+    {
         try {
-            $cards = Transaction::select('card_last4','card_first6','card_type')
-                ->where('user_id',Auth::id())
-                ->where('status','Paid')
+            $cards = Transaction::select('card_last4', 'card_first6', 'card_type')
+                ->where('user_id', Auth::id())
+                ->where('status', 'Paid')
                 ->distinct()
                 ->get();
-            return view('screens.add-card',compact('cards'));
-        }catch (\Exception $exception){
+            return view('screens.add-card', compact('cards'));
+        } catch (\Exception $exception) {
             toastError('Something went wrong, try later');
         }
     }
-    public function create($id){
-        try{
-            $package = Package::where('id',decrypt($id))->first();
+
+    public function create($id)
+    {
+        try {
+            $package = Package::where('id', decrypt($id))->first();
             $total = $package->price * 0.05 + $package->price;
-            $username = explode(" ",Auth::user()->name,2);
-            if(count($username) > 1 ){
+            $username = explode(" ", Auth::user()->name, 2);
+            if (count($username) > 1) {
                 $last_name = $username[1];
-            }else{
-             $last_name ='Not Set';
+            } else {
+                $last_name = 'Not Set';
             }
             $params = array(
                 'ivp_method' => 'create',
@@ -61,10 +66,11 @@ class TransactionController extends Controller
                 'bill_city' => Auth::user()->city ?? null,
                 'bill_country' => Auth::user()->country->country_code,
                 'bill_email' => Auth::user()->email,
-                'return_auth' => url('/').'/transaction-success-loading',
-                'return_can' => url('/').'/transaction-cancel-loading',
-                'return_decl' => url('/').'/transaction-decline-loading'
+                'return_auth' => url('/') . '/transaction-success-loading',
+                'return_can' => url('/') . '/transaction-cancel-loading',
+                'return_decl' => url('/') . '/transaction-decline-loading'
             );
+
             $ch = curl_init();
             curl_setopt($ch, CURLOPT_URL, "https://secure.telr.com/gateway/order.json");
             curl_setopt($ch, CURLOPT_POST, count($params));
@@ -74,17 +80,17 @@ class TransactionController extends Controller
             $results = curl_exec($ch);
             curl_close($ch);
             $results = json_decode($results);
-            if(isset( $results->order->url) && isset($results->order->ref)){
-                session()->put('package_id',$id);
-                session()->put('order_no',$results->order->ref);
+            if (isset($results->order->url) && isset($results->order->ref)) {
+                session()->put('package_id', $id);
+                session()->put('order_no', $results->order->ref);
                 $order_url = $results->order->url;
                 $data = [
                     'success' => true,
                     'order_url' => $order_url
                 ];
                 return response()->json($data);
-            }else{
-                            return response()->json($results);
+            } else {
+                return response()->json($results);
 
                 $data = [
                     'success' => false,
@@ -92,43 +98,46 @@ class TransactionController extends Controller
                 ];
                 return response()->json($results);
             }
-        }catch (\Exception $exception){
+        } catch (DecryptException $decryptException) {
+            return response()->json($decryptException->getMessage());
+
+            $data = [
+                'success' => false,
+                'message' => 'Server is busy, try again!'
+            ];
+            return response()->json($data);
+        } catch (\Exception $exception) {
             return response()->json($exception->getMessage());
             $data = [
                 'success' => false,
                 'message' => 'Server is busy, try again!'
             ];
             return response()->json($data);
-        }catch (DecryptException $decryptException){
-                        return response()->json($exception->getMessage());
 
-            $data = [
-                'success' => false,
-                'message' => 'Server is busy, try again!'
-            ];
-            return response()->json($data);
         }
     }
 
-    public function success(){
+    public function success()
+    {
         try {
-                $results = self::checkOrder();
-                $transaction = self::saveTransactionForSuccess($results);
-                return redirect('success-payment');
+            $results = self::checkOrder();
+            $transaction = self::saveTransactionForSuccess($results);
+            return redirect('success-payment');
 
-                //if(($results->order->status->code == 3) && ($results->order->transaction->status == "A" ||  $results->order->transaction->status == "H" )){
-        }catch (\Exception $exception){
+            //if(($results->order->status->code == 3) && ($results->order->transaction->status == "A" ||  $results->order->transaction->status == "H" )){
+        } catch (\Exception $exception) {
             toastr()->error('Server is busy, try again!');
             return redirect('/');
         }
     }
 
-    protected function saveTransactionForSuccess($transaction){
+    protected function saveTransactionForSuccess($transaction)
+    {
         try {
-            $package = Package::where('id',decrypt(session()->get('package_id')))->first();
-            $sub = Subscription::where('user_id',Auth::id())->first();
-            if (isset($sub)){
-                Subscription::where('user_id',Auth::id())->update([
+            $package = Package::where('id', decrypt(session()->get('package_id')))->first();
+            $sub = Subscription::where('user_id', Auth::id())->first();
+            if (isset($sub)) {
+                Subscription::where('user_id', Auth::id())->update([
                     'package_id' => $package->id,
                     'package_name' => $package->name,
                     'price' => $package->price,
@@ -136,7 +145,7 @@ class TransactionController extends Controller
                     'remaining_sanctions' => $package->sanctions + $sub->remaining_sanctions,
                     'total_sanctions' => $package->sanctions + $sub->total_sanctions,
                 ]);
-            }else{
+            } else {
                 Subscription::create([
                     'package_id' => $package->id,
                     'package_name' => $package->name,
@@ -150,14 +159,14 @@ class TransactionController extends Controller
 
             $transaction = self::saveTransactionForAll($transaction);
 
-            $pdf = PDF::loadView('pdf-transaction-template',['transaction'=>$transaction]);
+            $pdf = PDF::loadView('pdf-transaction-template', ['transaction' => $transaction]);
             $path = public_path('/data/pdf');
-            $fileName = 'transaction_' .Auth::id().time() . '.' . 'pdf';
+            $fileName = 'transaction_' . Auth::id() . time() . '.' . 'pdf';
             $pdf->setPaper('letter', 'landscape');
             $pdf->save($path . '/' . $fileName);
-            $transaction->update(['pdf' => 'data/pdf/'.$fileName]);
+            $transaction->update(['pdf' => 'data/pdf/' . $fileName]);
             Auth::user()->notify(new TransactionEmail($transaction));
-        }catch (\Exception $exception){
+        } catch (\Exception $exception) {
             dd($exception->getMessage());
             toastr()->error('Server is busy, try again!');
             return redirect('/');
@@ -165,9 +174,10 @@ class TransactionController extends Controller
 
     }
 
-    protected function checkOrder(){
+    protected function checkOrder()
+    {
         $order_no = session()->get('order_no');
-        if(isset($order_no)) {
+        if (isset($order_no)) {
             $params = array(
                 'ivp_method' => 'check',
                 'ivp_store' => env('IVP_STORE_ID'),
@@ -184,12 +194,14 @@ class TransactionController extends Controller
             curl_close($ch);
             $results = json_decode($results);
             return $results;
-        }else{
+        } else {
             return false;
         }
     }
-    protected function saveTransactionForAll($transaction){
-        $package = Package::where('id',decrypt(session()->get('package_id')))->first();
+
+    protected function saveTransactionForAll($transaction)
+    {
+        $package = Package::where('id', decrypt(session()->get('package_id')))->first();
         $transaction = Transaction::create([
             'order_id' => $transaction->order->ref ?? null,
             'invoice_id' => $transaction->order->cartid ?? null,
@@ -210,27 +222,30 @@ class TransactionController extends Controller
             'card_type' => $transaction->order->card->type ?? null,
             'trx_reference' => $transaction->order->transaction->ref ?? null,
             'user_id' => Auth::id() ?? null,
-            'package_id' =>  $package->id ?? null,
-            'package_name' =>  $package->name ?? null,
-            'package_sanctions' =>  $package->sanctions ?? null,
-            'vat_amount' =>  $package->price * 0.05 ?? null,
+            'package_id' => $package->id ?? null,
+            'package_name' => $package->name ?? null,
+            'package_sanctions' => $package->sanctions ?? null,
+            'vat_amount' => $package->price * 0.05 ?? null,
             'package_amount' => $package->price ?? null,
             'total_amount' => $transaction->order->amount ?? null,
         ]);
         return $transaction;
     }
-    public function cancel(Request $request){
+
+    public function cancel(Request $request)
+    {
         $results = self::checkOrder();
-        if(isset($results)) {
+        if (isset($results)) {
             $transaction = self::saveTransactionForAll($results);
             Auth::user()->notify(new TransactionEmail($transaction));
         }
         return redirect('cancel-payment');
     }
 
-    public function decline(Request $request){
+    public function decline(Request $request)
+    {
         $results = self::checkOrder();
-        if(isset($results)) {
+        if (isset($results)) {
             $transaction = self::saveTransactionForAll($results);
             Auth::user()->notify(new TransactionEmail($transaction));
 
@@ -238,17 +253,19 @@ class TransactionController extends Controller
         return redirect('decline-payment');
     }
 
-    protected function createSubscription($package){
+    protected function createSubscription($package)
+    {
 
     }
 
-    public function paymentCheckout($id){
+    public function paymentCheckout($id)
+    {
         try {
-            $package = Package::where('id',decrypt($id))->first();
+            $package = Package::where('id', decrypt($id))->first();
             $vat = $package->price * 0.05;
             $total = $vat + $package->price;
-            return view('screens.checkout',compact('package','total','vat'));
-        }catch (\Exception $exception){
+            return view('screens.checkout', compact('package', 'total', 'vat'));
+        } catch (\Exception $exception) {
             toastr()->error('Server is busy, try again!');
             return back();
         }

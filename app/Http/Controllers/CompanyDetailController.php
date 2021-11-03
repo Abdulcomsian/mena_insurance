@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Jobs\AddSearchJob;
 use App\Models\BoardOfDirector;
 use App\Models\CompanyDetail;
 use App\Models\CountryInformation;
@@ -11,10 +12,13 @@ use App\Models\Shareholder;
 use App\Notifications\NewSanctionRequestForAdmin;
 use App\Notifications\SanctionRequestEmail;
 use App\User;
+use App\Utils\AddSearchType;
 use App\Utils\SanctionRequestStatus;
 use App\Utils\SanctionsType;
 use App\Utils\Status;
 use Illuminate\Http\Request;
+use Illuminate\Queue\Jobs\Job;
+use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Validator;
@@ -47,6 +51,7 @@ class CompanyDetailController extends Controller
 
     //Sanction request from user
     public function sanctionRequest(Request $request){
+
         $validator = Validator::make($request->all(), [
             'company_id' => 'required|exists:company_detail,id',
             'sanctions_type' => 'required',
@@ -73,10 +78,21 @@ class CompanyDetailController extends Controller
             $sub = Auth::user()->subscription;
             $sanction_request =  null;
             if(isset($sub) && $sub->remaining_sanctions > 0){
+                $company_details = CompanyDetail::where('id',$request->company_id)
+                    ->select('id','company_name','country')
+                    ->first();
                 if ($all_fields['sanctions_type'] == SanctionsType::Searchcompany) {
                     $total_sanctions = 1;
                     if ($sub->remaining_sanctions >= $total_sanctions){
                         $sanction_request = self::saveSanctionRequest($all_fields,$total_sanctions,$sub);
+                        //Run job for company name
+                        $company_search = [
+                            'sanctionRequestId' => $sanction_request->id,
+                            'name' => $company_details->company_name,
+                            'searchTypeId' => $company_details->id,
+                            'type' => AddSearchType::Entity,
+                        ];
+                        AddSearchJob::dispatch($company_search);
                     }else{
                         toastInfo('Your do not have sufficient sanctions to perform this operation, buy more sanctions !');
                         return back();
@@ -84,12 +100,33 @@ class CompanyDetailController extends Controller
                 }
                 elseif ($all_fields['sanctions_type'] == SanctionsType::FullcompanywithBoardsofDirector){
                     //Count all board of directors for this company
-                    $directors_list = BoardOfDirector::where('company_id',$request->company_id)
-                        ->pluck('id');
-                    $total_sanctions = count($directors_list)+1; //Add 1 for company search
+                    $directors_list = BoardOfDirector::select('id','name')
+                        ->where('company_id',$request->company_id)
+                        ->get();
+                    $total_sanctions = $directors_list->count()+1; //Add 1 for company search
                     if ($sub->remaining_sanctions >= $total_sanctions){
-                        $all_fields['board_of_directors'] = json_encode($directors_list);
+                        $all_fields['board_of_directors'] = json_encode($directors_list->pluck('id'));
+                        //Run job for company name
                         $sanction_request = self::saveSanctionRequest($all_fields,$total_sanctions,$sub);
+                        //Run job for company name
+                        $company_search = [
+                            'sanctionRequestId' => $sanction_request->id,
+                            'name' => $company_details->company_name,
+                            'searchTypeId' => $company_details->id,
+                            'type' => AddSearchType::Entity,
+                        ];
+                        AddSearchJob::dispatch($company_search);
+
+                        foreach ($directors_list as $b_o_d){
+                            $bod_search = [
+                                'sanctionRequestId' => $sanction_request->id,
+                                'name' => $b_o_d->name,
+                                'searchTypeId' => $b_o_d->id,
+                                'type' => AddSearchType::Individual,
+                            ];
+                            //Run job for board of director name
+                            AddSearchJob::dispatch($bod_search);
+                        }
                     }else{
                         toastInfo('Your do not have sufficient sanctions to perform this operation, buy more sanctions !');
                         return back();
@@ -101,15 +138,36 @@ class CompanyDetailController extends Controller
                     if ($sub->remaining_sanctions >= $total_sanctions){
                         $all_fields['board_of_directors'] = json_encode($request->board_of_directors);
                         $sanction_request = self::saveSanctionRequest($all_fields,$total_sanctions,$sub);
+                        //Run job for company name
+                        $company_search = [
+                            'sanctionRequestId' => $sanction_request->id,
+                            'name' => $company_details->company_name,
+                            'searchTypeId' => $company_details->id,
+                            'type' => AddSearchType::Entity,
+                        ];
+                        AddSearchJob::dispatch($company_search);
+
+                        $directors_list = BoardOfDirector::select('id','name')
+                            ->whereIn('id',$request->board_of_directors)
+                            ->where('company_id',$request->company_id)
+                            ->get()
+                            ->toarray();
+                        foreach ($directors_list as $b_o_d){
+                            $bod_search = [
+                                'sanctionRequestId' => $sanction_request->id,
+                                'name' => $b_o_d['name'],
+                                'searchTypeId' => $b_o_d['id'],
+                                'type' => AddSearchType::Individual,
+                            ];
+                            //Run job for board of director name
+                            AddSearchJob::dispatch($bod_search);
+                        }
                     }else{
                         toastInfo('Your do not have sufficient sanctions to perform this operation, buy more sanctions !');
                         return back();
                     }
                 }
                 toastSuccess('Your request is successfully submitted for "Sanction Result"');
-                $company_details = CompanyDetail::where('id',$request->company_id)
-                    ->select('company_name','country')
-                    ->first();
 
                 Auth::user()->notify(new SanctionRequestEmail($company_details));
 
@@ -117,6 +175,7 @@ class CompanyDetailController extends Controller
                 foreach ($admins as $admin){
                     $admin->notify(new NewSanctionRequestForAdmin($company_details));
                 }
+
                 return back();
             }else{
                 toastInfo('You do not have sufficient sanctions to perform this operation, buy sanctions !');
