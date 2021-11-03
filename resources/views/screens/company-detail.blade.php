@@ -271,9 +271,9 @@
                                                 <div class="col-lg-6 col-md-6">
                                                     <div class="insights-div">
                                                     <h3>Last Updated</h3>
-                                                    @php if(isset( $company_detail->updated_at))
+                                                    @php if(isset( $company_detail->updated_at)) { @endphp
                                                     <p>{{ $company_detail->updated_at->diffForHumans() }}</p>
-                                                    @endphp
+                                                    @php } @endphp
                                                 </div>
                                                 </div>
                                             </div>
