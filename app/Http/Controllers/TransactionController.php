@@ -98,13 +98,6 @@ class TransactionController extends Controller
                 ];
                 return response()->json($results);
             }
-        } catch (\Exception $exception) {
-            return response()->json($exception->getMessage());
-            $data = [
-                'success' => false,
-                'message' => 'Server is busy, try again!'
-            ];
-            return response()->json($data);
         } catch (DecryptException $decryptException) {
             return response()->json($decryptException->getMessage());
 
@@ -113,6 +106,14 @@ class TransactionController extends Controller
                 'message' => 'Server is busy, try again!'
             ];
             return response()->json($data);
+        } catch (\Exception $exception) {
+            return response()->json($exception->getMessage());
+            $data = [
+                'success' => false,
+                'message' => 'Server is busy, try again!'
+            ];
+            return response()->json($data);
+
         }
     }
 

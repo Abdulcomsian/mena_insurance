@@ -1,5 +1,6 @@
 <?php
 
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -99,3 +100,5 @@ Route::get('telr-curl-testing','HomeController@telrCurlTesting');
 
 Route::view('pdf','pdf');
 Route::view('pdf-template','pdf-transaction-template');
+//Testing API methods
+Route::get('testing-api','HomeController@TestingApi');
