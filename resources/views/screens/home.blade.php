@@ -96,14 +96,14 @@
                         Dynamic Professionals
                         </h3>
                         <p>
-                        Team of Highly trained subject matter experts in international sanctions and regulatory compliance will assist you in sanction check and KYC documentations on request </p>
+                        Team of Highly trained subject matter experts in international sanctions and regulatory compliance will assist you in sanction check and KYC documentations on request. </p>
 
-                        <p>Our professionalsact as outsourced compliance officer and Money Laundering Reporting Officers and experts in this field.
+                        <p>Our professionals and act as outsourced compliance officers and Money Laundering Reporting Officers and experts in this field.
 
-                        </p>
+                        </p>company-detail.blade.php:282
                     </div>
                 </li>
-              
+
                 <li>
                     <div class="icon-div">
                         <img src="assets/img/mt-1421-home-icon06.png" alt="" class="img-fluid">
@@ -258,7 +258,7 @@
                         <span>Insurance Products</span>
                     </div>
                 </div>
-                
+
                 <div class="col-lg-4 col-md-4">
                     <div class="number-icon-div">
                         <img src="assets/img/user.png" alt="" class="img-fluid">
