@@ -282,7 +282,7 @@
                                 </div>
                             @else
                                 <div class="card loginCard" style="padding: .75rem 1.25rem;">
-                                    <h3>Please Logged in to view the Information </h3>
+                                    <h3>Please Log in to view the Information </h3>
                                 </div>
                             @endauth
                         </div>
