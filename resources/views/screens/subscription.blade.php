@@ -20,7 +20,7 @@
                      <thead>
                      <tr>
                          <th>Consumed Sanctions Search Count</th>
-                         <th>Balanced Sanctions Search Count</th>
+                         <th>Balance Sanctions Search Count</th>
                          <th>Total Sanctions</th>
                      </tr>
                      </thead>

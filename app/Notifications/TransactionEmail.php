@@ -48,7 +48,7 @@ class TransactionEmail extends Notification
             $action_text = 'Transaction Details';
             $message = ' your transaction is successfully completed click below "Transaction Details" button for more details:';
         }else{
-            $message = ' your transaction is '. $this->transaction->status .' click below "Login" and goto transactions menu for more details:';
+            $message = ' your transaction is '. $this->transaction->status .' click below "Login" and go to transactions menu for more details:';
             $url =  url('login');
             $action_text = 'Login';
         }

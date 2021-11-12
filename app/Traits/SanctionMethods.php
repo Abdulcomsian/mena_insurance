@@ -4,7 +4,9 @@ namespace App\Traits;
 
 
 use App\Models\AddSearch;
+use App\Models\ReqForSancStatus;
 use App\Models\SancImages;
+use App\Utils\SanctionRequestStatus;
 use Carbon\Carbon;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Response;
@@ -120,7 +122,6 @@ trait SanctionMethods {
                         'deleteSearchResponseStatusMessage' => $deleteRecord->responseStatus->message ?: null,
                         'deleteSearchDate' => now(),
                     ]);
-                dump('Delete Updated');
             }
             return $result;
         }catch (\Exception $exception){
@@ -129,7 +130,6 @@ trait SanctionMethods {
     }
 
     public function GetPdfs(){
-        dump('Here in getpdfs trait');
         try {
             $request = '{}';
             $result = self::curlRequest('GetPdfs',$request);
@@ -139,38 +139,34 @@ trait SanctionMethods {
 
                         $sanction = self::GetPdf($document->id);
                         if (!empty($sanction->data->document->documentBytes)) {
-                            dump('Here in if document byte not empty');
                             $pdfResult =  $sanction->data;
 
                             $addSearch = AddSearch::where('addSearchId',$pdfResult->document->sanctionsSearchId)->first();
                             $base64data = base64_decode($pdfResult->document->documentBytes, true);
-
-                            $filePath = 'images/'.$addSearch->name.' - '.$pdfResult->document->fileName;
+                            $filename = $addSearch->name.' - '.$pdfResult->document->fileName;
+                            $filePath = 'images/'. $filename;
                             $publicPath = public_path($filePath);
 
                             file_put_contents("{$publicPath}", $base64data);
-                            dump('File Saved');
                             SancImages::create([
                                 'name' => $addSearch->name,
                                 'type' => $pdfResult->document->type,
                                 'typeId' => $addSearch->searchTypeId,
                                 'isReady' => $pdfResult->document->isReady,
-                                'file' => $filePath,
+                                'file' => $filename,
                                 'getPdfResponseStatusMessage' => $pdfResult->responseStatus->message,
                                 'documentId' => $pdfResult->document->id,
                                 'sanctionsSearchId' => $pdfResult->document->sanctionsSearchId,
                                 'sanc_req_id' => $addSearch->sanc_req_id,
                                 'add_search_id' => $addSearch->id,
                             ]);
-                            dump('SancImages Saved');
                             $deleteResult = self::DeleteSearch( $pdfResult->document->sanctionsSearchId);
-                            dump('Done everything');
+                            self::updateRequestSanctionStaus($addSearch->sanc_req_id);
                         }
 
                     }
                 }
             }
-            dump('No document found');
 
         }catch (\Exception $exception){
             dd($exception->getMessage());
@@ -178,6 +174,21 @@ trait SanctionMethods {
         }
     }
 
+    private function updateRequestSanctionStaus($id){
+        try {
+            $addSearches = AddSearch::where('sanc_req_id',$id)
+                ->where('deleteSearchSuccess',true)
+                ->count();
+            $requestSanction = ReqForSancStatus::where('id',$id)
+                ->first();
+            if ($addSearches == $requestSanction->sanctions){
+                $requestSanction->status = SanctionRequestStatus::AllResultAttached;
+                $requestSanction->save();
+            }
+        }catch (\Exception $exception){
+            dd($exception->getMessage());
+        }
+    }
     public function GetPdf($id){
         try {
             $request = '{
