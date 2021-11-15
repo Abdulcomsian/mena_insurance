@@ -352,18 +352,13 @@
             console.log('Here page is loaded');
             $('#search-submit').click( function (e) {
                 e.preventDefault();
-                console.log('Here');
                 let country = $('#country').val();
                 let url = "{{route('companydetail.search.result',['country'=>['ccc']])}}";
-                console.log('country',country);
-
                 if(country == 'All'){
                     country = 0;
                 }
-                console.log('country',country);
 
                 url_changed = url.replace('ccc', country);
-                console.log('url changed',url_changed);
                 window.location.href = url_changed;
             });
 
