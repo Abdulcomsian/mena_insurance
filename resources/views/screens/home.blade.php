@@ -72,7 +72,7 @@
                         <h3>
                             <a href="#">KYC</a>
                         </h3>
-                        <p>Our team of KYC professionals assist you in onboarding Individuals and Legal entities. Companies are aware that traditional audit methodologies are not sufficient to meet the increasing Regulatory requirements. To ensure seamless onboarding & ongoing monitoring you need expert advice from our MLROs. </p>
+                        <p>Our team of KYC professionals assist you in onboarding Individuals and Legal entities. Companies are aware that traditional audit methodologies are not sufficient to meet the increasing regulatory requirements. To ensure seamless onboarding & ongoing monitoring, you need expert advice from our MLROs.</p>
                     </div>
                 </div>
             </div>
@@ -96,11 +96,11 @@
                         Dynamic Professionals
                         </h3>
                         <p>
-                        Team of Highly trained subject matter experts in international sanctions and regulatory compliance will assist you in sanction check and KYC documentations on request. </p>
+                            Team of highly trained subject matter experts in international sanctions and regulatory compliance will assist you in sanction check and KYC documentations on request.</p>
 
-                        <p>Our professionals and act as outsourced compliance officers and Money Laundering Reporting Officers and experts in this field.
+                        <p>Our professionals act as outsourced compliance officers and Money Laundering Reporting Officers and experts in this field.
 
-                        </p>company-detail.blade.php:282
+                        </p>
                     </div>
                 </li>
 
@@ -126,10 +126,11 @@
                         Up-to-date Information
                         </h3>
                         <p>
-                        Periodical update of every organizational detail by a functional team would never allow your decision to be influenced by obsolete data</p>
+                            Periodical update of every organizational detail by a functional team would never allow your decision to be influenced by obsolete data.
+                        </p>
 
-<p>Considering the ever-changing nature of the legal and regulatory environment we perform research and analysis on a timely basis
-
+                        <p>
+                            Considering the ever-changing nature of the legal and regulatory environment we perform research and analysis on a timely basis.
                         </p>
                     </div>
                 </li>
@@ -142,7 +143,8 @@
                         One-stop solution
                         </h3>
                         <p>
-                        An encyclopaedia of information ranging from company profile to sanction status to provide a holistic view of every insurance and insurance related businesses or professions
+                            An encyclopaedia of information, ranging from company profile to sanction status, to provide a holistic view of every insurance and insurance related businesses or professions.
+                        </p>
                     </div>
                 </li>
             </ul>

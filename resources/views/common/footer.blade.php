@@ -4,7 +4,9 @@
             <div class="col-lg-4 col-md-4">
                 <div class="footer-box">
                     <img src="{{asset("assets/img/logo.png")}}" alt="" class="img-fluid">
-                    <p>Callidus consulting provides comprehensive, tailor-made risk & Compliance services to Insurance & Reinsurance related businesses in the MENA region.</p>
+                    <p>
+                        Callidus consulting provides comprehensive, tailor-made risk & compliance services to Insurance & Reinsurance related businesses in the MENA region.
+                    </p>
                     <div class="social-media">
                         <!-- <span class="facebook"><a href=""><i class="fa fa-facebook" aria-hidden="true"></i></a></span> -->
                         <!-- <span><a href=""><i class="fa fa-twitter" aria-hidden="true"></i></a></span> -->

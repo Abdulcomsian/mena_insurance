@@ -76,13 +76,11 @@
 
                         <p>
                             <input type="checkbox" id="privacy">
-                            I Agree to <a href="/terms-condition">Term & Condition Privacy</a>
-                            and
-                            <a href="/refund-policy">Refund Priacy</a>
+                            I Agree to <a href="/terms-condition">Term & Condition Privacy,</a>
+                            <a href="/refund-policy">Privacy Settings and Refund Policy</a>
                         </p>
-
                         <p class="checkbox-validation">
-                            Please checked Term & Condition Policy and Refund Policy
+                            I Agree to the Terms & Conditions, Privacy Settings and Refund Policy
                         </p>
                         <button id="checkout">Proceed to Checkout</button>
                     </div>

@@ -18,7 +18,7 @@
             <div class="col-lg-6 col-md-6">
                 <div class="content-div" style="padding-top:0px;">
                     <h2>How to Find Us</h2>
-                    <p>If you have any questions, just fill in the contact form, and we will answer you shortly. If you are living nearby, come visit AllRisk at one of our comfortable offices.</p>
+                    <p>If you have any questions, just fill in the contact form, and we will answer you shortly. If you are living nearby, come visit us at one of our comfortable offices.</p>
                     <div class="address-detail">
                         <h4>Headquarters</h4>
                         <p>PO Box 121361, Business Venue Bldg <br>Opp. Al Nasr Club,Umm Hurair Road <br>Bur Dubai, UAE</p>

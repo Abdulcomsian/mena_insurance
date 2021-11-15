@@ -19,11 +19,10 @@
             <div class="col-lg-12 col-md-12">
                 <div class="content-div">
                     <h2>About Us</h2>
-                    <p>MENA Insurance KYC is an initiative by Callidus Consulting, aimed at making the know your customer process simpler and efficient for the members of the insurance industry.</p>
+                    <p>MENA Insurance KYC is an initiative by Callidus Consulting, aimed at making the Know Your Customer process simpler and efficient for the members of the insurance industry.</p>
                     <p>Our extensive database provides information about insurance companies across 24 countries in the Middle East and North Africa region and will help you find region-specific details of the insurance industry and the regulatory framework. Upon request, we will also provide customized single name screening of entities against sanctions list and adverse media information to ensure compliance with international standards. Our team is continuously working on the expansion of the database, and we will be adding insurance intermediaries and reinsurance companies in due course.</p>
                     <p>Additionally, our KYC team will assist you with a range of professional services, such as, Know Your Customer (KYC) documentation on insurance companies, insurance intermediaries and reinsurance companies.</p>
-                    <p>For any other requests on sanctions related investigations; please email or contact us through WhatsApp and we will be happy to assist you.
-</p>
+                    <p>For any other requests on sanctions related investigations, please email us or contact through WhatsApp and we will be happy to assist you.</p>
                 </div>
             </div>
             <!-- <div class="col-lg-6 col-md-6">
@@ -72,15 +71,14 @@
 <div class="multi-services">
             <div class="row">
                 <div class="col-lg-6 col-md-6">
-               
+
                     <div class="services-box misson-box">
                     <img src="assets/img/hand.png" alt="">
-                        
+
                         <h3>
                             <a href="#">OUR MISSION</a>
                         </h3>
-                        <p>We are committed to provide robust KYC/ AML database of (Re)/Insurance businesses across MENA region. We are aiming to make the know your customer and sanction screening process much easier and hassle free for the insurance sector. Our pay as you go model will help the firms reduce the compliance costs which will help the business.</p>
-                        <p>&nbsp;</p>
+                        <p>We are committed to provide robust KYC/ AML database of (Re)/Insurance businesses across MENA region. We are aiming to make the Know Your Customer and sanction screening process much easier and hassle free for the insurance sector. Our pay as you go model will help the firms reduce the compliance costs which will help the business.</p>
                     </div>
                 </div>
                 <div class="col-lg-6 col-md-6">
@@ -92,15 +90,15 @@
                         <p>To continuously better the lives of our clients through compliance solutions.<p><br><br><br><br></p></p>
                     </div>
                 </div>
-               
+
             </div>
 
             <div class="row" style="margin-top:50px;">
                 <div class="col-lg-4 col-md-4">
-               
+
                     <div class="services-box">
                     <img src="assets/img/hand.png" alt="">
-                        
+
                         <h3>
                             <a href="#">Communicate & Collaborate</a>
                         </h3>
@@ -114,7 +112,7 @@
                         <h3>
                             <a href="#">Continuously improve</a>
                         </h3>
-                        <p>Client is our top priority.To ensure highest standards, our Compliance team thinks critically tocontribute to the development of the platform.<p><br><br></p></p>
+                        <p>Client is our top priority. To ensure highest standards, our Compliance team thinks critically to contribute to the development of the platform.<p><br><br></p></p>
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-4">
@@ -123,7 +121,7 @@
                         <h3>
                             <a href="#">Compliant</a>
                         </h3>
-                        <p>We comply with Regulatory regimes in multiple jurisdictions. We perform periodic Risk assessments & encourage ethics and Compliance with law.<p><br><br></p></p>
+                        <p>We comply with regulatory regimes in multiple jurisdictions. We perform periodic risk assessments & encourage ethics and compliance with law.<p><br><br></p></p>
                     </div>
                 </div>
             </div>
