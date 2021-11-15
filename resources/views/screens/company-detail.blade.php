@@ -268,14 +268,15 @@
                                                         <p>{{ $company_detail->company_accounting->regulatory_authority ?: '-' }}</p>
                                                 </div>
                                                 </div>
-                                                <div class="col-lg-6 col-md-6">
-                                                    <div class="insights-div">
-                                                    <h3>Last Updated</h3>
-                                                    @php if(isset( $company_detail->updated_at)) { @endphp
-                                                    <p>{{ $company_detail->updated_at->diffForHumans() }}</p>
-                                                    @php } @endphp
-                                                </div>
-                                                </div>
+                                                @isset($company_detail->updated_at)
+                                                    <div class="col-lg-6 col-md-6">
+                                                        <div class="insights-div">
+                                                            <h3>Last Updated</h3>
+                                                            <p>{{ $company_detail->updated_at->diffForHumans() }}</p>
+                                                        </div>
+                                                    </div>
+                                                @endisset
+
                                             </div>
                                         </div>
                                     </div>

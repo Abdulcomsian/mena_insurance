@@ -114,7 +114,8 @@ use Illuminate\Support\Facades\DB;
                             @enderror
                         </div>
                         <div class="inputDiv">
-                            <input class="form-control @error('vat_number') is-invalid @enderror"  type="number" name="vat_number" value="{{ old('vat_number') }}"   placeholder="VAT Number">
+                            <input class="form-control @error('vat_number') is-invalid @enderror"  type="number" step="any"
+                                   name="vat_number" value="{{ old('vat_number') }}"   placeholder="VAT Number">
                             @error('vat_number')
                             <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
