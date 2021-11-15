@@ -239,6 +239,7 @@ class CompanyDetailController extends Controller
         return $query;
     }
     public function searchAllResult(Request $request){
+        dump($request->all());
         $companies = [];
         $peoples = [];
         if ($request->filled('country') && $request['country'][0] == '0') {

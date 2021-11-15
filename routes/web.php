@@ -32,9 +32,9 @@ Route::get('/search', function () {
     return view('screens.search-place');
 });
 
-Route::get('/search-all', function () {
-    return view('screens.search-all-companies');
-});
+//Route::get('/search-all', function () {
+//    return view('screens.search-all-companies');
+//});
 
 Route::get('subscription', 'userpagesController@subcription')->name('subscription');
 Route::get('account', 'userpagesController@account')->name('account');

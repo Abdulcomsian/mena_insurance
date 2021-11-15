@@ -31,8 +31,8 @@
 
                         </ul>
                     </div>
-                    <a href="{{route('companydetail.search.result',['country'=>[0]])}}" class="btn btn-success mt-3">
-                        <buttonw>Submit</buttonw>
+                    <a id="search-submit" class="btn btn-success mt-3">
+                        Submit
                     </a>
                 </form>
             </div>
@@ -346,3 +346,22 @@
   </div>
 </div>
 @endsection
+@section('script')
+    <script>
+        $(document).ready(function () {
+            console.log('Here page is loaded');
+            $('#search-submit').click( function (e) {
+                e.preventDefault();
+                let country = $('#country').val();
+                let url = "{{route('companydetail.search.result',['country'=>['ccc']])}}";
+                if(country == 'All'){
+                    country = 0;
+                }
+
+                url_changed = url.replace('ccc', country);
+                window.location.href = url_changed;
+            });
+
+        });
+    </script>
+@endsection()
