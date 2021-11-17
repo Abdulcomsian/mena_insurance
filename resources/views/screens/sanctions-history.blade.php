@@ -31,6 +31,8 @@
                                 <td>
                                     @if($sanction->status == \App\Utils\SanctionRequestStatus::Completed)
                                         <span class="badge badge-success">{{$sanction->status}}</span>
+                                    @elseif($sanction->status == \App\Utils\SanctionRequestStatus::AllResultAttached)
+                                        <span class="badge badge-danger">{{\App\Utils\SanctionRequestStatus::Pending}}</span>
                                     @else
                                         <span class="badge badge-danger">{{$sanction->status}}</span>
                                     @endif

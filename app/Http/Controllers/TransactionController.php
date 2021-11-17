@@ -167,7 +167,7 @@ class TransactionController extends Controller
             $transaction->update(['pdf' => 'data/pdf/' . $fileName]);
             Auth::user()->notify(new TransactionEmail($transaction));
         } catch (\Exception $exception) {
-            dd($exception->getMessage());
+//            dd($exception->getMessage());
             toastr()->error('Server is busy, try again!');
             return redirect('/');
         }

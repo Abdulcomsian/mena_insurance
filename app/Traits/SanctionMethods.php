@@ -169,7 +169,7 @@ trait SanctionMethods {
             }
 
         }catch (\Exception $exception){
-            dd($exception->getMessage());
+//            dd($exception->getMessage());
             Log::error('Error From Trait GetPdfs()'.$exception->getMessage().'');
         }
     }
@@ -186,7 +186,7 @@ trait SanctionMethods {
                 $requestSanction->save();
             }
         }catch (\Exception $exception){
-            dd($exception->getMessage());
+//            dd($exception->getMessage());
         }
     }
     public function GetPdf($id){
