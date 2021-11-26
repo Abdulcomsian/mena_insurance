@@ -24,7 +24,7 @@ class CreateSancAttachmentsTable extends Migration
             $table->string("pdfResponseStatusMessage")->nullable();
 
             $table->bigInteger('sanctionsSearchId')->nullable();
-            $table->foreign('sanctionsSearchId')->references('id')->on('add_searches')->unsigned();
+            $table->foreign('sanctionsSearchId')->references('id')->on('add_searches');
 
             $table->bigInteger('sanc_req_id')->unsigned();
             $table->foreign('sanc_req_id')->references('id')->on('req_for_sanc_status');
