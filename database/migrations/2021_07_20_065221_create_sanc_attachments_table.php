@@ -23,7 +23,7 @@ class CreateSancAttachmentsTable extends Migration
             $table->timestamp("dateExpires")->nullable();
             $table->string("pdfResponseStatusMessage")->nullable();
 
-            $table->bigInteger('sanctionsSearchId')->nullable();
+            $table->bigInteger('sanctionsSearchId')->nullable()->unsigned();
             $table->foreign('sanctionsSearchId')->references('id')->on('add_searches');
 
             $table->bigInteger('sanc_req_id')->unsigned();
