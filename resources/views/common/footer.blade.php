@@ -10,7 +10,7 @@
                     <div class="social-media">
                         <!-- <span class="facebook"><a href=""><i class="fa fa-facebook" aria-hidden="true"></i></a></span> -->
                         <!-- <span><a href=""><i class="fa fa-twitter" aria-hidden="true"></i></a></span> -->
-                        <span><a targe="_blank" href="https://www.linkedin.com/company/callidus-consulting-mena"><i class="fa fa-linkedin" aria-hidden="true"></i></a></span>
+                        <span><a target="_blank" href="https://www.linkedin.com/company/callidus-consulting-mena"><i class="fa fa-linkedin" aria-hidden="true"></i></a></span>
                         <span><a target="_blank" href="https://api.whatsapp.com/send?phone=971502016492"><i class="fa fa-whatsapp" aria-hidden="true"></i></a></span>
                     </div>
                     <div style="margin-top: 40px;width: 160px;"><img  src="{{asset("assets/img/creditcard2.png")}}" alt="" class="img-fluid" /></div>
