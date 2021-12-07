@@ -32,8 +32,8 @@ trait SanctionMethods {
                 CURLOPT_POSTFIELDS =>'{
                     "request": '.$request.',
                     "authentication": {
-                        "apiUserId": "api_malikasif",
-                        "apiUserKey": "Bw4XvkW2JCdFyhXQvMZwrIGVb4kMNspZbkS6NpPhoko5Q6kEbvvuQMa31hWCakoqnnDnz2cf8ShguLffTQKr86izkZfGDmge78RDB7ejspw9E4IocRTtJ7tsfedKWGMVLdjx5MNWLB0RIj6qr1EVCWEaOyxx4ExWNKxBUkuAd8Si8MT6jWs6b1sYJjSFoq4hdmd9WDGgGdRFevdcPCoglBUWsJ2LCYmXdKeVIVjPqmz9jXTnfQ1VbX6MBr"
+                        "apiUserId": "api_menainsurancekyc",
+                        "apiUserKey": "2DVsXnFPS20eyrgRHyAZs7ZG5QYThnLXBbFtYwx3h4QkBMrdcSaitje5OpxhzVHFqlNxVW3kaHSzqOfsyURymCDr7LPI9qCwvl5p05spZ1iWBPO0kfSPeisXRvAkgtlTeveeTZtEBBIwtR1r7Qy4HXrm4gHNDijFOyRfLJpuWonNJ6EaEjnA6smre2lNsPatsdR5aUPwBegtJNM8MHiu5SKwmzbTyMbgn4vGnJ0UD202l3RApoaVGQzJCv"
                     }
                 }',
                 CURLOPT_HTTPHEADER => array(
