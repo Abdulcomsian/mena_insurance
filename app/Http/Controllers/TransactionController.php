@@ -53,7 +53,7 @@ class TransactionController extends Controller
                 'ivp_store' => env('IVP_STORE_ID'),
                 'ivp_authkey' => 'FmJq#sfCh9-BTRbp',
                 'ivp_cart' => uniqid(mt_rand()),
-                'ivp_test' => '1',
+                'ivp_test' => '0',
                 'ivp_amount' => $total,
                 'ivp_currency' => 'AED',
                 'ivp_desc' => 'Not Set',
