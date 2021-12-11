@@ -48,12 +48,13 @@ class TransactionController extends Controller
             } else {
                 $last_name = 'Not Set';
             }
+//env('IVP_STORE_ID')
             $params = array(
                 'ivp_method' => 'create',
-                'ivp_store' => env('IVP_STORE_ID'),
+                'ivp_store' => '26075',
                 'ivp_authkey' => 'FmJq#sfCh9-BTRbp',
                 'ivp_cart' => uniqid(mt_rand()),
-                'ivp_test' => '0',
+                'ivp_test' => '1',
                 'ivp_amount' => $total,
                 'ivp_currency' => 'AED',
                 'ivp_desc' => 'Not Set',
@@ -202,9 +203,15 @@ class TransactionController extends Controller
     protected function saveTransactionForAll($transaction)
     {
         $package = Package::where('id', decrypt(session()->get('package_id')))->first();
+ $characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
+    $charactersLength = strlen($characters);
+    $randomString = '';
+    for ($i = 0; $i < 10; $i++) {
+        $randomString .= $characters[rand(0, $charactersLength - 1)];
+    }
         $transaction = Transaction::create([
-            'order_id' => $transaction->order->ref ?? null,
-            'invoice_id' => $transaction->order->cartid ?? null,
+            'order_id' => $transaction->order->ref ?? $randomString ,
+            'invoice_id' => $transaction->order->cartid ?? $randomString,
             'test_mode' => $transaction->test ?? null,
             'description' => $transaction->order->description ?? null,
             'billing_fname' => $transaction->order->customer->name->forenames ?? null,
